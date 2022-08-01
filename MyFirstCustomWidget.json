@@ -6,18 +6,18 @@
 	"license": "",
 	"id": "com.sap.miltonfirstcw", 
 	"newInstancePrefix": "CustomTable_",
-	"version": "0.1",
+	"version": "0.1.0",
 	"icon": "",
 	"webcomponents": [
 		{
 			"kind": "main",
 			"tag": "com-sap-miltonfirstcw",
-			"url": "https://github.com/armando-j-a-santos/Milton-CW/blob/main/MyFirstCustomWidget.js",
+			"url": "https://github.com/armando-j-a-santos/SAPCustomWidget/blob/master/MyFirstCustomWidget.js",
 			"integrity": "",
-			"igonoreIntegrity": true,
-			"imports": ["table", "input-controls"]
+			"ignoreIntegrity": true
 		}	
 	],
+	"properties": {},
 	"dataBindings": {
 	      "myDataBinding": {
 	        "feeds": [
@@ -34,8 +34,7 @@
 	        ]
 	      }
     },
-	"properties":{},
-	"methods":{
+	"methods": {
 		"addItemToRow":{
 				"description": "Adds a new item to row",
 				"parameters": [
@@ -43,7 +42,7 @@
 						"name": "key",
 						"type": "string",
 						"description": "The key of the item which won't be visible"
-					}
+					},
 					{
 						"name": "text",
 						"type": "string",
