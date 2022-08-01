@@ -1,0 +1,66 @@
+{
+	"name": "My First Custom Widget",
+	"description": "Milton Lopes Widget",
+	"eula": "",
+	"vendor": "",
+	"license": "",
+	"id": "com.sap.miltonfirstcw", 
+	"newInstancePrefix": "CustomTable_",
+	"version": "0.1",
+	"icon": "",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "com-sap-miltonfirstcw",
+			"url": "https://github.com/armando-j-a-santos/Milton-CW/blob/main/MyFirstCustomWidget.js",
+			"integrity": "",
+			"igonoreIntegrity": true,
+			"imports": ["table", "input-controls"]
+		}	
+	],
+	"dataBindings": {
+	      "myDataBinding": {
+	        "feeds": [
+	          {
+	            "id": "dimensions",
+	            "description": "Dimensions",
+	            "type": "dimension"
+	          },
+	          {
+	            "id": "measures",
+	            "description": "Measures",
+	            "type": "mainStructureMember"
+	          }
+	        ]
+	      }
+    },
+	"properties":{},
+	"methods":{
+		"addItemToRow":{
+				"description": "Adds a new item to row",
+				"parameters": [
+					{
+						"name": "key",
+						"type": "string",
+						"description": "The key of the item which won't be visible"
+					}
+					{
+						"name": "text",
+						"type": "string",
+						"description": "The text used to search and match the item"
+					}
+				]
+		},
+		"removeItemFromRow":{
+			"description": "Remove a especific item from row",
+			"parameters": [
+				{
+					"name": "key",
+					"type": "string",
+					"description": "The key of the item to be removed"
+				}
+			]
+		}
+	},
+	"events":{}
+}
