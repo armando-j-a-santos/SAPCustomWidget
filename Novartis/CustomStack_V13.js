@@ -33,7 +33,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV12 extends HTMLElement {
+  class NewStackV13 extends HTMLElement {
     constructor () {
       super()
 
@@ -481,8 +481,8 @@
         chart.scrollbarX.parent = chart.bottomAxesContainer;
 
 
-series.appear();
-chart.appear(1000, 100);
+chart.appear();
+//chart.appear(1000, 100);
           
           
         //***         
@@ -498,6 +498,6 @@ chart.appear(1000, 100);
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV12)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV13)
   
 })() // END of function --> (function () {
