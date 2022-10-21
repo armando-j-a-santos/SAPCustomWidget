@@ -33,7 +33,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV9 extends HTMLElement {
+  class NewStackV10 extends HTMLElement {
     constructor () {
       super()
 
@@ -109,7 +109,7 @@
         am4core.ready(function() {
           
         // Themes
-        am4core.useTheme(am4themes_animated);
+        /////am4core.useTheme(am4themes_animated);
 
         // Create chart instance
         var chart = am4core.create(mychartdiv , am4charts.RadarChart);
@@ -197,6 +197,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV9)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV10)
   
 })() // END of function --> (function () {
