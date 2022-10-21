@@ -19,13 +19,6 @@
             
       </style>
       <div id="root" style="width: 100%; height: 100%;">
-        <div id="my_data">
-            <b>Solid Gauge.</b> 
-            <br><-- Libraries --></br>
-            <br>src=https://cdn.amcharts.com/lib/4/core.js</br>
-            <br>src=https://cdn.amcharts.com/lib/4/charts.js</br>
-            <br>src=https://cdn.amcharts.com/lib/4/themes/animated.js</br>
-        </div>
         <div id="chartdiv"></div>
       </div>
     `
@@ -33,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV14 extends HTMLElement {
+  class NewStackV15 extends HTMLElement {
     constructor () {
       super()
 
@@ -111,11 +104,12 @@
         // Themes
         /////am4core.useTheme(am4themes_animated);
 
-        // Create chart instance
-        ////var chart = am4core.create(mychartdiv , am4charts.RadarChart);
-
         // Create chart
         var chart = am4core.create(mychartdiv, am4charts.XYChart);
+        if (chart.logo)
+        {
+          chart.logo.disabled = true;
+        }
       
         // Variables definition
         var CAct_Dark = "#0460a9";
@@ -498,6 +492,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV14)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV15)
   
 })() // END of function --> (function () {
