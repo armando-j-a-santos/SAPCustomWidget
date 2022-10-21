@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV6 extends HTMLElement {
+  class NewStackV7 extends HTMLElement {
     constructor () {
       super()
 
@@ -127,7 +127,7 @@
         
         //***
         // Create chart
-        var chart = am4core.create("chartdiv", am4charts.XYChart);
+        var chart = am4core.create(mychartdiv, am4charts.XYChart);
       
         // Variables definition
         var CAct_Dark = "#0460a9";
@@ -505,7 +505,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV6)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV7)
   
 })() // END of function --> (function () {
 
