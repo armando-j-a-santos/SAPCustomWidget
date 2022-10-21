@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV2 extends HTMLElement {
+  class NewStackV3 extends HTMLElement {
     constructor () {
       super()
 
@@ -100,7 +100,7 @@
       
       am4.ready(function() {
         
-       /+ 
+       /* 
         // To avoid error:  You cannot have multiple Roots on the same DOM node
         // Clicking two time the button in SAC side to render the amchart
         // Loop throught the registried root elements and disposed the we used in this custom widget (chartdiv)
@@ -505,7 +505,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV2)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV3)
   
 })() // END of function --> (function () {
 
