@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV1 extends HTMLElement {
+  class NewStackV2 extends HTMLElement {
     constructor () {
       super()
 
@@ -97,9 +97,10 @@
       var mychartdiv = this._shadowRoot.getElementById('chartdiv')
       //console.log(mychartdiv) 
       
-      /*
-      am5.ready(function() {
+      
+      am4.ready(function() {
         
+       /+ 
         // To avoid error:  You cannot have multiple Roots on the same DOM node
         // Clicking two time the button in SAC side to render the amchart
         // Loop throught the registried root elements and disposed the we used in this custom widget (chartdiv)
@@ -111,6 +112,7 @@
         });
       */
       
+
         // Create a new root element and
         // Assign this root element to a chartdiv
         var root = am4.Root.new(mychartdiv)
@@ -493,7 +495,7 @@
 
         //***
         
-      //}) // end am4.ready()
+      }) // end am4.ready()
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
       
     } // END of method --> render 
@@ -503,7 +505,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV1)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV2)
   
 })() // END of function --> (function () {
 
