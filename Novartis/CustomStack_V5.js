@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV4 extends HTMLElement {
+  class NewStackV5 extends HTMLElement {
     constructor () {
       super()
 
@@ -115,10 +115,10 @@
 
         // Create a new root element and
         // Assign this root element to a chartdiv
-        var root = am4core.Root.new(mychartdiv)
+        //var root = am4core.Root.new(mychartdiv)
         
         // Remove un-wanted logo image
-        root._logo.dispose() 
+        //root._logo.dispose() 
         
         // Set themes
         am4core.useTheme(am4themes_animated);
@@ -126,7 +126,7 @@
         
         //***
         // Create chart
-        var chart = root.container.children.push(am4charts.XYChart);
+        var chart = am4core.create("chartdiv", am4charts.XYChart);
       
         // Variables definition
         var CAct_Dark = "#0460a9";
@@ -494,7 +494,7 @@
 
         //***
         
-      }) // end am4.ready()
+      }) // end am4core.ready()
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
       
     } // END of method --> render 
@@ -504,7 +504,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV4)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV5)
   
 })() // END of function --> (function () {
 
