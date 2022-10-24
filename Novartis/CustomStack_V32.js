@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV31 extends HTMLElement {
+  class NewStackV32 extends HTMLElement {
     constructor () {
       super()
 
@@ -40,7 +40,7 @@
   
     //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
     
-    let LoadLibsAfterUpdate = async function(host, data, props) {
+    let LoadLibsAfterUpdate = async function() {
         try {
           await host.loadScript("https://armando-j-a-santos.github.io/SAPCustomWidget/Novartis/charts.js", this._shadowRoot);
         } catch (e) {
@@ -538,6 +538,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV31)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV32)
   
 })() // END of function --> (function () {
