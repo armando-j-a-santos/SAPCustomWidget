@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV40 extends HTMLElement {
+  class NewStackV41 extends HTMLElement {
     constructor () {
       super()
 
@@ -67,6 +67,7 @@
               console.log('loaded charts.js')
             }
             
+            //Loaded a second time to avoid library error on start up of the app
             let script1 = document.createElement('script')
             script1.src = 'https://cdn.amcharts.com/lib/4/charts.js'
             script1.onload = () => {
@@ -500,6 +501,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV40)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV41)
   
 })() // END of function --> (function () {
