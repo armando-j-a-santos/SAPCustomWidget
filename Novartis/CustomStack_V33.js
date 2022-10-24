@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV32 extends HTMLElement {
+  class NewStackV33 extends HTMLElement {
     constructor () {
       super()
 
@@ -39,19 +39,6 @@
     }
   
     //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
-    
-    let LoadLibsAfterUpdate = async function() {
-        try {
-          await host.loadScript("https://armando-j-a-santos.github.io/SAPCustomWidget/Novartis/charts.js", this._shadowRoot);
-        } catch (e) {
-              console.log(JSON.stringify(e));
-              console.log('NOT OK');
-              await host.loadScript("https://armando-j-a-santos.github.io/SAPCustomWidget/Novartis/charts.js", this._shadowRoot);
-        } finally {
-          console.log('OK');
-          this._shadowRoot.appendChild(script)
-        }
-    }
     
     
     onCustomWidgetAfterUpdate() {
@@ -79,21 +66,24 @@
             this._shadowRoot.appendChild(script)
         })
         
-        /*
+        
         // Library: charts.js
         new Promise(resolve => {
             let script = document.createElement('script')
             script.src = 'https://armando-j-a-santos.github.io/SAPCustomWidget/Novartis/charts.js'
             try {
-                  await host.loadScript(script", this._shadowRoot);
-                }
+                  script.onload = () => {  
+                      resolve(script)
+                      script.onerror = () => reject(new Error(`Script load error for ${src}`))
+                      console.log('loaded charts.js (first try)')
+                  }
             } catch (e) {
                   resolve(script)
                   console.log('loaded charts.js (second try)')              
             }    
             this._shadowRoot.appendChild(script)
         })
-        */
+        
 
         // Library: animated.js
         new Promise(resolve => {
@@ -102,6 +92,7 @@
             try {
                 script.onload = () => {  
                   resolve(script)
+                  script.onerror = () => reject(new Error(`Script load error for ${src}`))
                   console.log('loaded animated.js (first try)')
                 }
             } catch (e) {
@@ -112,6 +103,7 @@
         })
     }
     
+    /*
     loadScript(src, shadowRoot) {
             return new Promise(function(resolve, reject) {
                 let script = document.createElement('script');
@@ -124,7 +116,7 @@
                 //shadowRoot.appendChild(script);
             });
     }
-
+    */
     
     // ------------------
     // Scripting methods
@@ -538,6 +530,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV32)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV33)
   
 })() // END of function --> (function () {
