@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV25 extends HTMLElement {
+  class NewStackV26 extends HTMLElement {
     constructor () {
       super()
 
@@ -50,7 +50,7 @@
         // Library: core.js
         new Promise(resolve => {
             let script = document.createElement('script')
-            script.src = 'https://cdn.amcharts.com/lib/4/core.js'
+            script.src = 'core.js'
             script.onload = () => {
               resolve(script)
               console.log('loaded core.js')
@@ -61,7 +61,7 @@
         // Library: charts.js
         new Promise(resolve => {
             let script = document.createElement('script')
-            script.src = 'https://cdn.amcharts.com/lib/4/charts.js'
+            script.src = 'charts.js'
             script.onload = () => {
               resolve(script)
               console.log('loaded charts.js')
@@ -72,7 +72,7 @@
         // Library: animated.js
         new Promise(resolve => {
             let script = document.createElement('script')
-            script.src = 'https://cdn.amcharts.com/lib/4/themes/animated.js'
+            script.src = 'animated.js'
             script.onload = () => {
               resolve(script)
               console.log('loaded animated.js')
@@ -495,6 +495,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV25)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV26)
   
 })() // END of function --> (function () {
