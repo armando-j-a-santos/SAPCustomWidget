@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV27 extends HTMLElement {
+  class NewStackV28 extends HTMLElement {
     constructor () {
       super()
 
@@ -51,9 +51,14 @@
         new Promise(resolve => {
             let script = document.createElement('script')
             script.src = 'https://armando-j-a-santos.github.io/SAPCustomWidget/Novartis/core.js'
-            script.onload = () => {
-              resolve(script)
-              console.log('loaded core.js')
+            try {
+                script.onload = () => {
+                  resolve(script)
+                  console.log('loaded core.js (first try)')
+                }
+            } catch (e) {
+                  resolve(script)
+                  console.log('loaded core.js (second try)')              
             }
             this._shadowRoot.appendChild(script)
         })
@@ -495,6 +500,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV27)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV28)
   
 })() // END of function --> (function () {
