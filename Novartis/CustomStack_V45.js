@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV44 extends HTMLElement {
+  class NewStackV45 extends HTMLElement {
     constructor () {
       super()
 
@@ -145,9 +145,7 @@
         var AIScope_4 = "Non AI"; 
           
         //var CY = 2022
-          
-
-        
+       
           
         //ResultSet
         console.log('resultSet:')
@@ -155,6 +153,8 @@
         resultSet.forEach(dp => {
           console.log(dp)
           
+          var CY_Array = [];
+                 
           if(dp["TIME.YEAR"].id === "2022" ){
             console.log("INSIDE 2022 DATA:")
             
@@ -168,7 +168,26 @@
             if(dp['@MeasureDimension'].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Only]"){
               console.log("HERE IN COLUMN 1");
               console.log("A1 ->"); 
-              console.log(resultSet[i]["@MeasureDimension"].formattedValue);            
+              console.log(dp["@MeasureDimension"].formattedValue);    
+              CY_Array.push(dp["@MeasureDimension"].formattedValue);
+            }
+            //A2 - New AI 
+            else if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_New_AI]"){
+              console.log("A2 ->"); 
+              console.log(dp["@MeasureDimension"].formattedValue);
+              CY_Array.push(dp["@MeasureDimension"].formattedValue);
+            }
+            //A3 - HI (AI Drivers) 
+            else if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Drivers]"){
+              console.log("A3 ->"); 
+              console.log(dp["@MeasureDimension"].formattedValue);
+              CY_Array.push(dp["@MeasureDimension"].formattedValue);
+            }
+            //A4 - Non AI 
+            else if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_Non_AI]"){
+              console.log("A4 ->"); 
+              console.log(dp["@MeasureDimension"].formattedValue);
+              CY_Array.push(dp["@MeasureDimension"].formattedValue);
             }
             
           }
@@ -195,11 +214,19 @@
 
         }, {
           "year": "2022",
+          
+          "A1": CY_Array[0],
+          "A2": CY_Array[1],
+          "A3": CY_Array[2],
+          "A4": CY_Array[3],
+          
+         /*
           "A1": 33.7,
           "A2": 6.5,
           "A3": 10.5,
           "A4": 10.3,
-
+        */
+          
           "B1": 30.2,
           "B2": 0.9,
           "B3": 0,
@@ -539,6 +566,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV44)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV45)
   
 })() // END of function --> (function () {
