@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV35 extends HTMLElement {
+  class NewStackV36 extends HTMLElement {
     constructor () {
       super()
 
@@ -76,8 +76,8 @@
                       resolve(script)
                       console.log('loaded charts.js (first try)')
                   }
-                  script.onerror = () => reject(new Error(`ERRRRRRRRRO`))
-                  console.log(script.onerror)
+                  
+                  console.log(script)
             } catch (e) {
                   resolve(script)
                   console.log('loaded charts.js (second try)')              
@@ -531,6 +531,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV35)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV36)
   
 })() // END of function --> (function () {
