@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV26 extends HTMLElement {
+  class NewStackV27 extends HTMLElement {
     constructor () {
       super()
 
@@ -50,7 +50,7 @@
         // Library: core.js
         new Promise(resolve => {
             let script = document.createElement('script')
-            script.src = 'core.js'
+            script.src = 'https://armando-j-a-santos.github.io/SAPCustomWidget/Novartis/core.js'
             script.onload = () => {
               resolve(script)
               console.log('loaded core.js')
@@ -61,7 +61,7 @@
         // Library: charts.js
         new Promise(resolve => {
             let script = document.createElement('script')
-            script.src = 'charts.js'
+            script.src = 'https://armando-j-a-santos.github.io/SAPCustomWidget/Novartis/charts.js'
             script.onload = () => {
               resolve(script)
               console.log('loaded charts.js')
@@ -72,7 +72,7 @@
         // Library: animated.js
         new Promise(resolve => {
             let script = document.createElement('script')
-            script.src = 'animated.js'
+            script.src = 'https://armando-j-a-santos.github.io/SAPCustomWidget/Novartis/animated.js'
             script.onload = () => {
               resolve(script)
               console.log('loaded animated.js')
@@ -495,6 +495,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV26)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV27)
   
 })() // END of function --> (function () {
