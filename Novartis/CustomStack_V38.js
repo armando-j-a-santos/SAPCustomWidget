@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV37 extends HTMLElement {
+  class NewStackV38 extends HTMLElement {
     constructor () {
       super()
 
@@ -39,8 +39,6 @@
     }
   
     //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
-    
-    
     onCustomWidgetAfterUpdate() {
         // Build the neceasry div tag with name: chartdiv, to be used later on the following code
         console.log("onCustomWidgetAfterUpdate")
@@ -52,72 +50,38 @@
         // Library: core.js
         new Promise(resolve => {
             let script = document.createElement('script')
-            script.src = 'https://armando-j-a-santos.github.io/SAPCustomWidget/Novartis/core.js'
-            try {
-                script.onload = () => {
-                  resolve(script)
-                  console.log('loaded core.js (first try)')
-                }
-            } catch (e) {
-              
-                  resolve(script)
-                  console.log('loaded core.js (second try)')              
+            script.src = 'https://cdn.amcharts.com/lib/4/core.js'
+            script.onload = () => {
+              resolve(script)
+              console.log('loaded core.js')
             }
             this._shadowRoot.appendChild(script)
         })
         
-        
         // Library: charts.js
         new Promise(resolve => {
             let script = document.createElement('script')
-            script.src = 'https://armando-j-a-santos.github.io/SAPCustomWidget/Novartis/charts.js'
-            try {
-                  script.onload = () => {  
-                      resolve(script)
-                      console.log('loaded charts.js (first try)')
-                  }
-            } catch (e) {
-                  resolve(script)
-                  console.log('loaded charts.js (second try)')              
-            } 
-          
+            script.src = 'https://cdn.amcharts.com/lib/4/charts.js'
+            script.onload = () => {
+              resolve(script)
+              console.log('loaded charts.js')
+            }
             console.log(script)
             this._shadowRoot.appendChild(script)
         })
-        
 
         // Library: animated.js
         new Promise(resolve => {
             let script = document.createElement('script')
-            script.src = 'https://armando-j-a-santos.github.io/SAPCustomWidget/Novartis/animated.js'
-            try {
-                script.onload = () => {  
-                  resolve(script)
-                  script.onerror = () => reject(new Error(`Script load error for ${src}`))
-                  console.log('loaded animated.js (first try)')
-                }
-            } catch (e) {
-                  resolve(script)
-                  console.log('loaded animated.js (second try)')              
-            }                
+            script.src = 'https://cdn.amcharts.com/lib/4/themes/animated.js'
+            script.onload = () => {
+              resolve(script)
+              console.log('loaded animated.js')
+            }
             this._shadowRoot.appendChild(script)
         })
     }
-    
-    /*
-    loadScript(src, shadowRoot) {
-            return new Promise(function(resolve, reject) {
-                let script = document.createElement('script');
-                script.src = src;
-                script.onload = () => {
-                    console.log("Load: " + src);
-                    resolve(script);
-                };
-                script.onerror = () => reject(new Error(`Script load error for ${src}`));
-                //shadowRoot.appendChild(script);
-            });
-    }
-    */
+
     
     // ------------------
     // Scripting methods
@@ -129,8 +93,6 @@
         this._root.removeChild(this._placeholder)
         this._placeholder = null
       }
-      
-     // loadLibraries();
       
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
       var mychartdiv = this._shadowRoot.getElementById('chartdiv')
@@ -521,7 +483,6 @@ chart.appear();
         //***         
         }); // end am4core.ready()
         
-        //***
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
       
     } // END of method --> render 
@@ -531,6 +492,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV37)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV38)
   
 })() // END of function --> (function () {
