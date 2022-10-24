@@ -151,7 +151,7 @@
           
         resultSet.forEach(dp => {
           console.log(dp)
-        }
+        })
 
         // Add data
         chart.data = [ {
