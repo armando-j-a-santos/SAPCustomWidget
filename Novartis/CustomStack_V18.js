@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV17 extends HTMLElement {
+  class NewStackV18 extends HTMLElement {
     constructor () {
       super()
 
@@ -38,8 +38,8 @@
       this._props = {}
     }
   
-         // Load necessary chart libraries
-    function loadLibraries() {
+    // Load necessary chart libraries
+    loadLibraries() {
         // Build the neceasry div tag with name: chartdiv, to be used later on the following code
         console.log("onCustomWidgetAfterUpdate")
         const div = document.createElement('div')
@@ -92,7 +92,7 @@
         this._placeholder = null
       }
       
-      loadLibraries()
+      loadLibraries();
       
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
       var mychartdiv = this._shadowRoot.getElementById('chartdiv')
@@ -493,6 +493,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV17)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV18)
   
 })() // END of function --> (function () {
