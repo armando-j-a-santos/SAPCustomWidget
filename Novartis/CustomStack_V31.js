@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV30 extends HTMLElement {
+  class NewStackV31 extends HTMLElement {
     constructor () {
       super()
 
@@ -39,6 +39,21 @@
     }
   
     //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
+    
+    let LoadLibsAfterUpdate = async function(host, data, props) {
+        try {
+          await host.loadScript("https://armando-j-a-santos.github.io/SAPCustomWidget/Novartis/charts.js", this._shadowRoot);
+        } catch (e) {
+              console.log(JSON.stringify(e));
+              console.log('NOT OK');
+              await host.loadScript("https://armando-j-a-santos.github.io/SAPCustomWidget/Novartis/charts.js", this._shadowRoot);
+        } finally {
+          console.log('OK');
+          this._shadowRoot.appendChild(script)
+        }
+    }
+    
+    
     onCustomWidgetAfterUpdate() {
         // Build the neceasry div tag with name: chartdiv, to be used later on the following code
         console.log("onCustomWidgetAfterUpdate")
@@ -64,6 +79,7 @@
             this._shadowRoot.appendChild(script)
         })
         
+        /*
         // Library: charts.js
         new Promise(resolve => {
             let script = document.createElement('script')
@@ -77,6 +93,7 @@
             }    
             this._shadowRoot.appendChild(script)
         })
+        */
 
         // Library: animated.js
         new Promise(resolve => {
@@ -521,6 +538,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV30)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV31)
   
 })() // END of function --> (function () {
