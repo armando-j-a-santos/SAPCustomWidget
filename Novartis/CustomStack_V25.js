@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV24 extends HTMLElement {
+  class NewStackV25 extends HTMLElement {
     constructor () {
       super()
 
@@ -38,8 +38,8 @@
       this._props = {}
     }
   
-    // Load necessary chart libraries
-    async function LoadLibs() {
+    //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
+    onCustomWidgetAfterUpdate() {
         // Build the neceasry div tag with name: chartdiv, to be used later on the following code
         console.log("onCustomWidgetAfterUpdate")
         const div = document.createElement('div')
@@ -81,7 +81,7 @@
         })
     }
     
-    LoadLibs();
+    //LoadLibs();
     
     // ------------------
     // Scripting methods
@@ -495,6 +495,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV24)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV25)
   
 })() // END of function --> (function () {
