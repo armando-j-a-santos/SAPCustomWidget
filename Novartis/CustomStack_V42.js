@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV41 extends HTMLElement {
+  class NewStackV42 extends HTMLElement {
     constructor () {
       super()
 
@@ -95,7 +95,7 @@
     // ------------------
     // Scripting methods
     // ------------------
-    async render () {
+    async render (resultSet) {
       
       this._placeholder = this._root.querySelector('#placeholder')
       if (this._placeholder) {
@@ -144,7 +144,14 @@
         var AIScope_3 = "HI"; 
         var AIScope_4 = "Non AI"; 
 
-
+        
+          
+        //ResultSet
+        console.log('resultSet:')
+          
+        resultSet.forEach(dp => {
+          console.log(dp)
+        }
 
         // Add data
         chart.data = [ {
@@ -405,7 +412,12 @@
         var legendA = new am4charts.Legend();
         //To push the custom legend top
         legendA.parent = chart.topAxesContainer; 
-
+        
+        //Disable toggle of items in LegendA
+        legendA.itemContainers.template.clickable = false;
+        legendA.itemContainers.template.focusable = false;
+        legendA.itemContainers.template.cursorOverStyle = am4core.MouseCursorStyle.default;  
+          
         //Set font size and font family for the custom legend
         legendA.fontSize = 12;  
         legendA.fontFamily = "Arial";
@@ -446,6 +458,11 @@
         var legendB = new am4charts.Legend();
         //To push the custom legend top
         legendB.parent = chart.topAxesContainer; 
+          
+        //Disable toggle of items in LegendB
+        legendB.itemContainers.template.clickable = false;
+        legendB.itemContainers.template.focusable = false;
+        legendB.itemContainers.template.cursorOverStyle = am4core.MouseCursorStyle.default;
 
         //Set font size and font family for the custom legend
         legendB.fontSize = 12;  
@@ -501,6 +518,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV41)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV42)
   
 })() // END of function --> (function () {
