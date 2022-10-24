@@ -23,23 +23,8 @@
       </div>
     `
   
-  // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
-  // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV15 extends HTMLElement {
-    constructor () {
-      super()
-
-       // Necessary statments that runs onInit (initialization) of the custom widget
-      this._shadowRoot = this.attachShadow({ mode: 'open' })
-      this._shadowRoot.appendChild(template.content.cloneNode(true))
-
-      this._root = this._shadowRoot.getElementById('root')
-      this._props = {}
-    }
-  
-    //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
-    onCustomWidgetAfterUpdate() {
+      // Load necessary chart libraries
+    function loadLibraries() {
         // Build the neceasry div tag with name: chartdiv, to be used later on the following code
         console.log("onCustomWidgetAfterUpdate")
         const div = document.createElement('div')
@@ -80,8 +65,23 @@
             this._shadowRoot.appendChild(script)
         })
     }
+  
+  // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
+  // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
+  class NewStackV16 extends HTMLElement {
+    constructor () {
+      super()
 
-    
+       // Necessary statments that runs onInit (initialization) of the custom widget
+      this._shadowRoot = this.attachShadow({ mode: 'open' })
+      this._shadowRoot.appendChild(template.content.cloneNode(true))
+
+      this._root = this._shadowRoot.getElementById('root')
+      this._props = {}
+    }
+  
+   
     // ------------------
     // Scripting methods
     // ------------------
@@ -92,6 +92,8 @@
         this._root.removeChild(this._placeholder)
         this._placeholder = null
       }
+      
+      loadLibraries()
       
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
       var mychartdiv = this._shadowRoot.getElementById('chartdiv')
@@ -492,6 +494,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV15)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV16)
   
 })() // END of function --> (function () {
