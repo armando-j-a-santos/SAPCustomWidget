@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV46 extends HTMLElement {
+  class NewStackV47 extends HTMLElement {
     constructor () {
       super()
 
@@ -145,7 +145,7 @@
         var AIScope_4 = "Non AI"; 
           
         //var CY = 2022
-       
+        var CY_Array = [];
           
         //ResultSet
         console.log('resultSet:')
@@ -153,7 +153,7 @@
         resultSet.forEach(dp => {
           console.log(dp)
           
-          const CY_Array = [];
+          
                  
           if(dp["TIME.YEAR"].id === "2022" ){
             console.log("INSIDE 2022 DATA:")
@@ -566,6 +566,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV46)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV47)
   
 })() // END of function --> (function () {
