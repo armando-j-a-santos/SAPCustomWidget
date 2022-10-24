@@ -23,7 +23,22 @@
       </div>
     `
   
-      // Load necessary chart libraries
+  // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
+  // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
+  class NewStackV17 extends HTMLElement {
+    constructor () {
+      super()
+
+       // Necessary statments that runs onInit (initialization) of the custom widget
+      this._shadowRoot = this.attachShadow({ mode: 'open' })
+      this._shadowRoot.appendChild(template.content.cloneNode(true))
+
+      this._root = this._shadowRoot.getElementById('root')
+      this._props = {}
+    }
+  
+         // Load necessary chart libraries
     function loadLibraries() {
         // Build the neceasry div tag with name: chartdiv, to be used later on the following code
         console.log("onCustomWidgetAfterUpdate")
@@ -65,23 +80,7 @@
             this._shadowRoot.appendChild(script)
         })
     }
-  
-  // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
-  // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV16 extends HTMLElement {
-    constructor () {
-      super()
-
-       // Necessary statments that runs onInit (initialization) of the custom widget
-      this._shadowRoot = this.attachShadow({ mode: 'open' })
-      this._shadowRoot.appendChild(template.content.cloneNode(true))
-
-      this._root = this._shadowRoot.getElementById('root')
-      this._props = {}
-    }
-  
-   
+    
     // ------------------
     // Scripting methods
     // ------------------
@@ -494,6 +493,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV16)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV17)
   
 })() // END of function --> (function () {
