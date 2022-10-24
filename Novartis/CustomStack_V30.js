@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV29 extends HTMLElement {
+  class NewStackV30 extends HTMLElement {
     constructor () {
       super()
 
@@ -57,6 +57,7 @@
                   console.log('loaded core.js (first try)')
                 }
             } catch (e) {
+              
                   resolve(script)
                   console.log('loaded core.js (second try)')              
             }
@@ -68,9 +69,7 @@
             let script = document.createElement('script')
             script.src = 'https://armando-j-a-santos.github.io/SAPCustomWidget/Novartis/charts.js'
             try {
-                script.onload = () => {
-                  resolve(script)
-                  console.log('loaded charts.js (first try)')
+                  await host.loadScript(script", this._shadowRoot);
                 }
             } catch (e) {
                   resolve(script)
@@ -96,7 +95,19 @@
         })
     }
     
-    //LoadLibs();
+    loadScript(src, shadowRoot) {
+            return new Promise(function(resolve, reject) {
+                let script = document.createElement('script');
+                script.src = src;
+                script.onload = () => {
+                    console.log("Load: " + src);
+                    resolve(script);
+                };
+                script.onerror = () => reject(new Error(`Script load error for ${src}`));
+                //shadowRoot.appendChild(script);
+            });
+    }
+
     
     // ------------------
     // Scripting methods
@@ -510,6 +521,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV29)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV30)
   
 })() // END of function --> (function () {
