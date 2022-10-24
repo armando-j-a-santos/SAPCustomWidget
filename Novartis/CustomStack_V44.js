@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV43 extends HTMLElement {
+  class NewStackV44 extends HTMLElement {
     constructor () {
       super()
 
@@ -143,6 +143,9 @@
         var AIScope_2 = "New AI"; 
         var AIScope_3 = "HI"; 
         var AIScope_4 = "Non AI"; 
+          
+        //var CY = 2022
+          
 
         
           
@@ -151,6 +154,24 @@
           
         resultSet.forEach(dp => {
           console.log(dp)
+          
+          if(dp["TIME.YEAR"].id === "2022" ){
+            console.log("INSIDE 2022 DATA:")
+            
+            ////////////////////////////////////////////
+            //Column 1 
+            //CW --> Version_2
+            //Model Variable --> Selected_Version_1 
+            ////////////////////////////////////////////
+
+            //A1 - Base AI (AI Only) 
+            if(dp['@MeasureDimension'].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Only]"){
+              console.log("HERE IN COLUMN 1");
+              console.log("A1 ->"); 
+              console.log(resultSet[i]["@MeasureDimension"].formattedValue);            
+            }
+            
+          }
         })
 
         // Add data
@@ -518,6 +539,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV43)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV44)
   
 })() // END of function --> (function () {
