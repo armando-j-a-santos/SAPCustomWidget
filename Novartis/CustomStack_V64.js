@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV63 extends HTMLElement {
+  class NewStackV64 extends HTMLElement {
     constructor () {
       super()
 
@@ -147,6 +147,15 @@
         //ResultSet
         console.log('resultSet:')
           
+        const CY_Minus1 = {
+          year: "2021",
+          
+          B1: undefined,
+          B2: undefined,
+          B3: undefined,
+          B4: undefined,
+      };
+          
         const CY = {
           year: "2022",
           A1: undefined,
@@ -165,8 +174,85 @@
           C4: undefined	
       };
           
+          const CY_Plus1 = {
+          year: "2023",
+          A1: undefined,
+          A2: undefined,
+          A3: undefined,
+          A4: undefined,
+
+          B1: undefined,
+          B2: undefined,
+          B3: undefined,
+          B4: undefined,
+
+          C1: undefined,
+          C2: undefined,
+          C3: undefined,
+          C4: undefined	
+      };
+          
+          const CY_Plus2 = {
+          year: "2024",
+          A1: undefined,
+          A2: undefined,
+          A3: undefined,
+          A4: undefined,
+
+          B1: undefined,
+          B2: undefined,
+          B3: undefined,
+          B4: undefined,
+
+          C1: undefined,
+          C2: undefined,
+          C3: undefined,
+          C4: undefined	
+      };
+          
+          const CY_Plus3 = {
+          year: "2025",
+          A1: undefined,
+          A2: undefined,
+          A3: undefined,
+          A4: undefined,
+
+          B1: undefined,
+          B2: undefined,
+          B3: undefined,
+          B4: undefined,
+
+          C1: undefined,
+          C2: undefined,
+          C3: undefined,
+          C4: undefined	
+      };
+          
+          
         resultSet.forEach(dp => {
-          console.log(dp)                
+          console.log(dp)
+            if(dp["TIME.YEAR"].id === "2021" ){
+            console.log("INSIDE 2022 DATA:")
+
+          ////////////////////////////////////////////
+          //Column 2  (Blue Column)
+          //CW --> Version_3 (Actuals)
+          //
+          ////////////////////////////////////////////
+
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Only]"){              
+                CY_Minus1.B1 = dp["@MeasureDimension"].formattedValue;
+                  }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_New_AI]"){
+                CY_Minus1.B2 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Drivers]"){
+                CY_Minus1.B3 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_Non_AI]"){
+               CY_Minus1.B4 = dp["@MeasureDimension"].formattedValue;
+              }
+          }	       
              
           if(dp["TIME.YEAR"].id === "2022" ){
             console.log("INSIDE 2022 DATA:")
@@ -228,12 +314,200 @@
               if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_Non_AI]"){
                 CY.C4 = dp["@MeasureDimension"].formattedValue;
               }
-          }	       
+          }
+          
+          if(dp["TIME.YEAR"].id === "2023" ){
+            console.log("INSIDE 2023 DATA:")
+
+          ////////////////////////////////////////////
+          //Column 1 
+          //CW --> Version_2
+          //Model Variable --> Selected_Version_1 
+          ////////////////////////////////////////////
+
+
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Only]"){
+                CY_Plus1.A1 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_New_AI]"){
+                CY_Plus1.A2 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Drivers]"){                
+                CY_Plus1.A3 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_Non_AI]"){                
+                CY_Plus1.A4 = dp["@MeasureDimension"].formattedValue;
+              }
+
+          ////////////////////////////////////////////
+          //Column 2 
+          //CW --> Version_3
+          //Model Variable --> Selected_Version_2 
+          ////////////////////////////////////////////
+
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Only]"){              
+                CY_Plus1.B1 = dp["@MeasureDimension"].formattedValue;
+                  }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_New_AI]"){
+                CY_Plus1.B2 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Drivers]"){
+                CY_Plus1.B3 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_Non_AI]"){
+               CY_Plus1.B4 = dp["@MeasureDimension"].formattedValue;
+              }
+
+          ////////////////////////////////////////////
+          //Column 3 
+          //CW --> Version_4
+          //Model Variable --> Selected_Version_3 
+          ////////////////////////////////////////////
+
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_AI_Only]"){
+                CY_Plus1.C1 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_New_AI]"){
+                CY_Plus1.C2 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_AI_Drivers]"){
+                CY_Plus1.C3 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_Non_AI]"){
+                CY_Plus1.C4 = dp["@MeasureDimension"].formattedValue;
+              }
+          }	
+          
+          if(dp["TIME.YEAR"].id === "2024" ){
+            console.log("INSIDE 2022 DATA:")
+
+          ////////////////////////////////////////////
+          //Column 1 
+          //CW --> Version_2
+          //Model Variable --> Selected_Version_1 
+          ////////////////////////////////////////////
+
+
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Only]"){
+                CY_Plus2.A1 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_New_AI]"){
+                CY_Plus2.A2 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Drivers]"){                
+                CY_Plus2.A3 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_Non_AI]"){                
+                CY_Plus2.A4 = dp["@MeasureDimension"].formattedValue;
+              }
+
+          ////////////////////////////////////////////
+          //Column 2 
+          //CW --> Version_3
+          //Model Variable --> Selected_Version_2 
+          ////////////////////////////////////////////
+
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Only]"){              
+                CY_Plus2.B1 = dp["@MeasureDimension"].formattedValue;
+                  }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_New_AI]"){
+                CY_Plus2.B2 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Drivers]"){
+                CY_Plus2.B3 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_Non_AI]"){
+               CY_Plus2.B4 = dp["@MeasureDimension"].formattedValue;
+              }
+
+          ////////////////////////////////////////////
+          //Column 3 
+          //CW --> Version_4
+          //Model Variable --> Selected_Version_3 
+          ////////////////////////////////////////////
+
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_AI_Only]"){
+                CY_Plus2.C1 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_New_AI]"){
+                CY_Plus2.C2 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_AI_Drivers]"){
+                CY_Plus2.C3 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_Non_AI]"){
+                CY_Plus2.C4 = dp["@MeasureDimension"].formattedValue;
+              }
+          }	
+          
+          if(dp["TIME.YEAR"].id === "2025" ){
+            console.log("INSIDE 2022 DATA:")
+
+          ////////////////////////////////////////////
+          //Column 1 
+          //CW --> Version_2
+          //Model Variable --> Selected_Version_1 
+          ////////////////////////////////////////////
+
+
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Only]"){
+                CY_Plus3.A1 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_New_AI]"){
+                CY_Plus3.A2 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Drivers]"){                
+                CY_Plus3.A3 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_Non_AI]"){                
+                CY_Plus3.A4 = dp["@MeasureDimension"].formattedValue;
+              }
+
+          ////////////////////////////////////////////
+          //Column 2 
+          //CW --> Version_3
+          //Model Variable --> Selected_Version_2 
+          ////////////////////////////////////////////
+
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Only]"){              
+                CY_Plus3.B1 = dp["@MeasureDimension"].formattedValue;
+                  }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_New_AI]"){
+                CY_Plus3.B2 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Drivers]"){
+                CY_Plus3.B3 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_Non_AI]"){
+               CY_Plus3.B4 = dp["@MeasureDimension"].formattedValue;
+              }
+
+          ////////////////////////////////////////////
+          //Column 3 
+          //CW --> Version_4
+          //Model Variable --> Selected_Version_3 
+          ////////////////////////////////////////////
+
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_AI_Only]"){
+                CY_Plus3.C1 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_New_AI]"){
+                CY_Plus3.C2 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_AI_Drivers]"){
+                CY_Plus3.C3 = dp["@MeasureDimension"].formattedValue;
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_Non_AI]"){
+                CY_Plus3.C4 = dp["@MeasureDimension"].formattedValue;
+              }
+          }	
+          
         })
           
       
         // Add data
-        chart.data = [ {
+        chart.data = [
+          /* {
           "year": "2021",
 
          // "A1": 33.7,
@@ -253,7 +527,7 @@
 
         },
                       
-          /* {
+           {
           "year": "2022",
           
           "A1": CY_Array[0],
@@ -278,7 +552,7 @@
           "C3": 0,
           "C4": 10.3,
 
-        }, */
+        }, 
             {
           "year": "2023",
           "A1": 29.2,
@@ -327,11 +601,28 @@
           "C2": 4.3,
           "C3": 2.5,
           "C4": 9
-        } ];
+        }
         
+        */
+        ];
+        
+        chart.data.push(CY_Minus1);
         chart.data.push(CY);
-        console.log("*******FINAL CHART DAATA******");
+        chart.data.push(CY_Plus1);
+        chart.data.push(CY_Plus2);
+        chart.data.push(CY_Plus3);
+        
+         console.log("*******FINAL CHART DAATA******");
         console.log(chart.data);
+          
+        //Release memory
+        CY_Minus1 = {};
+        CY = {};
+        CY_Plus1 = {};
+        CY_Plus2 = {};
+        CY_Plus3 = {};
+          
+          
           
         // Create X axes (and customize it)
         var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -612,6 +903,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV63)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV64)
  
 })() // END of function --> (function () {
