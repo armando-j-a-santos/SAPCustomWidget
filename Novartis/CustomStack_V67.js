@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV66 extends HTMLElement {
+  class NewStackV67 extends HTMLElement {
     constructor () {
       super()
 
@@ -237,19 +237,19 @@
           ////////////////////////////////////////////
           //Column 2  (Blue Column)
           //CW --> Version_3 (Actuals)
-          //
+          //Actuals
           ////////////////////////////////////////////
 
-              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Only]"){              
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Only]"){              
                 CY_Minus1.B1 = dp["@MeasureDimension"].formattedValue;
                   }
-              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_New_AI]"){
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_New_AI]"){
                 CY_Minus1.B2 = dp["@MeasureDimension"].formattedValue;
               }
-              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Drivers]"){
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Drivers]"){
                 CY_Minus1.B3 = dp["@MeasureDimension"].formattedValue;
               }
-              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_Non_AI]"){
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_Non_AI]"){
                CY_Minus1.B4 = dp["@MeasureDimension"].formattedValue;
               }
           }	       
@@ -504,107 +504,26 @@
           
         })
           
-      
+        ////// Custom Widget columns data sintax:
+
+        //Version_2		Version_3	Version_4
+        // A4; 			B4; 		C4 		>> Non AI
+        // A3; 			B3; 		C3 		>> HI		(AI Drivers)
+        // A2;			B2; 		C2		>> Ñew AI
+        // A1; 			B1; 		C1 		>> Base AI  (AI Only)
+
+
+        ////// Custom widget Chart.data sintax:
+        //[
+        //{year:"2021", "B1": 30.2, "B2": 10, "B3":13.6}
+        //{year:"2022", "A1": 24.2, "A2": 13, "A3":13.4, "B1": 30.2, "B2": 10, "B3":13.6, "C1": 30.2, "C2": 10, "C3":13.6}
+        //{year:"2023", "A1": 24.2, "A2": 13, "A3":13.4, "B1": 30.2, "B2": 10, "B3":13.6, "C1": 30.2, "C2": 10, "C3":13.6}
+        //{year:"2024", "A1": 24.2, "A2": 13, "A3":13.4, "B1": 30.2, "B2": 10, "B3":13.6, "C1": 30.2, "C2": 10, "C3":13.6}
+        //{year:"2025", "A1": 24.2, "A2": 13, "A3":13.4, "B1": 30.2, "B2": 10, "B3":13.6, "C1": 30.2, "C2": 10, "C3":13.6}
+        //]
+          
         // Add data
-        chart.data = [
-          /* {
-          "year": "2021",
-
-         // "A1": 33.7,
-         // "A2": 6.5,
-         // "A3": 10.5,
-         //"A4": 10.3,
-
-          "B1": 30.2,
-          "B2": 10,
-          "B3": 0,
-          "B4": 13.6,
-
-         // "C1": 33.7,
-         // "C2": 0,
-         // "C3": 0,
-         // "C4": 10.3,
-
-        },
-                      
-           {
-          "year": "2022",
-          
-          "A1": CY_Array[0],
-          "A2": CY_Array[1],
-          "A3": CY_Array[2],
-          "A4": CY_Array[3],
-          
-         /*
-          "A1": 33.7,
-          "A2": 6.5,
-          "A3": 10.5,
-          "A4": 10.3,
-        */
-         /* 
-          "B1": 30.2,
-          "B2": 0.9,
-          "B3": 0,
-          "B4": 13.6,
-
-          "C1": 33.7,
-          "C2": 10,
-          "C3": 0,
-          "C4": 10.3,
-
-        }, 
-            {
-          "year": "2023",
-          "A1": 29.2,
-          "A2": 6.3,
-          "A3": 3.3,
-          "A4": 17.5,
-
-          "B1": 30,
-          "B2": 5.5,
-          "B3": 16,
-          "B4": 12.5,
-
-          "C1": 33,
-          "C2": 15,
-          "C3": 0,
-          "C4": 14
-        }, {
-          "year": "2024",
-          "A1": 27.3,
-          "A2": 4.6,
-          "A3": 2.3,
-          "A4": 13.5,
-
-          "B1": 24,
-          "B2": 14.6,
-          "B3": 14.6,
-          "B4": 5,
-
-         "C1": 19,
-         "C2": 3,
-         "C3": 1.9,
-          "C4": 7
-        },{
-          "year": "2025",
-          "A1": 34,
-          "A2": 10.5,
-          "A3": 5.5,
-          "A4": 5,
-
-          "B1": 25.8,
-          "B2": 7,
-          "B3": 10,
-          "B4": 7.7,
-
-          "C1": 19.9,
-          "C2": 4.3,
-          "C3": 2.5,
-          "C4": 9
-        }
-        
-        */
-        ];
+        chart.data = [];
         
         chart.data.push(CY_Minus1);
         chart.data.push(CY);
@@ -617,7 +536,7 @@
           
         //Release memory
       //  CY_Minus1 = {};
-      // CY = {};
+      //  CY = {};
       //  CY_Plus1 = {};
       //  CY_Plus2 = {};
       //  CY_Plus3 = {};
@@ -737,7 +656,10 @@
 
           // Tooltip 
           series.tooltip.getFillFromObject = false;
-          series.tooltip.background.fill = am4core.color("#000000");
+          series.tooltip.background.fill = am4core.color("#F3F3F3");
+          series.tooltip.label.fill = am4core.color("#000000");
+          series.tooltip.label.fontSize = 14;
+          series.tooltip.fontFamily = "Arial";
           series.columns.template.tooltipText = `{name}: [bold]{valueY.value} [/] 
           Version: [bold]` + version;
 
@@ -887,7 +809,7 @@
         chart.scrollbarX.parent = chart.bottomAxesContainer;
 
 
-chart.appear();
+ chart.appear();
 //chart.appear(1000, 100);
           
           
@@ -903,6 +825,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV66)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV67)
  
 })() // END of function --> (function () {
