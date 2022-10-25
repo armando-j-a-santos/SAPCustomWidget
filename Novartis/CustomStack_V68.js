@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV67 extends HTMLElement {
+  class NewStackV68 extends HTMLElement {
     constructor () {
       super()
 
@@ -138,14 +138,14 @@
         var Version_3 = "Sep22";
         var Version_4 = "Oct22";
 
-        var AIScope_1 = "Base Jorge"; 
+        var AIScope_1 = "Base AI"; 
         var AIScope_2 = "New AI"; 
         var AIScope_3 = "HI"; 
         var AIScope_4 = "Non AI"; 
 
           
         //ResultSet
-        console.log('resultSet:')
+        //console.log('resultSet:')
           
         const CY_Minus1 = {
           year: "2021",
@@ -230,10 +230,9 @@
           
           
         resultSet.forEach(dp => {
-          console.log(dp)
+          //console.log(dp)
             if(dp["TIME.YEAR"].id === "2022" ){
-            console.log("INSIDE 2022 DATA:")
-
+            
           ////////////////////////////////////////////
           //Column 2  (Blue Column)
           //CW --> Version_3 (Actuals)
@@ -254,8 +253,7 @@
               }
           }	       
              
-          if(dp["TIME.YEAR"].id === "2022" ){
-            console.log("INSIDE 2022 DATA:")
+          if(dp["TIME.YEAR"].id === "2022" ){           
 
           ////////////////////////////////////////////
           //Column 1 
@@ -316,8 +314,7 @@
               }
           }
           
-          if(dp["TIME.YEAR"].id === "2023" ){
-            console.log("INSIDE 2023 DATA:")
+          if(dp["TIME.YEAR"].id === "2023" ){           
 
           ////////////////////////////////////////////
           //Column 1 
@@ -378,8 +375,7 @@
               }
           }	
           
-          if(dp["TIME.YEAR"].id === "2024" ){
-            console.log("INSIDE 2022 DATA:")
+          if(dp["TIME.YEAR"].id === "2024" ){            
 
           ////////////////////////////////////////////
           //Column 1 
@@ -440,8 +436,7 @@
               }
           }	
           
-          if(dp["TIME.YEAR"].id === "2025" ){
-            console.log("INSIDE 2022 DATA:")
+          if(dp["TIME.YEAR"].id === "2025" ){           
 
           ////////////////////////////////////////////
           //Column 1 
@@ -825,6 +820,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV67)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV68)
  
 })() // END of function --> (function () {
