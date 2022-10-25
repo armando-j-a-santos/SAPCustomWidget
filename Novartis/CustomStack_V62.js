@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV61 extends HTMLElement {
+  class NewStackV62 extends HTMLElement {
     constructor () {
       super()
 
@@ -329,22 +329,7 @@
           "C4": 9
         } ];
         
-       //Console chart data
-       console.log("test 1 chart data");
-       chart.data.push(TestO)
-       console.log(chart.data);
-       console.log("----above WITH TEST0--------");
-
-          
-       
-          
-       //Console chart data
-       console.log("test 2 chart data");
-        chart.data.push(Testtext);
-       console.log(chart.data);
-        console.log("----above TestText--------");
-          
-        //Console chart data
+      
         console.log("*******FINAL CHART DAATA******");
         console.log(chart.data);
           
@@ -627,6 +612,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV61)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV62)
  
 })() // END of function --> (function () {
