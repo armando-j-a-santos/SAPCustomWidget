@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV71 extends HTMLElement {
+  class NewStackV72 extends HTMLElement {
     constructor () {
       super()
 
@@ -553,7 +553,14 @@
         for (const key in CY_Plus3) {
           delete obj[key];
         }          
-
+          
+          console.log("DELETE TEST-----");
+          console.log(CY_Minus1);
+          console.log(CY);
+          console.log(CY_Plus1);
+          console.log(CY_Plus2);
+          console.log(CY_Plus3);
+          
       //  CY_Minus1 = {};
       //  CY = {};
       //  CY_Plus1 = {};
@@ -844,6 +851,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV71)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV72)
  
 })() // END of function --> (function () {
