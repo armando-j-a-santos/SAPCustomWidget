@@ -716,5 +716,5 @@ chart.appear();
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV54)
-  
+ 
 })() // END of function --> (function () {
