@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV68 extends HTMLElement {
+  class NewStackV69 extends HTMLElement {
     constructor () {
       super()
 
@@ -142,6 +142,10 @@
         var AIScope_2 = "New AI"; 
         var AIScope_3 = "HI"; 
         var AIScope_4 = "Non AI"; 
+          
+         var Scale = "bn";
+          
+        
 
           
         //ResultSet
@@ -655,7 +659,7 @@
           series.tooltip.label.fill = am4core.color("#000000");
           series.tooltip.label.fontSize = 14;
           series.tooltip.fontFamily = "Arial";
-          series.columns.template.tooltipText = `{name}: [bold]{valueY.value} [/] 
+          series.columns.template.tooltipText = `{name}: [bold]{valueY.value} ` + Scale + ` [/] 
           Version: [bold]` + version;
 
            // Add and edit Datalabel 
@@ -820,6 +824,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV68)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV69)
  
 })() // END of function --> (function () {
