@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV73 extends HTMLElement {
+  class NewStackV75 extends HTMLElement {
     constructor () {
       super()
 
@@ -531,36 +531,7 @@
         chart.data.push(CY_Plus3);
         
         console.log("*******FINAL CHART DAATA******");
-        console.log(chart.data);
-          
-        //Release memory          
-        for (const key in CY_Minus1) {
-          delete CY_Minus1[key];
-        }
-        
-        for (const key in CY) {
-          delete CY[key];
-        }
-          
-        for (const key in CY_Plus1) {
-          delete CY_Plus1[key];
-        }
-          
-        for (const key in CY_Plus2) {
-          delete CY_Plus2[key];
-        }
-          
-        for (const key in CY_Plus3) {
-          delete CY_Plus3[key];
-        }          
-          
-          console.log("DELETE TEST-----");
-          console.log(CY_Minus1);
-          console.log(CY);
-          console.log(CY_Plus1);
-          console.log(CY_Plus2);
-          console.log(CY_Plus3);
-          
+        console.log(chart.data);          
           
         // Create X axes (and customize it)
         var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -830,7 +801,33 @@
 
  chart.appear();
 //chart.appear(1000, 100);
+        //Release memory          
+        for (const key in CY_Minus1) {
+          delete CY_Minus1[key];
+        }
+        
+        for (const key in CY) {
+          delete CY[key];
+        }
           
+        for (const key in CY_Plus1) {
+          delete CY_Plus1[key];
+        }
+          
+        for (const key in CY_Plus2) {
+          delete CY_Plus2[key];
+        }
+          
+        for (const key in CY_Plus3) {
+          delete CY_Plus3[key];
+        }          
+          
+          console.log("DELETE TEST-----");
+          console.log(CY_Minus1);
+          console.log(CY);
+          console.log(CY_Plus1);
+          console.log(CY_Plus2);
+          console.log(CY_Plus3);  
           
         //***         
         }); // end am4core.ready()
@@ -844,6 +841,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV73)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV75)
  
 })() // END of function --> (function () {
