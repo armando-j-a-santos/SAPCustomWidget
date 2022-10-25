@@ -329,7 +329,7 @@
           "C4": 9
         } ];
         
-      
+        chart.data.push(CY);
         console.log("*******FINAL CHART DAATA******");
         console.log(chart.data);
           
