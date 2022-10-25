@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV72 extends HTMLElement {
+  class NewStackV73 extends HTMLElement {
     constructor () {
       super()
 
@@ -535,23 +535,23 @@
           
         //Release memory          
         for (const key in CY_Minus1) {
-          delete obj[key];
+          delete CY_Minus1[key];
         }
         
         for (const key in CY) {
-          delete obj[key];
+          delete CY[key];
         }
           
         for (const key in CY_Plus1) {
-          delete obj[key];
+          delete CY_Plus1[key];
         }
           
         for (const key in CY_Plus2) {
-          delete obj[key];
+          delete CY_Plus2[key];
         }
           
         for (const key in CY_Plus3) {
-          delete obj[key];
+          delete CY_Plus3[key];
         }          
           
           console.log("DELETE TEST-----");
@@ -560,13 +560,6 @@
           console.log(CY_Plus1);
           console.log(CY_Plus2);
           console.log(CY_Plus3);
-          
-      //  CY_Minus1 = {};
-      //  CY = {};
-      //  CY_Plus1 = {};
-      //  CY_Plus2 = {};
-      //  CY_Plus3 = {};
-          
           
           
         // Create X axes (and customize it)
@@ -851,6 +844,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV72)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV73)
  
 })() // END of function --> (function () {
