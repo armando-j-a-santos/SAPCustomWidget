@@ -325,8 +325,12 @@
           
         })
           
+        
           
-        chart.data.push(Testtext);
+       console.log("Testtext");
+       console.log(Testtext);
+          
+       chart.data.push(Testtext);
 
         // Add data
         chart.data = [ {
