@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV50 extends HTMLElement {
+  class NewStackV51 extends HTMLElement {
     constructor () {
       super()
 
@@ -153,10 +153,137 @@
           console.log(dp)
           
           
-                 
+             
           if(dp["TIME.YEAR"].id === "2022" ){
             console.log("INSIDE 2022 DATA:")
+                
+       
+          var text = '';
+          var j = 0;
+
+          ////////////////////////////////////////////
+          //Column 1 
+          //CW --> Version_2
+          //Model Variable --> Selected_Version_1 
+          ////////////////////////////////////////////
+
+
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Only]"){
+                j = 1;
+                text = text + '"A' + j.toString() + '": ' + dp["@MeasureDimension"].formattedValue;
+                Data.push(text);
+                Testtext = Testtext.concat('"year": ' + dp["TIME.YEAR"].id);
+                Testtext = Testtext.concat(",");
+                Testtext = Testtext.concat(text);
+                Testtext = Testtext.concat(",");	
+                  }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_New_AI]"){
+                j = 2;
+                text = text + '"A' + j.toString() + '": ' + dp["@MeasureDimension"].formattedValue;
+                Data.push(text);
+
+                Testtext = Testtext.concat(text);
+                Testtext = Testtext.concat(",");
+
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Drivers]"){
+                j = 3;
+                text = text + '"A' + j.toString() + '": ' + dp["@MeasureDimension"].formattedValue;
+                Data.push(text);
+
+                Testtext = Testtext.concat(text);
+                Testtext = Testtext.concat(",");
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_Non_AI]"){
+                j = 4;
+                text = text + '"A' + j.toString() + '": ' + dp["@MeasureDimension"].formattedValue;
+                Data.push(text);
+
+                Testtext = Testtext.concat(text);
+              }
+
+          ////////////////////////////////////////////
+          //Column 2 
+          //CW --> Version_3
+          //Model Variable --> Selected_Version_2 
+          ////////////////////////////////////////////
+
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Only]"){
+                j = 1;
+                text = text + '"B' + j.toString() + '": ' + dp["@MeasureDimension"].formattedValue;
+                Data.push(text);
+
+                Testtext = Testtext.concat(text);
+                Testtext = Testtext.concat(",");	
+                  }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_New_AI]"){
+                j = 2;
+                text = text + '"B' + j.toString() + '": ' + dp["@MeasureDimension"].formattedValue;
+                Data.push(text);
+
+                Testtext = Testtext.concat(text);
+                Testtext = Testtext.concat(",");
+
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Drivers]"){
+                j = 3;
+                text = text + '"B' + j.toString() + '": ' + dp["@MeasureDimension"].formattedValue;
+                Data.push(text);
+
+                Testtext = Testtext.concat(text);
+                Testtext = Testtext.concat(",");
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_Non_AI]"){
+                j = 4;
+                text = text + '"B' + j.toString() + '": ' + dp["@MeasureDimension"].formattedValue;
+                Data.push(text);
+
+                Testtext = Testtext.concat(text);
+              }
+
+          ////////////////////////////////////////////
+          //Column 3 
+          //CW --> Version_4
+          //Model Variable --> Selected_Version_3 
+          ////////////////////////////////////////////
+
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_AI_Only]"){
+                j = 1;
+                text = text + '"C' + j.toString() + '": ' + dp["@MeasureDimension"].formattedValue;
+                Data.push(text);
+
+                Testtext = Testtext.concat(text);
+                Testtext = Testtext.concat(",");	
+                  }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_New_AI]"){
+                j = 2;
+                text = text + '"C' + j.toString() + '": ' + dp["@MeasureDimension"].formattedValue;
+                Data.push(text);
+
+                Testtext = Testtext.concat(text);
+                Testtext = Testtext.concat(",");
+
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_AI_Drivers]"){
+                j = 3;
+                text = text + '"C' + j.toString() + '": ' + dp["@MeasureDimension"].formattedValue;
+                Data.push(text);
+
+                Testtext = Testtext.concat(text);
+                Testtext = Testtext.concat(",");
+              }
+              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_Non_AI]"){
+                j = 4;
+                text = text + '"C' + j.toString() + '": ' + dp["@MeasureDimension"].formattedValue;
+                Data.push(text);
+
+                Testtext = Testtext.concat(text);
+                Testtext = Testtext.concat("}");
+
+              }
+          }	
             
+   /*             
             ////////////////////////////////////////////
             //Column 1 
             //CW --> Version_2
@@ -190,7 +317,12 @@
             }
             
           }
+  */
+          
         })
+          
+          
+        chart.data.push(Testtext);
 
         // Add data
         chart.data = [ {
@@ -211,7 +343,9 @@
          // "C3": 0,
          // "C4": 10.3,
 
-        }, {
+        },
+                      
+          /* {
           "year": "2022",
           
           "A1": CY_Array[0],
@@ -225,7 +359,7 @@
           "A3": 10.5,
           "A4": 10.3,
         */
-          
+         /* 
           "B1": 30.2,
           "B2": 0.9,
           "B3": 0,
@@ -236,7 +370,8 @@
           "C3": 0,
           "C4": 10.3,
 
-        }, {
+        }, */
+            {
           "year": "2023",
           "A1": 29.2,
           "A2": 6.3,
@@ -568,6 +703,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV50)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV51)
   
 })() // END of function --> (function () {
