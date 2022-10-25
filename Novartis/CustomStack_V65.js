@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV64 extends HTMLElement {
+  class NewStackV65 extends HTMLElement {
     constructor () {
       super()
 
@@ -616,11 +616,11 @@
         console.log(chart.data);
           
         //Release memory
-        CY_Minus1 = {};
-        CY = {};
-        CY_Plus1 = {};
-        CY_Plus2 = {};
-        CY_Plus3 = {};
+      //  CY_Minus1 = {};
+      // CY = {};
+      //  CY_Plus1 = {};
+      //  CY_Plus2 = {};
+      //  CY_Plus3 = {};
           
           
           
@@ -903,6 +903,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV64)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV65)
  
 })() // END of function --> (function () {
