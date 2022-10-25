@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV58 extends HTMLElement {
+  class NewStackV59 extends HTMLElement {
     constructor () {
       super()
 
@@ -155,20 +155,20 @@
           
         const TestO = {
           year: "2026",
-          A1: "",
-          A2: "",
-          A3: "",
-          A4: "",
+          A1: null,
+          A2: null,
+          A3: null,
+          A4: undefined,
 
-          B1: "",
-          B2: "",
-          B3: "",
-          B4: "",
+          B1: null,
+          B2: null,
+          B3: null,
+          B4: null,
 
-          C1: "",
-          C2: "",
-          C3: "",
-          C4: ""	
+          C1: undefined,
+          C2: undefined,
+          C3: undefined,
+          C4: undefined	
       };
           
         resultSet.forEach(dp => {
@@ -217,6 +217,8 @@
 
                 Testtext = Testtext.concat(text);
                 Testtext = Testtext.concat(",");
+                
+                TestO.A3 = dp["@MeasureDimension"].formattedValue;
               }
               if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_Non_AI]"){
                 j = 4;
@@ -224,6 +226,8 @@
                 Data.push(text);
 
                 Testtext = Testtext.concat(text);
+                
+                TestO.A4 = dp["@MeasureDimension"].formattedValue;
               }
 
           ////////////////////////////////////////////
@@ -239,6 +243,8 @@
 
                 Testtext = Testtext.concat(text);
                 Testtext = Testtext.concat(",");	
+                
+                TestO.B1 = dp["@MeasureDimension"].formattedValue;
                   }
               if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_New_AI]"){
                 j = 2;
@@ -745,6 +751,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV58)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV59)
  
 })() // END of function --> (function () {
