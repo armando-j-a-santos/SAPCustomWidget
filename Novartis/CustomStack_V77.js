@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV76 extends HTMLElement {
+  class NewStackV77 extends HTMLElement {
     constructor () {
       super()
 
@@ -136,7 +136,7 @@
         var Version_1 = "Actuals";
         var Version_2 = "Ago22";
         var Version_3 = "Sep22";
-        var Version_4 = "Oct22";
+        var Version_4 = "";
 
         var AIScope_1 = "Base AI"; 
         var AIScope_2 = "New AI"; 
@@ -773,19 +773,31 @@
         legendB.markers.template.height = 15;
 
 
+        //Custom legend for the Versions
         legendB.data = [{
           "name": Version_1,
            "fill": CAct_Dark
-        },{
+        }];
+        
+        if(Version_2.length !== 0 && Version_2 !== undefined){
+         legendB.data.push({
           "name": Version_2,
           "fill": CNonAct_Col1_Dark
-        }, {
+         })
+        }
+        if(Version_3.length !== 0 && Version_3 !== undefined){
+         legendB.data.push({
           "name": Version_3,
           "fill": CNonAct_Col2_Dark
-        }, {
+         })
+        }
+        
+        if(Version_4.length !== 0 && Version_4 !== undefined){
+         legendB.data.push({
           "name": Version_4,
           "fill": CNonAct_Col3_Dark
-        }];
+         })
+        }
 
         //Customize the markers layout for the Custom legend
         var marker = legendB.markers.template.children.getIndex(0);
@@ -814,6 +826,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV76)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV77)
  
 })() // END of function --> (function () {
