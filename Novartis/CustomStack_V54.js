@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV53 extends HTMLElement {
+  class NewStackV54 extends HTMLElement {
     constructor () {
       super()
 
@@ -214,7 +214,7 @@
 
               if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Only]"){
                 j = 1;
-                text = text + '"B' + j.toString() + '": ' + dp["@MeasureDimension"].formattedValue;
+                text = text + ',"B' + j.toString() + '": ' + dp["@MeasureDimension"].formattedValue;
                 Data.push(text);
 
                 Testtext = Testtext.concat(text);
@@ -253,7 +253,7 @@
 
               if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_AI_Only]"){
                 j = 1;
-                text = text + '"C' + j.toString() + '": ' + dp["@MeasureDimension"].formattedValue;
+                text = text + ',"C' + j.toString() + '": ' + dp["@MeasureDimension"].formattedValue;
                 Data.push(text);
 
                 Testtext = Testtext.concat(text);
@@ -331,6 +331,10 @@
        console.log(Testtext);
           
        chart.data.push(Testtext);
+          
+       //Console chart data
+       console.log("test chart data");
+       console.log(chart.data);
 
         // Add data
         chart.data = [ {
@@ -711,6 +715,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV53)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV54)
   
 })() // END of function --> (function () {
