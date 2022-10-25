@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV60 extends HTMLElement {
+  class NewStackV61 extends HTMLElement {
     constructor () {
       super()
 
@@ -148,16 +148,16 @@
         console.log('resultSet:')
           
         const CY = {
-          year: "2026",
-          A1: null,
-          A2: null,
-          A3: null,
+          year: "2022",
+          A1: undefined,
+          A2: undefined,
+          A3: undefined,
           A4: undefined,
 
-          B1: null,
-          B2: null,
-          B3: null,
-          B4: null,
+          B1: undefined,
+          B2: undefined,
+          B3: undefined,
+          B4: undefined,
 
           C1: undefined,
           C2: undefined,
@@ -231,10 +231,6 @@
           }	       
         })
           
-       console.log("Testtext");
-       console.log(Testtext);
-          
-       
       
         // Add data
         chart.data = [ {
@@ -631,6 +627,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV60)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV61)
  
 })() // END of function --> (function () {
