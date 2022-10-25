@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV54 extends HTMLElement {
+  class NewStackV55 extends HTMLElement {
     constructor () {
       super()
 
@@ -153,10 +153,26 @@
         //ResultSet
         console.log('resultSet:')
           
+        const TestO = {
+          year: ""
+          A1: "",
+          A2: "",
+          A3: "",
+          A4: "",
+
+          B1: "",
+          B2: "",
+          B3: "",
+          B4: "",
+
+          C1: "",
+          C2: "",
+          C3: "",
+          C4: ""	
+      };
+          
         resultSet.forEach(dp => {
-          console.log(dp)
-          
-          
+          console.log(dp)                
              
           if(dp["TIME.YEAR"].id === "2022" ){
             console.log("INSIDE 2022 DATA:")
@@ -180,6 +196,8 @@
                 Testtext = Testtext.concat(",");
                 Testtext = Testtext.concat(text);
                 Testtext = Testtext.concat(",");	
+                
+                TestO.A1 = dp["@MeasureDimension"].formattedValue;
                   }
               if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_New_AI]"){
                 j = 2;
@@ -188,6 +206,8 @@
 
                 Testtext = Testtext.concat(text);
                 Testtext = Testtext.concat(",");
+                
+                TestO.A2 = dp["@MeasureDimension"].formattedValue;
 
               }
               if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Drivers]"){
@@ -325,16 +345,21 @@
           
         })
           
-        
-          
        console.log("Testtext");
        console.log(Testtext);
           
        chart.data.push(Testtext);
           
        //Console chart data
-       console.log("test chart data");
+       console.log("test 1 chart data");
        console.log(chart.data);
+       console.log("------------");
+          
+       //Console chart data
+       console.log("test 2 chart data");
+       chart.data.push(TestO)
+       console.log(chart.data);
+       console.log("------------");
 
         // Add data
         chart.data = [ {
@@ -715,6 +740,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV54)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV55)
  
 })() // END of function --> (function () {
