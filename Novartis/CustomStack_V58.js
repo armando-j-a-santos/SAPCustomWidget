@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV57 extends HTMLElement {
+  class NewStackV58 extends HTMLElement {
     constructor () {
       super()
 
@@ -154,7 +154,7 @@
         console.log('resultSet:')
           
         const TestO = {
-          year: "2022",
+          year: "2026",
           A1: "",
           A2: "",
           A3: "",
@@ -348,19 +348,8 @@
        console.log("Testtext");
        console.log(Testtext);
           
-       chart.data.push(Testtext);
-          
-       //Console chart data
-       console.log("test 1 chart data");
-       console.log(chart.data);
-       console.log("------------");
-          
-       //Console chart data
-       console.log("test 2 chart data");
-       chart.data.push(TestO)
-       console.log(chart.data);
-       console.log("------------");
-
+       
+      
         // Add data
         chart.data = [ {
           "year": "2021",
@@ -458,7 +447,23 @@
           "C4": 9
         } ];
         
+       //Console chart data
+       console.log("test 1 chart data");
+       chart.data.push(TestO)
+       console.log(chart.data);
+       console.log("----above WITH TEST0--------");
+
+          
+       
+          
+       //Console chart data
+       console.log("test 2 chart data");
+        chart.data.push(Testtext);
+       console.log(chart.data);
+        console.log("----above TestText--------");
+          
         //Console chart data
+        console.log("*******FINAL CHART DAATA******");
         console.log(chart.data);
           
         // Create X axes (and customize it)
@@ -740,6 +745,6 @@ chart.appear();
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV57)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV58)
  
 })() // END of function --> (function () {
