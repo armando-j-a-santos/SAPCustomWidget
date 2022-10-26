@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV82 extends HTMLElement {
+  class NewStackV83 extends HTMLElement {
     constructor () {
       super()
 
@@ -149,8 +149,10 @@
         var AIScope_2 = "New AI"; 
         var AIScope_3 = "HI"; 
         var AIScope_4 = "Non AI"; 
+
+        var AIScope_color = String(chartConfigurations.AIScope_color);
           
-         var Scale = String(chartConfigurations.Scale);
+        var Scale = String(chartConfigurations.Scale);
           
         
 
@@ -733,13 +735,13 @@
         legendA.markers.template.width = 15;
         legendA.markers.template.height = 15;
 
-        var patternHI = SetPatterns("A2",CAct_Light);
-        var patternNEWAI = SetPatterns("A3",CAct_Light);
-        var patternNONAI = SetPatterns("A4",CAct_Light);
+        var patternHI = SetPatterns("A2",AIScope_color);
+        var patternNEWAI = SetPatterns("A3",AIScope_color);
+        var patternNONAI = SetPatterns("A4",AIScope_color);
 
         legendA.data = [{
           "name": AIScope_1,
-           "fill": CAct_Dark
+           "fill": AIScope_color
         },{
           "name": AIScope_2,
           "fill":	patternHI
@@ -833,6 +835,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV82)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV83)
  
 })() // END of function --> (function () {
