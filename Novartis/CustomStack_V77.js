@@ -94,7 +94,7 @@
     // ------------------
     // Scripting methods
     // ------------------
-    async render (resultSet) {
+    async setConfigChart (resultSet, newJSONSets){
       
       this._placeholder = this._root.querySelector('#placeholder')
       if (this._placeholder) {
@@ -105,11 +105,18 @@
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
       var mychartdiv = this._shadowRoot.getElementById('chartdiv')
       //console.log(mychartdiv) 
-        
-        //***
+      
+      onsole.log('newJSONSets:')
+      console.log(newJSONSets)
+
+        //***        
 
         am4core.ready(function() {
           
+
+        var chartConfigurations = JSON.parse(newJSONSets);
+        console.log(chartConfigurations.CAct_Dark);
+
         // Themes
         /////am4core.useTheme(am4themes_animated);
 
@@ -121,7 +128,7 @@
         }
       
         // Variables definition
-        var CAct_Dark = "#0460a9";
+        var CAct_Dark = String(chartConfigurations.CAct_Dark);
         var CAct_Light =  "#68a0cb";
 
         var CNonAct_Col1_Dark = "#776644";
