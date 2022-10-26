@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV78 extends HTMLElement {
+  class NewStackV79 extends HTMLElement {
     constructor () {
       super()
 
@@ -106,7 +106,7 @@
       var mychartdiv = this._shadowRoot.getElementById('chartdiv')
       //console.log(mychartdiv) 
       
-      onsole.log('newJSONSets:')
+      console.log('newJSONSets:')
       console.log(newJSONSets)
 
         //***        
@@ -833,6 +833,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV78)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV79)
  
 })() // END of function --> (function () {
