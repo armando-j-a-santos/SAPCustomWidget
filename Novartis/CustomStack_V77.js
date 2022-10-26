@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV83 extends HTMLElement {
+  class NewStackV84 extends HTMLElement {
     constructor () {
       super()
 
@@ -819,6 +819,14 @@
         //To push the TimeLine ScroolBar down
         chart.scrollbarX.parent = chart.bottomAxesContainer;
 
+        //Customize the Timeline ScrollBar
+        //line
+        chart.scrollbarX.minHeight = 4;              
+        //The startGrip
+        chart.scrollbarX.startGrip.icon.disabled = true;
+        //The endGrip
+        chart.scrollbarX.endGrip.icon.disabled = true;
+
 
  chart.appear();
 //chart.appear(1000, 100);
@@ -835,6 +843,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV83)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV84)
  
 })() // END of function --> (function () {
