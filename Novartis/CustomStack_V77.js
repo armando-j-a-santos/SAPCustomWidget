@@ -145,10 +145,10 @@
         var Version_3 = String(chartConfigurations.Version_3);
         var Version_4 = String(chartConfigurations.Version_4);
 
-        var AIScope_1 = "Base AI"; 
-        var AIScope_2 = "New AI"; 
-        var AIScope_3 = "HI"; 
-        var AIScope_4 = "Non AI"; 
+        var AIScope_1 = String(chartConfigurations.AIScope_1);
+        var AIScope_2 = String(chartConfigurations.AIScope_2); 
+        var AIScope_3 = String(chartConfigurations.AIScope_3);; 
+        var AIScope_4 = String(chartConfigurations.AIScope_4); 
 
         var AIScope_color = String(chartConfigurations.AIScope_color);
           
@@ -741,19 +741,31 @@
         var patternNEWAI = SetPatterns("A3",AIScope_color);
         var patternNONAI = SetPatterns("A4",AIScope_color);
 
-        legendA.data = [{
-          "name": AIScope_1,
-           "fill": AIScope_color
-        },{
-          "name": AIScope_2,
-          "fill":	patternHI
-        }, {
-          "name": AIScope_3,
-          "fill": patternNEWAI
-        }, {
-          "name": AIScope_4,
-          "fill": patternNONAI
-        }];
+        legendA.data = [];
+        if(AIScope_1.length !== 0 && AIScope_1 !== undefined){
+        	legendA.data.push({
+          	"name": AIScope_1,
+            "fill": AIScope_color
+          })
+        }
+        if(AIScope_2.length !== 0 && AIScope_2 !== undefined){
+        	legendA.data.push({
+          	"name": AIScope_2,
+          	"fill":	patternHI
+          })
+        }
+        if(AIScope_3.length !== 0 && AIScope_3 !== undefined){
+        	legendA.data.push({
+          	"name": AIScope_3,
+          	"fill": patternNEWAI
+          })
+        }
+        if(AIScope_4.length !== 0 && AIScope_4 !== undefined){
+        	legendA.data.push({
+          	"name": AIScope_4,
+         	 	"fill": patternNONAI
+          })
+        }
 
         //Customize the markers layout for the Custom legend
         var marker = legendA.markers.template.children.getIndex(0);
