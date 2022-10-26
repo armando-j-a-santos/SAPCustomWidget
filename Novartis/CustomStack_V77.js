@@ -551,7 +551,9 @@
         //Comment/Uncomment Show/Hide Grid
         categoryAxis.renderer.grid.template.opacity = 0; 
 
-        categoryAxis.renderer.minGridDistance = 20;
+        //Hide X axis line
+        categoryAxis.renderer.line.strokeOpacity = 1;
+        categoryAxis.renderer.line.stroke = am4core.color("#ffffff");
 
         //Star and End Location for columns (of each year)
         categoryAxis.renderer.cellStartLocation = 0.1;
@@ -821,7 +823,7 @@
 
         //Customize the Timeline ScrollBar
         //line
-        chart.scrollbarX.minHeight = 4;              
+        chart.scrollbarX.minHeight = 5;              
         //The startGrip
         chart.scrollbarX.startGrip.icon.disabled = true;
         //The endGrip
