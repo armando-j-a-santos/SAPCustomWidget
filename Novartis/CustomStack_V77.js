@@ -129,28 +129,28 @@
       
         // Variables definition
         var CAct_Dark = String(chartConfigurations.CAct_Dark);
-        var CAct_Light =  "#68a0cb";
+        var CAct_Light =  String(chartConfigurations.CAct_Light);
 
-        var CNonAct_Col1_Dark = "#776644";
-        var CNonAct_Col1_Light =  "#ADA38F";
+        var CNonAct_Col1_Dark = String(chartConfigurations.CNonAct_Col1_Dark);
+        var CNonAct_Col1_Light =  String(chartConfigurations.CNonAct_Col1_Light);
 
-        var CNonAct_Col2_Dark = "#822921";
-        var CNonAct_Col2_Light =  "#B47F7A";
+        var CNonAct_Col2_Dark = String(chartConfigurations.CNonAct_Col2_Dark);
+        var CNonAct_Col2_Light =  String(chartConfigurations.CNonAct_Col2_Light);
 
-        var CNonAct_Col3_Dark = "#cfa6a4";
-        var CNonAct_Col3_Light =  "#e2cac8";
+        var CNonAct_Col3_Dark = String(chartConfigurations.CNonAct_Col3_Dark);
+        var CNonAct_Col3_Light =  String(chartConfigurations.CNonAct_Col3_Light);
 
-        var Version_1 = "Actuals";
-        var Version_2 = "Ago22";
-        var Version_3 = "Sep22";
-        var Version_4 = "";
+        var Version_1 = String(chartConfigurations.Version_1);
+        var Version_2 = String(chartConfigurations.Version_2);
+        var Version_3 = String(chartConfigurations.Version_3);
+        var Version_4 = String(chartConfigurations.Version_4);
 
         var AIScope_1 = "Base AI"; 
         var AIScope_2 = "New AI"; 
         var AIScope_3 = "HI"; 
         var AIScope_4 = "Non AI"; 
           
-         var Scale = "bn";
+         var Scale = String(chartConfigurations.Scale);
           
         
 
