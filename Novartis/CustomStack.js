@@ -40,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV96 extends HTMLElement {
+  class NewStackV97 extends HTMLElement {
     constructor () {
       super()
 
@@ -576,7 +576,7 @@
         categoryAxis.renderer.cellEndLocation = 0.9;
           
         //Set the cursor to pointer over the categoryAxis values (2021,2022,2023,2024)
-				categoryAxis.renderer.labels.template.cursorOverStyle = am4core.MouseCursorStyle.pointer;        
+ 	categoryAxis.renderer.labels.template.cursorOverStyle = am4core.MouseCursorStyle.pointer;        
         
         //Filter Year
         categoryAxis.renderer.labels.template.events.on("hit", function(ev) { 
@@ -906,6 +906,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV96)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV97)
  
 })() // END of function --> (function () {
