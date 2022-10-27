@@ -1,6 +1,12 @@
 (function () {
   const template = document.createElement('template')
   template.innerHTML = `
+      html,body
+      {
+          height: 100%;
+          margin: 0;
+      }
+
       <style>
       #root {
         background-color: white;  
@@ -13,8 +19,16 @@
       }
       
       #chartdiv {
-        width: 100%;
-        height: 400px;
+          width: 100%;
+          height: 98%;
+          
+          /* To make the chart widget RESPONSIBLE */
+          flex-direction: column;
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
       }
             
       </style>
@@ -26,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV85 extends HTMLElement {
+  class NewStackV86 extends HTMLElement {
     constructor () {
       super()
 
@@ -857,6 +871,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV85)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV86)
  
 })() // END of function --> (function () {
