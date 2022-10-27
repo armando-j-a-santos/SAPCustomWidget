@@ -40,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV90 extends HTMLElement {
+  class NewStackV91 extends HTMLElement {
     constructor () {
       super()
 
@@ -590,9 +590,10 @@
         function SetPatterns(field, color){
           var pattern = new am4core.LinePattern();
 
-          // A2; B2; C2 >> HI 
-          // A3; B3; C3 >> New AI
-          // A4; B$; C4 >> Non AI
+          // A1; B1; C1 >> Base AI 
+          // A2; B2; C2 >> New AI 
+          // A3; B3; C3 >> HI 
+          // A4; B4; C4 >> Non AI
 
           if(field === "A2" || field === "B2" || field === "C2" ){
             var pattern = new am4core.LinePattern();
@@ -752,8 +753,8 @@
         legendA.markers.template.width = 15;
         legendA.markers.template.height = 15;
 
-        var patternHI = SetPatterns("A2",AIScope_color);
-        var patternNEWAI = SetPatterns("A3",AIScope_color);
+        var patternNEWAI = SetPatterns("A2",AIScope_color);
+        var patternHI = SetPatterns("A3",AIScope_color);
         var patternNONAI = SetPatterns("A4",AIScope_color);
 
         legendA.data = [];
@@ -766,13 +767,13 @@
         if(AIScope_2.length !== 0 && AIScope_2 !== undefined){
         	legendA.data.push({
           	"name": AIScope_2,
-          	"fill":	patternHI
+          	"fill":	patternNEWAI
           })
         }
         if(AIScope_3.length !== 0 && AIScope_3 !== undefined){
         	legendA.data.push({
           	"name": AIScope_3,
-          	"fill": patternNEWAI
+          	"fill": patternHI
           })
         }
         if(AIScope_4.length !== 0 && AIScope_4 !== undefined){
@@ -872,6 +873,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV90)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV91)
  
 })() // END of function --> (function () {
