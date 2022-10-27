@@ -40,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV94 extends HTMLElement {
+  class NewStackV95 extends HTMLElement {
     constructor () {
       super()
 
@@ -168,7 +168,7 @@
           
         var Scale = String(chartConfigurations.Scale);
           
-        var DataLabelColorExc = String(chartConfigurations.DataLabelColorExc);
+        var BaseLabelColorExc = String(chartConfigurations.BaseLabelColorExc);
           
         
 
@@ -688,22 +688,19 @@
           labelBullet.label.fill = am4core.color("#000000");
           labelBullet.locationY = 0.5;  
           labelBullet.label.fontSize = 14; 
-          labelBullet.fontFamily = "Arial";
+          labelBullet.fontFamily = "Arial";          
           
-          
-          //We used below an adapter for a data labels color exception in the Base
-          if(DataLabelColorExc === "yes"){           
-            labelBullet.label.adapter.add("fill", function(fill, target) {      
-            if (target.dataItem && (target.dataItem.component.dataFields.valueY === 'A1' || 
-                                    target.dataItem.component.dataFields.valueY === 'B1' ||
-                                    target.dataItem.component.dataFields.valueY === 'C1')) {        
-              return am4core.color("#ffffff");         
-            }
-            else {
-              return fill;
-            }
-            });
+          //We used below an adapter for a data labels color exception in the Base        
+          labelBullet.label.adapter.add("fill", function(fill, target) {      
+          if (target.dataItem && (target.dataItem.component.dataFields.valueY === 'A1' || 
+                                  target.dataItem.component.dataFields.valueY === 'B1' ||
+                                  target.dataItem.component.dataFields.valueY === 'C1')) {        
+            return am4core.color(BaseLabelColorExc);         
           }
+          else {
+            return fill;
+          }
+          });         
 
 
           //We used below an adapter for a color exception for year === 2021
@@ -891,6 +888,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV94)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV95)
  
 })() // END of function --> (function () {
