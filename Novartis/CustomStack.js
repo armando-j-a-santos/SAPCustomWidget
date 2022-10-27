@@ -40,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV91 extends HTMLElement {
+  class NewStackV92 extends HTMLElement {
     constructor () {
       super()
 
@@ -675,7 +675,7 @@
           series.tooltip.getFillFromObject = false;
           series.tooltip.background.fill = am4core.color("#F3F3F3");
           series.tooltip.label.fill = am4core.color("#000000");
-          series.tooltip.label.fontSize = 14;
+          series.tooltip.label.fontSize = 12;
           series.tooltip.fontFamily = "Arial";
           series.columns.template.tooltipText = `{name}: [bold]{valueY.value} ` + Scale + ` [/] 
           Version: [bold]` + version;
@@ -873,6 +873,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV91)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV92)
  
 })() // END of function --> (function () {
