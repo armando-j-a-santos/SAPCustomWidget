@@ -40,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV93 extends HTMLElement {
+  class NewStackV94 extends HTMLElement {
     constructor () {
       super()
 
@@ -168,7 +168,7 @@
           
         var Scale = String(chartConfigurations.Scale);
           
-        var DataLabelColorExc = Boolean(chartConfigurations.DataLabelColorExc);
+        var DataLabelColorExc = String(chartConfigurations.DataLabelColorExc);
           
         
 
@@ -692,7 +692,7 @@
           
           
           //We used below an adapter for a data labels color exception in the Base
-          if(DataLabelColorExc){            
+          if(DataLabelColorExc === "yes"){           
             labelBullet.label.adapter.add("fill", function(fill, target) {      
             if (target.dataItem && (target.dataItem.component.dataFields.valueY === 'A1' || 
                                     target.dataItem.component.dataFields.valueY === 'B1' ||
@@ -891,6 +891,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV93)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV94)
  
 })() // END of function --> (function () {
