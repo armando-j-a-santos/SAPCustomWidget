@@ -40,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV95 extends HTMLElement {
+  class NewStackV96 extends HTMLElement {
     constructor () {
       super()
 
@@ -574,6 +574,24 @@
         //Star and End Location for columns (of each year)
         categoryAxis.renderer.cellStartLocation = 0.1;
         categoryAxis.renderer.cellEndLocation = 0.9;
+          
+        //Set the cursor to pointer over the categoryAxis values (2021,2022,2023,2024)
+				categoryAxis.renderer.labels.template.cursorOverStyle = am4core.MouseCursorStyle.pointer;        
+        
+        //Filter Year
+        categoryAxis.renderer.labels.template.events.on("hit", function(ev) { 
+        
+          //Return the selected year value (2021,2022,2023,2024)
+          console.log(ev.target.dataItem.properties.category);     
+          //Return the selected year index (1,2,3,4)
+          console.log(categoryAxis.categoryToIndex(ev.target.dataItem.properties.category));
+
+
+          var start = categoryAxis.categoryToIndex(ev.target.dataItem.properties.category);
+          var end = categoryAxis.categoryToIndex(ev.target.dataItem.properties.category) + 1;
+				
+         	categoryAxis.zoomToIndexes(start, end);
+        });
 
 
         // Create Y axes (and customize it)
@@ -888,6 +906,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV95)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV96)
  
 })() // END of function --> (function () {
