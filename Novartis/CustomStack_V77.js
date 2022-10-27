@@ -1,13 +1,13 @@
 (function () {
   const template = document.createElement('template')
   template.innerHTML = `
+      <style>
       html,body
       {
           height: 100%;
           margin: 0;
       }
-
-      <style>
+      
       #root {
         background-color: white;  
       }
@@ -40,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV86 extends HTMLElement {
+  class NewStackV87 extends HTMLElement {
     constructor () {
       super()
 
@@ -871,6 +871,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV86)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV87)
  
 })() // END of function --> (function () {
