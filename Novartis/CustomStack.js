@@ -40,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV92 extends HTMLElement {
+  class NewStackV93 extends HTMLElement {
     constructor () {
       super()
 
@@ -161,12 +161,14 @@
 
         var AIScope_1 = String(chartConfigurations.AIScope_1);
         var AIScope_2 = String(chartConfigurations.AIScope_2); 
-        var AIScope_3 = String(chartConfigurations.AIScope_3);; 
+        var AIScope_3 = String(chartConfigurations.AIScope_3);
         var AIScope_4 = String(chartConfigurations.AIScope_4); 
 
         var AIScope_color = String(chartConfigurations.AIScope_color);
           
         var Scale = String(chartConfigurations.Scale);
+          
+        var DataLabelColorExc = Boolean(chartConfigurations.DataLabelColorExc);
           
         
 
@@ -687,6 +689,22 @@
           labelBullet.locationY = 0.5;  
           labelBullet.label.fontSize = 14; 
           labelBullet.fontFamily = "Arial";
+          
+          
+          //We used below an adapter for a data labels color exception in the Base
+          if(DataLabelColorExc){            
+            labelBullet.label.adapter.add("fill", function(fill, target) {      
+            if (target.dataItem && (target.dataItem.component.dataFields.valueY === 'A1' || 
+                                    target.dataItem.component.dataFields.valueY === 'B1' ||
+                                    target.dataItem.component.dataFields.valueY === 'C1')) {        
+              return am4core.color("#ffffff");         
+            }
+            else {
+              return fill;
+            }
+            });
+          }
+
 
           //We used below an adapter for a color exception for year === 2021
           series.columns.template.adapter.add("fill", function(fill, target) {
@@ -873,6 +891,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV92)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV93)
  
 })() // END of function --> (function () {
