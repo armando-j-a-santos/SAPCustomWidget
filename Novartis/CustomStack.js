@@ -40,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV89 extends HTMLElement {
+  class NewStackV90 extends HTMLElement {
     constructor () {
       super()
 
@@ -562,8 +562,8 @@
         categoryAxis.fontFamily = "Arial";
         categoryAxis.fontSize = 14;
 
-        //Comment/Uncomment Show/Hide Grid
-        categoryAxis.renderer.grid.template.opacity = 0; 
+        //Show/Hide Grid
+        categoryAxis.renderer.grid.template.disabled = true; 
 
         //Hide X axis line
         categoryAxis.renderer.line.strokeOpacity = 1;
@@ -578,12 +578,13 @@
         var  valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.min = 0;
         valueAxis.extraMax = 0.1;
+          
         //Show/Hide Y Axis labels
         valueAxis.renderer.labels.template.disabled = true;
 
 
-        //Comment/Uncomment Show/Hide Grid
-        valueAxis.renderer.grid.template.opacity = 0;
+        //Show/Hide Grid
+        valueAxis.renderer.grid.template.disabled = true;
 
         //Function to Set diferent patterns and assign them to diferent colors
         function SetPatterns(field, color){
@@ -871,6 +872,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV89)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV90)
  
 })() // END of function --> (function () {
