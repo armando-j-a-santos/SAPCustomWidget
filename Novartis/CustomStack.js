@@ -759,13 +759,15 @@
           }
           });   
           
-          var Width = 55;
+          var Width = 0;
 
           console.log("Width at begining")
           console.log(Width);
           
           //Logic to ajust the 2021 colum in the center
           if(NumVersions === 2){
+
+          /*  
             series.columns.template.events.on("sizechanged", function(ev) {
 
                  Width = ev.target.pixelWidth;
@@ -774,11 +776,13 @@
                  console.log("----------");
              });
 
-
+          */
 
             series.columns.template.adapter.add("dx", function(dx, target) {
               if(target.dataItem && target.dataItem.index === 0){
                 console.log("HEEERREEEe in DX");
+                
+                Width = target.pixelWidth;
                 return dx + Width-7;
               }else{
                 return dx;
