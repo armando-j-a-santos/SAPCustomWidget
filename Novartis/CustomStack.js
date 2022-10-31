@@ -40,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV102 extends HTMLElement {
+  class NewStackV103 extends HTMLElement {
     constructor () {
       super()
 
@@ -170,7 +170,7 @@
           
         var BaseLabelColorExc = String(chartConfigurations.BaseLabelColorExc);
 
-        var NumVersions = String(chartConfigurations.NumVersions);
+        var NumVersions = chartConfigurations.NumVersions;
         
         console.log("NumVersions");
         console.log(NumVersions);
@@ -1019,6 +1019,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV102)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV103)
  
 })() // END of function --> (function () {
