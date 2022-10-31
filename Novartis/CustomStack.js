@@ -40,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV103 extends HTMLElement {
+  class NewStackV104 extends HTMLElement {
     constructor () {
       super()
 
@@ -170,7 +170,7 @@
           
         var BaseLabelColorExc = String(chartConfigurations.BaseLabelColorExc);
 
-        var NumVersions = chartConfigurations.NumVersions;
+        var NumVersions = Number(chartConfigurations.NumVersions);
         
         console.log("NumVersions");
         console.log(NumVersions);
@@ -182,6 +182,7 @@
         let CY_Minus1 = {};
 
         if(NumVersions === 1 || NumVersions === 2){
+          console.log("HERREEEEE");
           CY_Minus1 = {
             "year": "2021",
 
@@ -1019,6 +1020,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV103)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV104)
  
 })() // END of function --> (function () {
