@@ -40,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV106 extends HTMLElement {
+  class NewStackV107 extends HTMLElement {
     constructor () {
       super()
 
@@ -769,7 +769,7 @@
 
             series.columns.template.adapter.add("dx", function(dx, target) {
               if(target.dataItem && target.dataItem.index === 0){
-                console.log("HEEERREEEe");
+                console.log("HEEERREEEe in DX");
                 return dx + Width-7;
               }else{
                 return dx;
@@ -1017,6 +1017,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV106)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV107)
  
 })() // END of function --> (function () {
