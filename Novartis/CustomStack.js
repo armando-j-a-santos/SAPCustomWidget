@@ -40,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV99 extends HTMLElement {
+  class NewStackV100 extends HTMLElement {
     constructor () {
       super()
 
@@ -169,21 +169,37 @@
         var Scale = String(chartConfigurations.Scale);
           
         var BaseLabelColorExc = String(chartConfigurations.BaseLabelColorExc);
-          
-        
 
+        var NumVersions = String(chartConfigurations.NumVersions);
           
+      
         //ResultSet
         //console.log('resultSet:')
-          
-        const CY_Minus1 = {
-          year: "2021",
-          
-          B1: undefined,
-          B2: undefined,
-          B3: undefined,
-          B4: undefined,
-      };
+
+
+        let CY_Minus1 = {};
+
+        if(NumVersions === 1 || NumVersions === 2){
+          CY_Minus1 = {
+            "year": "2021",
+
+            "A1": undefined,
+            "A2": undefined,
+            "A3": undefined,
+            "A4": undefined
+
+          }
+        }else if(NumVersions === 3){
+          CY_Minus1 = {
+            "year": "2021",
+
+            "B1": undefined,
+            "B2": undefined,
+            "B3": undefined,
+            "B4": undefined,
+
+          }
+        }
           
         const CY = {
           year: "2022",
@@ -267,18 +283,34 @@
           //CW --> Version_3 (Actuals)
           //Actuals
           ////////////////////////////////////////////
+              if(NumVersions === 3){
 
-              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Only]"){              
-                CY_Minus1.B1 = dp["@MeasureDimension"].formattedValue;
-                  }
-              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_New_AI]"){
-                CY_Minus1.B2 = dp["@MeasureDimension"].formattedValue;
-              }
-              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Drivers]"){
-                CY_Minus1.B3 = dp["@MeasureDimension"].formattedValue;
-              }
-              if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_Non_AI]"){
-               CY_Minus1.B4 = dp["@MeasureDimension"].formattedValue;
+                if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Only]"){              
+                  CY_Minus1.B1 = dp["@MeasureDimension"].formattedValue;
+                    }
+                if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_New_AI]"){
+                  CY_Minus1.B2 = dp["@MeasureDimension"].formattedValue;
+                }
+                if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Drivers]"){
+                  CY_Minus1.B3 = dp["@MeasureDimension"].formattedValue;
+                }
+                if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_Non_AI]"){
+                CY_Minus1.B4 = dp["@MeasureDimension"].formattedValue;
+                }
+              }else if (NumVersions === 1 || NumVersions === 2){
+
+                if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Only]"){              
+                  CY_Minus1.A1 = dp["@MeasureDimension"].formattedValue;
+                    }
+                if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_New_AI]"){
+                  CY_Minus1.A2 = dp["@MeasureDimension"].formattedValue;
+                }
+                if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Drivers]"){
+                  CY_Minus1.A3 = dp["@MeasureDimension"].formattedValue;
+                }
+                if(dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_Non_AI]"){
+                CY_Minus1.A4 = dp["@MeasureDimension"].formattedValue;
+                }
               }
           }	       
              
@@ -576,7 +608,7 @@
         categoryAxis.renderer.cellEndLocation = 0.9;
           
         //Set the cursor to pointer over the categoryAxis values (2021,2022,2023,2024)
- 	categoryAxis.renderer.labels.template.cursorOverStyle = am4core.MouseCursorStyle.pointer;        
+ 	      categoryAxis.renderer.labels.template.cursorOverStyle = am4core.MouseCursorStyle.pointer;        
         
         //Filter Year
         categoryAxis.renderer.labels.template.events.on("hit", function(ev) { 
@@ -685,8 +717,16 @@
           series.dataFields.categoryX = "year";
           series.name = name; 
           series.stacked = stacked;
+
           //Set columns width
-          series.columns.template.width = am4core.percent(80);
+          if(NumVersions === 1){
+          	series.columns.template.width = am4core.percent(30);
+          }else if(NumVersions === 2){
+          	series.columns.template.width = am4core.percent(55);
+          }else if(NumVersions === 3){
+          	series.columns.template.width = am4core.percent(80);
+          }
+
           //Set columns border color
           series.columns.template.stroke = am4core.color("#FFFFFF");
 
@@ -718,51 +758,122 @@
           else {
             return fill;
           }
-          });         
+          });   
+          
+          var Width = 0;
+          
+          //Logic to ajust the 2021 colum in the center
+          if(NumVersions === 2){
+            series.columns.template.events.on("sizechanged", function(ev) {
+                 Width = ev.target.pixelWidth;
+             });
+
+            series.columns.template.adapter.add("dx", function(dx, target) {
+              if(target.dataItem && target.dataItem.index === 0){
+                return dx + Width-7;
+              }else{
+                return dx;
+              }
+            });
+            
+            //We used below an adapter for a data labels position for the 2021 column
+            labelBullet.label.adapter.add("dx", function(dx, target) {   
+           		if(target.dataItem && target.dataItem.index === 0){
+             		if ( target.dataItem.bullets) {        
+                	return dx + Width-7;        
+              	}
+             		else {
+                	return dx;
+              	}
+             	}
+          	});
+          
+          }
 
 
           //We used below an adapter for a color exception for year === 2021
           series.columns.template.adapter.add("fill", function(fill, target) {
-          if (target.dataItem && (target.dataItem.categories.categoryX === '2021')) {
-            if(target.dataItem.component.dataFields.valueY === 'B2'){
-              return SetPatterns("B2",CAct_Light);
-            }
-            else if(target.dataItem.component.dataFields.valueY === 'B3'){
-              return SetPatterns("B3",CAct_Light);
-            }
-            else if(target.dataItem.component.dataFields.valueY === 'B4'){
-              return SetPatterns("B4",CAct_Light);
-            }
-            else {
-              //console.log(target.dataItem.component.dataFields.valueY);
-              return am4core.color(CAct_Dark);
-            }
-          }
-          else {
-            return fill;
-          }
+            if (target.dataItem && (target.dataItem.categories.categoryX === '2021')) {
+          
+              if(NumVersions === 1 || NumVersions === 2){
+                  if(target.dataItem.component.dataFields.valueY === 'A2'){
+                 return SetPatterns("A2",CAct_Light);
+                 }
+                 else if(target.dataItem.component.dataFields.valueY === 'A3'){
+                   return SetPatterns("A3",CAct_Light);
+                 }
+                 else if(target.dataItem.component.dataFields.valueY === 'A4'){
+                   return SetPatterns("A4",CAct_Light);
+                 }            
+                 else {
+                   //console.log(target.dataItem.component.dataFields.valueY);
+                   return am4core.color(CAct_Dark);
+                 }
+               
+              }else if(NumVersions === 3){
+              
+                  if(target.dataItem.component.dataFields.valueY === 'B2'){
+                 return SetPatterns("B2",CAct_Light);
+                 }
+                 else if(target.dataItem.component.dataFields.valueY === 'B3'){
+                   return SetPatterns("B3",CAct_Light);
+                 }
+                 else if(target.dataItem.component.dataFields.valueY === 'B4'){
+                   return SetPatterns("B4",CAct_Light);
+                 }            
+                 else {
+                   //console.log(target.dataItem.component.dataFields.valueY);
+                   return am4core.color(CAct_Dark);
+                 }               
+              }            
+               
+             }
+             else {
+               return fill;
+             }
         });
 
 
         }
 
-        // First Column
-        createSeries("A1", AIScope_1, true, Version_2);
-        createSeries("A2", AIScope_2, true, Version_2);
-        createSeries("A3", AIScope_3, true, Version_2);
-        createSeries("A4", AIScope_4, true, Version_2);
+        //Set columns 
+        if(NumVersions === 1){
+          // First Column
+         createSeries("A1", AIScope_1, true, Version_2);
+         createSeries("A2", AIScope_2, true, Version_2);
+         createSeries("A3", AIScope_3, true, Version_2);
+         createSeries("A4", AIScope_4, true, Version_2);
+       }else if(NumVersions === 2){
+         // First Column
+         createSeries("A1", AIScope_1, true, Version_2);
+         createSeries("A2", AIScope_2, true, Version_2);
+         createSeries("A3", AIScope_3, true, Version_2);
+         createSeries("A4", AIScope_4, true, Version_2);
 
-        // Second Column
-        createSeries("B1", AIScope_1, false, Version_3);
-        createSeries("B2", AIScope_2, true, Version_3);
-        createSeries("B3", AIScope_3, true, Version_3);
-        createSeries("B4", AIScope_4, true, Version_3);
+         // Second Column
+         createSeries("B1", AIScope_1, false, Version_3);
+         createSeries("B2", AIScope_2, true, Version_3);
+         createSeries("B3", AIScope_3, true, Version_3);
+         createSeries("B4", AIScope_4, true, Version_3);
+       }else if(NumVersions === 3){
+         // First Column
+         createSeries("A1", AIScope_1, true, Version_2);
+         createSeries("A2", AIScope_2, true, Version_2);
+         createSeries("A3", AIScope_3, true, Version_2);
+         createSeries("A4", AIScope_4, true, Version_2);
 
-        // Third Column
-        createSeries("C1", AIScope_1, false, Version_4);
-        createSeries("C2", AIScope_2, true, Version_4);
-        createSeries("C3", AIScope_3, true, Version_4);
-        createSeries("C4", AIScope_4, true, Version_4);
+         // Second Column
+         createSeries("B1", AIScope_1, false, Version_3);
+         createSeries("B2", AIScope_2, true, Version_3);
+         createSeries("B3", AIScope_3, true, Version_3);
+         createSeries("B4", AIScope_4, true, Version_3);
+
+         // Third Column
+         createSeries("C1", AIScope_1, false, Version_4);
+         createSeries("C2", AIScope_2, true, Version_4);
+         createSeries("C3", AIScope_3, true, Version_4);
+         createSeries("C4", AIScope_4, true, Version_4);
+       }
 
         //Custom legend
         //// NON AI, HI, NEW AI, BASE AI
@@ -906,6 +1017,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV99)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV100)
  
 })() // END of function --> (function () {
