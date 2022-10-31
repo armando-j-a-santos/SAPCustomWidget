@@ -40,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV109 extends HTMLElement {
+  class NewStackV110 extends HTMLElement {
     constructor () {
       super()
 
@@ -760,6 +760,9 @@
           });   
           
           var Width = 0;
+
+          console.log("Width at begining")
+          console.log(series.columns.template.target.pixelWidth);
           
           //Logic to ajust the 2021 colum in the center
           if(NumVersions === 2){
@@ -770,6 +773,8 @@
                  console.log(Width);
                  console.log("----------");
              });
+
+
 
             series.columns.template.adapter.add("dx", function(dx, target) {
               if(target.dataItem && target.dataItem.index === 0){
@@ -1021,6 +1026,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV109)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV110)
  
 })() // END of function --> (function () {
