@@ -40,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV110 extends HTMLElement {
+  class NewStackV111 extends HTMLElement {
     constructor () {
       super()
 
@@ -759,10 +759,10 @@
           }
           });   
           
-          var Width = 0;
+          var Width = series.columns.template.properties.width._value;
 
           console.log("Width at begining")
-          console.log(series.columns.template.target.pixelWidth);
+          console.log(Width);
           
           //Logic to ajust the 2021 colum in the center
           if(NumVersions === 2){
@@ -1026,6 +1026,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV110)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV111)
  
 })() // END of function --> (function () {
