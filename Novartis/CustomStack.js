@@ -40,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV114 extends HTMLElement {
+  class NewStackV115 extends HTMLElement {
     constructor () {
       super()
 
@@ -766,22 +766,9 @@
           
           //Logic to ajust the 2021 colum in the center
           if(NumVersions === 2){
-
-          /*  
-            series.columns.template.events.on("sizechanged", function(ev) {
-
-                 Width = ev.target.pixelWidth;
-                 console.log("INSIDE SIzE CHANGED");
-                 console.log(Width);
-                 console.log("----------");
-             });
-
-          */
-
+            //We used below an adapter to ajust the column position for the year 2021  
             series.columns.template.adapter.add("dx", function(dx, target) {
-              if(target.dataItem && target.dataItem.index === 0){
-                console.log("HEEERREEEe in DX");
-
+              if(target.dataItem && target.dataItem.index === 0){               
                 Width = target.pixelWidth;
                 return dx + Width-9;
               }else{
@@ -1030,6 +1017,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV114)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV115)
  
 })() // END of function --> (function () {
