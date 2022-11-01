@@ -760,9 +760,6 @@
           });   
           
           var Width = 0;
-
-          console.log("Width at begining")
-          console.log(Width);
           
           //Logic to ajust the 2021 colum in the center
           if(NumVersions === 2){
@@ -778,15 +775,14 @@
             
             //We used below an adapter for a data labels position for the 2021 column
             labelBullet.label.adapter.add("dx", function(dx, target) {   
-           		if(target.dataItem && target.dataItem.index === 0){
-             		if (target.dataItem.bullets) {        
+           	if(target.dataItem && target.dataItem.index === 0){
+             	    if (target.dataItem.bullets) {        
                 	return dx + Width-9;        
-              	}
-             		else {
+              	    } else {
                 	return dx;
-              	}
+              	    }
              	}
-          	});
+             });
           
           }
 
@@ -1002,8 +998,8 @@
         chart.scrollbarX.endGrip.icon.disabled = true;
 
 
- chart.appear();
-//chart.appear(1000, 100);
+	 chart.appear();
+	//chart.appear(1000, 100);
           
         //***         
         }); // end am4core.ready()
