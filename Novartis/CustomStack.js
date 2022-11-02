@@ -40,7 +40,7 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-    class NewStackV115 extends HTMLElement {
+    class NewStackV116 extends HTMLElement {
         constructor() {
             super()
 
@@ -167,6 +167,14 @@
                 var BaseLabelColorExc = String(chartConfigurations.BaseLabelColorExc);
                 var NumVersions = Number(String(chartConfigurations.NumVersions));
 
+                var CYy = Number(String(chartConfigurations.CYy));
+
+                var CY_Minus1y = String(CY - 1);
+                var CY_Plus1y = String(CY + 1);
+                var CY_Plus2y = String(CY + 2);
+                var CY_Plus3y = String(CY + 3);
+                CYy = String(CY);
+
                 //ResultSet
                 //console.log('resultSet:')
 
@@ -176,7 +184,7 @@
               	// Previous Year column defintion
                 if (NumVersions === 1 || NumVersions === 2) {
                     CY_Minus1 = {
-                        "year": "2021",
+                        "year": CY_Minus1y,
 
                         "A1": undefined,
                         "A2": undefined,
@@ -185,7 +193,7 @@
                     }
                 } else if (NumVersions === 3) {
                     CY_Minus1 = {
-                        "year": "2021",
+                        "year": CY_Minus1y,
 
                         "B1": undefined,
                         "B2": undefined,
@@ -196,7 +204,7 @@
 
               	// Strutures definition for CY, CY+1, CY+2, CY+3
                 const CY = {
-                    year: "2022",
+                    year: CYy,
                     A1: undefined,
                     A2: undefined,
                     A3: undefined,
@@ -214,7 +222,7 @@
                 };
 
                 const CY_Plus1 = {
-                    year: "2023",
+                    year: CY_Plus1y,
                     A1: undefined,
                     A2: undefined,
                     A3: undefined,
@@ -232,7 +240,7 @@
                 };
 
                 const CY_Plus2 = {
-                    year: "2024",
+                    year: CY_Plus2y,
                     A1: undefined,
                     A2: undefined,
                     A3: undefined,
@@ -250,7 +258,7 @@
                 };
 
                 const CY_Plus3 = {
-                    year: "2025",
+                    year: CY_Plus3y,
                     A1: undefined,
                     A2: undefined,
                     A3: undefined,
@@ -980,6 +988,6 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // Return the end result into SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV115)
+    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV116)
 
 })() // END of function --> (function () {
