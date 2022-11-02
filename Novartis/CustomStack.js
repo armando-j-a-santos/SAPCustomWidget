@@ -118,14 +118,11 @@
                 this._placeholder = null
             }
 
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
-            var mychartdiv = this._shadowRoot.getElementById('chartdiv')
+           var mychartdiv = this._shadowRoot.getElementById('chartdiv')
             //console.log(mychartdiv) 
 
             //console.log('newJSONSets:')
-            //console.log(newJSONSets)
-
-            //***        
+            //console.log(newJSONSets)     
 
             am4core.ready(function() {
 
@@ -185,7 +182,6 @@
                         "A2": undefined,
                         "A3": undefined,
                         "A4": undefined
-
                     }
                 } else if (NumVersions === 3) {
                     CY_Minus1 = {
@@ -195,7 +191,6 @@
                         "B2": undefined,
                         "B3": undefined,
                         "B4": undefined
-
                     }
                 }
 
@@ -284,7 +279,6 @@
                         //Actuals
                         ////////////////////////////////////////////
                         if (NumVersions === 3) {
-
                             if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Only]") {
                                 CY_Minus1.B1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -298,7 +292,6 @@
                                 CY_Minus1.B4 = dp["@MeasureDimension"].formattedValue;
                             }
                         } else if (NumVersions === 1 || NumVersions === 2) {
-
                             if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Only]") {
                                 CY_Minus1.A1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -321,7 +314,6 @@
                         //CW --> Version_2
                         //Model Variable --> Selected_Version_1 
                         ////////////////////////////////////////////
-
 
                         if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Only]") {
                             CY.A1 = dp["@MeasureDimension"].formattedValue;
@@ -383,7 +375,6 @@
                         //Model Variable --> Selected_Version_1 
                         ////////////////////////////////////////////
 
-
                         if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Only]") {
                             CY_Plus1.A1 = dp["@MeasureDimension"].formattedValue;
                         }
@@ -443,7 +434,6 @@
                         //CW --> Version_2
                         //Model Variable --> Selected_Version_1 
                         ////////////////////////////////////////////
-
 
                         if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Only]") {
                             CY_Plus2.A1 = dp["@MeasureDimension"].formattedValue;
@@ -505,7 +495,6 @@
                         //Model Variable --> Selected_Version_1 
                         ////////////////////////////////////////////
 
-
                         if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Only]") {
                             CY_Plus3.A1 = dp["@MeasureDimension"].formattedValue;
                         }
@@ -561,7 +550,6 @@
                 })
 
                 ////// Custom Widget columns data sintax sample:
-
                 //Version_2		Version_3	Version_4
                 // A4; 			B4; 		C4 		>> Non AI
                 // A3; 			B3; 		C3 		>> HI		(AI Drivers)
@@ -613,7 +601,6 @@
 
                 //Filter Year
                 categoryAxis.renderer.labels.template.events.on("hit", function(ev) {
-
                     //Return the selected year value (2021,2022,2023,2024)
                     console.log(ev.target.dataItem.properties.category);
                     //Return the selected year index (1,2,3,4)
@@ -657,8 +644,6 @@
                         pattern.rotation = 135;
                         pattern.fill = am4core.color(color);
                         pattern.stroke = am4core.color(color);
-
-
                     } else if (field === "A3" || field === "B3" || field === "C3") {
                         var pattern = new am4core.LinePattern();
                         pattern.width = 6;
@@ -727,7 +712,6 @@
 
                     //Set columns border color
                     series.columns.template.stroke = am4core.color("#FFFFFF");
-
 
                     // Tooltip 
                     series.tooltip.getFillFromObject = false;
@@ -800,7 +784,6 @@
                                     //console.log(target.dataItem.component.dataFields.valueY);
                                     return am4core.color(CAct_Dark);
                                 }
-
                             } else if (NumVersions === 3) {
 
                                 if (target.dataItem.component.dataFields.valueY === 'B2') {
@@ -819,7 +802,6 @@
                             return fill;
                         }
                     });
-
 
                 }
 
@@ -920,7 +902,6 @@
                 marker.strokeOpacity = 1;
                 marker.stroke = am4core.color("#ccc");
 
-
                 //// Version 1, Version 2, Version 3, Version 4
                 var legendB = new am4charts.Legend();
                 //To push the custom legend top
@@ -941,7 +922,6 @@
                 //Custom the markers size for the custom legend
                 legendB.markers.template.width = 15;
                 legendB.markers.template.height = 15;
-
 
                 //Custom legend for the Versions
                 legendB.data = [{
@@ -988,10 +968,9 @@
                 //The endGrip
                 chart.scrollbarX.endGrip.icon.disabled = true;
 
-				// Chart showing in the frontend (SAC)
+		// Chart showing in the frontend (SAC)
                 chart.appear();
-
-                //***         
+    
             }); // end am4core.ready()        
 
         } // END of method --> render 
