@@ -40,7 +40,7 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-    class NewStackV117 extends HTMLElement {
+    class NewStackV118 extends HTMLElement {
         constructor() {
             super()
 
@@ -169,11 +169,11 @@
 
                 var CYy = Number(String(chartConfigurations.CYy));
 
-                var CY_Minus1y = String(CY - 1);
-                var CY_Plus1y = String(CY + 1);
-                var CY_Plus2y = String(CY + 2);
-                var CY_Plus3y = String(CY + 3);
-                CYy = String(CY);
+                var CY_Minus1y = String(CYy - 1);
+                var CY_Plus1y = String(CYy + 1);
+                var CY_Plus2y = String(CYy + 2);
+                var CY_Plus3y = String(CYy + 3);
+                CYy = String(CYy);
 
                 //ResultSet
                 //console.log('resultSet:')
@@ -279,7 +279,7 @@
               	// Loop trhough the resultset received from SAC side
                 resultSet.forEach(dp => {
                     //console.log(dp)
-                    
+
                     if (dp["TIME.YEAR"].id === CYy) {
 
                         ////////////////////////////////////////////
@@ -986,6 +986,6 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // Return the end result into SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV117)
+    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV118)
 
 })() // END of function --> (function () {
