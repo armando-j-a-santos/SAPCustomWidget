@@ -40,7 +40,7 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-    class NewStackV116 extends HTMLElement {
+    class NewStackV117 extends HTMLElement {
         constructor() {
             super()
 
@@ -279,26 +279,27 @@
               	// Loop trhough the resultset received from SAC side
                 resultSet.forEach(dp => {
                     //console.log(dp)
-                    if (dp["TIME.YEAR"].id === "2022") {
+                    
+                    if (dp["TIME.YEAR"].id === CYy) {
 
                         ////////////////////////////////////////////
                         //Column 2021  (Blue Column)
-                        //CW --> Version_3 (Actuals)
+                        //CW --> Version Actuals
                         //Actuals
                         ////////////////////////////////////////////
                         if (NumVersions === 3) {
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Only]") {
-                                CY_Minus1.B1 = dp["@MeasureDimension"].formattedValue;
-                            }
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_New_AI]") {
-                                CY_Minus1.B2 = dp["@MeasureDimension"].formattedValue;
-                            }
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Drivers]") {
-                                CY_Minus1.B3 = dp["@MeasureDimension"].formattedValue;
-                            }
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_Non_AI]") {
-                                CY_Minus1.B4 = dp["@MeasureDimension"].formattedValue;
-                            }
+                          if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Only]") {
+                              CY_Minus1.B1 = dp["@MeasureDimension"].formattedValue;
+                          }
+                          if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_New_AI]") {
+                              CY_Minus1.B2 = dp["@MeasureDimension"].formattedValue;
+                          }
+                          if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Drivers]") {
+                              CY_Minus1.B3 = dp["@MeasureDimension"].formattedValue;
+                          }
+                          if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_Non_AI]") {
+                              CY_Minus1.B4 = dp["@MeasureDimension"].formattedValue;
+                          }
                         } else if (NumVersions === 1 || NumVersions === 2) {
                             if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Only]") {
                                 CY_Minus1.A1 = dp["@MeasureDimension"].formattedValue;
@@ -313,9 +314,6 @@
                                 CY_Minus1.A4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
-                    }
-
-                    if (dp["TIME.YEAR"].id === "2022") {
 
                         ////////////////////////////////////////////
                         //Column 1 
@@ -375,7 +373,7 @@
                         }
                     }
 
-                    if (dp["TIME.YEAR"].id === "2023") {
+                    if (dp["TIME.YEAR"].id === CY_Plus1y) {
 
                         ////////////////////////////////////////////
                         //Column 1 
@@ -435,7 +433,7 @@
                         }
                     }
 
-                    if (dp["TIME.YEAR"].id === "2024") {
+                    if (dp["TIME.YEAR"].id === CY_Plus2y) {
 
                         ////////////////////////////////////////////
                         //Column 1 
@@ -495,7 +493,7 @@
                         }
                     }
 
-                    if (dp["TIME.YEAR"].id === "2025") {
+                    if (dp["TIME.YEAR"].id === CY_Plus3y) {
 
                         ////////////////////////////////////////////
                         //Column 1 
@@ -988,6 +986,6 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // Return the end result into SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV116)
+    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV117)
 
 })() // END of function --> (function () {
