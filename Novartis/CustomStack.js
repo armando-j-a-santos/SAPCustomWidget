@@ -300,7 +300,7 @@
                           if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_Non_AI]") {
                               CY_Minus1.B4 = dp["@MeasureDimension"].formattedValue;
                           }
-                      } else if (NumVersions === 1 || NumVersions === 2) {
+                      } else if (NumVersions === 0 || NumVersions === 1 || NumVersions === 2) {
                           if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Only]") {
                               CY_Minus1.A1 = dp["@MeasureDimension"].formattedValue;
                           }
@@ -582,8 +582,8 @@
               chart.data.push(CY_Plus2);
               chart.data.push(CY_Plus3);
 
-              console.log("*******FINAL CHART DAATA******");
-              console.log(chart.data);
+              //console.log("*******FINAL CHART DAATA******");
+              //console.log(chart.data);
 
               // Create X axes (and customize it)
               var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
