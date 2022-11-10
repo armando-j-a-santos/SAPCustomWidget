@@ -40,7 +40,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewStackV119 extends HTMLElement {
+  class NewStackV120 extends HTMLElement {
       constructor() {
           super()
 
@@ -182,7 +182,7 @@
               let CY_Minus1 = {};
 
               // Previous Year column defintion
-              if (NumVersions === 1 || NumVersions === 2) {
+              if (NumVersions === 0 || NumVersions === 1 || NumVersions === 2) {
                   CY_Minus1 = {
                       "year": CY_Minus1y,
 
@@ -708,7 +708,7 @@
                   series.stacked = stacked;
 
                   //Set columns width
-                  if (NumVersions === 1) {
+                  if (NumVersions === 0 || NumVersions === 1) {
                       series.columns.template.width = am4core.percent(30);
                   } else if (NumVersions === 2) {
                       series.columns.template.width = am4core.percent(55);
@@ -779,7 +779,7 @@
                   series.columns.template.adapter.add("fill", function(fill, target) {
                       if (target.dataItem && (target.dataItem.categories.categoryX === '2021')) {
 
-                          if (NumVersions === 1 || NumVersions === 2) {
+                          if (NumVersions === 0 || NumVersions === 1 || NumVersions === 2) {
                               if (target.dataItem.component.dataFields.valueY === 'A2') {
                                   return SetPatterns("A2", CAct_Light);
                               } else if (target.dataItem.component.dataFields.valueY === 'A3') {
@@ -812,7 +812,7 @@
               }
 
               //Set columns 
-              if (NumVersions === 1) {
+              if (NumVersions === 0 || NumVersions === 1) {
                   // First Column
                   createSeries("A1", AIScope_1, true, Version_2);
                   createSeries("A2", AIScope_2, true, Version_2);
@@ -986,6 +986,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result into SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV119)
+  customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV120)
 
 })() // END of function --> (function () {
