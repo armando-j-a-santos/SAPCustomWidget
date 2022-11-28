@@ -621,9 +621,9 @@
               //Filter Year
               categoryAxis.renderer.labels.template.events.on("hit", function(ev) {
                   //Return the selected year value (2021,2022,2023,2024)
-                  console.log(ev.target.dataItem.properties.category);
+                  //console.log(ev.target.dataItem.properties.category);
                   //Return the selected year index (1,2,3,4)
-                  console.log(categoryAxis.categoryToIndex(ev.target.dataItem.properties.category));
+                  //console.log(categoryAxis.categoryToIndex(ev.target.dataItem.properties.category));
 
 
                   var start = categoryAxis.categoryToIndex(ev.target.dataItem.properties.category);
