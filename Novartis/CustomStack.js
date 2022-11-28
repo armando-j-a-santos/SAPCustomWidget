@@ -196,7 +196,8 @@
                       "A1": undefined,
                       "A2": undefined,
                       "A3": undefined,
-                      "A4": undefined
+                      "A4": undefined,
+                      "none": 0
                   }
               } else if (NumVersions === 3) {
                   CY_Minus1 = {
@@ -205,7 +206,8 @@
                       "B1": undefined,
                       "B2": undefined,
                       "B3": undefined,
-                      "B4": undefined
+                      "B4": undefined,
+                      "none": 0
                   }
               }
 
@@ -225,7 +227,8 @@
                   C1: undefined,
                   C2: undefined,
                   C3: undefined,
-                  C4: undefined
+                  C4: undefined,
+                  "none": 0
               };
 
               const CY_Plus1 = {
@@ -243,7 +246,8 @@
                   C1: undefined,
                   C2: undefined,
                   C3: undefined,
-                  C4: undefined
+                  C4: undefined,
+                  "none": 0
               };
 
               const CY_Plus2 = {
@@ -261,7 +265,8 @@
                   C1: undefined,
                   C2: undefined,
                   C3: undefined,
-                  C4: undefined
+                  C4: undefined,
+                  "none": 0
               };
 
               const CY_Plus3 = {
@@ -279,7 +284,8 @@
                   C1: undefined,
                   C2: undefined,
                   C3: undefined,
-                  C4: undefined
+                  C4: undefined,
+                  "none": 0
               };
 
 
