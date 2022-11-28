@@ -925,6 +925,7 @@
                  
                  console.log("width in totals 11 more tryyyy");
                  console.log(Width);
+                
 
 
                  //Ajust Total labels position when 2 columns displayed
