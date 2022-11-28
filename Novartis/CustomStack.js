@@ -627,17 +627,46 @@
               });
 
 
-              // Create Y axes (and customize it)
-              var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-              valueAxis.min = 0;
-              valueAxis.extraMax = 0.1;
+             // Create Y axes (and customize it)
+            var  valueAxis1 = chart.yAxes.push(new am4charts.ValueAxis());
+            valueAxis1.min = 0;
+            valueAxis1.extraMax = 0.1;
+            //Enable total calculation
+            valueAxis1.calculateTotals = ShowStackedTotals;
+            
+            //Show/Hide Y Axis labels
+            valueAxis1.renderer.labels.template.disabled = true;
 
-              //Show/Hide Y Axis labels
-              valueAxis.renderer.labels.template.disabled = true;
+            //Show/Hide Grid
+            valueAxis1.renderer.grid.template.disabled = true;
+            
+            //Another axis to display totals for the second column
+            // Create Y axes (and customize it)
+            var  valueAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
+            valueAxis2.min = 0;
+            valueAxis2.extraMax = 0.1;
+            //Enable total calculation
+            valueAxis2.calculateTotals = ShowStackedTotals;
+            
+            //Show/Hide Y Axis labels
+            valueAxis2.renderer.labels.template.disabled = true;
 
+            //Show/Hide Grid
+            valueAxis2.renderer.grid.template.disabled = true;
+            
+            //Another axis to display totals for the second column
+            // Create Y axes (and customize it)
+            var  valueAxis3 = chart.yAxes.push(new am4charts.ValueAxis());
+            valueAxis3.min = 0;
+            valueAxis3.extraMax = 0.1;
+            //Enable total calculation
+            valueAxis3.calculateTotals = ShowStackedTotals;
+            
+            //Show/Hide Y Axis labels
+            valueAxis3.renderer.labels.template.disabled = true;
 
-              //Show/Hide Grid
-              valueAxis.renderer.grid.template.disabled = true;
+            //Show/Hide Grid
+            valueAxis3.renderer.grid.template.disabled = true;
 
               //Function to Set diferent patterns and assign them to diferent colors
               function SetPatterns(field, color) {
