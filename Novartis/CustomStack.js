@@ -922,20 +922,14 @@
                  })           
                      
                  
-                 console.log("width in totals 2 more tryyyy");
+                 console.log("width in totals 3 more tryyyy");
                  console.log(Width);
 
 
                  //Ajust Total labels position when 2 columns displayed
+                /* 
                  if(NumVersions === 2){
-                    totalSeries.columns.template.adapter.add("dx", function(dx, target) {
-                        if(target.dataItem && target.dataItem.index === 0){
-                          return dx + Width-7;
-                        }else{
-                          return dx;
-                        }
-                    }); 
-
+                    
                    totalBullet.adapter.add("dx", function(dx, target) {                
                         if (target.dataItem && target.dataItem.categories.categoryX === "2021") {
                            return dx + Width-9;
@@ -943,6 +937,8 @@
                          return dx;
                    })
                    }  
+
+                */
                 
              }
 
