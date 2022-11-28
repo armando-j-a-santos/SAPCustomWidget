@@ -820,14 +820,10 @@
                   //Logic to ajust the 2021 colum in the center
                   if (NumVersions === 2) {                    
 
-                    series.columns.template.events.on("sizechanged", function(ev) {
-                        Width = ev.target.pixelWidth;
-                    });
-
                       //We used below an adapter to ajust the column position for the year 2021  
                       series.columns.template.adapter.add("dx", function(dx, target) {
                           if (target.dataItem && target.dataItem.index === 0) {
-                            //Width = target.pixelWidth;
+                            Width = target.pixelWidth;
                              return dx + Width - 9;
                           } else {
                               return dx;
