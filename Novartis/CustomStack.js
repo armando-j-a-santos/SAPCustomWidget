@@ -714,7 +714,9 @@
 
                   return pattern;
               }
-
+              
+              var Width = 0;
+              
               // Create series
               function createSeries(field, name, stacked, version, yAxes) {
                     var valueAxis;
@@ -812,7 +814,6 @@
                     return text;
                   }) 
 
-                  var Width = 0;
 
                   //Logic to ajust the 2021 colum in the center
                   if (NumVersions === 2) {
