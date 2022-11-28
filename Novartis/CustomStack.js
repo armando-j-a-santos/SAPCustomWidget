@@ -167,6 +167,13 @@
               var BaseLabelColorExc = String(chartConfigurations.BaseLabelColorExc);
               var NumVersions = Number(String(chartConfigurations.NumVersions));
 
+              var ShowStackedTotals = true;        
+              var MinValue = 2.5;              
+              var DataLabelsFontSize = 12;
+              var TotalsDataLabelsFontSize = 12;
+              var TotalsBackgroundColor = "white";
+      
+
               var CYy = Number(String(chartConfigurations.CYy));
 
               var CY_Minus1y = String(CYy - 1);
@@ -709,11 +716,11 @@
 
                   //Set columns width
                   if (NumVersions === 0 || NumVersions === 1) {
-                      series.columns.template.width = am4core.percent(30);
+                      series.columns.template.width = am4core.percent(15);
                   } else if (NumVersions === 2) {
-                      series.columns.template.width = am4core.percent(55);
+                      series.columns.template.width = am4core.percent(35);
                   } else if (NumVersions === 3) {
-                      series.columns.template.width = am4core.percent(80);
+                      series.columns.template.width = am4core.percent(60);
                   }
 
                   //Set columns border color
@@ -733,7 +740,7 @@
                   labelBullet.label.text = "[bold]{valueY}";
                   labelBullet.label.fill = am4core.color("#000000");
                   labelBullet.locationY = 0.5;
-                  labelBullet.label.fontSize = 14;
+                  labelBullet.label.fontSize = DataLabelsFontSize;
                   labelBullet.fontFamily = "Arial";
 
                   //We used below an adapter for a data labels color exception in the Base        
@@ -746,6 +753,14 @@
                           return fill;
                       }
                   });
+
+                  //Hide label when less than MinValue
+                  labelBullet.label.adapter.add("text", function(text, target) {
+                    if (target.dataItem && target.dataItem.values.valueY.value < MinValue) {
+                        return "";
+                    }
+                    return text;
+                  }) 
 
                   var Width = 0;
 
@@ -810,6 +825,8 @@
                   });
 
               }
+
+              
 
               //Set columns 
               if (NumVersions === 0 || NumVersions === 1) {
