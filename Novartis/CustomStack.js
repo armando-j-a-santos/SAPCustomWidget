@@ -898,40 +898,54 @@
               //Set columns 
               if (NumVersions === 0 || NumVersions === 1) {
                   // First Column
-                  createSeries("A1", AIScope_1, true, Version_2);
-                  createSeries("A2", AIScope_2, true, Version_2);
-                  createSeries("A3", AIScope_3, true, Version_2);
-                  createSeries("A4", AIScope_4, true, Version_2);
+                  createSeries("A1", AIScope_1, true, Version_2 ,1);
+                  createSeries("A2", AIScope_2, true, Version_2 ,1);
+                  createSeries("A3", AIScope_3, true, Version_2 ,1);
+                  createSeries("A4", AIScope_4, true, Version_2 ,1);
+
+                  createTotalSeries(1);
+
               } else if (NumVersions === 2) {
                   // First Column
-                  createSeries("A1", AIScope_1, true, Version_2);
-                  createSeries("A2", AIScope_2, true, Version_2);
-                  createSeries("A3", AIScope_3, true, Version_2);
-                  createSeries("A4", AIScope_4, true, Version_2);
-
+                  createSeries("A1", AIScope_1, true, Version_2 ,1);
+                  createSeries("A2", AIScope_2, true, Version_2 ,1);
+                  createSeries("A3", AIScope_3, true, Version_2 ,1);
+                  createSeries("A4", AIScope_4, true, Version_2 ,1);
+                  
+                  createTotalSeries(1);
+                  
                   // Second Column
-                  createSeries("B1", AIScope_1, false, Version_3);
-                  createSeries("B2", AIScope_2, true, Version_3);
-                  createSeries("B3", AIScope_3, true, Version_3);
-                  createSeries("B4", AIScope_4, true, Version_3);
+                  createSeries("B1", AIScope_1, false, Version_3 ,2);
+                  createSeries("B2", AIScope_2, true, Version_3 ,2);
+                  createSeries("B3", AIScope_3, true, Version_3 ,2);
+                  createSeries("B4", AIScope_4, true, Version_3 ,2);
+                  
+                  createTotalSeries(2);
+
               } else if (NumVersions === 3) {
                   // First Column
-                  createSeries("A1", AIScope_1, true, Version_2);
-                  createSeries("A2", AIScope_2, true, Version_2);
-                  createSeries("A3", AIScope_3, true, Version_2);
-                  createSeries("A4", AIScope_4, true, Version_2);
+                  createSeries("A1", AIScope_1, true, Version_2 ,1);
+                  createSeries("A2", AIScope_2, true, Version_2 ,1);
+                  createSeries("A3", AIScope_3, true, Version_2 ,1);
+                  createSeries("A4", AIScope_4, true, Version_2 ,1);
+
+                  createTotalSeries(1);
 
                   // Second Column
-                  createSeries("B1", AIScope_1, false, Version_3);
-                  createSeries("B2", AIScope_2, true, Version_3);
-                  createSeries("B3", AIScope_3, true, Version_3);
-                  createSeries("B4", AIScope_4, true, Version_3);
+                  createSeries("B1", AIScope_1, false, Version_3 ,2);
+                  createSeries("B2", AIScope_2, true, Version_3 ,2);
+                  createSeries("B3", AIScope_3, true, Version_3 ,2);
+                  createSeries("B4", AIScope_4, true, Version_3 ,2);
+
+                  createTotalSeries(2);
 
                   // Third Column
-                  createSeries("C1", AIScope_1, false, Version_4);
-                  createSeries("C2", AIScope_2, true, Version_4);
-                  createSeries("C3", AIScope_3, true, Version_4);
-                  createSeries("C4", AIScope_4, true, Version_4);
+                  createSeries("C1", AIScope_1, false, Version_4 ,3);
+                  createSeries("C2", AIScope_2, true, Version_4 ,3);
+                  createSeries("C3", AIScope_3, true, Version_4 ,3);
+                  createSeries("C4", AIScope_4, true, Version_4 ,3);
+
+                  createTotalSeries(3);
               }
 
               //Custom legend
