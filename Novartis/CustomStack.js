@@ -908,7 +908,7 @@
      
                  var totalBullet = totalSeries.bullets.push(new am4charts.LabelBullet());
                  totalBullet.dy = -20;
-                 totalBullet.dx = 0;
+                 //totalBullet.dx = 0;
                  totalBullet.label.text = "[bold]{valueY.total}";
                  totalBullet.label.hideOversized = false;
                  totalBullet.label.fontSize = TotalsDataLabelsFontSize;
