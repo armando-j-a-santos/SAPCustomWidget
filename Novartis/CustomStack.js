@@ -179,6 +179,8 @@
               console.log(DataLabelsFontSize);
               console.log(TotalsDataLabelsFontSize);
 
+              
+
               var CYy = Number(String(chartConfigurations.CYy));
 
               var CY_Minus1y = String(CYy - 1);
