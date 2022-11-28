@@ -816,7 +816,7 @@
                     return text;
                   }) 
 
-                  
+
                   //Logic to ajust the 2021 colum in the center
                   if (NumVersions === 2) {
                       //We used below an adapter to ajust the column position for the year 2021  
@@ -926,8 +926,16 @@
                  console.log(Width);
 
 
-                 //Ajut Total labels position when 2 columns displayed
+                 //Ajust Total labels position when 2 columns displayed
                  if(NumVersions === 2){
+                    totalSeries.columns.template.adapter.add("dx", function(dx, target) {
+                        if(target.dataItem && target.dataItem.index === 0){
+                          return dx + Width-7;
+                        }else{
+                          return dx;
+                        }
+                    }); 
+
                    totalBullet.adapter.add("dx", function(dx, target) {                
                         if (target.dataItem && target.dataItem.categories.categoryX === "2021") {
                            return dx + Width-9;
