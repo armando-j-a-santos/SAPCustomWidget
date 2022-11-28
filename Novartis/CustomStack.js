@@ -909,7 +909,7 @@
                  totalBullet.label.fontSize = TotalsDataLabelsFontSize;
                  totalBullet.label.background.fill = TotalsBackgroundColor;
                  totalBullet.label.background.fillOpacity = 1;
-                 totalBullet.label.padding(5, 10, 5, 10);       
+                 //totalBullet.label.padding(5, 10, 5, 10);       
                  
                  //Hide Total label when equal to 0
                  totalBullet.label.adapter.add("text", function(text, target) {
