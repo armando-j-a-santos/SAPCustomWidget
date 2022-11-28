@@ -920,7 +920,7 @@
                  })           
                      
                  
-                 console.log("width");
+                 console.log("width in totals");
                  console.log(Width);
 
 
