@@ -833,7 +833,9 @@
                       //We used below an adapter for a data labels position for the 2021 column
                       labelBullet.label.adapter.add("dx", function(dx, target) {
                           if (target.dataItem && target.dataItem.index === 0) {
-                              if (target.dataItem.bullets) {                               
+                              if (target.dataItem.bullets) {   
+                                  console.log("INSIDE -NOT- Totals")
+                                  console.log(Width);                            
                                   return dx + Width - 9;
                               } else {
                                   return dx;
@@ -933,6 +935,7 @@
                  if(NumVersions === 2){
                     totalSeries.columns.template.events.on("enabled",function(ev){ 
                         if(Width === 0){
+                          console.log("INSIDE TOTALS")
                           Width = ev.target.pixelWith;
                       }
                     
