@@ -768,11 +768,11 @@
 
                   //Set columns width
                   if (NumVersions === 0 || NumVersions === 1) {
-                      series.columns.template.width = am4core.percent(15);
+                      series.columns.template.width = am4core.percent(30);
                   } else if (NumVersions === 2) {
-                      series.columns.template.width = am4core.percent(35);
+                      series.columns.template.width = am4core.percent(55);
                   } else if (NumVersions === 3) {
-                      series.columns.template.width = am4core.percent(60);
+                      series.columns.template.width = am4core.percent(80);
                   }
 
                   //Set columns border color
