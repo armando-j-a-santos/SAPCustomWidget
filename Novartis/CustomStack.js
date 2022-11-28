@@ -680,7 +680,20 @@
               }
 
               // Create series
-              function createSeries(field, name, stacked, version) {
+              function createSeries(field, name, stacked, version, yAxes) {
+                    var valueAxis;
+                    if (yAxes === 1) {
+                    valueAxis = valueAxis1;     
+                    }
+        
+                    if (yAxes === 2) {
+                    valueAxis = valueAxis2;     
+                    }
+        
+                    if (yAxes === 3) {
+                    valueAxis = valueAxis3;     
+                    }
+
                   var series = chart.series.push(new am4charts.ColumnSeries());
 
                   if (field === 'A1') {
@@ -825,6 +838,60 @@
                   });
 
               }
+
+              function createTotalSeries(yAxes) {
+                var valueAxis;
+                if (yAxes === 1) {
+                  valueAxis = valueAxis1;     
+                }
+     
+                if (yAxes === 2) {
+                 valueAxis = valueAxis2;     
+                }
+     
+                if (yAxes === 3) {
+                 valueAxis = valueAxis3;     
+                }
+     
+                 // Create series for total
+                 var totalSeries = chart.series.push(new am4charts.ColumnSeries());
+                 totalSeries.dataFields.valueY = "none";
+                 totalSeries.dataFields.categoryX = "year";
+                 totalSeries.stacked = true;
+                 totalSeries.hiddenInLegend = true;
+                 totalSeries.columns.template.strokeOpacity = 0;
+                 totalSeries.yAxis = valueAxis;
+     
+                 var totalBullet = totalSeries.bullets.push(new am4charts.LabelBullet());
+                 totalBullet.dy = -20;
+                 totalBullet.dx = 0;
+                 totalBullet.label.text = "[bold]{valueY.total}";
+                 totalBullet.label.hideOversized = false;
+                 totalBullet.label.fontSize = TotalsDataLabelsFontSize;
+                 totalBullet.label.background.fill = TotalsBackgroundColor;
+                 totalBullet.label.background.fillOpacity = 1;
+                 totalBullet.label.padding(5, 10, 5, 10);       
+                 
+                 //Hide Total label when equal to 0
+                 totalBullet.label.adapter.add("text", function(text, target) {
+                    if (target.dataItem && target.dataItem.values.valueY.total === 0) {
+                       return "";
+                     }
+                     return text;
+                 })           
+                     
+                 
+                 //Ajut Total labels position when 2 columns displayed
+                 if(NumVersions === 2){
+                   totalBullet.adapter.add("dx", function(dx, target) {                
+                        if (target.dataItem && target.dataItem.categories.categoryX === "2021") {
+                           return dx + Width-7;
+                         }
+                         return dx;
+                   })
+                   }  
+                
+             }
 
               
 
