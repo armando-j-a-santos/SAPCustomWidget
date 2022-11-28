@@ -935,8 +935,9 @@
                  if(NumVersions === 2){
                     totalSeries.columns.template.events.on("enabled",function(ev){ 
                         if(Width === 0){
-                          console.log("INSIDE TOTALS")
+                          
                           Width = ev.target.pixelWith;
+                          console.log("INSIDE TOTALS Logic")
                       }
                     
                     });
