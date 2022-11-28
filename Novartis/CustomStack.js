@@ -172,6 +172,8 @@
               var DataLabelsFontSize = Number(String(chartConfigurations.DataLabelsFontSize));
               var TotalsDataLabelsFontSize = Number(String(chartConfigurations.TotalsDataLabelsFontSize));
               var TotalsBackgroundColor = String(chartConfigurations.TotalsBackgroundColor);
+
+              var Width = 0;
              
 
               var CYy = Number(String(chartConfigurations.CYy));
@@ -715,7 +717,7 @@
                   return pattern;
               }
               
-              var Width = 0;
+              
               
               // Create series
               function createSeries(field, name, stacked, version, yAxes) {
