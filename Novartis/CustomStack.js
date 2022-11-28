@@ -172,7 +172,12 @@
               var DataLabelsFontSize = Number(String(chartConfigurations.DataLabelsFontSize));
               var TotalsDataLabelsFontSize = Number(String(chartConfigurations.TotalsDataLabelsFontSize));
               var TotalsBackgroundColor = String(chartConfigurations.TotalsBackgroundColor);
-      
+            
+              console.log(TotalsBackgroundColor);
+              console.log(ShowStackedTotals);
+              console.log(MinValue);
+              console.log(DataLabelsFontSize);
+              console.log(TotalsDataLabelsFontSize);
 
               var CYy = Number(String(chartConfigurations.CYy));
 
