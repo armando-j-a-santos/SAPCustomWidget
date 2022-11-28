@@ -927,7 +927,8 @@
 
 
                  //Ajust Total labels position when 2 columns displayed
-                /* 
+                /* TESTE
+                
                  if(NumVersions === 2){
                     
                    totalBullet.adapter.add("dx", function(dx, target) {                
