@@ -877,6 +877,9 @@
 
               }
 
+              console.log("width");
+              console.log(Width);
+
               function createTotalSeries(yAxes) {
                 var valueAxis;
                 if (yAxes === 1) {
