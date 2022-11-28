@@ -818,8 +818,7 @@
 
 
                   //Logic to ajust the 2021 colum in the center
-                  if (NumVersions === 2) {
-                    Width =  series.columns.template.target.pixelWidth;
+                  if (NumVersions === 2) {                    
 
                     series.columns.template.events.on("sizechanged", function(ev) {
                         Width = ev.target.pixelWidth;
