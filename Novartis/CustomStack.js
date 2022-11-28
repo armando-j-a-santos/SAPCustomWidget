@@ -833,9 +833,7 @@
                       //We used below an adapter for a data labels position for the 2021 column
                       labelBullet.label.adapter.add("dx", function(dx, target) {
                           if (target.dataItem && target.dataItem.index === 0) {
-                              if (target.dataItem.bullets) {
-                                console.log("IN-SIDE");
-                                console.log(Width);
+                              if (target.dataItem.bullets) {                               
                                   return dx + Width - 9;
                               } else {
                                   return dx;
@@ -925,14 +923,20 @@
                  })           
                      
                  
-                 console.log("width in totals 10 more tryyyy");
+                 console.log("width in totals 11 more tryyyy");
                  console.log(Width);
 
 
                  //Ajust Total labels position when 2 columns displayed
                
                  if(NumVersions === 2){
+                    totalSeries.columns.template.events.on("enabled",function(ev){ 
+                        if(Width === 0){
+                          Width = ev.target.pixelWith;
+                      }
                     
+                    });
+
                     totalBullet.adapter.add("dx", function(dx, target) {                
                         if (target.dataItem && target.dataItem.categories.categoryX === "2021") {
                           //Width = target.pixelWidth;
