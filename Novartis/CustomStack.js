@@ -816,7 +816,7 @@
                     return text;
                   }) 
 
-
+                  
                   //Logic to ajust the 2021 colum in the center
                   if (NumVersions === 2) {
                       //We used below an adapter to ajust the column position for the year 2021  
