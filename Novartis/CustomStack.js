@@ -228,7 +228,7 @@
                   C2: undefined,
                   C3: undefined,
                   C4: undefined,
-                  "none": 0
+                  none: 0
               };
 
               const CY_Plus1 = {
@@ -247,7 +247,7 @@
                   C2: undefined,
                   C3: undefined,
                   C4: undefined,
-                  "none": 0
+                  none: 0
               };
 
               const CY_Plus2 = {
@@ -266,7 +266,7 @@
                   C2: undefined,
                   C3: undefined,
                   C4: undefined,
-                  "none": 0
+                  none: 0
               };
 
               const CY_Plus3 = {
@@ -285,7 +285,7 @@
                   C2: undefined,
                   C3: undefined,
                   C4: undefined,
-                  "none": 0
+                  none: 0
               };
 
 
