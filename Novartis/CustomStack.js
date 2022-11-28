@@ -167,11 +167,11 @@
               var BaseLabelColorExc = String(chartConfigurations.BaseLabelColorExc);
               var NumVersions = Number(String(chartConfigurations.NumVersions));
 
-              var ShowStackedTotals = true;        
-              var MinValue = 2.5;              
-              var DataLabelsFontSize = 12;
-              var TotalsDataLabelsFontSize = 12;
-              var TotalsBackgroundColor = "white";
+              var ShowStackedTotals = String(chartConfigurations.ShowStackedTotals);       
+              var MinValue = Number(String(chartConfigurations.MinValue));              
+              var DataLabelsFontSize = Number(String(chartConfigurations.DataLabelsFontSize));
+              var TotalsDataLabelsFontSize = Number(String(chartConfigurations.TotalsDataLabelsFontSize));
+              var TotalsBackgroundColor = String(chartConfigurations.TotalsBackgroundColor);
       
 
               var CYy = Number(String(chartConfigurations.CYy));
