@@ -877,9 +877,7 @@
 
               }
 
-              console.log("width");
-              console.log(Width);
-
+             
               function createTotalSeries(yAxes) {
                 var valueAxis;
                 if (yAxes === 1) {
@@ -922,6 +920,10 @@
                  })           
                      
                  
+                 console.log("width");
+                 console.log(Width);
+
+
                  //Ajut Total labels position when 2 columns displayed
                  if(NumVersions === 2){
                    totalBullet.adapter.add("dx", function(dx, target) {                
