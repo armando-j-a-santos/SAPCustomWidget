@@ -819,7 +819,6 @@
 
                   //Logic to ajust the 2021 colum in the center
                   if (NumVersions === 2) {
-                    
                       //We used below an adapter to ajust the column position for the year 2021  
                       series.columns.template.adapter.add("dx", function(dx, target) {
                           if (target.dataItem && target.dataItem.index === 0) {
