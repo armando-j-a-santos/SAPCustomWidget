@@ -674,6 +674,7 @@
                 //Show/Hide Grid
                 valueAxis3.renderer.grid.template.disabled = true;
 
+
               //Function to Set diferent patterns and assign them to diferent colors
               function SetPatterns(field, color) {
                   var pattern = new am4core.LinePattern();
@@ -761,6 +762,7 @@
                   series.dataFields.categoryX = "year";
                   series.name = name;
                   series.stacked = stacked;
+                  series.yAxis = valueAxis;
 
                   //Set columns width
                   if (NumVersions === 0 || NumVersions === 1) {
