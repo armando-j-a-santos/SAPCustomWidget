@@ -922,7 +922,7 @@
                  })           
                      
                  
-                 console.log("width in totals back");
+                 console.log("width in totals last one");
                  console.log(Width);
 
 
