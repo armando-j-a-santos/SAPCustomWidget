@@ -928,7 +928,7 @@
                  if(NumVersions === 2){
                    totalBullet.adapter.add("dx", function(dx, target) {                
                         if (target.dataItem && target.dataItem.categories.categoryX === "2021") {
-                           return dx + Width-7;
+                           return dx + Width-9;
                          }
                          return dx;
                    })
