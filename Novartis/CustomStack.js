@@ -175,7 +175,8 @@
 
               var Width = 0;
 
-              var armando = 0;
+              var DXValue = 0;
+              var counterDX = 0;
              
 
               var CYy = Number(String(chartConfigurations.CYy));
@@ -836,11 +837,13 @@
                       labelBullet.label.adapter.add("dx", function(dx, target) {
                           if (target.dataItem && target.dataItem.index === 0) {
 
-                              armando = dx + Width - 9;
+                              if (counterDX === 0)
+                              {
+                                DXValue = dx + Width - 9;
+                              }
+                              counterDX = counterDX  + 1;
 
-                              if (target.dataItem.bullets) {   
-                                  console.log("INSIDE -NOT- Totals")
-                                  console.log(Width);                            
+                              if (target.dataItem.bullets) {                               
                                   return dx + Width - 9;
                               } else {
                                   return dx;
@@ -853,7 +856,7 @@
 
                   //We used below an adapter for a color exception for year === 2021
                   series.columns.template.adapter.add("fill", function(fill, target) {
-                      if (target.dataItem && (target.dataItem.categories.categoryX === '2021')) {
+                      if (target.dataItem && (target.dataItem.categories.categoryX === CY_Minus1y)) {
 
                           if (NumVersions === 0 || NumVersions === 1 || NumVersions === 2) {
                               if (target.dataItem.component.dataFields.valueY === 'A2') {
@@ -929,37 +932,23 @@
                      return text;
                  })           
                      
-                 
-                 console.log("width in totals armando2 tryyyy");
-                 console.log(Width);
-                
-
 
                  //Ajust Total labels position when 2 columns displayed
                
                  if(NumVersions === 2){
-                    totalSeries.columns.template.events.on("enabled",function(ev){ 
-                        if(Width === 0){ 
-                          
-                           console.log("INSIDE TOTALS armando22:")
-                          console.log(armando);
 
-                           return armando;                         
-                         
-                      }
-                      else{
-                          return dx + Width-9;
-                      }
-                    
-                    });
 
                     totalBullet.adapter.add("dx", function(dx, target) {                
-                        if (target.dataItem && target.dataItem.categories.categoryX === "2021") {
-                          //Width = target.pixelWidth;
-                          console.log("IN-SIDE Toatls width:");
-                          console.log(Width);
-                           return dx + Width-9;
+                        if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
+                            
+                            if (Width===0)
+                            {
+                                return DXValue;
+                            } else {
+                                return dx - Width - 9;
+                            }
                          }
+                         
                          return dx;
                    })
                    }  
