@@ -767,11 +767,11 @@
 
                     //Set columns width
                     if (NumVersions === 0 || NumVersions === 1) {
-                        series.columns.template.width = am4core.percent(30);
+                        series.columns.template.width = am4core.percent(20);
                     } else if (NumVersions === 2) {
-                        series.columns.template.width = am4core.percent(55);
+                        series.columns.template.width = am4core.percent(40);
                     } else if (NumVersions === 3) {
-                        series.columns.template.width = am4core.percent(80);
+                        series.columns.template.width = am4core.percent(60);
                     }
 
                     //Set columns border color
@@ -820,7 +820,7 @@
                         //We used below an adapter to ajust the column position for the year 2021  
                         series.columns.template.adapter.add("dx", function(dx, target) {
                             if (target.dataItem && target.dataItem.index === 0) {
-                                return dx + target.pixelWidth - 7;
+                                return dx + target.pixelWidth + 17;
                             } else {
                                 return dx;
                             }
@@ -828,7 +828,7 @@
 
                         labelBullet.adapter.add("dx", function(dx, target) {
                             if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                                return dx + target.dataItem.column.realWidth - 7;
+                                return dx + target.dataItem.column.realWidth + 17;
                             } else {
                                 return dx;
                             }
@@ -917,11 +917,11 @@
 
                     //Ajust Total labels position when 2 columns displayed             
                     if (NumVersions === 2) {
-                        totalSeries.columns.template.width = am4core.percent(55);
+                        totalSeries.columns.template.width = am4core.percent(40);
 
                         totalBullet.adapter.add("dx", function(dx, target) {
                             if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                                return dx + target.dataItem.column.realWidth - 7;
+                                return dx + target.dataItem.column.realWidth + 17;
                             } else {
                                 return dx;
                             }
