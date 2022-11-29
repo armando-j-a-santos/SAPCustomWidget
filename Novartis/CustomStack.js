@@ -930,7 +930,7 @@
                  })           
                      
                  
-                 console.log("width in totals armandooo tryyyy");
+                 console.log("width in totals armando2 tryyyy");
                  console.log(Width);
                 
 
@@ -940,11 +940,12 @@
                  if(NumVersions === 2){
                     totalSeries.columns.template.events.on("enabled",function(ev){ 
                         if(Width === 0){ 
-                            
-                           return armando;                         
-                        
-                          console.log("INSIDE TOTALS armando:")
+                          
+                           console.log("INSIDE TOTALS armando2:")
                           console.log(armando);
+
+                           return armando;                         
+                         
                       }
                       else{
                           return dx + Width-9;
