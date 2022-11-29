@@ -907,6 +907,7 @@
                  totalSeries.hiddenInLegend = true;
                  totalSeries.columns.template.strokeOpacity = 0;
                  totalSeries.yAxis = valueAxis;
+                 totalSeries.columns.template.properties.dx = 0;
      
                  var totalBullet = totalSeries.bullets.push(new am4charts.LabelBullet());
                  totalBullet.dy = -20;
@@ -929,18 +930,21 @@
 
                  //Ajust Total labels position when 2 columns displayed             
                  if(NumVersions === 2){
-                   
-                      totalSeries.columns.template.width = am4core.percent(55);
-                   
-                      totalSeries.columns.template.adapter.add("dx", function(dx, target) {
-                          if (target.dataItem && target.dataItem.index === 0) {
-                                Width = target.pixelWidth;
-                                return dx + Width - 9;
-                          } else {
-                              return dx;
-                          }
-                      });
-                   
+                    console.log("Last TEST"), 
+                    
+                    totalSeries.columns.template.width = am4core.percent(55);
+                    
+                    //We used below an adapter to ajust the column position for the year 2021  
+                    totalSeries.columns.template.adapter.add("dx", function(dx, target) {
+                        if (target.dataItem && target.dataItem.index === 0) {
+                              Width = target.pixelWidth;
+                              return dx + Width - 9;
+                        } else {
+                            return dx;
+                        }
+                    });
+
+
                     totalBullet.adapter.add("dx", function(dx, target) {                
                         if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
                             return dx - Width - 9;
