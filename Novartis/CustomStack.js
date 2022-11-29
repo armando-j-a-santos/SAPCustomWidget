@@ -826,8 +826,14 @@
                       //We used below an adapter to ajust the column position for the year 2021  
                       series.columns.template.adapter.add("dx", function(dx, target) {
                           if (target.dataItem && target.dataItem.index === 0) {
-                            Width = target.pixelWidth;
-                             return dx + Width - 9;
+                                if (target.pixelWidth)
+                                {
+                                    if (target.pixelWidth>0)
+                                    {
+                                        Width = target.pixelWidth;
+                                    }
+                                }
+                                return dx + Width - 9;
                           } else {
                               return dx;
                           }
@@ -943,7 +949,7 @@
                             
                             console.log('inside Width');
                             console.log(Width);
-                            
+
                             if (Width===0)
                             {
                                 return DXValue;
