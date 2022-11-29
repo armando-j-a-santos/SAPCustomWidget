@@ -941,6 +941,9 @@
                     totalBullet.adapter.add("dx", function(dx, target) {                
                         if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
                             
+                            console.log('inside Width');
+                            console.log(Width);
+                            
                             if (Width===0)
                             {
                                 return DXValue;
@@ -948,7 +951,7 @@
                                 return dx - Width - 9;
                             }
                          }
-                         
+
                          return dx;
                    })
                    }  
