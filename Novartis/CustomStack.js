@@ -820,7 +820,7 @@
                         //We used below an adapter to ajust the column position for the year 2021  
                         series.columns.template.adapter.add("dx", function(dx, target) {
                             if (target.dataItem && target.dataItem.index === 0) {
-                                return dx + target.pixelWidth + 17;
+                                return dx + target.pixelWidth + 15;
                             } else {
                                 return dx;
                             }
@@ -828,7 +828,7 @@
 
                         labelBullet.adapter.add("dx", function(dx, target) {
                             if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                                return dx + target.dataItem.column.realWidth + 17;
+                                return dx + target.dataItem.column.realWidth + 15;
                             } else {
                                 return dx;
                             }
@@ -921,7 +921,7 @@
 
                         totalBullet.adapter.add("dx", function(dx, target) {
                             if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                                return dx + target.dataItem.column.realWidth + 17;
+                                return dx + target.dataItem.column.realWidth + 15;
                             } else {
                                 return dx;
                             }
