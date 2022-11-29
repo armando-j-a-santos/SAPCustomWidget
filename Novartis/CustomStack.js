@@ -821,30 +821,25 @@
 
 
                   //Logic to ajust the 2021 colum in the center
-                  if (NumVersions === 2) {      
+                  if (NumVersions === 2) {    
 
                       //We used below an adapter to ajust the column position for the year 2021  
                       series.columns.template.adapter.add("dx", function(dx, target) {
-                          if (target.dataItem && target.dataItem.index === 0) {
-                                Width = target.pixelWidth;
-                                return dx + Width - 9;
-                          } else {
-                              return dx;
-                          }
+                        if(target.dataItem && target.dataItem.index === 0){
+                          return dx + target.pixelWidth - 7;
+                        }else{
+                          return dx;
+                        }
                       });
 
                       labelBullet.adapter.add("dx", function(dx, target) {                
-                        if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                           return dx + target.dataItem.column.realWidth - 9;
-                         }
-                         return dx;
-                      })
-
-    
-
-
+                        if (target.dataItem && target.dataItem.categories.categoryX === "2021") {
+                           return dx + target.dataItem.column.realWidth - 7;
+                        }else{
+                            return dx;
+                        }
+                      }) 
                   }
-
 
                   //We used below an adapter for a color exception for year === 2021
                   series.columns.template.adapter.add("fill", function(fill, target) {
@@ -928,18 +923,17 @@
 
                  //Ajust Total labels position when 2 columns displayed             
                  if(NumVersions === 2){
-                                        
-                    totalSeries.columns.template.width = am4core.percent(55);            
-
+                    totalSeries.columns.template.width = am4core.percent(55);
+              
                     totalBullet.adapter.add("dx", function(dx, target) {                
-                        if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                            return dx + target.dataItem.column.realWidth - 9;
-                         }
-                         return dx;
-                    });
+                        if (target.dataItem && target.dataItem.categories.categoryX === "2021") {
+                            return dx + target.dataItem.column.realWidth - 7;
+                            }else{
+                            return dx;
+                            }                    
+                    })
                    }  
-
-                
+      
              }
 
               
