@@ -175,7 +175,7 @@
 
               var Width = 0;
 
-              var Armando = 0;
+              var armando = 0;
              
 
               var CYy = Number(String(chartConfigurations.CYy));
@@ -930,7 +930,7 @@
                  })           
                      
                  
-                 console.log("width in totals 11 more tryyyy");
+                 console.log("width in totals armando tryyyy");
                  console.log(Width);
                 
 
@@ -943,7 +943,8 @@
                             
                            return armando;                         
                         
-                          console.log("INSIDE TOTALS armando")
+                          console.log("INSIDE TOTALS armando:")
+                          console.log(armando);
                       }
                       else{
                           return dx + Width-9;
@@ -954,7 +955,7 @@
                     totalBullet.adapter.add("dx", function(dx, target) {                
                         if (target.dataItem && target.dataItem.categories.categoryX === "2021") {
                           //Width = target.pixelWidth;
-                          console.log("IN-SIDE Toatls");
+                          console.log("IN-SIDE Toatls width:");
                           console.log(Width);
                            return dx + Width-9;
                          }
