@@ -930,7 +930,7 @@
                  })           
                      
                  
-                 console.log("width in totals armando tryyyy");
+                 console.log("width in totals armandooo tryyyy");
                  console.log(Width);
                 
 
