@@ -941,7 +941,7 @@
                     totalSeries.columns.template.events.on("enabled",function(ev){ 
                         if(Width === 0){ 
                           
-                           console.log("INSIDE TOTALS armando2:")
+                           console.log("INSIDE TOTALS armando22:")
                           console.log(armando);
 
                            return armando;                         
