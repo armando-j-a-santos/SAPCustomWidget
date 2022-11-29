@@ -826,13 +826,7 @@
                       //We used below an adapter to ajust the column position for the year 2021  
                       series.columns.template.adapter.add("dx", function(dx, target) {
                           if (target.dataItem && target.dataItem.index === 0) {
-                                if (target.pixelWidth)
-                                {
-                                    if (target.pixelWidth>0)
-                                    {
-                                        Width = target.pixelWidth;
-                                    }
-                                }
+                                Width = target.pixelWidth;
                                 return dx + Width - 9;
                           } else {
                               return dx;
@@ -842,12 +836,6 @@
                       //We used below an adapter for a data labels position for the 2021 column
                       labelBullet.label.adapter.add("dx", function(dx, target) {
                           if (target.dataItem && target.dataItem.index === 0) {
-
-                              if (counterDX === 0)
-                              {
-                                DXValue = dx + Width - 9;
-                              }
-                              counterDX = counterDX  + 1;
 
                               if (target.dataItem.bullets) {                               
                                   return dx + Width - 9;
@@ -939,30 +927,28 @@
                  })           
                      
 
-                 //Ajust Total labels position when 2 columns displayed
-               
+                 //Ajust Total labels position when 2 columns displayed             
                  if(NumVersions === 2){
-
-
+                   
+                      totalSeries.columns.template.width = am4core.percent(55);
+                   
+                      totalSeries.columns.template.adapter.add("dx", function(dx, target) {
+                          if (target.dataItem && target.dataItem.index === 0) {
+                                Width = target.pixelWidth;
+                                return dx + Width - 9;
+                          } else {
+                              return dx;
+                          }
+                      });
+                   
                     totalBullet.adapter.add("dx", function(dx, target) {                
                         if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                            
-                            console.log('inside Width');
-                            console.log(Width);
-
-                            if (Width===0)
-                            {
-                                return DXValue;
-                            } else {
-                                return dx - Width - 9;
-                            }
+                            return dx - Width - 9;
                          }
-
                          return dx;
-                   })
+                    });
                    }  
 
-                
                 
              }
 
