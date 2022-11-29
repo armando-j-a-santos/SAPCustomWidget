@@ -930,7 +930,7 @@
 
                  //Ajust Total labels position when 2 columns displayed             
                  if(NumVersions === 2){
-                    console.log("Last TEST"), 
+                    console.log("Final TEST"), 
                     
                     totalSeries.columns.template.width = am4core.percent(55);
                     
@@ -947,7 +947,7 @@
 
                     totalBullet.adapter.add("dx", function(dx, target) {                
                         if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                            return dx - Width - 9;
+                            return dx + Width - 9;
                          }
                          return dx;
                     });
