@@ -833,6 +833,14 @@
                           }
                       });
 
+                      labelBullet.adapter.add("dx", function(dx, target) {                
+                        if (target.dataItem && target.dataItem.categories.categoryX === "2021") {
+                           return dx + Width-7;
+                         }
+                         return dx;
+                      })
+
+                 /*
                       //We used below an adapter for a data labels position for the 2021 column
                       labelBullet.label.adapter.add("dx", function(dx, target) {
                           if (target.dataItem && target.dataItem.index === 0) {
@@ -844,6 +852,8 @@
                               }
                           }
                       });
+                 */       
+
 
                   }
 
@@ -930,7 +940,7 @@
 
                  //Ajust Total labels position when 2 columns displayed             
                  if(NumVersions === 2){
-                    console.log("Final TEST"), 
+                    console.log("Final 4 TEST"), 
                     
                     totalSeries.columns.template.width = am4core.percent(55);
                     
