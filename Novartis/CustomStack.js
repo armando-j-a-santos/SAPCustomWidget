@@ -944,7 +944,7 @@
 
                  //Ajust Total labels position when 2 columns displayed             
                  if(NumVersions === 2){
-                    console.log("Final 4 TEST"), 
+                    console.log("Final 5 TEST"), 
                     
                     totalSeries.columns.template.width = am4core.percent(55);
                     
