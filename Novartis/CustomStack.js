@@ -171,13 +171,7 @@
               var MinValue = Number(String(chartConfigurations.MinValue));              
               var DataLabelsFontSize = Number(String(chartConfigurations.DataLabelsFontSize));
               var TotalsDataLabelsFontSize = Number(String(chartConfigurations.TotalsDataLabelsFontSize));
-              var TotalsBackgroundColor = String(chartConfigurations.TotalsBackgroundColor);
-
-              var Width = 0;
-
-              var DXValue = 0;
-              var counterDX = 0;
-             
+              var TotalsBackgroundColor = String(chartConfigurations.TotalsBackgroundColor);             
 
               var CYy = Number(String(chartConfigurations.CYy));
 
@@ -833,7 +827,7 @@
                       });
 
                       labelBullet.adapter.add("dx", function(dx, target) {                
-                        if (target.dataItem && target.dataItem.categories.categoryX === "2021") {
+                        if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
                            return dx + target.dataItem.column.realWidth - 7;
                         }else{
                             return dx;
@@ -926,7 +920,7 @@
                     totalSeries.columns.template.width = am4core.percent(55);
               
                     totalBullet.adapter.add("dx", function(dx, target) {                
-                        if (target.dataItem && target.dataItem.categories.categoryX === "2021") {
+                        if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
                             return dx + target.dataItem.column.realWidth - 7;
                             }else{
                             return dx;
@@ -935,8 +929,6 @@
                    }  
       
              }
-
-              
 
               //Set columns 
               if (NumVersions === 0 || NumVersions === 1) {
