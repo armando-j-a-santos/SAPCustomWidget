@@ -40,7 +40,7 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-    class NewStackV120 extends HTMLElement {
+    class NewStackV121 extends HTMLElement {
         constructor() {
             super()
 
@@ -172,6 +172,8 @@
                 var DataLabelsFontSize = Number(String(chartConfigurations.DataLabelsFontSize));
                 var TotalsDataLabelsFontSize = Number(String(chartConfigurations.TotalsDataLabelsFontSize));
                 var TotalsBackgroundColor = String(chartConfigurations.TotalsBackgroundColor);
+                
+                var NumYears = Number(chartConfigurations.NumYears);
 
                 var CYy = Number(String(chartConfigurations.CYy));
 
@@ -588,11 +590,25 @@
                 chart.data = [];
 
                 // Data array feed
-                chart.data.push(CY_Minus1);
-                chart.data.push(CY);
-                chart.data.push(CY_Plus1);
-                chart.data.push(CY_Plus2);
-                chart.data.push(CY_Plus3);
+                
+                if(NumYears === 4){
+                    chart.data.push(CY_Minus1);
+                    chart.data.push(CY);
+                    chart.data.push(CY_Plus1);
+                    chart.data.push(CY_Plus2);
+                    chart.data.push(CY_Plus3);
+                }else if(NumYears === 3){
+                    chart.data.push(CY_Minus1);
+                    chart.data.push(CY);
+                    chart.data.push(CY_Plus1);
+                    chart.data.push(CY_Plus2);
+                }else{
+                    chart.data.push(CY_Minus1);
+                    chart.data.push(CY);
+                    chart.data.push(CY_Plus1);
+                }
+                
+               
 
                 //console.log("*******FINAL CHART DAATA******");
                 //console.log(chart.data);
@@ -1119,6 +1135,6 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // Return the end result into SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV120)
+    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV121)
 
 })() // END of function --> (function () {
