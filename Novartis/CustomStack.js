@@ -181,6 +181,7 @@
                 var ScrollbarXHeight = Number(chartConfigurations.ScrollbarXHeight);  
                 var LegendRightPadding = Number(chartConfigurations.LegendRightPadding);  
                 var YaxisMaxValue = Number(chartConfigurations.YaxisMaxValue);  
+                var YAxisTitle = String(chartConfigurations.YAxisTitle);
 
                 console.log("FROMM GIT HUB");
 
@@ -660,15 +661,15 @@
                 // Create Y axes (and customize it)
                 var valueAxis1 = chart.yAxes.push(new am4charts.ValueAxis());
                 valueAxis1.min = 0;
-                valueAxis1.extraMax = 0.1;
+                valueAxis1.extraMax = YaxisMaxValue;
                 //Enable total calculation
                 valueAxis1.calculateTotals = ShowStackedTotals;
 
                 //Show/Hide Y Axis labels
-                valueAxis1.renderer.labels.template.disabled = true;
+                valueAxis1.renderer.labels.template.disabled = false;
 
                 //Show/Hide Grid
-                valueAxis1.renderer.grid.template.disabled = true;
+                valueAxis1.renderer.grid.template.disabled = false;
 
                 /////
                 //Another axis to display totals for the second column
@@ -676,7 +677,7 @@
                 // Create Y axes (and customize it)
                 var valueAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
                 valueAxis2.min = 0;
-                valueAxis2.extraMax = 0.1;
+                valueAxis2.extraMax = YaxisMaxValue;
                 //Enable total calculation
                 valueAxis2.calculateTotals = ShowStackedTotals;
 
@@ -692,7 +693,7 @@
                 // Create Y axes (and customize it)
                 var valueAxis3 = chart.yAxes.push(new am4charts.ValueAxis());
                 valueAxis3.min = 0;
-                valueAxis3.extraMax = 0.1;
+                valueAxis3.extraMax = YaxisMaxValue;
                 //Enable total calculation
                 valueAxis3.calculateTotals = ShowStackedTotals;
 
@@ -708,7 +709,7 @@
                 // Create Y axes (and customize it)
                 var valueAxis4 = chart.yAxes.push(new am4charts.ValueAxis());
                 valueAxis4.min = 0;
-                valueAxis4.extraMax = 0.1;
+                valueAxis4.extraMax = YaxisMaxValue;
                 //Enable total calculation
                 valueAxis4.calculateTotals = ShowStackedTotals;
 
@@ -1047,7 +1048,7 @@
                 legendA.contentAlign = "right";
 
                 //Set RightPadding of the legend
-                legendA.paddingRight = LegentPaddingRight;
+                legendA.paddingRight = LegendRightPadding;
 
                 //Custom the markers size for the custom legend
                 legendA.markers.template.width = 15;
