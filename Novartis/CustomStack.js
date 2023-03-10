@@ -698,25 +698,30 @@
                 // Data array feed
                 
                 if(NumYears === 4){
-                    if(EnabledActuals){
-                        console.log("HEEEEREEEEEEEE");
+                    if(EnabledActuals === true){
+                        console.log("YESSSSS 4");
                         chart.data.push(CY_Minus1);
                     }
+                    console.log("NOOOOO 4");
                     chart.data.push(CY);
                     chart.data.push(CY_Plus1);
                     chart.data.push(CY_Plus2);
                     chart.data.push(CY_Plus3);
                 }else if(NumYears === 3){
-                    if(EnabledActuals){
+                    if(EnabledActuals === true){
+                        console.log("YESSSSS 3");
                         chart.data.push(CY_Minus1);
                     }
+                    console.log("NOOOOO 3");
                     chart.data.push(CY);
                     chart.data.push(CY_Plus1);
                     chart.data.push(CY_Plus2);
                 }else{
-                    if(EnabledActuals){
+                    if(EnabledActuals === true){
+                        console.log("YESSSSS else");
                         chart.data.push(CY_Minus1);
                     }
+                    console.log("NOOOOO else");
                     chart.data.push(CY);
                     chart.data.push(CY_Plus1);
                 }
