@@ -193,6 +193,9 @@
                 CYy = String(CYy);
 
                 let CY_Minus1 = {};
+
+                console.log("EnabledActuals CW trigger:");
+                console.log(EnabledActuals);
                 
                 if(EnabledActuals){
                     // Previous Year column defintion
@@ -695,18 +698,24 @@
                 // Data array feed
                 
                 if(NumYears === 4){
-                    chart.data.push(CY_Minus1);
+                    if(EnabledActuals){
+                        chart.data.push(CY_Minus1);
+                    }
                     chart.data.push(CY);
                     chart.data.push(CY_Plus1);
                     chart.data.push(CY_Plus2);
                     chart.data.push(CY_Plus3);
                 }else if(NumYears === 3){
-                    chart.data.push(CY_Minus1);
+                    if(EnabledActuals){
+                        chart.data.push(CY_Minus1);
+                    }
                     chart.data.push(CY);
                     chart.data.push(CY_Plus1);
                     chart.data.push(CY_Plus2);
                 }else{
-                    chart.data.push(CY_Minus1);
+                    if(EnabledActuals){
+                        chart.data.push(CY_Minus1);
+                    }
                     chart.data.push(CY);
                     chart.data.push(CY_Plus1);
                 }
@@ -981,92 +990,92 @@
                         return text;
                     })
 
+                    if(EnabledActuals){
+                        //Logic to ajust the 2021 (Cy-1) colum in the center
+                        if (NumVersions === 2) {
 
-                    //Logic to ajust the 2021 (Cy-1) colum in the center
-                    if (NumVersions === 2) {
+                            //We used below an adapter to ajust the column position for the year 2021  (Cy-1)
+                            series.columns.template.adapter.add("dx", function(dx, target) {
+                                if (target.dataItem && target.dataItem.index === 0) {
+                                    return dx + target.pixelWidth + 15;
+                                } else {
+                                    return dx;
+                                }
+                            });
 
-                        //We used below an adapter to ajust the column position for the year 2021  (Cy-1)
-                        series.columns.template.adapter.add("dx", function(dx, target) {
-                            if (target.dataItem && target.dataItem.index === 0) {
-                                return dx + target.pixelWidth + 15;
-                            } else {
-                                return dx;
+                            labelBullet.adapter.add("dx", function(dx, target) {
+                                if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
+                                    return dx + target.dataItem.column.realWidth + 15;
+                                } else {
+                                    return dx;
+                                }
+                            })
+                        } else if (NumVersions === 4) {
+
+                            //We used below an adapter to ajust the column position for the year 2021 (Cy-1)
+                            series.columns.template.adapter.add("dx", function(dx, target) {
+                                if (target.dataItem && target.dataItem.index === 0) {
+                                    return dx + target.pixelWidth + 5;
+                                } else {
+                                    return dx;
+                                }
+                            });
+
+                            labelBullet.adapter.add("dx", function(dx, target) {
+                                if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
+                                    return dx + target.dataItem.column.realWidth + 5;
+                                } else {
+                                    return dx;
+                                }
+                            })
+                        }
+
+                        //We used below adapter to show "Actuals" in the the tooltip for actuals column            
+                        series.columns.template.adapter.add("tooltipText", function(tooltipText, target) {
+                            if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
+                            return `{name}: [bold]{valueY.value} [/] 
+                                    Version: [bold]Actuals`;
+                            }else{
+                                return tooltipText;
                             }
                         });
 
-                        labelBullet.adapter.add("dx", function(dx, target) {
-                            if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                                return dx + target.dataItem.column.realWidth + 15;
-                            } else {
-                                return dx;
-                            }
-                        })
-                    } else if (NumVersions === 4) {
+                        //We used below an adapter for a color exception for year === 2021
+                        series.columns.template.adapter.add("fill", function(fill, target) {
+                            if (target.dataItem && (target.dataItem.categories.categoryX === CY_Minus1y)) {
 
-                        //We used below an adapter to ajust the column position for the year 2021 (Cy-1)
-                        series.columns.template.adapter.add("dx", function(dx, target) {
-                            if (target.dataItem && target.dataItem.index === 0) {
-                                return dx + target.pixelWidth + 5;
+                                if (NumVersions === 0 || NumVersions === 1 || NumVersions === 2) {
+                                    if (target.dataItem.component.dataFields.valueY === 'A2') {
+                                        return SetPatterns("A2", CAct_Light);
+                                    } else if (target.dataItem.component.dataFields.valueY === 'A3') {
+                                        return SetPatterns("A3", CAct_Light);
+                                    } else if (target.dataItem.component.dataFields.valueY === 'A4') {
+                                        return SetPatterns("A4", CAct_Light);
+                                    } else {
+                                        //console.log(target.dataItem.component.dataFields.valueY);
+                                        return am4core.color(CAct_Dark);
+                                    }
+                                } else if (NumVersions === 3 || NumVersions === 4) {
+
+                                    if (target.dataItem.component.dataFields.valueY === 'B2') {
+                                        return SetPatterns("B2", CAct_Light);
+                                    } else if (target.dataItem.component.dataFields.valueY === 'B3') {
+                                        return SetPatterns("B3", CAct_Light);
+                                    } else if (target.dataItem.component.dataFields.valueY === 'B4') {
+                                        return SetPatterns("B4", CAct_Light);
+                                    } else {
+                                        //console.log(target.dataItem.component.dataFields.valueY);
+                                        return am4core.color(CAct_Dark);
+                                    }
+                                }
+
                             } else {
-                                return dx;
+                                return fill;
                             }
                         });
 
-                        labelBullet.adapter.add("dx", function(dx, target) {
-                            if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                                return dx + target.dataItem.column.realWidth + 5;
-                            } else {
-                                return dx;
-                            }
-                        })
                     }
-
-                    //We used below adapter to show "Actuals" in the the tooltip for actuals column            
-                    series.columns.template.adapter.add("tooltipText", function(tooltipText, target) {
-                        if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                        return `{name}: [bold]{valueY.value} [/] 
-                                Version: [bold]Actuals`;
-                        }else{
-                            return tooltipText;
-                        }
-                    });
-
-                    //We used below an adapter for a color exception for year === 2021
-                    series.columns.template.adapter.add("fill", function(fill, target) {
-                        if (target.dataItem && (target.dataItem.categories.categoryX === CY_Minus1y)) {
-
-                            if (NumVersions === 0 || NumVersions === 1 || NumVersions === 2) {
-                                if (target.dataItem.component.dataFields.valueY === 'A2') {
-                                    return SetPatterns("A2", CAct_Light);
-                                } else if (target.dataItem.component.dataFields.valueY === 'A3') {
-                                    return SetPatterns("A3", CAct_Light);
-                                } else if (target.dataItem.component.dataFields.valueY === 'A4') {
-                                    return SetPatterns("A4", CAct_Light);
-                                } else {
-                                    //console.log(target.dataItem.component.dataFields.valueY);
-                                    return am4core.color(CAct_Dark);
-                                }
-                            } else if (NumVersions === 3 || NumVersions === 4) {
-
-                                if (target.dataItem.component.dataFields.valueY === 'B2') {
-                                    return SetPatterns("B2", CAct_Light);
-                                } else if (target.dataItem.component.dataFields.valueY === 'B3') {
-                                    return SetPatterns("B3", CAct_Light);
-                                } else if (target.dataItem.component.dataFields.valueY === 'B4') {
-                                    return SetPatterns("B4", CAct_Light);
-                                } else {
-                                    //console.log(target.dataItem.component.dataFields.valueY);
-                                    return am4core.color(CAct_Dark);
-                                }
-                            }
-
-                        } else {
-                            return fill;
-                        }
-                    });
-
                 }
-
 
                 function createTotalSeries(yAxes) {
                     var valueAxis;
@@ -1124,18 +1133,19 @@
                         return text;
                     })
 
+                    if(EnabledActuals){
+                        //Ajust Total labels position when 2 columns displayed             
+                        if (NumVersions === 2 || NumVersions === 4) {
+                            totalSeries.columns.template.width = am4core.percent(40);
 
-                    //Ajust Total labels position when 2 columns displayed             
-                    if (NumVersions === 2 || NumVersions === 4) {
-                        totalSeries.columns.template.width = am4core.percent(40);
-
-                        totalBullet.adapter.add("dx", function(dx, target) {
-                            if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                                return dx + target.dataItem.column.realWidth + 15;
-                            } else {
-                                return dx;
-                            }
-                        })
+                            totalBullet.adapter.add("dx", function(dx, target) {
+                                if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
+                                    return dx + target.dataItem.column.realWidth + 15;
+                                } else {
+                                    return dx;
+                                }
+                            })
+                        }
                     }
 
                 }
@@ -1257,11 +1267,13 @@
 
                 legendA.data = [];
 
-                if (Version_1.length !== 0 && Version_1 !== undefined) {
-                    legendA.data.push({
-                        "name": Version_1,
-                        "fill": CAct_Dark
-                    })
+                if(EnabledActuals){
+                    if (Version_1.length !== 0 && Version_1 !== undefined) {
+                        legendA.data.push({
+                            "name": Version_1,
+                            "fill": CAct_Dark
+                        })
+                    }
                 }
                 
                 if (Version_2.length !== 0 && Version_2 !== undefined) {
