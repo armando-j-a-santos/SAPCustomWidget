@@ -1035,6 +1035,43 @@
                 var patternNONAI = SetPatterns("A4", AIScope_color);
 
                 legendA.data = [];
+                
+                if (Version_1.length !== 0 && Version_1 !== undefined) {
+                    legendA.data.push({
+                        "name": Version_1,
+                        "fill": CAct_Dark
+                    })
+                }
+                
+                if (Version_2.length !== 0 && Version_2 !== undefined) {
+                    legendA.data.push({
+                        "name": Version_2,
+                        "fill": CNonAct_Col1_Dark
+                    })
+                }
+
+                if (Version_3.length !== 0 && Version_3 !== undefined) {
+                    legendA.data.push({
+                        "name": Version_3,
+                        "fill": CNonAct_Col2_Dark
+                    })
+                }
+
+                if (Version_4.length !== 0 && Version_4 !== undefined) {
+                    legendA.data.push({
+                        "name": Version_4,
+                        "fill": CNonAct_Col3_Dark
+                    })
+                }
+
+                if (Version_5.length !== 0 && Version_5 !== undefined) {
+                    legendA.data.push({
+                        "name": Version_5,
+                        "fill": CNonAct_Col4_Dark
+                    })
+                }
+
+
                 if (AIScope_1.length !== 0 && AIScope_1 !== undefined) {
                     legendA.data.push({
                         "name": AIScope_1,
@@ -1059,6 +1096,8 @@
                         "fill": patternNONAI
                     })
                 }
+
+   /*           //REMOVE SECOND LINE OF LEGEND
 
                 //Customize the markers layout for the Custom legend
                 var marker = legendA.markers.template.children.getIndex(0);
@@ -1118,6 +1157,8 @@
                 marker.strokeWidth = 2;
                 marker.strokeOpacity = 1;
                 marker.stroke = am4core.color("#ccc");
+
+         */       
 
                 //Timeline ScroolBar in the bottom
                 chart.scrollbarX = new am4core.Scrollbar();
