@@ -699,6 +699,7 @@
                 
                 if(NumYears === 4){
                     if(EnabledActuals){
+                        console.log("HEEEEREEEEEEEE");
                         chart.data.push(CY_Minus1);
                     }
                     chart.data.push(CY);
