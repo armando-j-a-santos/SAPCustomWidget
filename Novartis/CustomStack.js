@@ -192,7 +192,7 @@
                 CYy = String(CYy);
 
                 //ResultSet
-                
+
                 console.log('YaxisMaxValue');
                 console.log(YaxisMaxValue);
 
@@ -662,7 +662,7 @@
                 // Create Y axes (and customize it)
                 var valueAxis1 = chart.yAxes.push(new am4charts.ValueAxis());
                 valueAxis1.min = 0;
-                valueAxis1.extraMax = YaxisMaxValue;
+                valueAxis1.max = YaxisMaxValue;
                 //Enable total calculation
                 valueAxis1.calculateTotals = ShowStackedTotals;
 
@@ -686,7 +686,7 @@
                 // Create Y axes (and customize it)
                 var valueAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
                 valueAxis2.min = 0;
-                valueAxis2.extraMax = YaxisMaxValue;
+                valueAxis2.max = YaxisMaxValue;
                 //Enable total calculation
                 valueAxis2.calculateTotals = ShowStackedTotals;
 
@@ -702,7 +702,7 @@
                 // Create Y axes (and customize it)
                 var valueAxis3 = chart.yAxes.push(new am4charts.ValueAxis());
                 valueAxis3.min = 0;
-                valueAxis3.extraMax = YaxisMaxValue;
+                valueAxis3.max = YaxisMaxValue;
                 //Enable total calculation
                 valueAxis3.calculateTotals = ShowStackedTotals;
 
@@ -718,7 +718,7 @@
                 // Create Y axes (and customize it)
                 var valueAxis4 = chart.yAxes.push(new am4charts.ValueAxis());
                 valueAxis4.min = 0;
-                valueAxis4.extraMax = YaxisMaxValue;
+                valueAxis4.max = YaxisMaxValue;
                 //Enable total calculation
                 valueAxis4.calculateTotals = ShowStackedTotals;
 
