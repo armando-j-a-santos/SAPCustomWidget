@@ -192,8 +192,8 @@
                 CYy = String(CYy);
 
                 //ResultSet
-                //console.log('resultSet:')
-
+                console.log('YaxisMaxValue');
+                console.log(YaxisMaxValue);
 
                 let CY_Minus1 = {};
 
