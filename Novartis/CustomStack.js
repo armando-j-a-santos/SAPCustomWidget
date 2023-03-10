@@ -1004,7 +1004,7 @@
                         //We used below an adapter to ajust the column position for the year 2021 (Cy-1)
                         series.columns.template.adapter.add("dx", function(dx, target) {
                             if (target.dataItem && target.dataItem.index === 0) {
-                                return dx + target.pixelWidth + 5;
+                                return dx + target.pixelWidth + 15;
                             } else {
                                 return dx;
                             }
@@ -1012,7 +1012,7 @@
 
                         labelBullet.adapter.add("dx", function(dx, target) {
                             if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                                return dx + target.dataItem.column.realWidth + 5;
+                                return dx + target.dataItem.column.realWidth + 15;
                             } else {
                                 return dx;
                             }
@@ -1034,7 +1034,7 @@
                                     //console.log(target.dataItem.component.dataFields.valueY);
                                     return am4core.color(CAct_Dark);
                                 }
-                            } else if (NumVersions === 3) {
+                            } else if (NumVersions === 3 || NumVersions === 4) {
 
                                 if (target.dataItem.component.dataFields.valueY === 'B2') {
                                     return SetPatterns("B2", CAct_Light);
