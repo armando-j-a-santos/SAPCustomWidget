@@ -1206,10 +1206,10 @@
                     createTotalSeries(3);
 
                     // Fourth Column
-                    createSeries("D1", AIScope_1, false, Version_5, 3);
-                    createSeries("D2", AIScope_2, true, Version_5, 3);
-                    createSeries("D3", AIScope_3, true, Version_5, 3);
-                    createSeries("D4", AIScope_4, true, Version_5, 3);
+                    createSeries("D1", AIScope_1, false, Version_5, 4);
+                    createSeries("D2", AIScope_2, true, Version_5, 4);
+                    createSeries("D3", AIScope_3, true, Version_5, 4);
+                    createSeries("D4", AIScope_4, true, Version_5, 4);
 
                     createTotalSeries(4);
                 }
