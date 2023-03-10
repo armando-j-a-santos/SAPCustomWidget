@@ -963,7 +963,7 @@
                                 target.dataItem.component.dataFields.valueY === 'A1' ||
                                 target.dataItem.component.dataFields.valueY === 'B1' ||
                                 target.dataItem.component.dataFields.valueY === 'C1' ||
-                                target.dataItem.component.dataFields.valueY === 'D1' ||
+                                target.dataItem.component.dataFields.valueY === 'D1'
                             )) {
                             return am4core.color(BaseLabelColorExc);
                         } else {
