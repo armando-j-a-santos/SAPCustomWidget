@@ -1004,7 +1004,7 @@
                         //We used below an adapter to ajust the column position for the year 2021 (Cy-1)
                         series.columns.template.adapter.add("dx", function(dx, target) {
                             if (target.dataItem && target.dataItem.index === 0) {
-                                return dx + target.pixelWidth + 15;
+                                return dx + target.pixelWidth + 10;
                             } else {
                                 return dx;
                             }
@@ -1012,7 +1012,7 @@
 
                         labelBullet.adapter.add("dx", function(dx, target) {
                             if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                                return dx + target.dataItem.column.realWidth + 15;
+                                return dx + target.dataItem.column.realWidth + 10;
                             } else {
                                 return dx;
                             }
