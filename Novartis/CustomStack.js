@@ -1019,6 +1019,16 @@
                         })
                     }
 
+                    //We used below adapter to show "Actuals" in the the tooltip for actuals column            
+                    series.columns.template.adapter.add("tooltipText", function(tooltipText, target) {
+                        if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
+                        return `{name}: [bold]{valueY.value} [/] 
+                                Version: [bold]Actuals`;
+                        }else{
+                            return tooltipText;
+                        }
+                    });
+
                     //We used below an adapter for a color exception for year === 2021
                     series.columns.template.adapter.add("fill", function(fill, target) {
                         if (target.dataItem && (target.dataItem.categories.categoryX === CY_Minus1y)) {
