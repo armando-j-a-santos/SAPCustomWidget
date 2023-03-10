@@ -184,6 +184,7 @@
                 var YAxisTitle = String(chartConfigurations.YAxisTitle);
                 var EnabledActuals = Boolean(chartConfigurations.EnabledActuals);
 
+                
                 var CYy = Number(String(chartConfigurations.CYy));
 
                 var CY_Minus1y = String(CYy - 1);
@@ -699,10 +700,10 @@
                 
                 if(NumYears === 4){
                     if(EnabledActuals === true){
-                        console.log("YESSSSS 4");
+                        
                         chart.data.push(CY_Minus1);
                     }
-                    console.log("NOOOOO 4");
+                    
                     chart.data.push(CY);
                     chart.data.push(CY_Plus1);
                     chart.data.push(CY_Plus2);
@@ -718,10 +719,10 @@
                     chart.data.push(CY_Plus2);
                 }else{
                     if(EnabledActuals === true){
-                        console.log("YESSSSS else");
+                        
                         chart.data.push(CY_Minus1);
                     }
-                    console.log("NOOOOO else");
+                    
                     chart.data.push(CY);
                     chart.data.push(CY_Plus1);
                 }
