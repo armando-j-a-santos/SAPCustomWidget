@@ -1126,11 +1126,27 @@
 
                 //Customize the Timeline ScrollBar
                 //line
-                chart.scrollbarX.minHeight = 5;
+                chart.scrollbarX.minHeight = ScrollbarXHeight;  
                 //The startGrip
                 chart.scrollbarX.startGrip.icon.disabled = true;
                 //The endGrip
                 chart.scrollbarX.endGrip.icon.disabled = true;
+                
+                //To not zooming in Y Axis (only X Axis)
+                chart.events.on("ready", function(ev) {
+                    valueAxis1.min = 0;
+                    valueAxis1.max = YaxisMaxValue;
+                    
+                    valueAxis2.min = 0;
+                    valueAxis2.max = YaxisMaxValue;
+                    
+                    valueAxis3.min = 0;
+                    valueAxis3.max = YaxisMaxValue;
+                    
+                    valueAxis4.min = 0;
+                    valueAxis4.max = YaxisMaxValue;
+                });
+
 
                 // Chart showing in the frontend (SAC)
                 chart.appear();
