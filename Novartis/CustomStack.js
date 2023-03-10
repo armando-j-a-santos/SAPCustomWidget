@@ -670,7 +670,9 @@
                 //Show/Hide Grid
                 valueAxis1.renderer.grid.template.disabled = true;
 
+                /////
                 //Another axis to display totals for the second column
+                /////
                 // Create Y axes (and customize it)
                 var valueAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
                 valueAxis2.min = 0;
@@ -683,8 +685,10 @@
 
                 //Show/Hide Grid
                 valueAxis2.renderer.grid.template.disabled = true;
-
-                //Another axis to display totals for the second column
+                
+                /////
+                //Another axis to display totals for the third column
+                /////
                 // Create Y axes (and customize it)
                 var valueAxis3 = chart.yAxes.push(new am4charts.ValueAxis());
                 valueAxis3.min = 0;
@@ -697,6 +701,22 @@
 
                 //Show/Hide Grid
                 valueAxis3.renderer.grid.template.disabled = true;
+
+                /////
+                //Another axis to display totals for the fourth column
+                /////
+                // Create Y axes (and customize it)
+                var valueAxis4 = chart.yAxes.push(new am4charts.ValueAxis());
+                valueAxis4.min = 0;
+                valueAxis4.extraMax = 0.1;
+                //Enable total calculation
+                valueAxis4.calculateTotals = ShowStackedTotals;
+
+                //Show/Hide Y Axis labels
+                valueAxis4.renderer.labels.template.disabled = true;
+
+                //Show/Hide Grid
+                valueAxis4.renderer.grid.template.disabled = true;
 
 
                 //Function to Set diferent patterns and assign them to diferent colors
@@ -1035,7 +1055,7 @@
                 var patternNONAI = SetPatterns("A4", AIScope_color);
 
                 legendA.data = [];
-                
+
                 if (Version_1.length !== 0 && Version_1 !== undefined) {
                     legendA.data.push({
                         "name": Version_1,
@@ -1096,14 +1116,15 @@
                         "fill": patternNONAI
                     })
                 }
-
-   /*           //REMOVE SECOND LINE OF LEGEND
-
+                
                 //Customize the markers layout for the Custom legend
                 var marker = legendA.markers.template.children.getIndex(0);
                 marker.strokeWidth = 2;
                 marker.strokeOpacity = 1;
                 marker.stroke = am4core.color("#ccc");
+
+
+   /*           //REMOVE SECOND LINE OF LEGEND               
 
                 //// Version 1, Version 2, Version 3, Version 4
                 var legendB = new am4charts.Legend();
