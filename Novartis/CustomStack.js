@@ -209,7 +209,7 @@
                         "A4": undefined,
                         "none": 0
                     }
-                } else if (NumVersions === 3) {
+                } else if (NumVersions === 3 || NumVersions === 4) {
                     CY_Minus1 = {
                         "year": CY_Minus1y,
 
