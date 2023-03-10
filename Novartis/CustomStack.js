@@ -1046,6 +1046,9 @@
                 //Align the custom legend to the right of its container
                 legendA.contentAlign = "right";
 
+                //Set RightPadding of the legend
+                legendA.paddingRight = LegentPaddingRight;
+
                 //Custom the markers size for the custom legend
                 legendA.markers.template.width = 15;
                 legendA.markers.template.height = 15;
@@ -1116,15 +1119,16 @@
                         "fill": patternNONAI
                     })
                 }
-                
+    
+          
                 //Customize the markers layout for the Custom legend
                 var marker = legendA.markers.template.children.getIndex(0);
                 marker.strokeWidth = 2;
                 marker.strokeOpacity = 1;
                 marker.stroke = am4core.color("#ccc");
 
-
-   /*           //REMOVE SECOND LINE OF LEGEND               
+  /*
+                //REMOVE SECOND LINE OF LEGEND               
 
                 //// Version 1, Version 2, Version 3, Version 4
                 var legendB = new am4charts.Legend();
