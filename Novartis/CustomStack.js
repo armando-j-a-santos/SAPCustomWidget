@@ -330,7 +330,7 @@
                         //CW --> Version Actuals
                         //Actuals
                         ////////////////////////////////////////////
-                        if (NumVersions === 3) {
+                        if (NumVersions === 3 || NumVersions === 4) {
                             if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Only]") {
                                 CY_Minus1.B1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -413,6 +413,25 @@
                         }
                         if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_Non_AI]") {
                             CY.C4 = dp["@MeasureDimension"].formattedValue;
+                        }
+
+                        ////////////////////////////////////////////
+                        //Column 4 
+                        //CW --> Version_5
+                        //Model Variable --> Selected_Version_5 
+                        ////////////////////////////////////////////
+
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_AI_Only]") {
+                            CY.D1 = dp["@MeasureDimension"].formattedValue;
+                        }
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_New_AI]") {
+                            CY.D2 = dp["@MeasureDimension"].formattedValue;
+                        }
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_AI_Drivers]") {
+                            CY.D3 = dp["@MeasureDimension"].formattedValue;
+                        }
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_Non_AI]") {
+                            CY.D4 = dp["@MeasureDimension"].formattedValue;
                         }
                     }
 
