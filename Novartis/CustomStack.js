@@ -675,11 +675,11 @@
                 })
 
                 ////// Custom Widget columns data sintax sample:
-                //Version_2		Version_3	Version_4
-                // A4; 			B4; 		C4 		>> Non AI
-                // A3; 			B3; 		C3 		>> HI		(AI Drivers)
-                // A2;			B2; 		C2		>> Ñew AI
-                // A1; 			B1; 		C1 		>> Base AI  (AI Only)
+                //Version_2		Version_3	Version_4  Version_5
+                // A4; 			B4; 		C4 		    D4             >> Non AI
+                // A3; 			B3; 		C3 		    D3             >> HI	(AI Drivers)
+                // A2;			B2; 		C2		    D2             >> Ñew AI
+                // A1; 			B1; 		C1 		    D2             >> Base AI  (AI Only)
 
 
                 ////// Custom widget Chart.data sintax sample:
@@ -834,7 +834,7 @@
                     // A3; B3; C3 >> HI 
                     // A4; B4; C4 >> Non AI
 
-                    if (field === "A2" || field === "B2" || field === "C2") {
+                    if (field === "A2" || field === "B2" || field === "C2" || field === "D2") {
                         var pattern = new am4core.LinePattern();
                         pattern.width = 10;
                         pattern.height = 10;
@@ -843,7 +843,7 @@
                         pattern.rotation = 135;
                         pattern.fill = am4core.color(color);
                         pattern.stroke = am4core.color(color);
-                    } else if (field === "A3" || field === "B3" || field === "C3") {
+                    } else if (field === "A3" || field === "B3" || field === "C3" || field === "D3") {
                         var pattern = new am4core.LinePattern();
                         pattern.width = 6;
                         pattern.height = 6;
@@ -852,7 +852,7 @@
                         pattern.rotation = 135;
                         pattern.fill = am4core.color(color);
                         pattern.stroke = am4core.color(color);
-                    } else if (field === "A4" || field === "B4" || field === "C4") {
+                    } else if (field === "A4" || field === "B4" || field === "C4" || field === "D4") {
                         var pattern = new am4core.CirclePattern();
                         pattern.width = 6;
                         pattern.height = 6;
@@ -882,6 +882,10 @@
                         valueAxis = valueAxis3;
                     }
 
+                    if (yAxes === 4) {
+                        valueAxis = valueAxis4;
+                    }
+
                     var series = chart.series.push(new am4charts.ColumnSeries());
 
                     if (field === 'A1') {
@@ -908,6 +912,14 @@
                         series.columns.template.fill = SetPatterns(field, CNonAct_Col3_Light);
                     } else if (field === 'C4') {
                         series.columns.template.fill = SetPatterns(field, CNonAct_Col3_Light);
+                    } else if (field === 'D1') {
+                        series.columns.template.fill = CNonAct_Col4_Dark;
+                    } else if (field === 'D2') {
+                        series.columns.template.fill = SetPatterns(field, CNonAct_Col4_Light);
+                    } else if (field === 'D3') {
+                        series.columns.template.fill = SetPatterns(field, CNonAct_Col4_Light);
+                    } else if (field === 'D4') {
+                        series.columns.template.fill = SetPatterns(field, CNonAct_Col4_Light);
                     }
 
                     series.dataFields.valueY = field;
@@ -921,7 +933,7 @@
                         series.columns.template.width = am4core.percent(20);
                     } else if (NumVersions === 2) {
                         series.columns.template.width = am4core.percent(40);
-                    } else if (NumVersions === 3) {
+                    } else if (NumVersions === 3 || NumVersions === 4) {
                         series.columns.template.width = am4core.percent(60);
                     }
 
@@ -947,9 +959,12 @@
 
                     //We used below an adapter for a data labels color exception in the Base        
                     labelBullet.label.adapter.add("fill", function(fill, target) {
-                        if (target.dataItem && (target.dataItem.component.dataFields.valueY === 'A1' ||
+                        if (target.dataItem && (
+                                target.dataItem.component.dataFields.valueY === 'A1' ||
                                 target.dataItem.component.dataFields.valueY === 'B1' ||
-                                target.dataItem.component.dataFields.valueY === 'C1')) {
+                                target.dataItem.component.dataFields.valueY === 'C1' ||
+                                target.dataItem.component.dataFields.valueY === 'D1' ||
+                            )) {
                             return am4core.color(BaseLabelColorExc);
                         } else {
                             return fill;
@@ -965,10 +980,10 @@
                     })
 
 
-                    //Logic to ajust the 2021 colum in the center
+                    //Logic to ajust the 2021 (Cy-1) colum in the center
                     if (NumVersions === 2) {
 
-                        //We used below an adapter to ajust the column position for the year 2021  
+                        //We used below an adapter to ajust the column position for the year 2021  (Cy-1)
                         series.columns.template.adapter.add("dx", function(dx, target) {
                             if (target.dataItem && target.dataItem.index === 0) {
                                 return dx + target.pixelWidth + 15;
@@ -980,6 +995,24 @@
                         labelBullet.adapter.add("dx", function(dx, target) {
                             if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
                                 return dx + target.dataItem.column.realWidth + 15;
+                            } else {
+                                return dx;
+                            }
+                        })
+                    } else if (NumVersions === 4) {
+
+                        //We used below an adapter to ajust the column position for the year 2021 (Cy-1)
+                        series.columns.template.adapter.add("dx", function(dx, target) {
+                            if (target.dataItem && target.dataItem.index === 0) {
+                                return dx + target.pixelWidth + 5;
+                            } else {
+                                return dx;
+                            }
+                        });
+
+                        labelBullet.adapter.add("dx", function(dx, target) {
+                            if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
+                                return dx + target.dataItem.column.realWidth + 5;
                             } else {
                                 return dx;
                             }
@@ -1037,6 +1070,10 @@
                         valueAxis = valueAxis3;
                     }
 
+                    if (yAxes === 4) {
+                        valueAxis = valueAxis4;
+                    }
+
                     // Create series for total
                     var totalSeries = chart.series.push(new am4charts.ColumnSeries());
                     totalSeries.dataFields.valueY = "none";
@@ -1046,6 +1083,16 @@
                     totalSeries.columns.template.strokeOpacity = 0;
                     totalSeries.yAxis = valueAxis;
                     totalSeries.columns.template.properties.dx = 0;
+
+
+                    //Set columns width
+                    if (NumVersions === 0 || NumVersions === 1) {
+                        totalSeries.columns.template.width = am4core.percent(20);
+                    } else if (NumVersions === 2) {
+                        totalSeries.columns.template.width = am4core.percent(40);
+                    } else if (NumVersions === 3 || NumVersions === 4) {
+                        totalSeries.columns.template.width = am4core.percent(60);
+                    }
 
                     var totalBullet = totalSeries.bullets.push(new am4charts.LabelBullet());
                     totalBullet.dy = -20;
@@ -1067,7 +1114,7 @@
 
 
                     //Ajust Total labels position when 2 columns displayed             
-                    if (NumVersions === 2) {
+                    if (NumVersions === 2 || NumVersions === 4) {
                         totalSeries.columns.template.width = am4core.percent(40);
 
                         totalBullet.adapter.add("dx", function(dx, target) {
