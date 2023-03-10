@@ -183,8 +183,6 @@
                 var YaxisMaxValue = Number(chartConfigurations.YaxisMaxValue);  
                 var YAxisTitle = String(chartConfigurations.YAxisTitle);
 
-                console.log("FROMM GIT HUB");
-
                 var CYy = Number(String(chartConfigurations.CYy));
 
                 var CY_Minus1y = String(CYy - 1);
@@ -657,7 +655,9 @@
                     categoryAxis.zoomToIndexes(start, end);
                 });
 
-
+                 /////
+                //Axis to display totals for the first column
+                /////
                 // Create Y axes (and customize it)
                 var valueAxis1 = chart.yAxes.push(new am4charts.ValueAxis());
                 valueAxis1.min = 0;
@@ -670,6 +670,14 @@
 
                 //Show/Hide Grid
                 valueAxis1.renderer.grid.template.disabled = false;
+
+                //Set Grid Color/Opacity/Strokewidth
+                valueAxis1.renderer.grid.template.strokeOpacity = 1;
+                valueAxis1.renderer.grid.template.stroke = am4core.color("#E0E0E0");
+                valueAxis1.renderer.grid.template.strokeWidth = 0.5;
+                
+                // Set up axis title
+                valueAxis1.title.text = YAxisTitle;
 
                 /////
                 //Another axis to display totals for the second column
