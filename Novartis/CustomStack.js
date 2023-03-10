@@ -493,6 +493,25 @@
                         if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_Non_AI]") {
                             CY_Plus1.C4 = dp["@MeasureDimension"].formattedValue;
                         }
+
+                        ////////////////////////////////////////////
+                        //Column 4 
+                        //CW --> Version_5
+                        //Model Variable --> Selected_Version_4 
+                        ////////////////////////////////////////////
+
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_AI_Only]") {
+                            CY_Plus1.D1 = dp["@MeasureDimension"].formattedValue;
+                        }
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_New_AI]") {
+                            CY_Plus1.D2 = dp["@MeasureDimension"].formattedValue;
+                        }
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_AI_Drivers]") {
+                            CY_Plus1.D3 = dp["@MeasureDimension"].formattedValue;
+                        }
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_Non_AI]") {
+                            CY_Plus1.D4 = dp["@MeasureDimension"].formattedValue;
+                        }
                     }
 
                     if (dp["TIME.YEAR"].id === CY_Plus2y) {
@@ -553,6 +572,25 @@
                         if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_Non_AI]") {
                             CY_Plus2.C4 = dp["@MeasureDimension"].formattedValue;
                         }
+
+                        ////////////////////////////////////////////
+                        //Column 4 
+                        //CW --> Version_5
+                        //Model Variable --> Selected_Version_4 
+                        ////////////////////////////////////////////
+
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_AI_Only]") {
+                            CY_Plus2.D1 = dp["@MeasureDimension"].formattedValue;
+                        }
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_New_AI]") {
+                            CY_Plus2.D2 = dp["@MeasureDimension"].formattedValue;
+                        }
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_AI_Drivers]") {
+                            CY_Plus2.D3 = dp["@MeasureDimension"].formattedValue;
+                        }
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_Non_AI]") {
+                            CY_Plus2.D4 = dp["@MeasureDimension"].formattedValue;
+                        }
                     }
 
                     if (dp["TIME.YEAR"].id === CY_Plus3y) {
@@ -612,6 +650,25 @@
                         }
                         if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_Non_AI]") {
                             CY_Plus3.C4 = dp["@MeasureDimension"].formattedValue;
+                        }
+
+                        ////////////////////////////////////////////
+                        //Column 4 
+                        //CW --> Version_5
+                        //Model Variable --> Selected_Version_4 
+                        ////////////////////////////////////////////
+
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_AI_Only]") {
+                            CY_Plus3.D1 = dp["@MeasureDimension"].formattedValue;
+                        }
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_New_AI]") {
+                            CY_Plus3.D2 = dp["@MeasureDimension"].formattedValue;
+                        }
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_AI_Drivers]") {
+                            CY_Plus3.D3 = dp["@MeasureDimension"].formattedValue;
+                        }
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_Non_AI]") {
+                            CY_Plus3.D4 = dp["@MeasureDimension"].formattedValue;
                         }
                     }
 
