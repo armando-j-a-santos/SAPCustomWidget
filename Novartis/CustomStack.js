@@ -40,7 +40,7 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-    class NewStackV121 extends HTMLElement {
+    class NewStackV122 extends HTMLElement {
         constructor() {
             super()
 
@@ -152,10 +152,14 @@
                 var CNonAct_Col3_Dark = String(chartConfigurations.CNonAct_Col3_Dark);
                 var CNonAct_Col3_Light = String(chartConfigurations.CNonAct_Col3_Light);
 
+                var CNonAct_Col4_Dark = String(chartConfigurations.CNonAct_Col4_Dark);
+                var CNonAct_Col4_Light = String(chartConfigurations.CNonAct_Col4_Light);
+
                 var Version_1 = String(chartConfigurations.Version_1);
                 var Version_2 = String(chartConfigurations.Version_2);
                 var Version_3 = String(chartConfigurations.Version_3);
                 var Version_4 = String(chartConfigurations.Version_4);
+                var Version_5 = String(chartConfigurations.Version_5);
 
                 var AIScope_1 = String(chartConfigurations.AIScope_1);
                 var AIScope_2 = String(chartConfigurations.AIScope_2);
@@ -172,8 +176,13 @@
                 var DataLabelsFontSize = Number(String(chartConfigurations.DataLabelsFontSize));
                 var TotalsDataLabelsFontSize = Number(String(chartConfigurations.TotalsDataLabelsFontSize));
                 var TotalsBackgroundColor = String(chartConfigurations.TotalsBackgroundColor);
-                
-                var NumYears = Number(chartConfigurations.NumYears);
+                               
+                var NumYears = Number(chartConfigurations.NumYears);  // NumYears = 2 || 3 || 4
+                var ScrollbarXHeight = Number(chartConfigurations.ScrollbarXHeight);  
+                var LegendRightPadding = Number(chartConfigurations.LegendRightPadding);  
+                var YaxisMaxValue = Number(chartConfigurations.YaxisMaxValue);  
+
+                console.log("FROMM GIT HUB");
 
                 var CYy = Number(String(chartConfigurations.CYy));
 
@@ -1135,6 +1144,6 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // Return the end result into SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV121)
+    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV122)
 
 })() // END of function --> (function () {
