@@ -182,7 +182,7 @@
                 var LegendRightPadding = Number(chartConfigurations.LegendRightPadding);  
                 var YaxisMaxValue = Number(chartConfigurations.YaxisMaxValue);  
                 var YAxisTitle = String(chartConfigurations.YAxisTitle);
-                var EnabledActuals = String(chartConfigurations.EnabledActuals);
+                var EnabledActuals = Boolean(chartConfigurations.EnabledActuals);
 
                 var CYy = Number(String(chartConfigurations.CYy));
 
