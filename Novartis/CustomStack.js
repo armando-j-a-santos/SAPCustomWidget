@@ -182,7 +182,7 @@
                 var LegendRightPadding = Number(chartConfigurations.LegendRightPadding);  
                 var YaxisMaxValue = Number(chartConfigurations.YaxisMaxValue);  
                 var YAxisTitle = String(chartConfigurations.YAxisTitle);
-                var EnabledActuals = Boolean(chartConfigurations.EnabledActuals);
+                var EnabledActuals = String(chartConfigurations.EnabledActuals);
 
                 
                 var CYy = Number(String(chartConfigurations.CYy));
@@ -198,7 +198,7 @@
                 console.log("EnabledActuals CW trigger:");
                 console.log(EnabledActuals);
                 
-                if(EnabledActuals === true){
+                if(EnabledActuals === "true"){
                     // Previous Year column defintion
                     if (NumVersions === 0 || NumVersions === 1 || NumVersions === 2) {
                         CY_Minus1 = {
@@ -699,7 +699,7 @@
                 // Data array feed
                 
                 if(NumYears === 4){
-                    if(EnabledActuals === true){
+                    if(EnabledActuals === "true"){
                         
                         chart.data.push(CY_Minus1);
                     }
@@ -709,7 +709,7 @@
                     chart.data.push(CY_Plus2);
                     chart.data.push(CY_Plus3);
                 }else if(NumYears === 3){
-                    if(EnabledActuals === true){
+                    if(EnabledActuals === "true"){
                         console.log("YESSSSS 3");
                         chart.data.push(CY_Minus1);
                     }
@@ -718,7 +718,7 @@
                     chart.data.push(CY_Plus1);
                     chart.data.push(CY_Plus2);
                 }else{
-                    if(EnabledActuals === true){
+                    if(EnabledActuals === "true"){
                         
                         chart.data.push(CY_Minus1);
                     }
@@ -997,7 +997,7 @@
                         return text;
                     })
 
-                    if(EnabledActuals === true){
+                    if(EnabledActuals === "true"){
                         //Logic to ajust the 2021 (Cy-1) colum in the center
                         if (NumVersions === 2) {
 
@@ -1140,7 +1140,7 @@
                         return text;
                     })
 
-                    if(EnabledActuals === 3){
+                    if(EnabledActuals === "true"){
                         //Ajust Total labels position when 2 columns displayed             
                         if (NumVersions === 2 || NumVersions === 4) {
                             totalSeries.columns.template.width = am4core.percent(40);
@@ -1274,7 +1274,7 @@
 
                 legendA.data = [];
 
-                if(EnabledActuals === true){
+                if(EnabledActuals === "true"){
                     if (Version_1.length !== 0 && Version_1 !== undefined) {
                         legendA.data.push({
                             "name": Version_1,
