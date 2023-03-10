@@ -238,6 +238,11 @@
                     C2: undefined,
                     C3: undefined,
                     C4: undefined,
+
+                    D1: undefined,
+                    D2: undefined,
+                    D3: undefined,
+                    D4: undefined,
                     none: 0
                 };
 
@@ -257,6 +262,11 @@
                     C2: undefined,
                     C3: undefined,
                     C4: undefined,
+
+                    D1: undefined,
+                    D2: undefined,
+                    D3: undefined,
+                    D4: undefined,
                     none: 0
                 };
 
@@ -276,6 +286,11 @@
                     C2: undefined,
                     C3: undefined,
                     C4: undefined,
+
+                    D1: undefined,
+                    D2: undefined,
+                    D3: undefined,
+                    D4: undefined,
                     none: 0
                 };
 
@@ -295,6 +310,11 @@
                     C2: undefined,
                     C3: undefined,
                     C4: undefined,
+
+                    D1: undefined,
+                    D2: undefined,
+                    D3: undefined,
+                    D4: undefined,
                     none: 0
                 };
 
