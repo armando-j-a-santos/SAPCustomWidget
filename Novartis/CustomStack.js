@@ -192,6 +192,7 @@
                 CYy = String(CYy);
 
                 //ResultSet
+                
                 console.log('YaxisMaxValue');
                 console.log(YaxisMaxValue);
 
