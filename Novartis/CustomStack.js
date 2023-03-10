@@ -759,6 +759,10 @@
                 var valueAxis1 = chart.yAxes.push(new am4charts.ValueAxis());
                 valueAxis1.min = 0;
                 valueAxis1.max = YaxisMaxValue;
+
+                valueAxis1.fontFamily = "Arial";
+                valueAxis1.fontSize = 14;
+
                 //Enable total calculation
                 valueAxis1.calculateTotals = ShowStackedTotals;
 
