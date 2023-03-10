@@ -182,6 +182,7 @@
                 var LegendRightPadding = Number(chartConfigurations.LegendRightPadding);  
                 var YaxisMaxValue = Number(chartConfigurations.YaxisMaxValue);  
                 var YAxisTitle = String(chartConfigurations.YAxisTitle);
+                var EnabledActuals = String(chartConfigurations.EnabledActuals);
 
                 var CYy = Number(String(chartConfigurations.CYy));
 
@@ -191,33 +192,30 @@
                 var CY_Plus3y = String(CYy + 3);
                 CYy = String(CYy);
 
-                //ResultSet
-
-                console.log('YaxisMaxValue');
-                console.log(YaxisMaxValue);
-
                 let CY_Minus1 = {};
+                
+                if(EnabledActuals){
+                    // Previous Year column defintion
+                    if (NumVersions === 0 || NumVersions === 1 || NumVersions === 2) {
+                        CY_Minus1 = {
+                            "year": CY_Minus1y,
 
-                // Previous Year column defintion
-                if (NumVersions === 0 || NumVersions === 1 || NumVersions === 2) {
-                    CY_Minus1 = {
-                        "year": CY_Minus1y,
+                            "A1": undefined,
+                            "A2": undefined,
+                            "A3": undefined,
+                            "A4": undefined,
+                            "none": 0
+                        }
+                    } else if (NumVersions === 3 || NumVersions === 4) {
+                        CY_Minus1 = {
+                            "year": CY_Minus1y,
 
-                        "A1": undefined,
-                        "A2": undefined,
-                        "A3": undefined,
-                        "A4": undefined,
-                        "none": 0
-                    }
-                } else if (NumVersions === 3 || NumVersions === 4) {
-                    CY_Minus1 = {
-                        "year": CY_Minus1y,
-
-                        "B1": undefined,
-                        "B2": undefined,
-                        "B3": undefined,
-                        "B4": undefined,
-                        "none": 0
+                            "B1": undefined,
+                            "B2": undefined,
+                            "B3": undefined,
+                            "B4": undefined,
+                            "none": 0
+                        }
                     }
                 }
 
@@ -1008,7 +1006,7 @@
                         //We used below an adapter to ajust the column position for the year 2021 (Cy-1)
                         series.columns.template.adapter.add("dx", function(dx, target) {
                             if (target.dataItem && target.dataItem.index === 0) {
-                                return dx + target.pixelWidth + 10;
+                                return dx + target.pixelWidth + 5;
                             } else {
                                 return dx;
                             }
@@ -1016,7 +1014,7 @@
 
                         labelBullet.adapter.add("dx", function(dx, target) {
                             if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                                return dx + target.dataItem.column.realWidth + 10;
+                                return dx + target.dataItem.column.realWidth + 5;
                             } else {
                                 return dx;
                             }
