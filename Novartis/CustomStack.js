@@ -776,7 +776,8 @@
                 if(YMaxValue < temp){
                     YMaxValue = temp; 
                 }
-                   
+                  
+                console.log("TEST");
                 console.log("YMaxValue");
                 console.log(YMaxValue);
 
@@ -796,11 +797,9 @@
                     chart.data.push(CY_Plus2);
                     chart.data.push(CY_Plus3);
                 }else if(NumYears === 3){
-                    if(EnabledActuals === "true"){
-                        console.log("YESSSSS 3");
+                    if(EnabledActuals === "true"){                    
                         chart.data.push(CY_Minus1);
-                    }
-                    console.log("NOOOOO 3");
+                    }                   
                     chart.data.push(CY);
                     chart.data.push(CY_Plus1);
                     chart.data.push(CY_Plus2);
