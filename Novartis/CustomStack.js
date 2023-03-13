@@ -742,7 +742,7 @@
 
                 if(YMaxValue < temp){
                     YMaxValue = temp; 
-
+                }
 
                 ///////////////
                 ////// CY + 1
