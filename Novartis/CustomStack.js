@@ -779,7 +779,7 @@
                 }
                 
                 console.log("CY_Plus1.D4");
-                console.log(CY_Plus1.D4);
+                console.log(Number(CY_Plus1.D4));
 
                   
                 console.log("TEST");
