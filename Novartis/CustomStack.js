@@ -40,7 +40,7 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-    class NewStackV126 extends HTMLElement {
+    class NewStackV127 extends HTMLElement {
         constructor() {
             super()
 
@@ -693,7 +693,7 @@
                 //{year:"2025", "A1": 24.2, "A2": 13, "A3":13.4, "B1": 30.2, "B2": 10, "B3":13.6, "C1": 30.2, "C2": 10, "C3":13.6}
                 //]
 
-            /*
+            
                 //TEST GETTING MAX VALUE
                 var YMaxValue = 0;
                 var temp = 0;
@@ -778,14 +778,20 @@
                     YMaxValue = temp; 
                 }
                 
-                console.log("CY_Plus1.D4");
-                console.log(Number(CY_Plus1.D4));
+                console.log("CY_Plus1.A1");
+                console.log(Number(CY_Plus1.A1));
+
+                console.log("CY_Plus1.A2");
+                console.log(Number(CY_Plus1.A2));
+
+                console.log("CY_Plus1.A1 + CY_Plus1.A2 ");
+                console.log(Number(CY_Plus1.A1) + Number(CY_Plus1.A2));
 
                   
                 console.log("TEST");
                 console.log("YMaxValue");
                 console.log(YMaxValue);
-           */     
+                
 
                 // Data array definition
                 chart.data = [];
@@ -1535,6 +1541,6 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // Return the end result into SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV126)
+    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV127)
 
 })() // END of function --> (function () {
