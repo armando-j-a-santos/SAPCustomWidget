@@ -693,23 +693,24 @@
                 //{year:"2025", "A1": 24.2, "A2": 13, "A3":13.4, "B1": 30.2, "B2": 10, "B3":13.6, "C1": 30.2, "C2": 10, "C3":13.6}
                 //]
 
+
                 //TEST GETTING MAX VALUE
                 var YMaxValue = 0;
                 var temp = 0;
                 ///////////////
                 //////CY
                 ///////////////
-
+/*
                 ///
                 //Actual
                 ///
-                temp = CY_Minus1.B1 + CY_Minus1.B2 + CY_Minus1.B3 + CY_Minus1.B4
+                temp = CY_Minus1.B1 + CY_Minus1.B2 + CY_Minus1.B3 + CY_Minus1.B4;
 
                 if(YMaxValue < temp){
                     YMaxValue = temp; 
                 }
 
-                temp = CY_Minus1.A1 + CY_Minus1.A2 + CY_Minus1.A3 + CY_Minus1.A4
+                temp = CY_Minus1.A1 + CY_Minus1.A2 + CY_Minus1.A3 + CY_Minus1.A4;
 
                 if(YMaxValue < temp){
                     YMaxValue = temp; 
@@ -720,25 +721,25 @@
                 //Non-Actual
                 ///
 
-                temp = CY.A1 + CY.A2 + CY.A3 + CY.A4
+                temp = CY.A1 + CY.A2 + CY.A3 + CY.A4;
 
                 if(YMaxValue < temp){
                     YMaxValue = temp; 
                 }
 
-                temp = CY.B1 + CY.B2 + CY.B3 + CY.B4
+                temp = CY.B1 + CY.B2 + CY.B3 + CY.B4;
 
                 if(YMaxValue < temp){
                     YMaxValue = temp; 
                 }
 
-                temp = CY.C1 + CY.C2 + CY.C3 + CY.C4
+                temp = CY.C1 + CY.C2 + CY.C3 + CY.C4;
 
                 if(YMaxValue < temp){
                     YMaxValue = temp; 
                 }
 
-                temp = CY.D1 + CY.D2 + CY.D3 + CY.D4
+                temp = CY.D1 + CY.D2 + CY.D3 + CY.D4;
 
                 if(YMaxValue < temp){
                     YMaxValue = temp; 
@@ -752,30 +753,30 @@
                 //Non-Actual
                 ///
 
-                temp = CY_Plus1.A1 + CY_Plus1.A2 + CY_Plus1.A3 + CY_Plus1.A4
+                temp = CY_Plus1.A1 + CY_Plus1.A2 + CY_Plus1.A3 + CY_Plus1.A4;
 
                 if(YMaxValue < temp){
                     YMaxValue = temp; 
                 }
 
-                temp = CY_Plus1.B1 + CY_Plus1.B2 + CY_Plus1.B3 + CY_Plus1.B4
+                temp = CY_Plus1.B1 + CY_Plus1.B2 + CY_Plus1.B3 + CY_Plus1.B4;
 
                 if(YMaxValue < temp){
                     YMaxValue = temp; 
                 }
 
-                temp = CY_Plus1.C1 + CY_Plus1.C2 + CY_Plus1.C3 + CY_Plus1.C4
+                temp = CY_Plus1.C1 + CY_Plus1.C2 + CY_Plus1.C3 + CY_Plus1.C4;
 
                 if(YMaxValue < temp){
                     YMaxValue = temp; 
                 }
 
-                temp = CY_Plus1.D1 + CY_Plus1.D2 + CY_Plus1.D3 + CY_Plus1.D4
+                temp = CY_Plus1.D1 + CY_Plus1.D2 + CY_Plus1.D3 + CY_Plus1.D4;
 
                 if(YMaxValue < temp){
                     YMaxValue = temp; 
                 }
-                   
+  */                 
                 console.log("YMaxValue");
                 console.log(YMaxValue);
 
