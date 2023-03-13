@@ -40,7 +40,7 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-    class NewStackV123 extends HTMLElement {
+    class NewStackV124 extends HTMLElement {
         constructor() {
             super()
 
@@ -700,7 +700,7 @@
                 ///////////////
                 //////CY
                 ///////////////
-/*
+
                 ///
                 //Actual
                 ///
@@ -776,7 +776,7 @@
                 if(YMaxValue < temp){
                     YMaxValue = temp; 
                 }
-  */                 
+                   
                 console.log("YMaxValue");
                 console.log(YMaxValue);
 
@@ -1530,6 +1530,6 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // Return the end result into SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV123)
+    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV124)
 
 })() // END of function --> (function () {
