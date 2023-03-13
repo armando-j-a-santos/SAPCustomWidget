@@ -40,7 +40,7 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-    class NewStackV127 extends HTMLElement {
+    class NewStackV128 extends HTMLElement {
         constructor() {
             super()
 
@@ -781,11 +781,11 @@
                 console.log("CY_Plus1.A1");
                 console.log(Number(CY_Plus1.A1));
 
-                console.log("CY_Plus1.A2");
-                console.log(Number(CY_Plus1.A2));
+                console.log("CY_Plus1.A3");
+                console.log(Number(CY_Plus1.A3));
 
-                console.log("CY_Plus1.A1 + CY_Plus1.A2 ");
-                console.log(Number(CY_Plus1.A1) + Number(CY_Plus1.A2));
+                console.log("CY_Plus1.A1 + CY_Plus1.A3 ");
+                console.log(Number(CY_Plus1.A1) + Number(CY_Plus1.A3));
 
                   
                 console.log("TEST");
@@ -1541,6 +1541,6 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // Return the end result into SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV127)
+    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV128)
 
 })() // END of function --> (function () {
