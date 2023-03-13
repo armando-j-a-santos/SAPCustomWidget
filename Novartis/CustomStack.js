@@ -781,7 +781,7 @@
                 console.log("CY_Plus1.A1");
                 console.log(CY_Plus1.A1);
                 console.log(Number(CY_Plus1.A1));
-                console.log(isNumber(CY_Plus1.A3));
+                console.log(isNumber(CY_Plus1.A1));
 
                 console.log("CY_Plus1.A2");
                 console.log(CY_Plus1.A2);
