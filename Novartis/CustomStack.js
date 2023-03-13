@@ -773,6 +773,9 @@
 
                 temp = CY_Plus1.D1 + CY_Plus1.D2 + CY_Plus1.D3 + CY_Plus1.D4;
 
+                console.log("CY_Plus1.D4");
+                console.log(CY_Plus1.D4);
+
                 if(YMaxValue < temp){
                     YMaxValue = temp; 
                 }
