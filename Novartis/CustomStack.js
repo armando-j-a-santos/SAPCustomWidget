@@ -40,7 +40,7 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-    class NewStackV131 extends HTMLElement {
+    class NewStackV132 extends HTMLElement {
         constructor() {
             super()
 
@@ -128,7 +128,7 @@
 
 
                 var chartConfigurations = JSON.parse(newJSONSets);
-                console.log(chartConfigurations.CAct_Dark);
+                //console.log(chartConfigurations.CAct_Dark);
 
                 // Themes
                 /////am4core.useTheme(am4themes_animated);
@@ -195,8 +195,8 @@
 
                 let CY_Minus1 = {};
 
-                console.log("EnabledActuals CW trigger:");
-                console.log(EnabledActuals);
+                //console.log("EnabledActuals CW trigger:");
+                //console.log(EnabledActuals);
                 
                 if(EnabledActuals === "true"){
                     // Previous Year column defintion
@@ -1442,6 +1442,6 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // Return the end result into SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV131)
+    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV132)
 
 })() // END of function --> (function () {
