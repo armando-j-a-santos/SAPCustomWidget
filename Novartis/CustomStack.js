@@ -1151,12 +1151,12 @@
                     //totalBullet.label.padding(5, 10, 5, 10);    
                     
                     //Total tooltipText
-                    totalBullet.tooltipText = `[bold]`+ version +`: {valueY.total} [/]  \n
+                    totalBullet.tooltipText = `[bold]`+ version +`: {valueY.total} ` + Scale + ` [/]  \n
                     \n  `+
-                    name4 +`: [bold]{value4} [/] \n `+
-                    name3 +`: [bold]{value3} [/] \n `+ 
-                    name2 +`: [bold]{value2} [/] \n `+ 
-                    name1 +`: [bold]{value1} [/]`;
+                    name4 +`: [bold]{value4} ` + Scale + ` [/] \n `+
+                    name3 +`: [bold]{value3} ` + Scale + ` [/] \n `+ 
+                    name2 +`: [bold]{value2} ` + Scale + ` [/] \n `+ 
+                    name1 +`: [bold]{value1} ` + Scale + ` [/]`;
 
                     //Hide Total label when equal to 0
                     totalBullet.label.adapter.add("text", function(text, target) {
@@ -1184,12 +1184,12 @@
                         totalBullet.adapter.add("tooltipText", function(tooltipText, target) {
                             if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
                         // if(target.dataItem && target.dataItem.index === 0){
-                            return `[bold]Actuals: {valueY.total} [/]  \n
+                            return `[bold]Actuals: {valueY.total} ` + Scale + ` [/]  \n
                             \n  `+
-                                name4 +`: [bold]{value4} [/] \n `+
-                                name3 +`: [bold]{value3} [/] \n `+ 
-                                name2 +`: [bold]{value2} [/] \n `+ 
-                                name1 +`: [bold]{value1} [/]`;
+                                name4 +`: [bold]{value4} ` + Scale + ` [/] \n `+
+                                name3 +`: [bold]{value3} ` + Scale + ` [/] \n `+ 
+                                name2 +`: [bold]{value2} ` + Scale + ` [/] \n `+ 
+                                name1 +`: [bold]{value1} ` + Scale + ` [/]`;
                             }else{
                             return tooltipText;
                             }
