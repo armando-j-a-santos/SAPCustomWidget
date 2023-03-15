@@ -128,7 +128,6 @@
 
 
                 var chartConfigurations = JSON.parse(newJSONSets);
-                //console.log(chartConfigurations.CAct_Dark);
 
                 // Themes
                 /////am4core.useTheme(am4themes_animated);
@@ -194,9 +193,6 @@
                 CYy = String(CYy);
 
                 let CY_Minus1 = {};
-
-                //console.log("EnabledActuals CW trigger:");
-                //console.log(EnabledActuals);
                 
                 if(EnabledActuals === "true"){
                     // Previous Year column defintion
@@ -1083,7 +1079,7 @@
                     }
                 }
 
-                function createTotalSeries(yAxes) {
+                function createTotalSeries(yAxes, field1, field2, field3, field4, version, name1, name2, name3, name4) {
                     var valueAxis;
                     if (yAxes === 1) {
                         valueAxis = valueAxis1;
@@ -1120,6 +1116,28 @@
                     } else if (NumVersions === 3 || NumVersions === 4) {
                         totalSeries.columns.template.width = am4core.percent(60);
                     }
+                    
+                    //To be displayed in tooltip
+                    totalSeries.dataFields.value1 = field1;
+                    totalSeries.dataFields.value2 = field2;
+                    totalSeries.dataFields.value3 = field3;
+                    totalSeries.dataFields.value4 = field4;
+                    
+                    totalSeries.name1 = name1;
+                    totalSeries.name2 = name2;
+                    totalSeries.name3 = name3;
+                    totalSeries.name4 = name4;
+
+                    //Tooltip
+                    totalSeries.tooltip.getFillFromObject = false;
+                    totalSeries.tooltip.background.fill = am4core.color("#000");
+                    totalSeries.tooltip.label.fill = am4core.color("#fff");
+                    totalSeries.tooltip.label.fontSize = 12;           
+                    
+                    //Prevent cross-fading of tooltips
+                    totalSeries.tooltip.defaultState.transitionDuration = 0;
+                    totalSeries.tooltip.hiddenState.transitionDuration = 0;
+
 
                     var totalBullet = totalSeries.bullets.push(new am4charts.LabelBullet());
                     totalBullet.dy = -20;
@@ -1129,7 +1147,15 @@
                     totalBullet.label.fontSize = TotalsDataLabelsFontSize;
                     totalBullet.label.background.fill = TotalsBackgroundColor;
                     totalBullet.label.background.fillOpacity = 1;
-                    //totalBullet.label.padding(5, 10, 5, 10);       
+                    //totalBullet.label.padding(5, 10, 5, 10);    
+                    
+                    //tooltipText
+                    totalBullet.tooltipText = `[bold]`+ version +`: {valueY.total} [/]  \n
+                    \n  `+
+                    name4 +`: [bold]{value4} [/] \n `+
+                    name3 +`: [bold]{value3} [/] \n `+ 
+                    name2 +`: [bold]{value2} [/] \n `+ 
+                    name1 +`: [bold]{value1} [/]`;
 
                     //Hide Total label when equal to 0
                     totalBullet.label.adapter.add("text", function(text, target) {
@@ -1152,6 +1178,21 @@
                                 }
                             })
                         }
+
+                        //We used below adapter to show "Actuals" in the the tooltip for actuals column            
+                        totalBullet.adapter.add("tooltipText", function(tooltipText, target) {
+                            if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
+                        // if(target.dataItem && target.dataItem.index === 0){
+                            return `[bold]Actuals: {valueY.total} [/]  \n
+                            \n  `+
+                                name4 +`: [bold]{value4} [/] \n `+
+                                name3 +`: [bold]{value3} [/] \n `+ 
+                                name2 +`: [bold]{value2} [/] \n `+ 
+                                name1 +`: [bold]{value1} [/]`;
+                            }else{
+                            return tooltipText;
+                            }
+                        });
                     }
 
                 }
@@ -1164,7 +1205,7 @@
                     createSeries("A3", AIScope_3, true, Version_2, 1);
                     createSeries("A4", AIScope_4, true, Version_2, 1);
 
-                    createTotalSeries(1);
+                    createTotalSeries(1,"A1","A2","A3","A4",Version_2, AIScope_1, AIScope_2, AIScope_3, AIScope_4);
 
                 } else if (NumVersions === 2) {
                     // First Column
@@ -1173,7 +1214,7 @@
                     createSeries("A3", AIScope_3, true, Version_2, 1);
                     createSeries("A4", AIScope_4, true, Version_2, 1);
 
-                    createTotalSeries(1);
+                    createTotalSeries(1,"A1","A2","A3","A4",Version_2, AIScope_1, AIScope_2, AIScope_3, AIScope_4);
 
                     // Second Column
                     createSeries("B1", AIScope_1, false, Version_3, 2);
@@ -1181,7 +1222,7 @@
                     createSeries("B3", AIScope_3, true, Version_3, 2);
                     createSeries("B4", AIScope_4, true, Version_3, 2);
 
-                    createTotalSeries(2);
+                    createTotalSeries(2,"B1","B2","B3","B4",Version_3, AIScope_1, AIScope_2, AIScope_3, AIScope_4);
 
                 } else if (NumVersions === 3) {
                     // First Column
@@ -1190,7 +1231,7 @@
                     createSeries("A3", AIScope_3, true, Version_2, 1);
                     createSeries("A4", AIScope_4, true, Version_2, 1);
 
-                    createTotalSeries(1);
+                    createTotalSeries(1,"A1","A2","A3","A4",Version_2, AIScope_1, AIScope_2, AIScope_3, AIScope_4);  
 
                     // Second Column
                     createSeries("B1", AIScope_1, false, Version_3, 2);
@@ -1198,7 +1239,7 @@
                     createSeries("B3", AIScope_3, true, Version_3, 2);
                     createSeries("B4", AIScope_4, true, Version_3, 2);
 
-                    createTotalSeries(2);
+                    createTotalSeries(2,"B1","B2","B3","B4",Version_3, AIScope_1, AIScope_2, AIScope_3, AIScope_4);
 
                     // Third Column
                     createSeries("C1", AIScope_1, false, Version_4, 3);
@@ -1206,7 +1247,7 @@
                     createSeries("C3", AIScope_3, true, Version_4, 3);
                     createSeries("C4", AIScope_4, true, Version_4, 3);
 
-                    createTotalSeries(3);
+                    createTotalSeries(3,"C1","C2","C3","C4", Version_4, AIScope_1, AIScope_2, AIScope_3, AIScope_4);
 
                 } else if (NumVersions === 4) {
                     // First Column
@@ -1215,7 +1256,7 @@
                     createSeries("A3", AIScope_3, true, Version_2, 1);
                     createSeries("A4", AIScope_4, true, Version_2, 1);
 
-                    createTotalSeries(1);
+                    createTotalSeries(1,"A1","A2","A3","A4",Version_2, AIScope_1, AIScope_2, AIScope_3, AIScope_4);
 
                     // Second Column
                     createSeries("B1", AIScope_1, false, Version_3, 2);
@@ -1223,7 +1264,7 @@
                     createSeries("B3", AIScope_3, true, Version_3, 2);
                     createSeries("B4", AIScope_4, true, Version_3, 2);
 
-                    createTotalSeries(2);
+                    createTotalSeries(2,"B1","B2","B3","B4",Version_3, AIScope_1, AIScope_2, AIScope_3, AIScope_4);
 
                     // Third Column
                     createSeries("C1", AIScope_1, false, Version_4, 3);
@@ -1231,7 +1272,7 @@
                     createSeries("C3", AIScope_3, true, Version_4, 3);
                     createSeries("C4", AIScope_4, true, Version_4, 3);
 
-                    createTotalSeries(3);
+                    createTotalSeries(3,"C1","C2","C3","C4", Version_4, AIScope_1, AIScope_2, AIScope_3, AIScope_4);
 
                     // Fourth Column
                     createSeries("D1", AIScope_1, false, Version_5, 4);
@@ -1239,7 +1280,7 @@
                     createSeries("D3", AIScope_3, true, Version_5, 4);
                     createSeries("D4", AIScope_4, true, Version_5, 4);
 
-                    createTotalSeries(4);
+                    createTotalSeries(4,"D1","D2","D3","D4", Version_5, AIScope_1, AIScope_2, AIScope_3, AIScope_4);
                 }
 
                 //Custom legend
