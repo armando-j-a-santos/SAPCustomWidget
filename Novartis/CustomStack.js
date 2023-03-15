@@ -1150,7 +1150,7 @@
                     totalBullet.label.background.fillOpacity = 1;
                     //totalBullet.label.padding(5, 10, 5, 10);    
                     
-                    //tooltipText
+                    //Total tooltipText
                     totalBullet.tooltipText = `[bold]`+ version +`: {valueY.total} [/]  \n
                     \n  `+
                     name4 +`: [bold]{value4} [/] \n `+
