@@ -1035,7 +1035,7 @@
                         //We used below adapter to show "Actuals" in the the tooltip for actuals column            
                         series.columns.template.adapter.add("tooltipText", function(tooltipText, target) {
                             if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                            return `{name}: [bold]{valueY.value} [/] 
+                            return `{name}: [bold]{valueY.value} ` + Scale + ` [/] 
                                     Version: [bold]Actuals`;
                             }else{
                                 return tooltipText;
