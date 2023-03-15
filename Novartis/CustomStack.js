@@ -1130,9 +1130,10 @@
 
                     //Tooltip
                     totalSeries.tooltip.getFillFromObject = false;
-                    totalSeries.tooltip.background.fill = am4core.color("#000");
-                    totalSeries.tooltip.label.fill = am4core.color("#fff");
-                    totalSeries.tooltip.label.fontSize = 12;           
+                    totalSeries.tooltip.background.fill = am4core.color("#F3F3F3");
+                    totalSeries.tooltip.label.fill = am4core.color("#000000");
+                    totalSeries.tooltip.label.fontSize = 12;  
+                    totalSeries.tooltip.fontFamily = "Arial";
                     
                     //Prevent cross-fading of tooltips
                     totalSeries.tooltip.defaultState.transitionDuration = 0;
