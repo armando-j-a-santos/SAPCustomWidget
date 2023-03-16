@@ -867,8 +867,8 @@
                         pattern.stroke = am4core.color(color);
                     } else if (field === "A4" || field === "B4" || field === "C4" || field === "D4") {
                         var pattern = new am4core.CirclePattern();
-                        pattern.width = 6;
-                        pattern.height = 6;
+                        pattern.width = 4;
+                        pattern.height = 4;
                         pattern.rotation = 45;
                         pattern.radius = 0.5;
                         pattern.fill = am4core.color(color);
