@@ -40,7 +40,7 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-    class NewStackV134 extends HTMLElement {
+    class NewStackV135 extends HTMLElement {
         constructor() {
             super()
 
@@ -959,8 +959,17 @@
                     series.tooltip.label.fill = am4core.color("#000000");
                     series.tooltip.label.fontSize = 12;
                     series.tooltip.fontFamily = "Arial";
-                    series.columns.template.tooltipText = `{name}: [bold]{valueY.value} ` + Scale + ` [/] 
-        Version: [bold]` + version;
+                    series.columns.template.tooltipHTML =                                 
+                            `<table>
+                            <tr>
+                                <td align="left">{name}:</td>
+                                <th align="left">{valueY.value}</th>
+                            </tr>               
+                            <tr>
+                                <td align="left">Version:</td>
+                                <th align="left">`+ version +`</th>
+                            </tr>
+                            </table>`;     
 
                     // Add and edit Datalabel 
                     var labelBullet = series.bullets.push(new am4charts.LabelBullet());
@@ -1033,12 +1042,20 @@
                         }
 
                         //We used below adapter to show "Actuals" in the the tooltip for actuals column            
-                        series.columns.template.adapter.add("tooltipText", function(tooltipText, target) {
+                        series.columns.template.adapter.add("tooltipHTML", function(tooltipHTML, target) {
                             if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                            return `{name}: [bold]{valueY.value} ` + Scale + ` [/] 
-                                    Version: [bold]Actuals`;
+                              return `<table>
+                                      <tr>
+                                        <td align="left">{name}:</td>
+                                        <th align="left">{valueY.value}</th>
+                                      </tr>               
+                                      <tr>
+                                        <td align="left">Version:</td>
+                                        <th align="left">Actuals</th>
+                                      </tr>
+                                      </table>`;      
                             }else{
-                                return tooltipText;
+                              return tooltipHTML;
                             }
                         });
 
@@ -1184,44 +1201,44 @@
                         var HTML =
                                 `<table>
                                 <tr>
-                                <td align="left">`+ version +`:</td>
-                                <th align="left">{valueY.total} ` + Scale + `</th>
+                                    <td align="left">`+ version +`:</td>
+                                    <th align="left">{valueY.total} ` + Scale + `</th>
                                 </tr>      
                                 <tr>
-                                <th align="left"> ‎</th>
-                                <th align="left"> ‎ </th>
+                                    <th align="left"> ‎</th>
+                                    <th align="left"> ‎ </th>
                                 </tr>`												
                                 ;
                                 
                         if (target.dataItem && target.dataItem.value4 !== undefined) {            		
                             HTML = HTML +`
                                     <tr>
-                                    <td align="left">`+ name4 +`:</td>
-                                    <th align="left">{value4} ` + Scale + `</th>
+                                        <td align="left">`+ name4 +`:</td>
+                                        <th align="left">{value4} ` + Scale + `</th>
                                     </tr>`;
                         } 
                         
                         if (target.dataItem && target.dataItem.value3 !== undefined) {
                             HTML = HTML +`
                                     <tr>
-                                    <td align="left">`+ name3 +`:</td>
-                                    <th align="left">{value3} ` + Scale + `</th>
+                                        <td align="left">`+ name3 +`:</td>
+                                        <th align="left">{value3} ` + Scale + `</th>
                                     </tr>`;
                         }
                         
                         if (target.dataItem && target.dataItem.value2 !== undefined) {
                             HTML = HTML +`
                                     <tr>
-                                    <td align="left">`+ name2 +`:</td>
-                                    <th align="left">{value2} ` + Scale + `</th>
+                                        <td align="left">`+ name2 +`:</td>
+                                        <th align="left">{value2} ` + Scale + `</th>
                                     </tr>`;
                         }
                         
                         if (target.dataItem && target.dataItem.value1 !== undefined) {
                             HTML = HTML +`
                                     <tr>
-                                    <td align="left">`+ name1 +`:</td>
-                                    <th align="left">{value1} ` + Scale + `</th>
+                                        <td align="left">`+ name1 +`:</td>
+                                        <th align="left">{value1} ` + Scale + `</th>
                                     </tr>`;                         
                         }
                         
@@ -1598,6 +1615,6 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // Return the end result into SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV134)
+    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV135)
 
 })() // END of function --> (function () {
