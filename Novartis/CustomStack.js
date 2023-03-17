@@ -40,7 +40,7 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-    class NewStackV135 extends HTMLElement {
+    class NewStackV136 extends HTMLElement {
         constructor() {
             super()
 
@@ -963,7 +963,7 @@
                             `<table>
                             <tr>
                                 <td align="left">{name}:</td>
-                                <th align="left">{valueY.value}</th>
+                                <th align="left">{valueY.value} ` + Scale + `</th>
                             </tr>               
                             <tr>
                                 <td align="left">Version:</td>
@@ -1047,7 +1047,7 @@
                               return `<table>
                                       <tr>
                                         <td align="left">{name}:</td>
-                                        <th align="left">{valueY.value}</th>
+                                        <th align="left">{valueY.value} ` + Scale + `</th>
                                       </tr>               
                                       <tr>
                                         <td align="left">Version:</td>
@@ -1615,6 +1615,6 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // Return the end result into SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV135)
+    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV136)
 
 })() // END of function --> (function () {
