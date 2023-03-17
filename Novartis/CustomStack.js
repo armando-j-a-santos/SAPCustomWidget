@@ -40,7 +40,7 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-    class NewStackV133 extends HTMLElement {
+    class NewStackV134 extends HTMLElement {
         constructor() {
             super()
 
@@ -1159,7 +1159,7 @@
                         </tr>               
                         <tr>
                             <th align="left"> ‎</th>
-                            <th align="left"> ‎ </th>
+                            <th align="left"> ‎</th>
                         </tr>  
                         <tr>
                             <td align="left">`+ name4 +`:</td>
@@ -1178,6 +1178,58 @@
                             <th align="left">{value1} ` + Scale + `</th>
                         </tr>
                         </table>`;      
+
+                    //Adapter to hide from the totaltooltip the AIScope with have undefined values
+                    totalBullet.adapter.add("tooltipHTML", function(tooltipHTML, target) {
+                        var HTML =
+                                `<table>
+                                <tr>
+                                <td align="left">`+ version +`:</td>
+                                <th align="left">{valueY.total}</th>
+                                </tr>      
+                                <tr>
+                                <th align="left"> ‎</th>
+                                <th align="left"> ‎ </th>
+                                </tr>`												
+                                ;
+                                
+                    if (target.dataItem && target.dataItem.value4 !== undefined) {            		
+                        HTML = HTML +`
+                                <tr>
+                                <td align="left">`+ name4 +`:</td>
+                                <th align="left">{value4}</th>
+                                </tr>`;
+                    } 
+                    
+                    if (target.dataItem && target.dataItem.value3 !== undefined) {
+                        HTML = HTML +`
+                                <tr>
+                                <td align="left">`+ name3 +`:</td>
+                                <th align="left">{value3}</th>
+                                </tr>`;
+                    }
+                    
+                    if (target.dataItem && target.dataItem.value2 !== undefined) {
+                        HTML = HTML +`
+                                <tr>
+                                <td align="left">`+ name2 +`:</td>
+                                <th align="left">{value2}</th>
+                                </tr>`;
+                    }
+                    
+                    if (target.dataItem && target.dataItem.value1 !== undefined) {
+                        HTML = HTML +`
+                                <tr>
+                                <td align="left">`+ name1 +`:</td>
+                                <th align="left">{value1}</th>
+                                </tr>`;                         
+                    }
+                    
+                    HTML = HTML + `</table>`            
+                    
+                    return HTML;
+
+                    });
 
                     //Hide Total label when equal to 0
                     totalBullet.label.adapter.add("text", function(text, target) {
@@ -1505,6 +1557,6 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // Return the end result into SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV133)
+    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV134)
 
 })() // END of function --> (function () {
