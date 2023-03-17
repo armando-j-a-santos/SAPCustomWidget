@@ -1179,13 +1179,13 @@
                         </tr>
                         </table>`;      
 
-                    //Adapter to hide from the totaltooltip the AIScope with have undefined values
+                    //Adapter to hide from the totaltooltip the AIScope with undefined values
                     totalBullet.adapter.add("tooltipHTML", function(tooltipHTML, target) {
                         var HTML =
                                 `<table>
                                 <tr>
                                 <td align="left">`+ version +`:</td>
-                                <th align="left">{valueY.total}</th>
+                                <th align="left">{valueY.total} ` + Scale + `</th>
                                 </tr>      
                                 <tr>
                                 <th align="left"> ‎</th>
@@ -1193,41 +1193,41 @@
                                 </tr>`												
                                 ;
                                 
-                    if (target.dataItem && target.dataItem.value4 !== undefined) {            		
-                        HTML = HTML +`
-                                <tr>
-                                <td align="left">`+ name4 +`:</td>
-                                <th align="left">{value4}</th>
-                                </tr>`;
-                    } 
-                    
-                    if (target.dataItem && target.dataItem.value3 !== undefined) {
-                        HTML = HTML +`
-                                <tr>
-                                <td align="left">`+ name3 +`:</td>
-                                <th align="left">{value3}</th>
-                                </tr>`;
-                    }
-                    
-                    if (target.dataItem && target.dataItem.value2 !== undefined) {
-                        HTML = HTML +`
-                                <tr>
-                                <td align="left">`+ name2 +`:</td>
-                                <th align="left">{value2}</th>
-                                </tr>`;
-                    }
-                    
-                    if (target.dataItem && target.dataItem.value1 !== undefined) {
-                        HTML = HTML +`
-                                <tr>
-                                <td align="left">`+ name1 +`:</td>
-                                <th align="left">{value1}</th>
-                                </tr>`;                         
-                    }
-                    
-                    HTML = HTML + `</table>`            
-                    
-                    return HTML;
+                        if (target.dataItem && target.dataItem.value4 !== undefined) {            		
+                            HTML = HTML +`
+                                    <tr>
+                                    <td align="left">`+ name4 +`:</td>
+                                    <th align="left">{value4} ` + Scale + `</th>
+                                    </tr>`;
+                        } 
+                        
+                        if (target.dataItem && target.dataItem.value3 !== undefined) {
+                            HTML = HTML +`
+                                    <tr>
+                                    <td align="left">`+ name3 +`:</td>
+                                    <th align="left">{value3} ` + Scale + `</th>
+                                    </tr>`;
+                        }
+                        
+                        if (target.dataItem && target.dataItem.value2 !== undefined) {
+                            HTML = HTML +`
+                                    <tr>
+                                    <td align="left">`+ name2 +`:</td>
+                                    <th align="left">{value2} ` + Scale + `</th>
+                                    </tr>`;
+                        }
+                        
+                        if (target.dataItem && target.dataItem.value1 !== undefined) {
+                            HTML = HTML +`
+                                    <tr>
+                                    <td align="left">`+ name1 +`:</td>
+                                    <th align="left">{value1} ` + Scale + `</th>
+                                    </tr>`;                         
+                        }
+                        
+                        HTML = HTML + `</table>`            
+                        
+                        return HTML;
 
                     });
 
@@ -1240,7 +1240,7 @@
                     })
 
                     if(EnabledActuals === "true"){
-                        //Ajust Total labels position when 2 columns displayed             
+                        //Ajust Total labels position when 2 or 4 columns displayed             
                         if (NumVersions === 2 || NumVersions === 4) {
                             totalSeries.columns.template.width = am4core.percent(40);
 
@@ -1254,19 +1254,60 @@
                         }
 
                         //We used below adapter to show "Actuals" in the the tooltip for actuals column            
-                        totalBullet.adapter.add("tooltipText", function(tooltipText, target) {
+                        totalBullet.adapter.add("tooltipHTML", function(tooltipHTML, target) {
                             if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                        // if(target.dataItem && target.dataItem.index === 0){
-                            return `[bold]Actuals: {valueY.total} ` + Scale + ` [/]  \n
-                            \n  `+
-                                name4 +`: [bold]{value4} ` + Scale + ` [/] \n `+
-                                name3 +`: [bold]{value3} ` + Scale + ` [/] \n `+ 
-                                name2 +`: [bold]{value2} ` + Scale + ` [/] \n `+ 
-                                name1 +`: [bold]{value1} ` + Scale + ` [/]`;
+                                 var HTML =                                  
+                                     `<table>
+                                       <tr>
+                                       <td align="left">Actuals:</td>
+                                       <th align="left">{valueY.total} ` + Scale + `</th>
+                                       </tr>      
+                                       <tr>
+                                       <th align="left"> ‎</th>
+                                       <th align="left"> ‎ </th>
+                                       </tr>`	;			                        
+              
+                              if (target.dataItem && target.dataItem.value4 !== undefined) {            		
+                                HTML = HTML +`
+                                        <tr>
+                                        <td align="left">`+ name4 +`:</td>
+                                        <th align="left">{value4} ` + Scale + `</th>
+                                        </tr>`;
+                              } 
+              
+                              if (target.dataItem && target.dataItem.value3 !== undefined) {
+                                HTML = HTML +`
+                                        <tr>
+                                        <td align="left">`+ name3 +`:</td>
+                                        <th align="left">{value3} ` + Scale + `</th>
+                                        </tr>`;
+                              }
+              
+                              if (target.dataItem && target.dataItem.value2 !== undefined) {
+                                HTML = HTML +`
+                                        <tr>
+                                        <td align="left">`+ name2 +`:</td>
+                                        <th align="left">{value2} ` + Scale + `</th>
+                                        </tr>`;
+                              }
+              
+                              if (target.dataItem && target.dataItem.value1 !== undefined) {
+                                HTML = HTML +`
+                                        <tr>
+                                        <td align="left">`+ name1 +`:</td>
+                                        <th align="left">{value1} ` + Scale + `</th>
+                                        </tr>`;                         
+                              }
+              
+                              HTML = HTML +	` </table>` 
+                                              
+              
+                              return HTML;
+              
                             }else{
-                            return tooltipText;
+                              return tooltipHTML;
                             }
-                        });
+                          });
                     }
 
                 }
