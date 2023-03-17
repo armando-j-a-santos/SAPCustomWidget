@@ -1151,12 +1151,33 @@
                     //totalBullet.label.padding(5, 10, 5, 10);    
                     
                     //Total tooltipText
-                    totalBullet.tooltipText = `[bold]`+ version +`: {valueY.total} ` + Scale + ` [/]  \n
-                    \n  `+
-                    name4 +`: [bold]{value4} ` + Scale + ` [/] \n `+
-                    name3 +`: [bold]{value3} ` + Scale + ` [/] \n `+ 
-                    name2 +`: [bold]{value2} ` + Scale + ` [/] \n `+ 
-                    name1 +`: [bold]{value1} ` + Scale + ` [/]`;
+                    totalBullet.tooltipHTML =                                 
+                        `<table>
+                        <tr>
+                            <td align="left">`+ version +`:</td>
+                            <th align="left">{valueY.total} ` + Scale + `</th>
+                        </tr>               
+                        <tr>
+                            <th align="left"> ‎</th>
+                            <th align="left"> ‎ </th>
+                        </tr>  
+                        <tr>
+                            <td align="left">`+ name4 +`:</td>
+                            <th align="left">{value4} ` + Scale + `</th>
+                        </tr>  	
+                        <tr>
+                            <td align="left">`+ name3 +`:</td>
+                            <th align="left">{value3} ` + Scale + `</th>
+                        </tr>
+                        <tr>
+                            <td align="left">`+ name2 +`:</td>
+                            <th align="left">{value2} ` + Scale + `</th>
+                        </tr>
+                        <tr>
+                            <td align="left">`+ name1 +`:</td>
+                            <th align="left">{value1} ` + Scale + `</th>
+                        </tr>
+                        </table>`;      
 
                     //Hide Total label when equal to 0
                     totalBullet.label.adapter.add("text", function(text, target) {
