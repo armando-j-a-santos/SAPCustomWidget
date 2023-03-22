@@ -1607,7 +1607,7 @@
                 chart.appear();
 
                 // Round all numbers to integer
-				chart.numberFormatter.numberFormat = "#,###,###.";
+				//chart.numberFormatter.numberFormat = "#,###,###.";
 
             }); // end am4core.ready()        
 
