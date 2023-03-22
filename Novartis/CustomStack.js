@@ -963,7 +963,7 @@
                             `<table>
                             <tr>
                                 <td align="left">{name}:</td>
-                                <th align="left">{valueY.value} ` + Scale + `</th>
+                                <th align="left">{valueY.value.formatNumber("#,###,###.0000")} ` + Scale + `</th>
                             </tr>               
                             <tr>
                                 <td align="left">Version:</td>
@@ -1304,7 +1304,7 @@
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name2 +`:</td>
-                                        <th align="left">{value2.formatNumber('#,###,###.000')} ` + Scale + `</th>
+                                        <th align="left">{value2.formatNumber('#,###,###.')} ` + Scale + `</th>
                                         </tr>`;
                               }
               
