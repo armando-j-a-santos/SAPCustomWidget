@@ -1288,7 +1288,7 @@
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name4 +`:</td>
-                                        <th align="left">{value4.formatNumber('#,###,###.')} ` + Scale + `</th>
+                                        <th align="left">{value4.formatNumber("#,###,###.")} ` + Scale + `</th>
                                         </tr>`;
                               } 
               
@@ -1296,7 +1296,7 @@
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name3 +`:</td>
-                                        <th align="left">{value3.formatNumber('#,###,###.')} ` + Scale + `</th>
+                                        <th align="left">{value3.formatNumber("#,###,###.")} ` + Scale + `</th>
                                         </tr>`;
                               }
               
@@ -1304,7 +1304,7 @@
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name2 +`:</td>
-                                        <th align="left">{value2.formatNumber('#,###,###.')} ` + Scale + `</th>
+                                        <th align="left">{value2.formatNumber("#,###,###.")} ` + Scale + `</th>
                                         </tr>`;
                               }
               
@@ -1312,7 +1312,7 @@
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name1 +`:</td>
-                                        <th align="left">{value1.formatNumber('#,###,###.')} ` + Scale + `</th>
+                                        <th align="left">{value1.formatNumber("#,###,###.")} ` + Scale + `</th>
                                         </tr>`;                         
                               }
               
@@ -1607,7 +1607,7 @@
                 chart.appear();
 
                 // Round all numbers to integer
-				//chart.numberFormatter.numberFormat = "#,###,###.";
+				chart.numberFormatter.numberFormat = "#,###,###.";
 
             }); // end am4core.ready()        
 
