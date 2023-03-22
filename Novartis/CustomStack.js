@@ -40,7 +40,7 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-    class NewStackV136 extends HTMLElement {
+    class NewStackV137 extends HTMLElement {
         constructor() {
             super()
 
@@ -1606,6 +1606,9 @@
                 // Chart showing in the frontend (SAC)
                 chart.appear();
 
+                // Round all numbers to integer
+				chart.numberFormatter.numberFormat = "#.";
+
             }); // end am4core.ready()        
 
         } // END of method --> render 
@@ -1615,6 +1618,6 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // Return the end result into SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV136)
+    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV137)
 
 })() // END of function --> (function () {
