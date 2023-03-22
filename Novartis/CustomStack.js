@@ -40,7 +40,7 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-    class NewStackV141 extends HTMLElement {
+    class NewStackV142 extends HTMLElement {
         constructor() {
             super()
 
@@ -1304,7 +1304,7 @@
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name2 +`:</td>
-                                        <th align="left">{value2.formatNumber("#,###,###.00")} ` + Scale + `</th>
+                                        <th align="left">{value2.formatNumber('#,###,###.000')} ` + Scale + `</th>
                                         </tr>`;
                               }
               
@@ -1312,7 +1312,7 @@
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name1 +`:</td>
-                                        <th align="left">{value1.formatNumber("#,###,###.00")} ` + Scale + `</th>
+                                        <th align="left">{value1.formatNumber("#,###,###.000")} ` + Scale + `</th>
                                         </tr>`;                         
                               }
               
@@ -1607,7 +1607,7 @@
                 chart.appear();
 
                 // Round all numbers to integer
-			    chart.numberFormatter.numberFormat = "#,###,###.";
+			    //chart.numberFormatter.numberFormat = "#,###,###.";
 
             }); // end am4core.ready()        
 
@@ -1618,6 +1618,6 @@
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // Return the end result into SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvv
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV141)
+    customElements.define('com-sap-sample-asantos-new-cwstackv1', NewStackV142)
 
 })() // END of function --> (function () {
