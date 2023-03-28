@@ -1328,7 +1328,7 @@
                                 console.log(Number(target.dataItem.value1));
                                 console.log("-------------------");
 
-                                target.dataItem.value1 = Number(target.dataItem.value1).toFixed();
+                                //target.dataItem.value1 = Number(target.dataItem.value1).toFixed();
                                 console.log("TEST DEC***");
                                 console.log(target.dataItem.value1);
                                 HTML = HTML +`
