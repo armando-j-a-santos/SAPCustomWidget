@@ -1332,7 +1332,7 @@
                                 console.log(Number(target.dataItem.value1));
                                 console.log("++++++++++");
 
-                                target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', '')).toFixed(2);
+                                target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', '')).toFixed(0);
                                 console.log("TEST DEC***");
                                 console.log(target.dataItem.value1);
                                 HTML = HTML +`
