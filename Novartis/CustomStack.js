@@ -1331,6 +1331,7 @@
                                 
                                 console.log(Number(target.dataItem.value1));
                                 console.log("++++++++++");
+                                console.log(">>>>>>>>>");
 
                                 target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', '')).toFixed(0);
                                 console.log("TEST DEC***");
