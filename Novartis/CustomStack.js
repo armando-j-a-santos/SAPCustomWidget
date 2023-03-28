@@ -1307,7 +1307,8 @@
                               }
               
                               if (target.dataItem && target.dataItem.value2 !== undefined) {
-                                target.dataItem.value2 = Number(String(target.dataItem.value2).replace(',', '')).toFixed(0);
+                                target.dataItem.value2 = Number(String(target.dataItem.value2).replace(',', ''))
+                                //.toFixed(0);
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name2 +`:</td>
@@ -1316,7 +1317,8 @@
                               }
               
                               if (target.dataItem && target.dataItem.value1 !== undefined) {                
-                                target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', '')).toFixed(0);
+                                target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', ''))
+                                //.toFixed(0);
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name1 +`:</td>
