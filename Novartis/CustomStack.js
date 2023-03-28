@@ -1284,35 +1284,39 @@
                                        <th align="left"> ‎ </th>
                                        </tr>`	;			                        
               
-                              if (target.dataItem && target.dataItem.value4 !== undefined) {            		
+                              if (target.dataItem && target.dataItem.value4 !== undefined) {    
+                                target.dataItem.value4 = Number(target.dataItem.value4).toFixed();        		
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name4 +`:</td>
-                                        <th align="left">{value4.formatNumber("#,###,###.")} ` + Scale + `</th>
+                                        <th align="left">{value4} ` + Scale + `</th>
                                         </tr>`;
                               } 
               
                               if (target.dataItem && target.dataItem.value3 !== undefined) {
+                                target.dataItem.value3 = Number(target.dataItem.value3).toFixed();
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name3 +`:</td>
-                                        <th align="left">{value3.formatNumber("#,###,###.")} ` + Scale + `</th>
+                                        <th align="left">{value3} ` + Scale + `</th>
                                         </tr>`;
                               }
               
                               if (target.dataItem && target.dataItem.value2 !== undefined) {
+                                target.dataItem.value2 = Number(target.dataItem.value2).toFixed();
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name2 +`:</td>
-                                        <th align="left">{value2.formatNumber('#,###,###.')} ` + Scale + `</th>
+                                        <th align="left">{value2} ` + Scale + `</th>
                                         </tr>`;
                               }
               
                               if (target.dataItem && target.dataItem.value1 !== undefined) {
+                                target.dataItem.value1 = Number(target.dataItem.value1).toFixed();
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name1 +`:</td>
-                                        <th align="left">{value1.formatNumber("#,###,###.000")} ` + Scale + `</th>
+                                        <th align="left">{value1} ` + Scale + `</th>
                                         </tr>`;                         
                               }
               
