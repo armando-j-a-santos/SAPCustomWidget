@@ -1331,7 +1331,7 @@
                                 
                                 console.log(Number(target.dataItem.value1));
                                 console.log("++++++++++");
-                                console.log(">>>>>>>>>");
+                                console.log("^^^^UPPPP^^");
 
                                 target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', '')).toFixed(0);
                                 console.log("TEST DEC***");
@@ -1339,7 +1339,7 @@
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name1 +`:</td>
-                                        <th align="left">{value1} ` + Scale + `</th>
+                                        <th align="left">{value1.formatNumber("#,###,###.")} ` + Scale + `</th>
                                         </tr>`;                         
                               }
               
