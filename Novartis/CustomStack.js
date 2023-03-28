@@ -1321,7 +1321,9 @@
                                 console.log(testValue1);
                                 console.log(String(testValue1));
                                 console.log(testValue1.replace(',', ''));
+
                                 console.log(Number(String(testValue1.replace(',', ''))));
+                                
                                 console.log(Number(String(testValue1)));
                                 console.log(Number(testValue1));
                                 console.log("*************");
@@ -1330,7 +1332,7 @@
                                 console.log(Number(target.dataItem.value1));
                                 console.log("-------------------");
 
-                                //target.dataItem.value1 = Number(target.dataItem.value1).toFixed();
+                                target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', '')).toFixed(2);
                                 console.log("TEST DEC***");
                                 console.log(target.dataItem.value1);
                                 HTML = HTML +`
