@@ -1320,6 +1320,8 @@
                                 var testValue1 = target.dataItem.value1;
                                 console.log(testValue1);
                                 console.log(String(testValue1));
+                                console.log(testValue1.replace(',', ''));
+                                console.log(Number(String(testValue1.replace(',', ''))));
                                 console.log(Number(String(testValue1)));
                                 console.log(Number(testValue1));
                                 console.log("*************");
