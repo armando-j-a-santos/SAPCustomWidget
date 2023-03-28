@@ -1313,6 +1313,8 @@
               
                               if (target.dataItem && target.dataItem.value1 !== undefined) {
                                 target.dataItem.value1 = Number(target.dataItem.value1).toFixed();
+                                console.log("TEST DECIMAL");
+                                console.log(target.dataItem.value1);
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name1 +`:</td>
