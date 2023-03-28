@@ -1317,10 +1317,6 @@
               
                               if (target.dataItem && target.dataItem.value1 !== undefined) {                
                                 target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', '')).toFixed(0);
-
-                                console.log("NEW TEST *****");
-                                console.log(target.dataItem.value1);
-
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name1 +`:</td>
