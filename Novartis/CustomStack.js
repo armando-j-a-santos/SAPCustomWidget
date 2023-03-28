@@ -1312,8 +1312,8 @@
                               }
               
                               if (target.dataItem && target.dataItem.value1 !== undefined) {
-                                target.dataItem.value1 = Number(target.dataItem.value1).toFixed();
-                                console.log("TEST DECIMAL");
+                                target.dataItem.value1 = target.dataItem.value1.toFixed();
+                                console.log("TEST DEC");
                                 console.log(target.dataItem.value1);
                                 HTML = HTML +`
                                         <tr>
