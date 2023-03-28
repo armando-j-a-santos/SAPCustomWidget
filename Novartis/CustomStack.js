@@ -1318,7 +1318,7 @@
               
                               if (target.dataItem && target.dataItem.value1 !== undefined) {                
                                 target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', ''))
-                                console.log("LAST TEST");
+                                console.log("LASTTEST ###");
                                 //.toFixed(0);
                                 HTML = HTML +`
                                         <tr>
