@@ -1210,7 +1210,8 @@
                                 </tr>`												
                                 ;
                                 
-                        if (target.dataItem && target.dataItem.value4 !== undefined) {            		
+                        if (target.dataItem && target.dataItem.value4 !== undefined) { 
+                            target.dataItem.value4 = Number(String(target.dataItem.value4).replace(',', '')).toFixed(0);           		
                             HTML = HTML +`
                                     <tr>
                                         <td align="left">`+ name4 +`:</td>
@@ -1219,6 +1220,7 @@
                         } 
                         
                         if (target.dataItem && target.dataItem.value3 !== undefined) {
+                            target.dataItem.value3 = Number(String(target.dataItem.value3).replace(',', '')).toFixed(0);
                             HTML = HTML +`
                                     <tr>
                                         <td align="left">`+ name3 +`:</td>
@@ -1227,6 +1229,7 @@
                         }
                         
                         if (target.dataItem && target.dataItem.value2 !== undefined) {
+                            target.dataItem.value2 = Number(String(target.dataItem.value2).replace(',', '')).toFixed(0);
                             HTML = HTML +`
                                     <tr>
                                         <td align="left">`+ name2 +`:</td>
@@ -1235,6 +1238,7 @@
                         }
                         
                         if (target.dataItem && target.dataItem.value1 !== undefined) {
+                            target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', '')).toFixed(0);
                             HTML = HTML +`
                                     <tr>
                                         <td align="left">`+ name1 +`:</td>
@@ -1289,7 +1293,7 @@
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name4 +`:</td>
-                                        <th align="left">{value4} ` + Scale + `</th>
+                                        <th align="left">{value4.formatNumber("#,###,###.")} ` + Scale + `</th>
                                         </tr>`;
                               } 
               
@@ -1298,25 +1302,23 @@
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name3 +`:</td>
-                                        <th align="left">{value3} ` + Scale + `</th>
+                                        <th align="left">{value3.formatNumber("#,###,###.")} ` + Scale + `</th>
                                         </tr>`;
                               }
               
                               if (target.dataItem && target.dataItem.value2 !== undefined) {
                                 target.dataItem.value2 = Number(String(target.dataItem.value2).replace(',', '')).toFixed(0);
-
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name2 +`:</td>
-                                        <th align="left">{value2} ` + Scale + `</th>
+                                        <th align="left">{value2.formatNumber("#,###,###.")} ` + Scale + `</th>
                                         </tr>`;
                               }
               
-                              if (target.dataItem && target.dataItem.value1 !== undefined) {                  
-
+                              if (target.dataItem && target.dataItem.value1 !== undefined) {                
                                 target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', '')).toFixed(0);
 
-                                console.log("TEST DEC^^NEW");
+                                console.log("NEW TEST *****");
                                 console.log(target.dataItem.value1);
 
                                 HTML = HTML +`
