@@ -1214,7 +1214,7 @@
                             HTML = HTML +`
                                     <tr>
                                         <td align="left">`+ name4 +`:</td>
-                                        <th align="left">{value4} ` + Scale + `</th>
+                                        <th align="left">{value4.formatNumber("#,###,###.")} ` + Scale + `</th>
                                     </tr>`;
                         } 
                         
@@ -1222,7 +1222,7 @@
                             HTML = HTML +`
                                     <tr>
                                         <td align="left">`+ name3 +`:</td>
-                                        <th align="left">{value3} ` + Scale + `</th>
+                                        <th align="left">{value3.formatNumber("#,###,###.")} ` + Scale + `</th>
                                     </tr>`;
                         }
                         
@@ -1230,7 +1230,7 @@
                             HTML = HTML +`
                                     <tr>
                                         <td align="left">`+ name2 +`:</td>
-                                        <th align="left">{value2} ` + Scale + `</th>
+                                        <th align="left">{value2.formatNumber("#,###,###.")} ` + Scale + `</th>
                                     </tr>`;
                         }
                         
@@ -1238,7 +1238,7 @@
                             HTML = HTML +`
                                     <tr>
                                         <td align="left">`+ name1 +`:</td>
-                                        <th align="left">{value1} ` + Scale + `</th>
+                                        <th align="left">{value1.formatNumber("#,###,###.")} ` + Scale + `</th>
                                     </tr>`;                         
                         }
                         
@@ -1285,7 +1285,7 @@
                                        </tr>`	;			                        
               
                               if (target.dataItem && target.dataItem.value4 !== undefined) {    
-                                target.dataItem.value4 = Number(target.dataItem.value4).toFixed();        		
+                                target.dataItem.value4 = Number(String(target.dataItem.value4).replace(',', '')).toFixed(0);		
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name4 +`:</td>
@@ -1294,7 +1294,7 @@
                               } 
               
                               if (target.dataItem && target.dataItem.value3 !== undefined) {
-                                target.dataItem.value3 = Number(target.dataItem.value3).toFixed();
+                                target.dataItem.value3 = Number(String(target.dataItem.value3).replace(',', '')).toFixed(0);
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name3 +`:</td>
@@ -1303,7 +1303,8 @@
                               }
               
                               if (target.dataItem && target.dataItem.value2 !== undefined) {
-                                target.dataItem.value2 = Number(target.dataItem.value2).toFixed();
+                                target.dataItem.value2 = Number(String(target.dataItem.value2).replace(',', '')).toFixed(0);
+
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name2 +`:</td>
@@ -1311,31 +1312,13 @@
                                         </tr>`;
                               }
               
-                              if (target.dataItem && target.dataItem.value1 !== undefined) {
-                                console.log("NEW TEST#:");
-                                console.log(target.dataItem.value1);
-                                console.log(typeof(target.dataItem.value1));
-
-                                console.log("*************");
-                                var testValue1 = target.dataItem.value1;
-                                console.log(testValue1);
-                                console.log(String(testValue1));
-                                console.log(testValue1.replace(',', ''));
-
-                                console.log(Number(String(testValue1.replace(',', ''))));
-                                
-                                console.log(Number(String(testValue1)));
-                                console.log(Number(testValue1));
-                                console.log("*************");
-
-                                
-                                console.log(Number(target.dataItem.value1));
-                                console.log("++++++++++");
-                                console.log("^^^^UPPPP^^");
+                              if (target.dataItem && target.dataItem.value1 !== undefined) {                  
 
                                 target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', '')).toFixed(0);
-                                console.log("TEST DEC***");
+
+                                console.log("TEST DEC^^NEW");
                                 console.log(target.dataItem.value1);
+
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name1 +`:</td>
