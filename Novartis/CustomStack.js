@@ -1211,7 +1211,7 @@
                                 ;
                                 
                         if (target.dataItem && target.dataItem.value4 !== undefined) { 
-                            target.dataItem.value4 = Number(String(target.dataItem.value4).replace(',', ''));           		
+                            target.dataItem.value4 = Number(String(target.dataItem.value4).replace(',', '').replace(',', ''));           		
                             HTML = HTML +`
                                     <tr>
                                         <td align="left">`+ name4 +`:</td>
@@ -1220,7 +1220,7 @@
                         } 
                         
                         if (target.dataItem && target.dataItem.value3 !== undefined) {
-                            target.dataItem.value3 = Number(String(target.dataItem.value3).replace(',', ''));
+                            target.dataItem.value3 = Number(String(target.dataItem.value3).replace(',', '').replace(',', ''));
                             HTML = HTML +`
                                     <tr>
                                         <td align="left">`+ name3 +`:</td>
@@ -1229,7 +1229,7 @@
                         }
                         
                         if (target.dataItem && target.dataItem.value2 !== undefined) {
-                            target.dataItem.value2 = Number(String(target.dataItem.value2).replace(',', ''));
+                            target.dataItem.value2 = Number(String(target.dataItem.value2).replace(',', '').replace(',', ''));
                             HTML = HTML +`
                                     <tr>
                                         <td align="left">`+ name2 +`:</td>
@@ -1245,7 +1245,7 @@
                             console.log(String(target.dataItem.value1).replace(',', '').replace(',', ''));
 
 
-                            target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', ''));
+                            target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', '').replace(',', ''));
                             HTML = HTML +`
                                     <tr>
                                         <td align="left">`+ name1 +`:</td>
@@ -1297,7 +1297,7 @@
                               
                              console.log("THOUSANDS TEST************");
                               if (target.dataItem && target.dataItem.value4 !== undefined) {    
-                                target.dataItem.value4 = Number(String(target.dataItem.value4).replace(',', ''));		
+                                target.dataItem.value4 = Number(String(target.dataItem.value4).replace(',', '').replace(',', ''));		
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name4 +`:</td>
@@ -1306,7 +1306,7 @@
                               } 
               
                               if (target.dataItem && target.dataItem.value3 !== undefined) {
-                                target.dataItem.value3 = Number(String(target.dataItem.value3).replace(',', ''));
+                                target.dataItem.value3 = Number(String(target.dataItem.value3).replace(',', '').replace(',', ''));
 
                                 HTML = HTML +`
                                         <tr>
@@ -1316,7 +1316,7 @@
                               }
               
                               if (target.dataItem && target.dataItem.value2 !== undefined) {
-                                target.dataItem.value2 = Number(String(target.dataItem.value2).replace(',', '')); 
+                                target.dataItem.value2 = Number(String(target.dataItem.value2).replace(',', '').replace(',', '')); 
                                 HTML = HTML +`
                                         <tr>
                                         <td align="left">`+ name2 +`:</td>
@@ -1329,13 +1329,11 @@
                                 console.log("---------");
                                 console.log(target.dataItem.value1);
                                 console.log(String(target.dataItem.value1).replace(',', ''));
-
-                                target.dataItem.value1 = String(target.dataItem.value1).replace(',', '');
                                 
                                 console.log("EXTRA TEST 1");
                                 console.log(target.dataItem.value1);
                                 
-                                target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', ''));
+                                target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', '').replace(',', ''));
 
                                 console.log("TEST 1");
                                 console.log(target.dataItem.value1);
