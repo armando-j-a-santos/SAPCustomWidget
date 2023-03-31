@@ -1331,6 +1331,9 @@
                               if (target.dataItem && target.dataItem.value1 !== undefined) {  
                                 target.dataItem.value1 = String(target.dataItem.value1).replace(',', '');
 
+                                console.log("---------");
+                                console.log(target.dataItem.value1);
+
                                 console.log("EXTRA TEST 1");
                                 console.log(target.dataItem.value1);
                                 
