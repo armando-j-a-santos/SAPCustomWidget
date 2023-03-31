@@ -1238,6 +1238,12 @@
                         }
                         
                         if (target.dataItem && target.dataItem.value1 !== undefined) {
+
+                            console.log("*********");
+                            console.log(target.dataItem.value1);
+                            console.log(String(target.dataItem.value1).replace(',', ''));
+
+
                             target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', ''));
                             HTML = HTML +`
                                     <tr>
@@ -1332,7 +1338,7 @@
 
                                 console.log("---------");
                                 console.log(target.dataItem.value1);
-                                console.log(target.dataItem.value1.replace(',', ''));
+                                console.log(String(target.dataItem.value1).replace(',', ''));
 
                                 target.dataItem.value1 = String(target.dataItem.value1).replace(',', '');
                                 
