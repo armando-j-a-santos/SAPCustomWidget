@@ -1627,6 +1627,12 @@
                 // Round all numbers to integer
 			    chart.numberFormatter.numberFormat = "#,###,###.";
 
+
+                 // Create a separate NumberFormatter for Yaxis,
+                valueAxis1.numberFormatter = new am4core.NumberFormatter();
+                valueAxis1.numberFormatter.numberFormat = "#.a";
+                console.log("COMMIT DONE");
+
             }); // end am4core.ready()        
 
         } // END of method --> render 
