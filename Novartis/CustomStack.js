@@ -1156,8 +1156,8 @@
                     totalSeries.tooltip.getFillFromObject = false;
                     totalSeries.tooltip.background.fill = am4core.color(TooltipBackgroundColor);
                     totalSeries.tooltip.label.fill = am4core.color(TooltipLabelColor);
-                    series.tooltip.background.strokeWidth = 1;
-                    series.tooltip.background.stroke = am4core.color(TooltipLabelColor);
+                    totalSeries.tooltip.background.strokeWidth = 1;
+                    totalSeries.tooltip.background.stroke = am4core.color(TooltipLabelColor);
                     totalSeries.tooltip.label.fontSize = 12;  
                     totalSeries.tooltip.fontFamily = "Arial";
                     
