@@ -1628,7 +1628,8 @@
 			    chart.numberFormatter.numberFormat = "#,###,###.";
 
 
-                 // Create a separate NumberFormatter for Yaxis,
+                // Create a separate NumberFormatter for Yaxis,
+                // Automatic adjustment of Y Axis representatino (K,M)
                 valueAxis1.numberFormatter = new am4core.NumberFormatter();
                 valueAxis1.numberFormatter.numberFormat = "#.a";
               
