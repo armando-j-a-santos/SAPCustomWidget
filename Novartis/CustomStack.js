@@ -176,6 +176,9 @@
                 var DataLabelsFontSize = Number(String(chartConfigurations.DataLabelsFontSize));
                 var TotalsDataLabelsFontSize = Number(String(chartConfigurations.TotalsDataLabelsFontSize));
                 var TotalsBackgroundColor = String(chartConfigurations.TotalsBackgroundColor);
+
+                var TooltipBackgroundColor = String(chartConfigurations.TooltipBackgroundColor);
+                var TooltipLabelColor = String(chartConfigurations.TooltipLabelColor);
                                
                 var NumYears = Number(chartConfigurations.NumYears);  // NumYears = 2 || 3 || 4
                 var ScrollbarXHeight = Number(chartConfigurations.ScrollbarXHeight);  
@@ -956,7 +959,7 @@
 
                     // Tooltip 
                     series.tooltip.getFillFromObject = false;
-                    series.tooltip.background.fill = am4core.color("#F3F3F3");
+                    series.tooltip.background.fill = am4core.color(TooltipBackgroundColor);
                     series.tooltip.label.fill = am4core.color("#000000");
                     series.tooltip.label.fontSize = 12;
                     series.tooltip.fontFamily = "Arial";
@@ -975,7 +978,7 @@
                     // Add and edit Datalabel 
                     var labelBullet = series.bullets.push(new am4charts.LabelBullet());
                     labelBullet.label.text = "[bold]{valueY}";
-                    labelBullet.label.fill = am4core.color("#000000");
+                    labelBullet.label.fill = am4core.color(TooltipLabelColor);
                     labelBullet.locationY = 0.5;
                     labelBullet.label.fontSize = DataLabelsFontSize;
                     labelBullet.fontFamily = "Arial";
@@ -1149,8 +1152,8 @@
 
                     //Tooltip
                     totalSeries.tooltip.getFillFromObject = false;
-                    totalSeries.tooltip.background.fill = am4core.color("#F3F3F3");
-                    totalSeries.tooltip.label.fill = am4core.color("#000000");
+                    totalSeries.tooltip.background.fill = am4core.color(TooltipBackgroundColor);
+                    totalSeries.tooltip.label.fill = am4core.color(TooltipLabelColor);
                     totalSeries.tooltip.label.fontSize = 12;  
                     totalSeries.tooltip.fontFamily = "Arial";
                     
