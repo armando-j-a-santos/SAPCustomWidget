@@ -171,6 +171,7 @@
                 var NumVersions = Number(String(chartConfigurations.NumVersions));
 
                 var ShowStackedTotals = String(chartConfigurations.ShowStackedTotals);
+                var StackedLabelsOpacity = Number(String(chartConfigurations.StackedLabelsOpacity));
                 var MinValue = Number(String(chartConfigurations.MinValue));
                 var DataLabelsFontSize = Number(String(chartConfigurations.DataLabelsFontSize));
                 var TotalsDataLabelsFontSize = Number(String(chartConfigurations.TotalsDataLabelsFontSize));
@@ -978,6 +979,7 @@
                     labelBullet.locationY = 0.5;
                     labelBullet.label.fontSize = DataLabelsFontSize;
                     labelBullet.fontFamily = "Arial";
+                    labelBullet.label.fillOpacity = StackedLabelsOpacity;
 
                     //We used below an adapter for a data labels color exception in the Base        
                     labelBullet.label.adapter.add("fill", function(fill, target) {
