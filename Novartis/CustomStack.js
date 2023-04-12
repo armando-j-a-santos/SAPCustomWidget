@@ -960,7 +960,9 @@
                     // Tooltip 
                     series.tooltip.getFillFromObject = false;
                     series.tooltip.background.fill = am4core.color(TooltipBackgroundColor);
-                    series.tooltip.label.fill = am4core.color("#000000");
+                    series.tooltip.label.fill = am4core.color(TooltipLabelColor);
+                    series.tooltip.background.strokeWidth = 1;
+                    series.tooltip.background.stroke = am4core.color(TooltipLabelColor);
                     series.tooltip.label.fontSize = 12;
                     series.tooltip.fontFamily = "Arial";
                     series.columns.template.tooltipHTML =                                 
@@ -978,7 +980,7 @@
                     // Add and edit Datalabel 
                     var labelBullet = series.bullets.push(new am4charts.LabelBullet());
                     labelBullet.label.text = "[bold]{valueY}";
-                    labelBullet.label.fill = am4core.color(TooltipLabelColor);
+                    labelBullet.label.fill = am4core.color("#000000");
                     labelBullet.locationY = 0.5;
                     labelBullet.label.fontSize = DataLabelsFontSize;
                     labelBullet.fontFamily = "Arial";
@@ -1154,6 +1156,8 @@
                     totalSeries.tooltip.getFillFromObject = false;
                     totalSeries.tooltip.background.fill = am4core.color(TooltipBackgroundColor);
                     totalSeries.tooltip.label.fill = am4core.color(TooltipLabelColor);
+                    series.tooltip.background.strokeWidth = 1;
+                    series.tooltip.background.stroke = am4core.color(TooltipLabelColor);
                     totalSeries.tooltip.label.fontSize = 12;  
                     totalSeries.tooltip.fontFamily = "Arial";
                     
