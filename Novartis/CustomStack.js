@@ -1180,7 +1180,7 @@
                     totalBullet.tooltipHTML =                                 
                         `<table>
                         <tr>
-                            <td align="left">`+ version +`:</td>
+                            <th align="left">`+ version +`:</th>
                             <th align="left">{valueY.total} ` + Scale + `</th>
                         </tr>               
                         <tr>
@@ -1210,7 +1210,7 @@
                         var HTML =
                                 `<table>
                                 <tr>
-                                    <td align="left">`+ version +`:</td>
+                                    <th align="left">`+ version +`:</th>
                                     <th align="left">{valueY.total} ` + Scale + `</th>
                                 </tr>      
                                 <tr>
@@ -1289,7 +1289,7 @@
                                  var HTML =                                  
                                      `<table>
                                        <tr>
-                                       <td align="left">Actuals:</td>
+                                       <th align="left">Actuals:</th>
                                        <th align="left">{valueY.total} ` + Scale + `</th>
                                        </tr>      
                                        <tr>
