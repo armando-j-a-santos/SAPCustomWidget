@@ -326,10 +326,6 @@
                     //console.log(dp)
 
                     if (dp["TIME.YEAR"].id === CY_Minus1y) {
-                        
-                        console.log("NEW****** CY_Minus1y");
-                        console.log(CY_Minus1y);
-                        console.log("*********");
 
                         ////////////////////////////////////////////
                         //Column 2021  (Blue Column)
@@ -367,45 +363,7 @@
                     }
 
 
-                    if (dp["TIME.YEAR"].id === CYy) {
-                        
-                        console.log(">>>>>>>>> CYy");
-                        console.log(CYy);
-                        console.log(">>>>>>>>>");
-                     /*   
-                        ////////////////////////////////////////////
-                        //Column 2021  (Blue Column)
-                        //CW --> Version Actuals
-                        //Actuals
-                        ////////////////////////////////////////////
-                        if (NumVersions === 3 || NumVersions === 4) {
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Only]") {
-                                CY_Minus1.B1 = dp["@MeasureDimension"].formattedValue;
-                            }
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_New_AI]") {
-                                CY_Minus1.B2 = dp["@MeasureDimension"].formattedValue;
-                            }
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Drivers]") {
-                                CY_Minus1.B3 = dp["@MeasureDimension"].formattedValue;
-                            }
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_Non_AI]") {
-                                CY_Minus1.B4 = dp["@MeasureDimension"].formattedValue;
-                            }
-                        } else if (NumVersions === 0 || NumVersions === 1 || NumVersions === 2) {
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Only]") {
-                                CY_Minus1.A1 = dp["@MeasureDimension"].formattedValue;
-                            }
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_New_AI]") {
-                                CY_Minus1.A2 = dp["@MeasureDimension"].formattedValue;
-                            }
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Drivers]") {
-                                CY_Minus1.A3 = dp["@MeasureDimension"].formattedValue;
-                            }
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_Non_AI]") {
-                                CY_Minus1.A4 = dp["@MeasureDimension"].formattedValue;
-                            }
-                        }
-                     */   
+                    if (dp["TIME.YEAR"].id === CYy) {          
 
                         ////////////////////////////////////////////
                         //Column 1 
