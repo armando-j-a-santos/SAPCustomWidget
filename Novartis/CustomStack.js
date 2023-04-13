@@ -325,7 +325,20 @@
                 resultSet.forEach(dp => {
                     //console.log(dp)
 
+                    if (dp["TIME.YEAR"].id === CY_Minus1y) {
+                        
+                        console.log("********* CY_Minus1y");
+                        console.log(CY_Minus1y);
+                        console.log("*********");
+                    
+                    }
+
+
                     if (dp["TIME.YEAR"].id === CYy) {
+                        
+                        console.log(">>>>>>>>> CYy");
+                        console.log(CYy);
+                        console.log(">>>>>>>>>");
 
                         ////////////////////////////////////////////
                         //Column 2021  (Blue Column)
@@ -1629,7 +1642,7 @@
 
 
                 // Create a separate NumberFormatter for Yaxis,
-                // Automatic adjustment of Y Axis representatino (K,M)
+                // Automatic adjustment of Y Axis representation (K,M)
                 valueAxis1.numberFormatter = new am4core.NumberFormatter();
                 valueAxis1.numberFormatter.numberFormat = "#.a";
               
