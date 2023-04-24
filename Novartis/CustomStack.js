@@ -971,8 +971,7 @@
                     series.tooltip.background.strokeWidth = TooltipBorderWidth;
                     series.tooltip.background.stroke = am4core.color(TooltipBorderColor);
                     series.tooltip.label.fontSize = 12;
-                    series.tooltip.fontFamily = "Arial";
-                    console.log("NEW TOOLTIP SETTINGS >>>>>>>>><<");
+                    series.tooltip.fontFamily = "Arial";                        
                     series.columns.template.tooltipHTML =                                 
                             `<table>
                             <tr>
