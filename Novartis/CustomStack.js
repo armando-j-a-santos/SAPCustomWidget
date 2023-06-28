@@ -1176,7 +1176,7 @@
                     var totalBullet = totalSeries.bullets.push(new am4charts.LabelBullet());
                     totalBullet.dy = -20;
                     //totalBullet.dx = 0;
-                    totalBullet.label.text = "[bold]{valueY.total}";
+                    totalBullet.label.text = "[bold]{valueY.sum}";
                     totalBullet.label.hideOversized = false;
                     totalBullet.label.fontSize = TotalsDataLabelsFontSize;
                     totalBullet.label.background.fill = TotalsBackgroundColor;
@@ -1188,7 +1188,7 @@
                         `<table>
                         <tr>
                             <th align="left">`+ version +`:</th>
-                            <th align="left">{valueY.total} ` + Scale + `</th>
+                            <th align="left">{valueY.sum} ` + Scale + `</th>
                         </tr>               
                         <tr>
                             <th align="left"> ‎</th>
@@ -1218,7 +1218,7 @@
                                 `<table>
                                 <tr>
                                     <th align="left">`+ version +`:</th>
-                                    <th align="left">{valueY.total} ` + Scale + `</th>
+                                    <th align="left">{valueY.sum} ` + Scale + `</th>
                                 </tr>      
                                 <tr>
                                     <th align="left"> ‎</th>
@@ -1270,7 +1270,7 @@
 
                     //Hide Total label when equal to 0
                     totalBullet.label.adapter.add("text", function(text, target) {
-                        if (target.dataItem && target.dataItem.values.valueY.total === 0) {
+                        if (target.dataItem && target.dataItem.values.valueY.sum === 0) {
                             return "";
                         }
                         return text;
@@ -1297,7 +1297,7 @@
                                      `<table>
                                        <tr>
                                        <th align="left">Actuals:</th>
-                                       <th align="left">{valueY.total} ` + Scale + `</th>
+                                       <th align="left">{valueY.sum} ` + Scale + `</th>
                                        </tr>      
                                        <tr>
                                        <th align="left"> ‎</th>
