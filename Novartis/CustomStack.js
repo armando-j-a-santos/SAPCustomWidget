@@ -778,7 +778,7 @@
                 /////
                 // Create Y axes (and customize it)
                 var valueAxis1 = chart.yAxes.push(new am4charts.ValueAxis());
-                valueAxis1.min = 0;
+                valueAxis1.min = YaxisMinValue;
                 valueAxis1.max = YaxisMaxValue;
 
                 valueAxis1.fontFamily = "Arial";
@@ -806,7 +806,7 @@
                 /////
                 // Create Y axes (and customize it)
                 var valueAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
-                valueAxis2.min = 0;
+                valueAxis2.min = YaxisMinValue;
                 valueAxis2.max = YaxisMaxValue;
                 //Enable total calculation
                 valueAxis2.calculateTotals = ShowStackedTotals;
@@ -822,7 +822,7 @@
                 /////
                 // Create Y axes (and customize it)
                 var valueAxis3 = chart.yAxes.push(new am4charts.ValueAxis());
-                valueAxis3.min = 0;
+                valueAxis3.min = YaxisMinValue;
                 valueAxis3.max = YaxisMaxValue;
                 //Enable total calculation
                 valueAxis3.calculateTotals = ShowStackedTotals;
@@ -838,7 +838,7 @@
                 /////
                 // Create Y axes (and customize it)
                 var valueAxis4 = chart.yAxes.push(new am4charts.ValueAxis());
-                valueAxis4.min = 0;
+                valueAxis4.min = YaxisMinValue;
                 valueAxis4.max = YaxisMaxValue;
                 //Enable total calculation
                 valueAxis4.calculateTotals = ShowStackedTotals;
@@ -1010,7 +1010,7 @@
 
                     //Hide label when less than MinValue
                     labelBullet.label.adapter.add("text", function(text, target) {
-                        if (target.dataItem && target.dataItem.values.valueY.value < MinValue) {
+                        if (target.dataItem && target.dataItem.values.valueY.value < MinValue && target.dataItem && target.dataItem.values.valueY.value > -MinValue) {
                             return "";
                         }
                         return text;
@@ -1615,16 +1615,16 @@
                 
                 //To not zooming in Y Axis (only X Axis)
                 chart.events.on("ready", function(ev) {
-                    valueAxis1.min = 0;
+                    valueAxis1.min = YaxisMinValue;
                     valueAxis1.max = YaxisMaxValue;
                     
-                    valueAxis2.min = 0;
+                    valueAxis2.min = YaxisMinValue;
                     valueAxis2.max = YaxisMaxValue;
                     
-                    valueAxis3.min = 0;
+                    valueAxis3.min = YaxisMinValue;
                     valueAxis3.max = YaxisMaxValue;
                     
-                    valueAxis4.min = 0;
+                    valueAxis4.min = YaxisMinValue;
                     valueAxis4.max = YaxisMaxValue;
                 });
 
