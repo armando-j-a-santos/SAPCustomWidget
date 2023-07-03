@@ -185,7 +185,8 @@
                 var NumYears = Number(chartConfigurations.NumYears);  // NumYears = 2 || 3 || 4
                 var ScrollbarXHeight = Number(chartConfigurations.ScrollbarXHeight);  
                 var LegendRightPadding = Number(chartConfigurations.LegendRightPadding);  
-                var YaxisMaxValue = Number(chartConfigurations.YaxisMaxValue);  
+                var YaxisMaxValue = Number(chartConfigurations.YaxisMaxValue);
+                var YaxisMinValue = Number(chartConfigurations.YaxisMinValue);  
                 var YAxisTitle = String(chartConfigurations.YAxisTitle);
                 var EnabledActuals = String(chartConfigurations.EnabledActuals);
 
