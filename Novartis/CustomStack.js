@@ -1579,16 +1579,30 @@
                 marker.strokeOpacity = 1;
                 marker.stroke = am4core.color("#ccc");
 
-
+                
                 //Timeline ScroolBar in the bottom
                 chart.scrollbarX = new am4core.Scrollbar();
                 //To push the TimeLine ScroolBar down
                 chart.scrollbarX.parent = chart.bottomAxesContainer;
                 chart.scrollbarX.marginTop = -2;
-     
+                
      		    chart.scrollbarX.showSystemTooltip = false;
 
                 //Customize the Timeline ScrollBar
+                function customizeGrip(grip) {
+                    grip.background.disabled = true;
+                    grip.icon.disabled = true;
+    
+                    var img = grip.createChild(am4core.Circle);
+                    img.width = 10;
+                    img.height = 10;
+                    img.valign = "center";
+                    img.fill = am4core.color('#BDBDBD');
+                }
+                
+               customizeGrip(chart.scrollbarX.startGrip);
+               customizeGrip(chart.scrollbarX.endGrip);
+               
                 //line
                 chart.scrollbarX.minHeight = ScrollbarXHeight;  
                 //The startGrip
@@ -1610,7 +1624,9 @@
                     valueAxis4.min = YaxisMinValue;
                     valueAxis4.max = YaxisMaxValue;
                 });
-
+                
+                //Reduce bottom gap
+                chart.bottomAxesContainer.marginBottom = -20;
 
                 // Chart showing in the frontend (SAC)
                 chart.appear();
