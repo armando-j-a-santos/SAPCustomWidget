@@ -1540,7 +1540,7 @@
     */      
                 //Customize the markers layout for the Custom legend
                 var marker = legendA.markers.template.children.getIndex(0);
-                marker.strokeWidth = 2;
+                marker.strokeWidth = 0;
                 marker.strokeOpacity = 1;
                 marker.stroke = am4core.color("#ccc");
 
@@ -1598,7 +1598,7 @@
 
                 //Customize the markers layout for the Custom legend
                 var marker = legendB.markers.template.children.getIndex(0);
-                marker.strokeWidth = 2;
+                marker.strokeWidth = 0;
                 marker.strokeOpacity = 1;
                 marker.stroke = am4core.color("#ccc");
 
