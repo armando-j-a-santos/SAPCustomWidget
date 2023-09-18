@@ -1602,7 +1602,7 @@
                 
                customizeGrip(chart.scrollbarX.startGrip);
                customizeGrip(chart.scrollbarX.endGrip);
-               
+
                 //line
                 chart.scrollbarX.minHeight = ScrollbarXHeight;  
                 //The startGrip
@@ -1625,8 +1625,9 @@
                     valueAxis4.max = YaxisMaxValue;
                 });
                 
-                //Reduce bottom gap
-                chart.bottomAxesContainer.marginBottom = -20;
+                //Reduce bottom/top gap
+                chart.paddingTop = 0;
+                chart.paddingBottom = 0;
 
                 // Chart showing in the frontend (SAC)
                 chart.appear();
