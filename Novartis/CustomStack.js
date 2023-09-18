@@ -1585,6 +1585,7 @@
                 //To push the TimeLine ScroolBar down
                 chart.scrollbarX.parent = chart.bottomAxesContainer;
                 chart.scrollbarX.marginTop = -2;
+                chart.scrollbarX.marginBottom = 4;
                 
      		    chart.scrollbarX.showSystemTooltip = false;
 
