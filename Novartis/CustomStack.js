@@ -1472,10 +1472,6 @@
                 legendA.markers.template.width = 15;
                 legendA.markers.template.height = 15;
 
-                var patternNEWAI = SetPatterns("A2", AIScope_color);
-                var patternHI = SetPatterns("A3", AIScope_color);
-                var patternNONAI = SetPatterns("A4", AIScope_color);
-
                 legendA.data = [];
 
                 if(EnabledActuals === "true"){
@@ -1548,9 +1544,9 @@
                 marker.strokeOpacity = 1;
                 marker.stroke = am4core.color("#ccc");
 
-  /*
+  
                 //REMOVE SECOND LINE OF LEGEND               
-
+/*
                 
                 //// NON AI, HI, NEW AI, BASE AI
                 var legendB = new am4charts.Legend();
@@ -1573,29 +1569,33 @@
                 legendB.markers.template.width = 15;
                 legendB.markers.template.height = 15;
 
-                //Custom legend for the Versions
-                legendB.data = [{
-                    "name": Version_1,
-                    "fill": CAct_Dark
-                }];
+                var patternNEWAI = SetPatterns("A2", AIScope_color);
+                var patternHI = SetPatterns("A3", AIScope_color);
+                var patternNONAI = SetPatterns("A4", AIScope_color);
 
-                if (Version_2.length !== 0 && Version_2 !== undefined) {
+                //Custom legend for the AI Scope
+                if (AIScope_1.length !== 0 && AIScope_1 !== undefined) {
                     legendB.data.push({
-                        "name": Version_2,
-                        "fill": CNonAct_Col1_Dark
+                        "name": AIScope_1,
+                        "fill": AIScope_color
                     })
                 }
-                if (Version_3.length !== 0 && Version_3 !== undefined) {
+                if (AIScope_2.length !== 0 && AIScope_2 !== undefined) {
                     legendB.data.push({
-                        "name": Version_3,
-                        "fill": CNonAct_Col2_Dark
+                        "name": AIScope_2,
+                        "fill": patternNEWAI
                     })
                 }
-
-                if (Version_4.length !== 0 && Version_4 !== undefined) {
+                if (AIScope_3.length !== 0 && AIScope_3 !== undefined) {
                     legendB.data.push({
-                        "name": Version_4,
-                        "fill": CNonAct_Col3_Dark
+                        "name": AIScope_3,
+                        "fill": patternHI
+                    })
+                }
+                if (AIScope_4.length !== 0 && AIScope_4 !== undefined) {
+                    legendB.data.push({
+                        "name": AIScope_4,
+                        "fill": patternNONAI
                     })
                 }
 
