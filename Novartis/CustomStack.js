@@ -1469,8 +1469,8 @@
                 legendA.paddingRight = LegendRightPadding;
 
                 //Custom the markers size for the custom legend
-                legendA.markers.template.width = 15;
-                legendA.markers.template.height = 15;
+                legendA.markers.template.width = 12;
+                legendA.markers.template.height = 12;
 
                 legendA.data = [];
 
@@ -1544,9 +1544,6 @@
                 marker.strokeOpacity = 1;
                 marker.stroke = am4core.color("#ccc");
 
-  
-                //REMOVE SECOND LINE OF LEGEND               
-/*
                 
                 //// NON AI, HI, NEW AI, BASE AI
                 var legendB = new am4charts.Legend();
@@ -1605,7 +1602,6 @@
                 marker.strokeOpacity = 1;
                 marker.stroke = am4core.color("#ccc");
 
-         */       
 
                 //Timeline ScroolBar in the bottom
                 chart.scrollbarX = new am4core.Scrollbar();
