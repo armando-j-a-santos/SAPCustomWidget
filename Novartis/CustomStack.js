@@ -1510,34 +1510,7 @@
                         "fill": CNonAct_Col4_Dark
                     })
                 }
-
-    /*
-                if (AIScope_1.length !== 0 && AIScope_1 !== undefined) {
-                    legendA.data.push({
-                        "name": AIScope_1,
-                        "fill": AIScope_color
-                    })
-                }
-                if (AIScope_2.length !== 0 && AIScope_2 !== undefined) {
-                    legendA.data.push({
-                        "name": AIScope_2,
-                        "fill": patternNEWAI
-                    })
-                }
-                if (AIScope_3.length !== 0 && AIScope_3 !== undefined) {
-                    legendA.data.push({
-                        "name": AIScope_3,
-                        "fill": patternHI
-                    })
-                }
-                if (AIScope_4.length !== 0 && AIScope_4 !== undefined) {
-                    legendA.data.push({
-                        "name": AIScope_4,
-                        "fill": patternNONAI
-                    })
-                }
     
-    */      
                 //Customize the markers layout for the Custom legend
                 var marker = legendA.markers.template.children.getIndex(0);
                 marker.strokeWidth = 0;
@@ -1561,6 +1534,9 @@
 
                 //Align the custom legend to the right of its container
                 legendB.contentAlign = "right";
+
+                //Set RightPadding of the legend
+                legendB.paddingRight = LegendRightPadding;
 
                 //Custom the markers size for the custom legend
                 legendB.markers.template.width = 15;
