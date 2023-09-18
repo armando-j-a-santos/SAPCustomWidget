@@ -1448,7 +1448,7 @@
                 }
 
                 //Custom legend
-                //// NON AI, HI, NEW AI, BASE AI
+                //// Version 1, Version 2, Version 3, Version 4
                 var legendA = new am4charts.Legend();
                 //To push the custom legend top
                 legendA.parent = chart.topAxesContainer;
@@ -1515,7 +1515,7 @@
                     })
                 }
 
-
+    /*
                 if (AIScope_1.length !== 0 && AIScope_1 !== undefined) {
                     legendA.data.push({
                         "name": AIScope_1,
@@ -1541,7 +1541,7 @@
                     })
                 }
     
-          
+    */      
                 //Customize the markers layout for the Custom legend
                 var marker = legendA.markers.template.children.getIndex(0);
                 marker.strokeWidth = 2;
@@ -1551,7 +1551,8 @@
   /*
                 //REMOVE SECOND LINE OF LEGEND               
 
-                //// Version 1, Version 2, Version 3, Version 4
+                
+                //// NON AI, HI, NEW AI, BASE AI
                 var legendB = new am4charts.Legend();
                 //To push the custom legend top
                 legendB.parent = chart.topAxesContainer;
