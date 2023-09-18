@@ -1537,7 +1537,7 @@
 
                 //Set RightPadding of the legend
                 legendB.paddingRight = LegendRightPadding;
-                legendB.paddingTop = 0;
+                legendB.paddingTop = -5;
 
                 //Custom the markers size for the custom legend
                 legendB.markers.template.width = 15;
