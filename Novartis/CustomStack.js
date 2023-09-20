@@ -202,13 +202,13 @@
                 var YAxisTitleFontColor = String(chartConfigurations.YAxisTitleFontColor);
                 var YAxisTitleFontSize = String(chartConfigurations.YAxisTitleFontSize);                
 
-                var YAxisFontFamily = String(chartConfigurations.YAxisFontFamily);;
-                var YAxisFontColor = String(chartConfigurations.YAxisFontColor);;
-                var YAxisFontSize = Number(chartConfigurations.YAxisFontSize);;
+                var YAxisFontFamily = String(chartConfigurations.YAxisFontFamily);
+                var YAxisFontColor = String(chartConfigurations.YAxisFontColor);
+                var YAxisFontSize = Number(chartConfigurations.YAxisFontSize);
                 
-                var XAxisFontFamily = String(chartConfigurations.XAxisFontFamily);;
-                var XAxisFontColor = String(chartConfigurations.XAxisFontColor);;
-                var XAxisFontSize = Number(chartConfigurations.XAxisFontSize);;
+                var XAxisFontFamily = String(chartConfigurations.XAxisFontFamily);
+                var XAxisFontColor = String(chartConfigurations.XAxisFontColor);
+                var XAxisFontSize = Number(chartConfigurations.XAxisFontSize);
 
                 
                 var CYy = Number(String(chartConfigurations.CYy));
