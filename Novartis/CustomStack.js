@@ -750,6 +750,7 @@
                 categoryAxis.dataFields.category = "year";
                 categoryAxis.fontFamily = "Arial";
                 categoryAxis.fontSize = 14;
+                categoryAxis.fontWeight = "bolder";
 
                 //Show/Hide Grid
                 categoryAxis.renderer.grid.template.disabled = true;
