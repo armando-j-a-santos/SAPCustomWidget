@@ -193,6 +193,7 @@
                 var TooltipLabelColor = String(chartConfigurations.TooltipLabelColor);
                 var TooltipBorderWidth = String(chartConfigurations.TooltipBorderWidth);
                 var TooltipBorderColor = String(chartConfigurations.TooltipBorderColor);
+                var TooltipSeparatorLine  = String(chartConfigurations.TooltipSeparatorLine);
                                
                 var NumYears = Number(chartConfigurations.NumYears);  // NumYears = 2 || 3 || 4
                 var ScrollbarXHeight = Number(chartConfigurations.ScrollbarXHeight);  
@@ -1229,7 +1230,7 @@
                             <th align="left">{valueY.sum} ` + Scale + `</th>
                         </tr>               
                         </table>
-                        <hr size="1" color="#E6E7E8">
+                        <hr size="1" color= ` + TooltipSeparatorLine + `>
                         <table> 
                         <tr>
                             <td align="left">`+ name4 +`:</td>
@@ -1258,7 +1259,7 @@
                                     <th align="left">{valueY.sum} ` + Scale + `</th>
                                 </tr>      
                                 </table>
-                                <hr size="1" color="#E6E7E8">
+                                <hr size="1" color=` + TooltipSeparatorLine + `>
                                 <table>`												
                                 ;
                                 
@@ -1336,7 +1337,7 @@
                                        <th align="left">{valueY.sum} ` + Scale + `</th>
                                        </tr>      
                                        </table>
-                                       <hr size="1" color="#E6E7E8">
+                                       <hr size="1" color=` + TooltipSeparatorLine + `>
                                        <table> `	;			                        
                               
                               if (target.dataItem && target.dataItem.value4 !== undefined) {    
