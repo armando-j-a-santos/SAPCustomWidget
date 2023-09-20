@@ -1246,19 +1246,19 @@
                         <table style="width:100%"> 
                         <tr>
                             <td align="left" style="padding-right:50px;">`+ name4 +`:</td>
-                            <td align="left" style="font-weight:700;">{value4} ` + Scale + `</td>
+                            <td align="right" style="font-weight:700;">{value4} ` + Scale + `</td>
                         </tr>  	
                         <tr>
                             <td align="left" style="padding-right:50px;">`+ name3 +`:</td>
-                            <td align="left" style="font-weight:700;">{value3} ` + Scale + `</td>
+                            <td align="right" style="font-weight:700;">{value3} ` + Scale + `</td>
                         </tr>
                         <tr>
                             <td align="left" style="padding-right:50px;">`+ name2 +`:</td>
-                            <td align="left" style="font-weight:700;">{value2} ` + Scale + `</td>
+                            <td align="right" style="font-weight:700;">{value2} ` + Scale + `</td>
                         </tr>
                         <tr>
                             <td align="left" style="padding-right:50px;">`+ name1 +`:</td>
-                            <td align="left" style="font-weight:700;">{value1} ` + Scale + `</td>
+                            <td align="right" style="font-weight:700;">{value1} ` + Scale + `</td>
                         </tr>
                         </table>`;      
 
@@ -1268,7 +1268,7 @@
                                 `<table>
                                 <tr>
                                     <td align="left" style="font-weight:700; padding-right:50px;">`+ version +`:</td>
-                                    <td align="left" style="font-weight:700;">{valueY.sum} ` + Scale + `</td>
+                                    <td align="right" style="font-weight:700;">{valueY.sum} ` + Scale + `</td>
                                 </tr>      
                                 </table>
 
@@ -1282,7 +1282,7 @@
                             HTML = HTML +`
                                     <tr>
                                         <td align="left" style="padding-right:50px;">`+ name4 +`:</td>
-                                        <td align="left" style="font-weight:700;">{value4.formatNumber("#,###,###.")} ` + Scale + `</td>
+                                        <td align="right" style="font-weight:700;">{value4.formatNumber("#,###,###.")} ` + Scale + `</td>
                                     </tr>`;
                         } 
                         
@@ -1291,7 +1291,7 @@
                             HTML = HTML +`
                                     <tr>
                                         <td align="left" style="padding-right:50px;">`+ name3 +`:</td>
-                                        <td align="left" style="font-weight:700;">{value3.formatNumber("#,###,###.")} ` + Scale + `</td>
+                                        <td align="right" style="font-weight:700;">{value3.formatNumber("#,###,###.")} ` + Scale + `</td>
                                     </tr>`;
                         }
                         
@@ -1300,7 +1300,7 @@
                             HTML = HTML +`
                                     <tr>
                                         <td align="left" style="padding-right:50px;">`+ name2 +`:</td>
-                                        <td align="left" style="font-weight:700;">{value2.formatNumber("#,###,###.")} ` + Scale + `</td>
+                                        <td align="right" style="font-weight:700;">{value2.formatNumber("#,###,###.")} ` + Scale + `</td>
                                     </tr>`;
                         }
                         
@@ -1309,7 +1309,7 @@
                             HTML = HTML +`
                                     <tr>
                                         <td align="left" style="padding-right:50px;">`+ name1 +`:</td>
-                                        <td align="left" style="font-weight:700;">{value1.formatNumber("#,###,###.")} ` + Scale + `</td>
+                                        <td align="right" style="font-weight:700;">{value1.formatNumber("#,###,###.")} ` + Scale + `</td>
                                     </tr>`;                         
                         }
                         
@@ -1351,7 +1351,9 @@
                                        <th align="left">{valueY.sum} ` + Scale + `</th>
                                        </tr>      
                                        </table>
+
                                        <hr size="1" color=` + TooltipSeparatorLine + `>
+                                       
                                        <table> `	;			                        
                               
                               if (target.dataItem && target.dataItem.value4 !== undefined) {    
