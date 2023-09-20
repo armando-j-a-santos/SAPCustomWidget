@@ -1015,7 +1015,9 @@
                                 <td align="left" style="font-weight:700;">{valueY.value} ` + Scale + `</td>
                             </tr>   
                             </table>
+
                             <hr size="1" color=` + TooltipSeparatorLine + `>
+                            
                             <table style="width:100%">            
                             <tr>
                                 <td align="left" style="padding-right:60px;">Version:</td>
@@ -1097,14 +1099,19 @@
                         //We used below adapter to show "Actuals" in the the tooltip for actuals column            
                         series.columns.template.adapter.add("tooltipHTML", function(tooltipHTML, target) {
                             if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
-                              return `<table>
+                              return `<table style="width:100%">
                                       <tr>
-                                        <td align="left">{name}:</td>
-                                        <th align="left">{valueY.value} ` + Scale + `</th>
-                                      </tr>               
+                                        <td align="left" style="padding-right:60px;">{name}:</td>
+                                        <td align="left" style="font-weight:700;">{valueY.value} ` + Scale + `</td>
+                                      </tr>   
+                                      </table>
+
+                                      <hr size="1" color=` + TooltipSeparatorLine + `>
+                                      
+                                      <table style="width:100%">            
                                       <tr>
-                                        <td align="left">Version:</td>
-                                        <th align="left">Actuals</th>
+                                        <td align="left" style="padding-right:60px;">Version:</td>
+                                        <td align="left" style="font-weight:700;">Actuals</td>
                                       </tr>
                                       </table>`;      
                             }else{
