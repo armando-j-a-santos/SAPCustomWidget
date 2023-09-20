@@ -183,7 +183,9 @@
                 var DataLabelsFontFamily = String(chartConfigurations.DataLabelsFontFamily);
                 var DataLabelsFontColor = String(chartConfigurations.DataLabelsFontColor);
                 var DataLabelsFontSize = Number(String(chartConfigurations.DataLabelsFontSize));
-
+                
+                var TotalsDataLabelsFontFamily = String(chartConfigurations.TotalsDataLabelsFontFamily);
+                var TotalsDataLabelsFontColor = String(chartConfigurations.TotalsDataLabelsFontColor);
                 var TotalsDataLabelsFontSize = Number(String(chartConfigurations.TotalsDataLabelsFontSize));
                 var TotalsBackgroundColor = String(chartConfigurations.TotalsBackgroundColor);
 
@@ -1201,6 +1203,7 @@
                     totalSeries.tooltip.label.fontSize = 12;  
                     totalSeries.tooltip.fontFamily = "Arial";
                     
+                    
                     //Prevent cross-fading of tooltips
                     totalSeries.tooltip.defaultState.transitionDuration = 0;
                     totalSeries.tooltip.hiddenState.transitionDuration = 0;
@@ -1212,6 +1215,8 @@
                     totalBullet.label.text = "[bold]{valueY.sum}";
                     totalBullet.label.hideOversized = false;
                     totalBullet.label.fontSize = TotalsDataLabelsFontSize;
+                    totalBullet.label.fontFamily = TotalsDataLabelsFontFamily;
+                    totalBullet.label.fill = TotalsDataLabelsFontColor;
                     totalBullet.label.background.fill = TotalsBackgroundColor;
                     totalBullet.label.background.fillOpacity = 1;
                     //totalBullet.label.padding(5, 10, 5, 10);    
