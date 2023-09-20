@@ -196,6 +196,14 @@
                 var YAxisTitle = String(chartConfigurations.YAxisTitle);
                 var EnabledActuals = String(chartConfigurations.EnabledActuals);
 
+                var YAxisFontFamily = String(chartConfigurations.YAxisFontFamily);;
+                var YAxisFontColor = String(chartConfigurations.YAxisFontColor);;
+                var YAxisFontSize = Number(chartConfigurations.YAxisFontSize);;
+                
+                var XAxisFontFamily = String(chartConfigurations.XAxisFontFamily);;
+                var XAxisFontColor = String(chartConfigurations.XAxisFontColor);;
+                var XAxisFontSize = Number(chartConfigurations.XAxisFontSize);;
+
                 
                 var CYy = Number(String(chartConfigurations.CYy));
 
@@ -748,9 +756,11 @@
                 // Create X axes (and customize it)
                 var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
                 categoryAxis.dataFields.category = "year";
-                categoryAxis.fontFamily = "Arial";
-                categoryAxis.fontSize = 14;
+                categoryAxis.fontFamily = XAxisFontFamily;
+                categoryAxis.fontSize = XAxisFontSize;
                 categoryAxis.fontWeight = "bolder";
+                categoryAxis.renderer.labels.template.fill = XAxisFontColor;
+                categoryAxis.renderer.labels.template.opacity = 1;
 
                 //Show/Hide Grid
                 categoryAxis.renderer.grid.template.disabled = true;
@@ -788,8 +798,10 @@
                 valueAxis1.min = YaxisMinValue;
                 valueAxis1.max = YaxisMaxValue;
 
-                valueAxis1.fontFamily = "Arial";
-                valueAxis1.fontSize = 14;
+                valueAxis1.fontFamily = YAxisFontFamily;
+                valueAxis1.fontSize = YAxisFontSize;
+                valueAxis1.renderer.labels.template.fill = YAxisFontColor;
+                valueAxis1.renderer.labels.template.opacity = 1;
 
                 //Enable total calculation
                 valueAxis1.calculateTotals = ShowStackedTotals;
