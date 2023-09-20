@@ -1012,7 +1012,7 @@
                             `<table style="width:100%">
                             <tr>
                                 <td align="left" style="padding-right:60px;">{name}:</td>
-                                <td align="left" style="font-weight:700;">{valueY.value} ` + Scale + `</td>
+                                <td align="right" style="font-weight:700;">{valueY.value} ` + Scale + `</td>
                             </tr>   
                             </table>
 
@@ -1021,7 +1021,7 @@
                             <table style="width:100%">            
                             <tr>
                                 <td align="left" style="padding-right:60px;">Version:</td>
-                                <td align="left" style="font-weight:700;">`+ version +`</td>
+                                <td align="right" style="font-weight:700;">`+ version +`</td>
                             </tr>
                             </table>`;     
 
@@ -1102,7 +1102,7 @@
                               return `<table style="width:100%">
                                       <tr>
                                         <td align="left" style="padding-right:60px;">{name}:</td>
-                                        <td align="left" style="font-weight:700;">{valueY.value} ` + Scale + `</td>
+                                        <td align="right" style="font-weight:700;">{valueY.value} ` + Scale + `</td>
                                       </tr>   
                                       </table>
 
@@ -1111,7 +1111,7 @@
                                       <table style="width:100%">            
                                       <tr>
                                         <td align="left" style="padding-right:60px;">Version:</td>
-                                        <td align="left" style="font-weight:700;">Actuals</td>
+                                        <td align="right" style="font-weight:700;">Actuals</td>
                                       </tr>
                                       </table>`;      
                             }else{
