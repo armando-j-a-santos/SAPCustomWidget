@@ -1011,7 +1011,7 @@
                     series.columns.template.tooltipHTML =                                 
                             `<table style="width:100%">
                             <tr>
-                                <td align="left" style="padding-right:60px;">{name}:</td>
+                                <td align="left" style="padding-right:50px;">{name}:</td>
                                 <td align="right" style="font-weight:700;">{valueY.value} ` + Scale + `</td>
                             </tr>   
                             </table>
@@ -1020,7 +1020,7 @@
                             
                             <table style="width:100%">            
                             <tr>
-                                <td align="left" style="padding-right:60px;">Version:</td>
+                                <td align="left" style="padding-right:50px;">Version:</td>
                                 <td align="right" style="font-weight:700;">`+ version +`</td>
                             </tr>
                             </table>`;     
@@ -1101,7 +1101,7 @@
                             if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
                               return `<table style="width:100%">
                                       <tr>
-                                        <td align="left" style="padding-right:60px;">{name}:</td>
+                                        <td align="left" style="padding-right:50px;">{name}:</td>
                                         <td align="right" style="font-weight:700;">{valueY.value} ` + Scale + `</td>
                                       </tr>   
                                       </table>
@@ -1110,7 +1110,7 @@
                                       
                                       <table style="width:100%">            
                                       <tr>
-                                        <td align="left" style="padding-right:60px;">Version:</td>
+                                        <td align="left" style="padding-right:50px;">Version:</td>
                                         <td align="right" style="font-weight:700;">Actuals</td>
                                       </tr>
                                       </table>`;      
@@ -1234,29 +1234,31 @@
                     
                     //Total tooltipText
                     totalBullet.tooltipHTML =                                 
-                        `<table>
+                        `<table style="width:100%">
                         <tr>
-                            <th align="left">`+ version +`:</th>
-                            <th align="left">{valueY.sum} ` + Scale + `</th>
+                            <td align="left" style="font-weight:700; padding-right:50px;">`+ version +`:</td>
+                            <td align="right" style="font-weight:700; padding-right:50px;">{valueY.sum} ` + Scale + `</td>
                         </tr>               
                         </table>
-                        <hr size="1" color= ` + TooltipSeparatorLine + `>
-                        <table> 
+
+                        <hr size="1" color=` + TooltipSeparatorLine + `>
+                                      
+                        <table style="width:100%"> 
                         <tr>
-                            <td align="left">`+ name4 +`:</td>
-                            <th align="left">{value4} ` + Scale + `</th>
+                            <td align="left" style="padding-right:50px;">`+ name4 +`:</td>
+                            <td align="left" style="font-weight:700;">{value4} ` + Scale + `</td>
                         </tr>  	
                         <tr>
-                            <td align="left">`+ name3 +`:</td>
-                            <th align="left">{value3} ` + Scale + `</th>
+                            <td align="left" style="padding-right:50px;">`+ name3 +`:</td>
+                            <td align="left" style="font-weight:700;">{value3} ` + Scale + `</td>
                         </tr>
                         <tr>
-                            <td align="left">`+ name2 +`:</td>
-                            <th align="left">{value2} ` + Scale + `</th>
+                            <td align="left" style="padding-right:50px;">`+ name2 +`:</td>
+                            <td align="left" style="font-weight:700;">{value2} ` + Scale + `</td>
                         </tr>
                         <tr>
-                            <td align="left">`+ name1 +`:</td>
-                            <th align="left">{value1} ` + Scale + `</th>
+                            <td align="left" style="padding-right:50px;">`+ name1 +`:</td>
+                            <td align="left" style="font-weight:700;">{value1} ` + Scale + `</td>
                         </tr>
                         </table>`;      
 
