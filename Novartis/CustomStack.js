@@ -1265,7 +1265,7 @@
                     //Adapter to hide from the totaltooltip the AIScope with undefined values
                     totalBullet.adapter.add("tooltipHTML", function(tooltipHTML, target) {
                         var HTML =
-                                `<table>
+                                `<table style="width:100%">
                                 <tr>
                                     <td align="left" style="font-weight:700; padding-right:50px;">`+ version +`:</td>
                                     <td align="right" style="font-weight:700;">{valueY.sum} ` + Scale + `</td>
@@ -1274,7 +1274,7 @@
 
                                 <hr size="1" color=` + TooltipSeparatorLine + `>
 
-                                <table>`												
+                                <table style="width:100%">`												
                                 ;
                                 
                         if (target.dataItem && target.dataItem.value4 !== undefined) { 
@@ -1345,23 +1345,23 @@
                         totalBullet.adapter.add("tooltipHTML", function(tooltipHTML, target) {
                             if (target.dataItem && target.dataItem.categories.categoryX === CY_Minus1y) {
                                  var HTML =                                  
-                                     `<table>
+                                     `<table style="width:100%">
                                        <tr>
-                                       <th align="left">Actuals:</th>
-                                       <th align="left">{valueY.sum} ` + Scale + `</th>
+                                        <td align="left" style="font-weight:700; padding-right:50px;">Actuals:</td>
+                                        <td align="right" style="font-weight:700;">{valueY.sum} ` + Scale + `</td>
                                        </tr>      
                                        </table>
 
                                        <hr size="1" color=` + TooltipSeparatorLine + `>
                                        
-                                       <table> `	;			                        
+                                       <table style="width:100%"> `	;			                        
                               
                               if (target.dataItem && target.dataItem.value4 !== undefined) {    
                                 target.dataItem.value4 = Number(String(target.dataItem.value4).replace(',', '').replace(',', ''));		
                                 HTML = HTML +`
                                         <tr>
-                                        <td align="left">`+ name4 +`:</td>
-                                        <th align="left">{value4.formatNumber("#,###,###.")} ` + Scale + `</th>
+                                            <td align="left" style="padding-right:50px;">`+ name4 +`:</td>
+                                            <td align="right" style="font-weight:700;">{value4.formatNumber("#,###,###.")} ` + Scale + `</td>
                                         </tr>`;
                               } 
               
@@ -1370,8 +1370,8 @@
 
                                 HTML = HTML +`
                                         <tr>
-                                        <td align="left">`+ name3 +`:</td>
-                                        <th align="left">{value3.formatNumber("#,###,###.")} ` + Scale + `</th>
+                                        <td align="left" style="padding-right:50px;">`+ name3 +`:</td>
+                                        <td align="right" style="font-weight:700;">{value3.formatNumber("#,###,###.")} ` + Scale + `</td>
                                         </tr>`;
                               }
               
@@ -1379,8 +1379,8 @@
                                 target.dataItem.value2 = Number(String(target.dataItem.value2).replace(',', '').replace(',', '')); 
                                 HTML = HTML +`
                                         <tr>
-                                        <td align="left">`+ name2 +`:</td>
-                                        <th align="left">{value2.formatNumber("#,###,###.")} ` + Scale + `</th>
+                                        <td align="left" style="padding-right:50px;">`+ name2 +`:</td>
+                                        <td align="right" style="font-weight:700;">{value2.formatNumber("#,###,###.")} ` + Scale + `</td>
                                         </tr>`;
                               }
               
@@ -1388,8 +1388,8 @@
                                 target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', '').replace(',', ''));
                                 HTML = HTML +`
                                         <tr>
-                                        <td align="left">`+ name1 +`:</td>
-                                        <th align="left">{value1.formatNumber("#,###,###.")} ` + Scale + `</th>
+                                        <td align="left" style="padding-right:50px;">`+ name1 +`:</td>
+                                        <td align="right" style="font-weight:700;">{value1.formatNumber("#,###,###.")} ` + Scale + `</td>
                                         </tr>`;                         
                               }
               
