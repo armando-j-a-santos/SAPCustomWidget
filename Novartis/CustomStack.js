@@ -1228,10 +1228,9 @@
                             <th align="left">`+ version +`:</th>
                             <th align="left">{valueY.sum} ` + Scale + `</th>
                         </tr>               
-                        <tr>
-                            <th align="left"> ‎</th>
-                            <th align="left"> ‎</th>
-                        </tr>  
+                        </table>
+                        <hr size="1" color="#E6E7E8">
+                        <table> 
                         <tr>
                             <td align="left">`+ name4 +`:</td>
                             <th align="left">{value4} ` + Scale + `</th>
@@ -1258,10 +1257,9 @@
                                     <th align="left">`+ version +`:</th>
                                     <th align="left">{valueY.sum} ` + Scale + `</th>
                                 </tr>      
-                                <tr>
-                                    <th align="left"> ‎</th>
-                                    <th align="left"> ‎ </th>
-                                </tr>`												
+                                </table>
+                                <hr size="1" color="#E6E7E8">
+                                <table>`												
                                 ;
                                 
                         if (target.dataItem && target.dataItem.value4 !== undefined) { 
@@ -1337,10 +1335,9 @@
                                        <th align="left">Actuals:</th>
                                        <th align="left">{valueY.sum} ` + Scale + `</th>
                                        </tr>      
-                                       <tr>
-                                       <th align="left"> ‎</th>
-                                       <th align="left"> ‎ </th>
-                                       </tr>`	;			                        
+                                       </table>
+                                       <hr size="1" color="#E6E7E8">
+                                       <table> `	;			                        
                               
                               if (target.dataItem && target.dataItem.value4 !== undefined) {    
                                 target.dataItem.value4 = Number(String(target.dataItem.value4).replace(',', '').replace(',', ''));		
