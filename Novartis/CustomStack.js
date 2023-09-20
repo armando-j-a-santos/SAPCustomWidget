@@ -1005,7 +1005,7 @@
                     series.tooltip.label.fill = am4core.color(TooltipLabelColor);
                     series.tooltip.background.strokeWidth = TooltipBorderWidth;
                     series.tooltip.background.stroke = am4core.color(TooltipBorderColor);
-                    series.tooltip.label.fontSize = 12;
+                    series.tooltip.label.fontSize = 14;
                     series.tooltip.fontFamily = "Arial";                        
                     series.columns.template.tooltipHTML =                                 
                             `<table>
@@ -1200,7 +1200,7 @@
                     totalSeries.tooltip.label.fill = am4core.color(TooltipLabelColor);
                     totalSeries.tooltip.background.strokeWidth = TooltipBorderWidth;
                     totalSeries.tooltip.background.stroke = am4core.color(TooltipBorderColor);
-                    totalSeries.tooltip.label.fontSize = 12;  
+                    totalSeries.tooltip.label.fontSize = 14;  
                     totalSeries.tooltip.fontFamily = "Arial";
                     
                     
