@@ -190,11 +190,17 @@
                                
                 var NumYears = Number(chartConfigurations.NumYears);  // NumYears = 2 || 3 || 4
                 var ScrollbarXHeight = Number(chartConfigurations.ScrollbarXHeight);  
-                var LegendRightPadding = Number(chartConfigurations.LegendRightPadding);  
-                var YaxisMaxValue = Number(chartConfigurations.YaxisMaxValue);
-                var YaxisMinValue = Number(chartConfigurations.YaxisMinValue);  
-                var YAxisTitle = String(chartConfigurations.YAxisTitle);
+                var LegendRightPadding = Number(chartConfigurations.LegendRightPadding);                   
+                
                 var EnabledActuals = String(chartConfigurations.EnabledActuals);
+                
+                var YaxisMaxValue = Number(chartConfigurations.YaxisMaxValue);
+                var YaxisMinValue = Number(chartConfigurations.YaxisMinValue); 
+                
+                var YAxisTitle = String(chartConfigurations.YAxisTitle);               
+                var YAxisTitleFontFamily = String(chartConfigurations.YAxisTitleFontFamily);
+                var YAxisTitleFontColor = String(chartConfigurations.YAxisTitleFontColor);
+                var YAxisTitleFontSize = String(chartConfigurations.YAxisTitleFontSize);                
 
                 var YAxisFontFamily = String(chartConfigurations.YAxisFontFamily);;
                 var YAxisFontColor = String(chartConfigurations.YAxisFontColor);;
@@ -819,6 +825,9 @@
                 
                 // Set up axis title
                 valueAxis1.title.text = YAxisTitle;
+                valueAxis1.title.fontSize = YAxisTitleFontSize;
+                valueAxis1.title.fontFamily = YAxisTitleFontFamily;
+                valueAxis1.title.fill = YAxisTitleFontColor;
 
                 /////
                 //Another axis to display totals for the second column
