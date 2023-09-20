@@ -179,7 +179,11 @@
                 var ShowStackedTotals = String(chartConfigurations.ShowStackedTotals);
                 var StackedLabelsOpacity = Number(String(chartConfigurations.StackedLabelsOpacity));
                 var MinValue = Number(String(chartConfigurations.MinValue));
+                
+                var DataLabelsFontFamily = String(chartConfigurations.DataLabelsFontFamily);
+                var DataLabelsFontColor = String(chartConfigurations.DataLabelsFontColor);
                 var DataLabelsFontSize = Number(String(chartConfigurations.DataLabelsFontSize));
+
                 var TotalsDataLabelsFontSize = Number(String(chartConfigurations.TotalsDataLabelsFontSize));
                 var TotalsBackgroundColor = String(chartConfigurations.TotalsBackgroundColor);
 
@@ -1016,10 +1020,10 @@
                     // Add and edit Datalabel 
                     var labelBullet = series.bullets.push(new am4charts.LabelBullet());
                     labelBullet.label.text = "[bold]{valueY}";
-                    labelBullet.label.fill = am4core.color("#000000");
+                    labelBullet.label.fill = DataLabelsFontColor;
                     labelBullet.locationY = 0.5;
                     labelBullet.label.fontSize = DataLabelsFontSize;
-                    labelBullet.fontFamily = "Arial";
+                    labelBullet.fontFamily = DataLabelsFontFamily;
                     labelBullet.label.fillOpacity = StackedLabelsOpacity;
 
                     //We used below an adapter for a data labels color exception in the Base        
