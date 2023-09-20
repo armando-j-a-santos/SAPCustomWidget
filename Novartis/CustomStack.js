@@ -1009,14 +1009,17 @@
                     series.tooltip.label.fontSize = 14;
                     series.tooltip.fontFamily = "Arial";                        
                     series.columns.template.tooltipHTML =                                 
-                            `<table>
+                            `<table style="width:100%">
                             <tr>
-                                <td align="left">{name}:</td>
-                                <th align="left">{valueY.value} ` + Scale + `</th>
-                            </tr>               
+                                <td align="left" style="padding-right:60px;">{name}:</td>
+                                <td align="left" style="font-weight:700;">{valueY.value} ` + Scale + `</td>
+                            </tr>   
+                            </table>
+                            <hr size="1" color=` + TooltipSeparatorLine + `>
+                            <table style="width:100%">            
                             <tr>
-                                <td align="left">Version:</td>
-                                <th align="left">`+ version +`</th>
+                                <td align="left" style="padding-right:60px;">Version:</td>
+                                <td align="left" style="font-weight:700;">`+ version +`</td>
                             </tr>
                             </table>`;     
 
