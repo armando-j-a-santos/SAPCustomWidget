@@ -1237,7 +1237,7 @@
                         `<table style="width:100%">
                         <tr>
                             <td align="left" style="font-weight:700; padding-right:50px;">`+ version +`:</td>
-                            <td align="right" style="font-weight:700; padding-right:50px;">{valueY.sum} ` + Scale + `</td>
+                            <td align="right" style="font-weight:700;">{valueY.sum} ` + Scale + `</td>
                         </tr>               
                         </table>
 
@@ -1267,11 +1267,13 @@
                         var HTML =
                                 `<table>
                                 <tr>
-                                    <th align="left">`+ version +`:</th>
-                                    <th align="left">{valueY.sum} ` + Scale + `</th>
+                                    <td align="left" style="font-weight:700; padding-right:50px;">`+ version +`:</td>
+                                    <td align="left" style="font-weight:700;">{valueY.sum} ` + Scale + `</td>
                                 </tr>      
                                 </table>
+
                                 <hr size="1" color=` + TooltipSeparatorLine + `>
+
                                 <table>`												
                                 ;
                                 
@@ -1279,8 +1281,8 @@
                             target.dataItem.value4 = Number(String(target.dataItem.value4).replace(',', '').replace(',', ''));           		
                             HTML = HTML +`
                                     <tr>
-                                        <td align="left">`+ name4 +`:</td>
-                                        <th align="left">{value4.formatNumber("#,###,###.")} ` + Scale + `</th>
+                                        <td align="left" style="padding-right:50px;">`+ name4 +`:</td>
+                                        <td align="left" style="font-weight:700;">{value4.formatNumber("#,###,###.")} ` + Scale + `</td>
                                     </tr>`;
                         } 
                         
@@ -1288,8 +1290,8 @@
                             target.dataItem.value3 = Number(String(target.dataItem.value3).replace(',', '').replace(',', ''));
                             HTML = HTML +`
                                     <tr>
-                                        <td align="left">`+ name3 +`:</td>
-                                        <th align="left">{value3.formatNumber("#,###,###.")} ` + Scale + `</th>
+                                        <td align="left" style="padding-right:50px;">`+ name3 +`:</td>
+                                        <td align="left" style="font-weight:700;">{value3.formatNumber("#,###,###.")} ` + Scale + `</td>
                                     </tr>`;
                         }
                         
@@ -1297,8 +1299,8 @@
                             target.dataItem.value2 = Number(String(target.dataItem.value2).replace(',', '').replace(',', ''));
                             HTML = HTML +`
                                     <tr>
-                                        <td align="left">`+ name2 +`:</td>
-                                        <th align="left">{value2.formatNumber("#,###,###.")} ` + Scale + `</th>
+                                        <td align="left" style="padding-right:50px;">`+ name2 +`:</td>
+                                        <td align="left" style="font-weight:700;">{value2.formatNumber("#,###,###.")} ` + Scale + `</td>
                                     </tr>`;
                         }
                         
@@ -1306,8 +1308,8 @@
                             target.dataItem.value1 = Number(String(target.dataItem.value1).replace(',', '').replace(',', ''));
                             HTML = HTML +`
                                     <tr>
-                                        <td align="left">`+ name1 +`:</td>
-                                        <th align="left">{value1.formatNumber("#,###,###.")} ` + Scale + `</th>
+                                        <td align="left" style="padding-right:50px;">`+ name1 +`:</td>
+                                        <td align="left" style="font-weight:700;">{value1.formatNumber("#,###,###.")} ` + Scale + `</td>
                                     </tr>`;                         
                         }
                         
