@@ -219,7 +219,7 @@
 
                 var DimTime = String(chartConfigurations.DimTime);
                 var DimVersion = String(chartConfigurations.DimVersion);
-                var DimMeasure = String(chartConfigurations.DimMeasure);
+                var DimMeasureID = String(chartConfigurations.DimMeasureID);
 
                 
                 var CYy = Number(String(chartConfigurations.CYy));
@@ -359,7 +359,7 @@
                 resultSet.forEach(dp => {
                     //console.log(dp)
 
-                    if (dp["TIME.YEAR"].id === CY_Minus1y && dp["@MeasureDimension"].id === "AMOUNT" && dp["SUBMISSION_LAYER"].id === Version_1) {
+                    if (dp[DimTime].id === CY_Minus1y && dp["@MeasureDimension"].id === DimMeasureID && dp[DimVersion].id === Version_1) {
 
                         ////////////////////////////////////////////
                         //Column 2021  (Blue Column)
@@ -397,7 +397,7 @@
                     }
 
 
-                    if (dp["TIME.YEAR"].id === CYy && dp["@MeasureDimension"].id === "AMOUNT") {          
+                    if (dp[DimTime].id === CYy && dp["@MeasureDimension"].id === DimMeasureID) {          
 
                         ////////////////////////////////////////////
                         //Column 1 
@@ -405,7 +405,7 @@
                         //Model Variable --> Selected_Version_1 
                         ////////////////////////////////////////////
 
-                        if(dp["SUBMISSION_LAYER"].id === Version_2){
+                        if(dp[DimVersion].id === Version_2){
                             if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY.A1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -426,7 +426,7 @@
                         //Model Variable --> Selected_Version_2 
                         ////////////////////////////////////////////
 
-                        if(dp["SUBMISSION_LAYER"].id === Version_3){
+                        if(dp[DimVersion].id === Version_3){
                             if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY.B1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -447,7 +447,7 @@
                         //Model Variable --> Selected_Version_3 
                         ////////////////////////////////////////////
 
-                        if(dp["SUBMISSION_LAYER"].id === Version_4){
+                        if(dp[DimVersion].id === Version_4){
                             if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY.C1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -468,7 +468,7 @@
                         //Model Variable --> Selected_Version_5 
                         ////////////////////////////////////////////
 
-                        if(dp["SUBMISSION_LAYER"].id === Version_5){
+                        if(dp[DimVersion].id === Version_5){
                             if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY.D1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -484,7 +484,7 @@
                         }
                     }
 
-                    if (dp["TIME.YEAR"].id === CY_Plus1y && dp["@MeasureDimension"].id === "AMOUNT") {
+                    if (dp[DimTime].id === CY_Plus1y && dp["@MeasureDimension"].id === DimMeasureID) {
 
                         ////////////////////////////////////////////
                         //Column 1 
@@ -492,7 +492,7 @@
                         //Model Variable --> Selected_Version_1 
                         ////////////////////////////////////////////
 
-                        if(dp["SUBMISSION_LAYER"].id === Version_2){
+                        if(dp[DimVersion].id === Version_2){
                             if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY_Plus1.A1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -513,7 +513,7 @@
                         //Model Variable --> Selected_Version_2 
                         ////////////////////////////////////////////
 
-                        if(dp["SUBMISSION_LAYER"].id === Version_3){
+                        if(dp[DimVersion].id === Version_3){
                             if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY_Plus1.B1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -534,7 +534,7 @@
                         //Model Variable --> Selected_Version_3 
                         ////////////////////////////////////////////
 
-                        if(dp["SUBMISSION_LAYER"].id === Version_4){
+                        if(dp[DimVersion].id === Version_4){
                             if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY_Plus1.C1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -555,7 +555,7 @@
                         //Model Variable --> Selected_Version_4 
                         ////////////////////////////////////////////
                         
-                        if(dp["SUBMISSION_LAYER"].id === Version_5){
+                        if(dp[DimVersion].id === Version_5){
                             if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY_Plus1.D1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -571,7 +571,7 @@
                         }
                     }
 
-                    if (dp["TIME.YEAR"].id === CY_Plus2y && dp["@MeasureDimension"].id === "AMOUNT") {
+                    if (dp[DimTime].id === CY_Plus2y && dp["@MeasureDimension"].id === DimMeasureID) {
 
                         ////////////////////////////////////////////
                         //Column 1 
@@ -579,7 +579,7 @@
                         //Model Variable --> Selected_Version_1 
                         ////////////////////////////////////////////
 
-                        if(dp["SUBMISSION_LAYER"].id === Version_2){
+                        if(dp[DimVersion].id === Version_2){
                             if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY_Plus2.A1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -600,7 +600,7 @@
                         //Model Variable --> Selected_Version_2 
                         ////////////////////////////////////////////
 
-                        if(dp["SUBMISSION_LAYER"].id === Version_3){
+                        if(dp[DimVersion].id === Version_3){
                             if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY_Plus2.B1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -621,7 +621,7 @@
                         //Model Variable --> Selected_Version_3 
                         ////////////////////////////////////////////
 
-                        if(dp["SUBMISSION_LAYER"].id === Version_4){
+                        if(dp[DimVersion].id === Version_4){
                             if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY_Plus2.C1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -642,7 +642,7 @@
                         //Model Variable --> Selected_Version_4 
                         ////////////////////////////////////////////
 
-                        if(dp["SUBMISSION_LAYER"].id === Version_5){
+                        if(dp[DimVersion].id === Version_5){
                             if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY_Plus2.D1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -658,7 +658,7 @@
                         }
                     }
 
-                    if (dp["TIME.YEAR"].id === CY_Plus3y && dp["@MeasureDimension"].id === "AMOUNT") {
+                    if (dp[DimTime].id === CY_Plus3y && dp["@MeasureDimension"].id === DimMeasureID) {
 
                         ////////////////////////////////////////////
                         //Column 1 
@@ -666,7 +666,7 @@
                         //Model Variable --> Selected_Version_1 
                         ////////////////////////////////////////////
 
-                        if(dp["SUBMISSION_LAYER"].id === Version_2){
+                        if(dp[DimVersion].id === Version_2){
                             if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY_Plus3.A1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -687,7 +687,7 @@
                         //Model Variable --> Selected_Version_2 
                         ////////////////////////////////////////////
 
-                        if(dp["SUBMISSION_LAYER"].id === Version_3){
+                        if(dp[DimVersion].id === Version_3){
                             if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY_Plus3.B1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -708,7 +708,7 @@
                         //Model Variable --> Selected_Version_3 
                         ////////////////////////////////////////////
 
-                        if(dp["SUBMISSION_LAYER"].id === Version_4){
+                        if(dp[DimVersion].id === Version_4){
                             if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY_Plus3.C1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -729,7 +729,7 @@
                         //Model Variable --> Selected_Version_4 
                         ////////////////////////////////////////////
 
-                        if(dp["SUBMISSION_LAYER"].id === Version_5){    
+                        if(dp[DimVersion].id === Version_5){    
                             if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY_Plus3.D1 = dp["@MeasureDimension"].formattedValue;
                             }
