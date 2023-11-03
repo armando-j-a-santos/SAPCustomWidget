@@ -401,16 +401,16 @@
                         //Model Variable --> Selected_Version_1 
                         ////////////////////////////////////////////
 
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Only]") {
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Only]" && dp["AI_CLASSIFIER"].id === "Base AI") {
                             CY.A1 = dp["@MeasureDimension"].formattedValue;
                         }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_New_AI]") {
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_New_AI]" && dp["AI_CLASSIFIER"].id === "New AI") {
                             CY.A2 = dp["@MeasureDimension"].formattedValue;
                         }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Drivers]") {
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Drivers]" && dp["AI_CLASSIFIER"].id === "HI") {
                             CY.A3 = dp["@MeasureDimension"].formattedValue;
                         }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_Non_AI]") {
+                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_Non_AI]" && dp["AI_CLASSIFIER"].id === "Non AI") {
                             CY.A4 = dp["@MeasureDimension"].formattedValue;
                         }
 
