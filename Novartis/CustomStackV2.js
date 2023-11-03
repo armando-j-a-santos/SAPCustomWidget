@@ -812,8 +812,6 @@
                     chart.data.push(CY_Plus1);
                 }
                 
-               
-
                 console.log("*******FINAL CHART DATA******");
                 console.log(chart.data);
 
