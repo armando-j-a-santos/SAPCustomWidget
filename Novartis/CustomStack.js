@@ -763,8 +763,8 @@
                 
                
 
-                //console.log("*******FINAL CHART DAATA******");
-                //console.log(chart.data);
+                console.log("*******FINAL CHART DAATA******");
+                console.log(chart.data);
 
                 // Create X axes (and customize it)
                 var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
