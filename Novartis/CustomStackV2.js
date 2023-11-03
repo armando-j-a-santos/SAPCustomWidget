@@ -217,6 +217,10 @@
                 var XAxisFontColor = String(chartConfigurations.XAxisFontColor);
                 var XAxisFontSize = Number(chartConfigurations.XAxisFontSize);
 
+                var DimTime = String(chartConfigurations.DimTime);
+                var DimVersion = String(chartConfigurations.DimVersion);
+                var DimMeasure = String(chartConfigurations.DimMeasure);
+
                 
                 var CYy = Number(String(chartConfigurations.CYy));
 
