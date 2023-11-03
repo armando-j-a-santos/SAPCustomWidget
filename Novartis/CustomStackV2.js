@@ -354,6 +354,21 @@
                     none: 0
                 };
 
+                console.log("resultSet StackedChart Data Source");
+                console.log(resultSet);
+                console.log("=========");
+                console.log(Version_1);   
+                console.log(Version_2);
+                console.log(Version_3);
+                console.log(Version_4);
+                console.log(Version_5);
+                console.log("=========")
+                console.log(DimTime);
+                console.log(DimSCope);
+                console.log(DimVersion);
+                console.log(MeasureID);
+                console.log("=========")
+
 
                 // Loop trhough the resultset received from SAC side
                 resultSet.forEach(dp => {
