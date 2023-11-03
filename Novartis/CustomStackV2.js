@@ -814,7 +814,7 @@
                 
                
 
-                console.log("*******FINAL CHART DAATA******");
+                console.log("*******FINAL CHART DATA******");
                 console.log(chart.data);
 
                 // Create X axes (and customize it)
