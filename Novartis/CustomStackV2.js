@@ -480,7 +480,7 @@
                         }
                     }
 
-                    if (dp["TIME.YEAR"].id === CY_Plus1y) {
+                    if (dp["TIME.YEAR"].id === CY_Plus1y && dp["@MeasureDimension"].id === "AMOUNT") {
 
                         ////////////////////////////////////////////
                         //Column 1 
@@ -488,36 +488,39 @@
                         //Model Variable --> Selected_Version_1 
                         ////////////////////////////////////////////
 
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Only]") {
-                            CY_Plus1.A1 = dp["@MeasureDimension"].formattedValue;
+                        if(dp["SUBMISSION_LAYER"].id === Version_2){
+                            if (dp["AI_CLASSIFIER"].id === "Base AI") {
+                                CY_Plus1.A1 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["AI_CLASSIFIER"].id === "New AI") {
+                                CY_Plus1.A2 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["AI_CLASSIFIER"].id === "HI") {
+                                CY_Plus1.A3 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["AI_CLASSIFIER"].id === "Non AI") {
+                                CY_Plus1.A4 = dp["@MeasureDimension"].formattedValue;
+                            }
                         }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_New_AI]") {
-                            CY_Plus1.A2 = dp["@MeasureDimension"].formattedValue;
-                        }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_AI_Drivers]") {
-                            CY_Plus1.A3 = dp["@MeasureDimension"].formattedValue;
-                        }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C1_Non_AI]") {
-                            CY_Plus1.A4 = dp["@MeasureDimension"].formattedValue;
-                        }
-
                         ////////////////////////////////////////////
                         //Column 2 
                         //CW --> Version_3
                         //Model Variable --> Selected_Version_2 
                         ////////////////////////////////////////////
 
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Only]") {
-                            CY_Plus1.B1 = dp["@MeasureDimension"].formattedValue;
-                        }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_New_AI]") {
-                            CY_Plus1.B2 = dp["@MeasureDimension"].formattedValue;
-                        }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Drivers]") {
-                            CY_Plus1.B3 = dp["@MeasureDimension"].formattedValue;
-                        }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_Non_AI]") {
-                            CY_Plus1.B4 = dp["@MeasureDimension"].formattedValue;
+                        if(dp["SUBMISSION_LAYER"].id === Version_3){
+                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Only]" && dp["AI_CLASSIFIER"].id === "Base AI") {
+                                CY_Plus1.B1 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_New_AI]" && dp["AI_CLASSIFIER"].id === "New AI") {
+                                CY_Plus1.B2 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Drivers]" && dp["AI_CLASSIFIER"].id === "HI") {
+                                CY_Plus1.B3 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_Non_AI]" && dp["AI_CLASSIFIER"].id === "Non AI") {
+                                CY_Plus1.B4 = dp["@MeasureDimension"].formattedValue;
+                            }
                         }
 
                         ////////////////////////////////////////////
