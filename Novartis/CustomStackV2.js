@@ -786,8 +786,7 @@
                 // Data array feed
                 
                 if(NumYears === 4){
-                    if(EnabledActuals === "true"){
-                        
+                    if(EnabledActuals === "true"){                        
                         chart.data.push(CY_Minus1);
                     }
                     
