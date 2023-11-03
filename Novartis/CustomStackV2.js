@@ -400,6 +400,7 @@
                         //CW --> Version_2
                         //Model Variable --> Selected_Version_1 
                         ////////////////////////////////////////////
+
                         if(dp["SUBMISSION_LAYER"].id === Version_2){
                             if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY.A1 = dp["@MeasureDimension"].formattedValue;
@@ -421,17 +422,19 @@
                         //Model Variable --> Selected_Version_2 
                         ////////////////////////////////////////////
 
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Only]") {
-                            CY.B1 = dp["@MeasureDimension"].formattedValue;
-                        }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_New_AI]") {
-                            CY.B2 = dp["@MeasureDimension"].formattedValue;
-                        }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_AI_Drivers]") {
-                            CY.B3 = dp["@MeasureDimension"].formattedValue;
-                        }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C2_Non_AI]") {
-                            CY.B4 = dp["@MeasureDimension"].formattedValue;
+                        if(dp["SUBMISSION_LAYER"].id === Version_3){
+                            if (dp["AI_CLASSIFIER"].id === "Base AI") {
+                                CY.B1 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["AI_CLASSIFIER"].id === "New AI") {
+                                CY.B2 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["AI_CLASSIFIER"].id === "HI") {
+                                CY.B3 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["AI_CLASSIFIER"].id === "Non AI") {
+                                CY.B4 = dp["@MeasureDimension"].formattedValue;
+                            }
                         }
 
                         ////////////////////////////////////////////
@@ -440,17 +443,19 @@
                         //Model Variable --> Selected_Version_3 
                         ////////////////////////////////////////////
 
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_AI_Only]") {
-                            CY.C1 = dp["@MeasureDimension"].formattedValue;
-                        }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_New_AI]") {
-                            CY.C2 = dp["@MeasureDimension"].formattedValue;
-                        }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_AI_Drivers]") {
-                            CY.C3 = dp["@MeasureDimension"].formattedValue;
-                        }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C3_Non_AI]") {
-                            CY.C4 = dp["@MeasureDimension"].formattedValue;
+                        if(dp["SUBMISSION_LAYER"].id === Version_4){
+                            if (dp["AI_CLASSIFIER"].id === "Base AI") {
+                                CY.C1 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["AI_CLASSIFIER"].id === "New AI") {
+                                CY.C2 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["AI_CLASSIFIER"].id === "HI") {
+                                CY.C3 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["AI_CLASSIFIER"].id === "Non AI") {
+                                CY.C4 = dp["@MeasureDimension"].formattedValue;
+                            }
                         }
 
                         ////////////////////////////////////////////
@@ -459,17 +464,19 @@
                         //Model Variable --> Selected_Version_5 
                         ////////////////////////////////////////////
 
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_AI_Only]") {
-                            CY.D1 = dp["@MeasureDimension"].formattedValue;
-                        }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_New_AI]") {
-                            CY.D2 = dp["@MeasureDimension"].formattedValue;
-                        }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_AI_Drivers]") {
-                            CY.D3 = dp["@MeasureDimension"].formattedValue;
-                        }
-                        if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_C4_Non_AI]") {
-                            CY.D4 = dp["@MeasureDimension"].formattedValue;
+                        if(dp["SUBMISSION_LAYER"].id === Version_5){
+                            if (dp["AI_CLASSIFIER"].id === "Base AI") {
+                                CY.D1 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["AI_CLASSIFIER"].id === "New AI") {
+                                CY.D2 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["AI_CLASSIFIER"].id === "HI") {
+                                CY.D3 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["AI_CLASSIFIER"].id === "Non AI") {
+                                CY.D4 = dp["@MeasureDimension"].formattedValue;
+                            }
                         }
                     }
 
