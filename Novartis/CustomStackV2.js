@@ -1739,7 +1739,7 @@ console.log("============ HEREEE 6 =============");
                 // Automatic adjustment of Y Axis representation (K,M)
                 valueAxis1.numberFormatter = new am4core.NumberFormatter();
                 valueAxis1.numberFormatter.numberFormat = "#.a";
-              
+console.log("============ HEREEE 7 =============");           
 
             }); // end am4core.ready()        
 
