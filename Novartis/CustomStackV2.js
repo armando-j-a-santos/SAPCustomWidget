@@ -935,6 +935,7 @@
                 //Show/Hide Grid
                 valueAxis4.renderer.grid.template.disabled = true;
 
+        console.log("============ HEREEE 1 =============");
 
                 //Function to Set diferent patterns and assign them to diferent colors
                 function SetPatterns(field, color) {
@@ -977,7 +978,7 @@
                 }
 
 
-
+ console.log("============ HEREEE 2 =============");
                 // Create series
                 function createSeries(field, name, stacked, version, yAxes) {
                     var valueAxis;
@@ -1050,7 +1051,7 @@
 
                     //Set columns border color
                     series.columns.template.stroke = am4core.color("#FFFFFF");
-
+    console.log("============ HEREEE 3 =============");
                     // Tooltip 
                     series.tooltip.getFillFromObject = false;
                     series.tooltip.background.fill = am4core.color(TooltipBackgroundColor);
@@ -1206,7 +1207,7 @@
 
                     }
                 }
-
+ console.log("============ HEREEE 4 =============");
                 function createTotalSeries(yAxes, field1, field2, field3, field4, version, name1, name2, name3, name4) {
                     var valueAxis;
                     if (yAxes === 1) {
@@ -1369,7 +1370,7 @@
                         return HTML;
 
                     });
-
+ console.log("============ HEREEE 5 =============");
                     //Hide Total label when equal to 0
                     totalBullet.label.adapter.add("text", function(text, target) {
                         if (target.dataItem && target.dataItem.values.valueY.sum === 0) {
@@ -1456,7 +1457,7 @@
                     }
 
                 }
-
+console.log("============ HEREEE 6 =============");
                 //Set columns 
                 if (NumVersions === 0 || NumVersions === 1) {
                     // First Column
@@ -1543,6 +1544,7 @@
                     createTotalSeries(4,"D1","D2","D3","D4", Version_5, AIScope_1, AIScope_2, AIScope_3, AIScope_4);
                 }
 
+console.log("============ HEREEE 6 =============");
                 //Custom legend
                 //// Version 1, Version 2, Version 3, Version 4
                 var legendA = new am4charts.Legend();
