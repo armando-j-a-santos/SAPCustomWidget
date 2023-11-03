@@ -355,7 +355,7 @@
                 resultSet.forEach(dp => {
                     //console.log(dp)
 
-                    if (dp["TIME.YEAR"].id === CY_Minus1y) {
+                    if (dp["TIME.YEAR"].id === CY_Minus1y && dp["@MeasureDimension"].id === "AMOUNT" && dp["SUBMISSION_LAYER"].id === Version_1) {
 
                         ////////////////////////////////////////////
                         //Column 2021  (Blue Column)
@@ -363,29 +363,29 @@
                         //Actuals
                         ////////////////////////////////////////////
                         if (NumVersions === 3 || NumVersions === 4) {
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Only]") {
+                            if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY_Minus1.B1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_New_AI]") {
+                            if (dp["AI_CLASSIFIER"].id === "New AI") {
                                 CY_Minus1.B2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Drivers]") {
+                            if (dp["AI_CLASSIFIER"].id === "HI") {
                                 CY_Minus1.B3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_Non_AI]") {
+                            if (dp["AI_CLASSIFIER"].id === "Non AI") {
                                 CY_Minus1.B4 = dp["@MeasureDimension"].formattedValue;
                             }
                         } else if (NumVersions === 0 || NumVersions === 1 || NumVersions === 2) {
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Only]") {
+                            if (dp["AI_CLASSIFIER"].id === "Base AI") {
                                 CY_Minus1.A1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_New_AI]") {
+                            if (dp["AI_CLASSIFIER"].id === "New AI") {
                                 CY_Minus1.A2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_AI_Drivers]") {
+                            if (dp["AI_CLASSIFIER"].id === "HI") {
                                 CY_Minus1.A3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp["@MeasureDimension"].id === "[OG_ACCOUNT].[parentId].&[NEW_Stacked_Act_Non_AI]") {
+                            if (dp["AI_CLASSIFIER"].id === "Non AI") {
                                 CY_Minus1.A4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
