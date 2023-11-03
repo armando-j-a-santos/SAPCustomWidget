@@ -803,8 +803,7 @@
                     chart.data.push(CY_Plus1);
                     chart.data.push(CY_Plus2);
                 }else{
-                    if(EnabledActuals === "true"){
-                        
+                    if(EnabledActuals === "true"){                        
                         chart.data.push(CY_Minus1);
                     }
                     
