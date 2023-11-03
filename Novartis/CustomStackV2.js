@@ -219,7 +219,7 @@
 
                 var DimTime = String(chartConfigurations.DimTime);
                 var DimVersion = String(chartConfigurations.DimVersion);
-                var DimScope = String(chartConfigurations.DimScope);
+                var DimSCope = String(chartConfigurations.DimSCope);
                 var MeasureID = String(chartConfigurations.MeasureID);
                 
                 var CYy = Number(String(chartConfigurations.CYy));
