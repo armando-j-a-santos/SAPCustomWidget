@@ -393,25 +393,26 @@
                     }
 
 
-                    if (dp["YEAR"].id === CYy) {          
+                    if (dp["YEAR"].id === CYy && dp["@MeasureDimension"].id === "AMOUNT") {          
 
                         ////////////////////////////////////////////
                         //Column 1 
                         //CW --> Version_2
                         //Model Variable --> Selected_Version_1 
                         ////////////////////////////////////////////
-
-                        if (dp["@MeasureDimension"].id === "AMOUNT" && dp["AI_CLASSIFIER"].id === "Base AI" && dp["SUBMISSION_LAYER"].id === XXXXXXXXX) {
-                            CY.A1 = dp["@MeasureDimension"].formattedValue;
-                        }
-                        if (dp["@MeasureDimension"].id === "AMOUNT" && dp["AI_CLASSIFIER"].id === "New AI") {
-                            CY.A2 = dp["@MeasureDimension"].formattedValue;
-                        }
-                        if (dp["@MeasureDimension"].id === "AMOUNT" && dp["AI_CLASSIFIER"].id === "HI") {
-                            CY.A3 = dp["@MeasureDimension"].formattedValue;
-                        }
-                        if (dp["@MeasureDimension"].id === "AMOUNT" && dp["AI_CLASSIFIER"].id === "Non AI") {
-                            CY.A4 = dp["@MeasureDimension"].formattedValue;
+                        if(dp["SUBMISSION_LAYER"].id === Version_2){
+                            if (dp["AI_CLASSIFIER"].id === "Base AI") {
+                                CY.A1 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["AI_CLASSIFIER"].id === "New AI") {
+                                CY.A2 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["AI_CLASSIFIER"].id === "HI") {
+                                CY.A3 = dp["@MeasureDimension"].formattedValue;
+                            }
+                            if (dp["AI_CLASSIFIER"].id === "Non AI") {
+                                CY.A4 = dp["@MeasureDimension"].formattedValue;
+                            }
                         }
 
                         ////////////////////////////////////////////
