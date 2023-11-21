@@ -69,7 +69,7 @@
 
 		async loadData(JSON, paramColumns){
 			//if (JSON != "") {
-				makeTable(JSON, paramColumns)
+				makeTable(JSON, paramColumns);
 			 //}		
 		}
 
