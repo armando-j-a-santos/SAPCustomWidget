@@ -17,32 +17,17 @@
 					`;
     class CWTableDrill extends HTMLElement {
 		constructor() {
-				super(); 
-				_shadowRoot = this.attachShadow({
-					mode: "open"
-				});
-				_shadowRoot.appendChild(tmpl.content.cloneNode(true));
-				this._JSON = "-";
-				this._paramColumns = "-";
-			    this.addEventListener("click", event => {
+			super(); 
+			_shadowRoot = this.attachShadow({
+				mode: "open"
+			});
+			_shadowRoot.appendChild(tmpl.content.cloneNode(true));
+			this._JSON = "-";
+			this._paramColumns = "-";
+			this.addEventListener("click", event => {
                 	var event = new Event("onClick");
                 	this.dispatchEvent(event);
             	});
-		}
-
-		connectedCallback(){
-		}
-
-		disconnectedCallback(){
-		}
-
-		onCustomWidgetBeforeUpdate(oChangedProperties) {
-		}
-
-		async loadData(JSON, paramColumns){
-			//if (JSON != "") {
-			//	makeTable(JSON, paramColumns);
-			 //}
 
 			var ModelA = {  "catalog": {
 			"clothing": {
@@ -119,8 +104,23 @@
 			//_shadowRoot.querySelector("#dataTable").id = "_dataTable";		
 			treeTable.placeAt(_shadowRoot.getElementById("dataTableCustom99"));
 
+		
+		}
 
-			
+		connectedCallback(){
+		}
+
+		disconnectedCallback(){
+		}
+
+		onCustomWidgetBeforeUpdate(oChangedProperties) {
+		}
+
+		async loadData(JSON, paramColumns){
+			//if (JSON != "") {
+			//	makeTable(JSON, paramColumns);
+			 //}
+		
 		}
 
 		onCustomWidgetAfterUpdate(oChangedProperties) {
