@@ -148,12 +148,13 @@
 		var dataTable = document.createElement('div');		
 		//dataTable.slot = "content";
 		_shadowRoot.appendChild(dataTable);
-		_shadowRoot.appendChild(treeTable);
+	
 		//_shadowRoot.querySelector("#dataTable").id = "_dataTable";
 
 		//treeTable.placeAt(_shadowRoot.getElementById("dataTableCustom99"));
-		console.log("-----TEST FROM HERE---");
-		console.log(_shadowRoot.getElementById("dataTableCustom99"));
+		console.log("-----TEST FROM HERE---");  //****************
+		_shadowRoot.getElementById("dataTableCustom99").innerHTML = treeTable;
+		console.log(_shadowRoot.getElementById("dataTableCustom99"));//****************
 		//treeTable.placeAt("dataTable");
 		
 		
