@@ -148,10 +148,9 @@
 	
 		//_shadowRoot.querySelector("#dataTable").id = "_dataTable";
 
-		//treeTable.placeAt(_shadowRoot.getElementById("dataTableCustom99"));
-		console.log("-----TEST FROM HERE---");  //****************
+		treeTable.placeAt(_shadowRoot.getElementById("dataTableCustom99"));
+		
 		//_shadowRoot.getElementById("dataTableCustom99").innerHTML = treeTable;
-		console.log(_shadowRoot.getElementById("dataTableCustom99"));//****************
 		//treeTable.placeAt("dataTable");
 		
 		
