@@ -73,6 +73,9 @@
 	customElements.define('com-sap-ajmlds-cwtabledrill', CWTableDrill);	
 	
 	function makeTable(JSON,paramColumns) {		
+
+		console.log("-----******---");
+		
 		var ModelA = {  "catalog": {
 		"clothing": {
 		  "categories": [
@@ -148,7 +151,7 @@
 		//_shadowRoot.querySelector("#dataTable").id = "_dataTable";
 
 		//treeTable.placeAt(_shadowRoot.getElementById("dataTableCustom99"));
-		console.log("--------");
+		console.log("-----TEST---");
 		console.log(_shadowRoot.getElementById("dataTableCustom99").innerHTML);
 		//treeTable.placeAt("dataTable");
 		
