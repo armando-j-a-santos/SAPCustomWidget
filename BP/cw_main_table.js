@@ -12,7 +12,7 @@
 				type="text/javascript"
 				id="sap-ui-bootstrap"
 				data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table,sap.ui.layout,sap.ui.core.mvc.Controller"
-				
+				data-sap-ui-theme="sap_bluecrystal"
 				data-sap-ui-bindingSyntax="complex"
 				ui-compatVersion="edge"
 				data-sap-ui-preload="async">
@@ -120,6 +120,7 @@
 			
 
 			treeTable.placeAt(_shadowRoot.getElementById("dataTableCustom99"));
+			console.log(_shadowRoot.getElementById("dataTableCustom99"));
 		
 		}
 
