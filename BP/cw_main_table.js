@@ -41,8 +41,6 @@
                 		this.dispatchEvent(event);
             		});
 			*/
-
-			tmpl.innerHTML = ``;
 			
 			var ModelA = {  "catalog": {
 			"clothing": {
