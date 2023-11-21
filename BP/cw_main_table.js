@@ -148,7 +148,8 @@
 		//_shadowRoot.querySelector("#dataTable").id = "_dataTable";
 
 		//treeTable.placeAt(_shadowRoot.getElementById("dataTableCustom99"));
-		console.log(tmpl.getElementById("dataTableCustom99").innerHTML);
+		console.log("--------");
+		console.log(_shadowRoot.getElementById("dataTableCustom99").innerHTML);
 		treeTable.placeAt("dataTable");
 		
 		
