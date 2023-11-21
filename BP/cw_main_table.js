@@ -4,8 +4,7 @@
     	let tmpl = document.createElement('template');
 	
 	//HTML
-	tmpl.innerHTML = `<head>
- 				<script src="https://openui5.hana.ondemand.com/1.108.20/resources/sap-ui-core.js"
+	tmpl.innerHTML = `<script src="https://openui5.hana.ondemand.com/1.108.20/resources/sap-ui-core.js"
 						type="text/javascript"
 						id="sap-ui-bootstrap"
 						data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table,sap.ui.layout,sap.ui.core.mvc.Controller"
@@ -14,11 +13,8 @@
 						ui-compatVersion="edge"
 						data-sap-ui-preload="async">
 					  </script>
-			</head>
-   			<body>
 					  <div id="dataTableCustom99">
-					  </div>
-       			</body>`;
+					  </div>`;
 	
     class CWTableDrill extends HTMLElement {
 		constructor() {
