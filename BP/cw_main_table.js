@@ -4,8 +4,6 @@
     	let tmpl = document.createElement('template');
 	
 	tmpl.innerHTML = `
- 			<div id="dataTableCustom99"></div>
-    
     			<script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
 						type="text/javascript"
 						id="sap-ui-bootstrap"
@@ -15,6 +13,9 @@
 						ui-compatVersion="edge"
 						data-sap-ui-preload="async">
 			</script>
+   
+    	<div id="dataTableCustom99"></div>
+
 			`;
 
 	
