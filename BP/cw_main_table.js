@@ -153,9 +153,14 @@
 		
 		var dataTable = document.createElement('div');		
 		//dataTable.slot = "content";
-		_shadowRoot.appendChild(dataTable);		
-		//_shadowRoot.querySelector("#dataTable").id = "_dataTable";		
-		treeTable.placeAt(_shadowRoot.getElementById("dataTableCustom99"));
+		if (dataTable !== null){
+			_shadowRoot.appendChild(dataTable);
+		}
+		//_shadowRoot.querySelector("#dataTable").id = "_dataTable";
+
+		if (treeTable !== null){
+			treeTable.placeAt(_shadowRoot.getElementById("dataTableCustom99"));
+		}
 		/*
    		sap.ui.getCore().attachInit(function() {
             "use strict";
