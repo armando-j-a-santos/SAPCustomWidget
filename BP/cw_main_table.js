@@ -3,7 +3,10 @@
 	let _id;
     	let tmpl = document.createElement('template');
 	
-	tmpl.innerHTML = `<script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+	tmpl.innerHTML = `
+ 			<div id="dataTableCustom99"></div>
+    
+    			<script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
 						type="text/javascript"
 						id="sap-ui-bootstrap"
 						data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table,sap.ui.layout,sap.ui.core.mvc.Controller"
@@ -12,8 +15,6 @@
 						ui-compatVersion="edge"
 						data-sap-ui-preload="async">
 			</script>
-			<div id="dataTableCustom99">
-			</div>
 			`;
 
 	
@@ -106,10 +107,8 @@
 			_shadowRoot.appendChild(dataTable);		
 			//_shadowRoot.querySelector("#dataTable").id = "_dataTable";	
 			
-			console.log(dataTable);
-			console.log(dataTableCustom99);
+
 			treeTable.placeAt(_shadowRoot.getElementById("dataTableCustom99"));
-			console.log(_shadowRoot.getElementById("dataTableCustom99"));
 		
 		}
 
