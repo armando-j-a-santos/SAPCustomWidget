@@ -18,12 +18,12 @@
     class CWTableDrill extends HTMLElement {
 		constructor() {
 			super(); 
-			_shadowRoot = this.attachShadow({
+			this._shadowRoot = this.attachShadow({
 				mode: "open"
 			});
-			_shadowRoot.appendChild(tmpl.content.cloneNode(true));
-			this._JSON = "-";
-			this._paramColumns = "-";
+			this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
+			//this._JSON = "-";
+			//this._paramColumns = "-";
 			/*
 			this.addEventListener("click", event => {
                 		var event = new Event("onClick");
@@ -112,7 +112,7 @@
 			
 			var dataTable = document.createElement('div');		
 			//dataTable.slot = "content";
-			_shadowRoot.appendChild(dataTable);		
+			this._shadowRoot.appendChild(dataTable);		
 			//_shadowRoot.querySelector("#dataTable").id = "_dataTable";	
 			
 
