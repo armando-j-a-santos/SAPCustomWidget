@@ -11,7 +11,7 @@
 	<script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
 				type="text/javascript"
 				id="sap-ui-bootstrap"
-				data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table,sap.ui.layout,sap.ui.core.mvc.Controller"
+				data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table,sap.ui.layout"
 				data-sap-ui-theme="sap_bluecrystal"
 				data-sap-ui-bindingSyntax="complex"
 				ui-compatVersion="edge"
@@ -112,15 +112,14 @@
 				template: new sap.m.Text({ text : "{size}"}),
 				sortProperty: "NscItem"}));
 			treeTable.bindRows("/catalog/clothing/");
+			//treeTable.placeAt("dataTableArmando");
 			
 			var dataTable = document.createElement('div');		
 			//dataTable.slot = "content";
 			_shadowRoot.appendChild(dataTable);		
 			//_shadowRoot.querySelector("#dataTable").id = "_dataTable";	
 			
-
 			treeTable.placeAt(_shadowRoot.getElementById("dataTableCustom99"));
-			console.log(dataTable);
 		
 		}
 
