@@ -24,11 +24,12 @@
 			_shadowRoot.appendChild(tmpl.content.cloneNode(true));
 			this._JSON = "-";
 			this._paramColumns = "-";
+			/*
 			this.addEventListener("click", event => {
-                	var event = new Event("onClick");
-                	this.dispatchEvent(event);
-            	});
-
+                		var event = new Event("onClick");
+                		this.dispatchEvent(event);
+            		});
+			*/
 			var ModelA = {  "catalog": {
 			"clothing": {
 			  "categories": [
