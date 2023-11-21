@@ -8,7 +8,7 @@
  	<script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
 			type="text/javascript"
 			id="sap-ui-bootstrap"
-			data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table,sap.ui.layout,sap.ui.core.mvc.Controller"
+			data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table,sap.ui.layout"
 			data-sap-ui-theme="sap_bluecrystal"
 			data-sap-ui-bindingSyntax="complex"
 			ui-compatVersion="edge"
