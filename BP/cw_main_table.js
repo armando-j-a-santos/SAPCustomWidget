@@ -110,7 +110,6 @@
 			console.log(dataTableCustom99);
 			treeTable.placeAt(_shadowRoot.getElementById("dataTableCustom99"));
 			console.log(_shadowRoot.getElementById("dataTableCustom99"));
-
 		
 		}
 
