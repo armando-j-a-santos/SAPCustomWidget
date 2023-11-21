@@ -146,7 +146,7 @@
 		//_shadowRoot.querySelector("#dataTable").id = "_dataTable";
 
 		if (treeTable !== null){
-			treeTable.placeAt(document.getElementById("dataTableCustom99")); //dataTableCustom99
+			treeTable.placeAt(document.getElementById("dataTableCustom99").innerHTML); //dataTableCustom99
 		}
 		/*
    		sap.ui.getCore().attachInit(function() {
