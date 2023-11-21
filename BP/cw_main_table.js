@@ -46,6 +46,7 @@
 
 		async loadData(JSON, paramColumns){
 			//if (JSON != "") {
+			console.log("-----**TES 3*---");
 				makeTable(JSON, paramColumns)
 			//}		
 		}
