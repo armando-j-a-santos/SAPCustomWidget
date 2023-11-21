@@ -148,8 +148,9 @@
 		//_shadowRoot.querySelector("#dataTable").id = "_dataTable";
 
 		//treeTable.placeAt(_shadowRoot.getElementById("dataTableCustom99"));
+		console.log(tmpl.getElementById("dataTableCustom99").innerHTML);
 		treeTable.placeAt("dataTable");
-		console.log(document.getElementById("dataTableCustom99").innerHTML)
+		
 		
 	}
 })();
