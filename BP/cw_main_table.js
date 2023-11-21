@@ -68,19 +68,6 @@
 	customElements.define('com-sap-ajmlds-cwtabledrill', CWTableDrill);	
 	
 	function makeTable(JSON,paramColumns) {	
-	 	let tmpl = document.createElement('template');
-		
-		tmpl.innerHTML = `
-	 	<div id="dataTableCustom99"></div>
-	 	<script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
-				type="text/javascript"
-				id="sap-ui-bootstrap"
-				data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table,sap.ui.layout,sap.ui.core.mvc.Controller"
-				data-sap-ui-theme="sap_bluecrystal"
-				data-sap-ui-bindingSyntax="complex"
-				ui-compatVersion="edge"
-				data-sap-ui-preload="async">
-		</script>`;
 		
 		var ModelA = {  "catalog": {
 		"clothing": {
