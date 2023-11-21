@@ -150,7 +150,7 @@
 
 		//treeTable.placeAt(_shadowRoot.getElementById("dataTableCustom99"));
 		console.log("-----TEST FROM HERE---");  //****************
-		_shadowRoot.getElementById("dataTableCustom99").innerHTML = treeTable;
+		//_shadowRoot.getElementById("dataTableCustom99").innerHTML = treeTable;
 		console.log(_shadowRoot.getElementById("dataTableCustom99"));//****************
 		//treeTable.placeAt("dataTable");
 		
