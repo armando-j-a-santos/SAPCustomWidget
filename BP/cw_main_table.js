@@ -16,7 +16,7 @@
 				type="text/javascript"
 				id="sap-ui-bootstrap"
 				data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table,sap.ui.layout,sap.ui.core.mvc.Controller"
-				data-sap-ui-theme="sap_bluecrystal"
+				
 				data-sap-ui-bindingSyntax="complex"
 				ui-compatVersion="edge"
 				data-sap-ui-preload="async">
@@ -33,6 +33,10 @@
 				mode: "open"
 			});
 			_shadowRoot.appendChild(tmpl.content.cloneNode(true));
+
+			_root = this._shadowRoot.getElementById('dataTableCustom99')
+			_props = {}
+			
 			//this._JSON = "-";
 			//this._paramColumns = "-";
 			/*
@@ -134,7 +138,6 @@
 			//if (JSON != "") {
 			//	makeTable(JSON, paramColumns);
 			 //}
-		
 		}
 
 		onCustomWidgetAfterUpdate(oChangedProperties) {
@@ -159,7 +162,7 @@
 	};
 	customElements.define('com-sap-ajmlds-cwtabledrill', CWTableDrill);	
 	
-	function makeTable(JSON,paramColumns) {		
+	function makeTable(JSON,paramColumns) {	
 	}
 })();
 
