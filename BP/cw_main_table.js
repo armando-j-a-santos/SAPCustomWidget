@@ -5,15 +5,7 @@
 	
 	tmpl.innerHTML = `
  	<div id="dataTableCustom99"></div>
- 	<script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
-			type="text/javascript"
-			id="sap-ui-bootstrap"
-			data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table,sap.ui.layout"
-			data-sap-ui-theme="sap_bluecrystal"
-			data-sap-ui-bindingSyntax="complex"
-			ui-compatVersion="edge"
-			data-sap-ui-preload="async">
-	</script>`;
+  	`;
 	
     class CWTableDrill extends HTMLElement {
 		constructor() {
@@ -68,6 +60,19 @@
 	customElements.define('com-sap-ajmlds-cwtabledrill', CWTableDrill);	
 	
 	function makeTable(JSON,paramColumns) {	
+
+	        div = document.createElement('div');
+	        let div2 = document.createElement('div');
+	        div2.innerHTML = `<script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+				type="text/javascript"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table,sap.ui.layout"
+				data-sap-ui-theme="sap_bluecrystal"
+				data-sap-ui-bindingSyntax="complex"
+				ui-compatVersion="edge"
+				data-sap-ui-preload="async">
+			</script>`;
+	        _shadowRoot.appendChild(div2);
 		
 		var ModelA = {  "catalog": {
 		"clothing": {
