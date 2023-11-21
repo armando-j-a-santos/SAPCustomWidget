@@ -1,10 +1,11 @@
 (function()  {
 	let _shadowRoot;
 	let _id;
-    let tmpl = document.createElement('template');
+    	let tmpl = document.createElement('template');
 	
 	//HTML
-	tmpl.innerHTML = `<script src="https://openui5.hana.ondemand.com/1.108.20/resources/sap-ui-core.js"
+	tmpl.innerHTML = `<head>
+ 				<script src="https://openui5.hana.ondemand.com/1.108.20/resources/sap-ui-core.js"
 						type="text/javascript"
 						id="sap-ui-bootstrap"
 						data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table,sap.ui.layout,sap.ui.core.mvc.Controller"
@@ -13,9 +14,12 @@
 						ui-compatVersion="edge"
 						data-sap-ui-preload="async">
 					  </script>
+			</head>
+   			<body>
 					  <div id="dataTableCustom99">
 					  </div>
-					`;
+       			</body>`;
+	
     class CWTableDrill extends HTMLElement {
 		constructor() {
 				super(); 
@@ -143,11 +147,10 @@
 		_shadowRoot.appendChild(dataTable);		
 		//_shadowRoot.querySelector("#dataTable").id = "_dataTable";
 
-
-
+		//treeTable.placeAt(_shadowRoot.getElementById("dataTableCustom99"));
+		treeTable.placeAt("dataTable");
+		console.log(document.getElementById("dataTableCustom99").innerHTML)
 		
-		treeTable.placeAt(_shadowRoot.getElementById("dataTableCustom99"));
-
 	}
 })();
 
