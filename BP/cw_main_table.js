@@ -10,6 +10,8 @@
     <meta charset="UTF-8" />
   </head>
   <body>
+      	<div id="dataTableCustom99"></div>
+       
 	<script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
 		type="text/javascript"
 		id="sap-ui-bootstrap"
@@ -20,7 +22,6 @@
 		data-sap-ui-preload="async">
 	</script>
    
-    	<div id="dataTableCustom99"></div>
   </body>
 </html>	`;
 
