@@ -68,9 +68,9 @@
 		}
 
 		async loadData(JSON, paramColumns){
-			if (JSON != "") {
+			//if (JSON != "") {
 				makeTable(JSON, paramColumns)
-			 }		
+			 //}		
 		}
 
 		onCustomWidgetAfterUpdate(oChangedProperties) {
