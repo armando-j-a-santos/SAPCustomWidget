@@ -226,7 +226,7 @@
                             ];
 
                              // Create the model linked to the data (oData)
-                            var _oModel = new JSONModel(oData);
+                            var _oModel = new sap.ui.model.json.JSONModel(oData)
                             _oModel.setSizeLimit(1000000);
                             
                             // Link the model to the widget
