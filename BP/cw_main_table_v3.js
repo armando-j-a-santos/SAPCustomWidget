@@ -106,15 +106,11 @@
         div.slot = "content_" + widgetName;
 
         let div1 = document.createElement('div');
-        div1.innerHTML = '<script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-bindingSyntax="complex"> </script>'
+        div1.innerHTML = '<script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-bindingSyntax="complex" data-sap-ui-libs="sap.m"> </script>'
         _shadowRoot.appendChild(div1);
             
         let div2 = document.createElement('div');
-        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons" xmlns="sap.ui.layout" xmlns="sap.m"><t:TreeTable id="tbl" rows="{path:'/',parameters:{arrayNames:["data"]}}" ><t:columns><t:Column><t:label><Label text="name" /></t:label><t:template><TextView text="{name}" /></t:template></t:Column><t:Column><t:label><Label text="Arm" /></t:label><t:template><TextView text="{description}" /></t:template></t:Column><t:Column><t:label><Label text="product" /></t:label><t:template><TextView text="{product}" /></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';
-                                        
-                                
-                            
-                            
+        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{path:'/',parameters:{arrayNames:["data"]}}" ><t:columns><t:Column><t:label><Label text="name" /></t:label><t:template><TextView text="{name}" /></t:template></t:Column><t:Column><t:label><Label text="Arm" /></t:label><t:template><TextView text="{description}" /></t:template></t:Column><t:Column><t:label><Label text="product" /></t:label><t:template><TextView text="{product}" /></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';               
         _shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
