@@ -279,6 +279,9 @@
                             var _oModel = new sap.ui.model.json.JSONModel(oData);
                             _oModel.setSizeLimit(1000000);
                             
+                            console.log("_oModel");
+                            console.log(_oModel);
+                            
                             // Link the model to the widget
                             this.getView()
                                 .setModel(_oModel, that.widgetName);
