@@ -100,6 +100,7 @@
 	function makeTable(JSON,paramColumns) {	
 	sap.ui.controller("view1.initial", {
 	    onInit : function(oEvent) {
+		console.log("hereeeeee 1111");
 	        var oModel = new sap.ui.model.json.JSONModel();
 	        oModel.setData({
 	            data: [
@@ -206,8 +207,10 @@
 	app.addPage(oView);
 	//app.placeAt("uiArea");
 
-	var myDiv = document.createElement('div');		
-	_shadowRoot.appendChild(myDiv);			
+	console.log("hereeeeee 2222");
+
+	//var myDiv = document.createElement('div');		
+	//_shadowRoot.appendChild(myDiv);			
 	app.placeAt(_shadowRoot.getElementById("uiArea"));
 		
 	}
