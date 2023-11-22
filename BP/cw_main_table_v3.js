@@ -176,51 +176,91 @@
                             */
 
                             var oData = [
-                                {
-                                  "text": "Node1",
-                                  "ref": "sap-icon://attachment-audio",
-                                  "nodes":
-                                  [
-                                      {
-                                          "text": "Node1-1",
-                                          "ref": "sap-icon://attachment-e-pub",
-                                          "nodes":[
-                                              {
-                                                  "text": "Node1-1-1",
-                                                  "ref": "sap-icon://attachment-html"
-                                              },
-                                              {
-                                                  "text": "Node1-1-2",
-                                                  "ref": "sap-icon://attachment-photo",
-                                                  "nodes":[
-                                                      {
-                                                          "text": "Node1-1-2-1",
-                                                          "ref": "sap-icon://attachment-text-file",
-                                                          "nodes":[
-                                                              {
-                                                                  "text": "Node1-1-2-1-1",
-                                                                  "ref": "sap-icon://attachment-video"
-                                                              },
-                                                              {
-                                                                  "text": "Node1-1-2-1-2",
-                                                                  "ref": "sap-icon://attachment-zip-file"
-                                                              },
-                                                              {
-                                                                  "text": "Node1-1-2-1-3",
-                                                                  "ref": "sap-icon://course-program"
-                                                              }
-                                                          ]
-                                                      }
-                                                  ]
-                                              }
-                                          ]
-                                      },
-                                      {
-                                          "text": "Node1-2",
-                                          "ref": "sap-icon://create"
-                                      }
-                                  ]
-                              },
+                                { 
+                                    name  : "node1", 
+                                    description : "Lorem ipsum dolor sit amet",
+                                    product : "ABC",
+                                    data : [
+                                        { 
+                                            name : "node1.1", 
+                                            description : "Cras pretium nisl ac ex congue posuere",
+                                            product : "XYZ" 
+                                        },
+                                        { 
+                                            name : "node1.2", 
+                                            description : "Consectetur adipiscing elit",
+                                            product : "ABC",
+                                            data: [
+                                                { 
+                                                    name : "node1.2.1",
+                                                    description : "Maecenas accumsan ipsum diam",
+                                                    product : "ABC",
+                                                }
+                                           ]
+                                        },
+                                        { 
+                                            name : "node1.3", 
+                                            description : "Sed tristique diam non imperdiet commodo",
+                                            product : "ABC"
+                                        },
+                                        { 
+                                            name : "node1.4", 
+                                            description : "Consectetur adipiscing elit",
+                                            product : "ABC",
+                                            data: [
+                                                { 
+                                                    name : "node1.4.1",
+                                                    description : "Maecenas accumsan ipsum diam",
+                                                    product : "ABC",
+                                                    data: [
+                                                        { 
+                                                            name : "node1.4.1.1",
+                                                            description : "Maecenas accumsan ipsum diam",
+                                                            product : "ABC",
+                                                            data: [
+                                                                { 
+                                                                    name : "node1.4.1.1.1",
+                                                                    description : "Maecenas accumsan ipsum diam",
+                                                                    product : "ABC",
+                                                                    data: [
+                                                                        { 
+                                                                            name : "node1.4.1.1.1.1",
+                                                                            description : "Maecenas accumsan ipsum diam",
+                                                                            product : "ABC",
+                                                                        }
+                                                                   ]
+                                                                }
+                                                           ]
+                                                        }
+                                                   ]
+                                                }
+                                           ]
+                                        },
+                                        { 
+                                            name : "node1.5", 
+                                            description : "Sed tristique diam non imperdiet commodo",
+                                            product : "ABC",
+                                        },
+                                        { 
+                                            name : "node1.6", 
+                                            description : "Consectetur adipiscing elit",
+                                            product : "ABC",
+                                            data: [
+                                                { 
+                                                    name : "node1.6.1",
+                                                    description : "Maecenas accumsan ipsum diam",
+                                                    product : "ABC",
+                                                }
+                                           ]
+                                        },
+                                        { 
+                                            name : "node1.7", 
+                                            description : "Sed tristique diam non imperdiet commodo",
+                                            product : "ABC",
+                                        },
+                
+                                    ]
+                                },
                               {
                                   "text": "Node2",
                                   "ref": "sap-icon://customer-financial-fact-sheet"
