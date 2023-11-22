@@ -302,8 +302,8 @@
             
             //### THE APP: place the XMLView somewhere into DOM ###
             var oView = sap.ui.xmlview({
-                //viewContent: jQuery(divfinal).html(),
-                viewContent: jQuery('#tbl').html(), 
+                viewContent: jQuery(divfinal).html(),
+                //viewContent: jQuery('#tbl').html(), 
             });
             oView.placeAt(div);
             
