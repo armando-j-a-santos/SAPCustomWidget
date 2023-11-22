@@ -103,21 +103,11 @@
         }
 
         div = document.createElement('div');
-        div.slot = "content_" + widgetName;
-
-            
+        //div.slot = "content_" + widgetName;
+  
         let div2 = document.createElement('div');
-        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + 
-		'" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core"'+
-		' xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"><TreeTable class=""  id="Tree"  items="{' + widgetName + 
-		'>/}" mode="MultiSelect"  selectionChange="onSelect" includeItemInSelection="true"' +
-		' updateFinished="onDefaultSelction"><headerToolbar></headerToolbar>'+
-		'<StandardTreeItem title="{' + widgetName + '>ref}" selected="{selected}"/></Tree></mvc:View></script>';
+        div2.innerHTML = '<script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-xx-bindingSyntax="complex" data-sap-ui-libs="sap.m"></script> <script id="view1" type="ui5/xmlview"><mvc:View controllerName="view1.initial" xmlns:t="sap.ui.table" xmlns="sap.ui.commons" xmlns:mvc="sap.ui.core.mvc" > <t:TreeTable id="tbl" rows="{path:'/'}" > <t:columns> <t:Column> <t:label><Label text="name" /></t:label> <t:template><TextView text="{name}" /></t:template> </t:Column> <t:Column> <t:label><Label text="Arm" /> </t:label> <t:template><TextView text="{description}" /></t:template> </t:Column> <t:Column> <t:label><Label text="product" /> </t:label> <t:template><TextView text="{product}" /></t:template> </t:Column> </t:columns> </t:TreeTable> </mvc:View> </script>';
         _shadowRoot.appendChild(div2);
-       
-        let div3 = document.createElement('div');
-        div3.innerHTML = '<div style="max-height: "' + that.max_height + that.unit_option + '"; border-radius: 15px; overflow-y: hidden;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><div style="max-height: ' + that.max_height + that.unit_option + '; border-radius: 15px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"> </slot></div></div>';
-         _shadowRoot.appendChild(div3);
 
         that_.appendChild(div);
         
@@ -155,101 +145,46 @@
 
                 var busyDialog = (busyDialog) ? busyDialog : new BusyDialog({});
 
-                return Controller.extend("myView.Template", {
+                return Controller.extend("view1", {
 
                     onInit: function() {
                         
                         console.log('>>>>>>>>>>>>>>>inside onInit');
                         
-                            // oData defintion (nodes, columns and rows)
-                            /*
-                            var oData = [{
-                              text: "Node1",
-                              nodes: [{
-                                text: "Node1-1"
-                              }]
-                            }, {
-                              text: "Node2",
-                              nodes: [{
-                                text: "Node2-1"
-                              }]
-                            }];
-                            */
-
-                            var oData = [
-                                {
-                                  "text": "Node1",
-                                  "ref": "sap-icon://attachment-audio",
-                                  "nodes":
-                                  [
-                                      {
-                                          "text": "Node1-1",
-                                          "ref": "sap-icon://attachment-e-pub",
-                                          "nodes":[
-                                              {
-                                                  "text": "Node1-1-1",
-                                                  "ref": "sap-icon://attachment-html"
-                                              },
-                                              {
-                                                  "text": "Node1-1-2",
-                                                  "ref": "sap-icon://attachment-photo",
-                                                  "nodes":[
-                                                      {
-                                                          "text": "Node1-1-2-1",
-                                                          "ref": "sap-icon://attachment-text-file",
-                                                          "nodes":[
-                                                              {
-                                                                  "text": "Node1-1-2-1-1",
-                                                                  "ref": "sap-icon://attachment-video"
-                                                              },
-                                                              {
-                                                                  "text": "Node1-1-2-1-2",
-                                                                  "ref": "sap-icon://attachment-zip-file"
-                                                              },
-                                                              {
-                                                                  "text": "Node1-1-2-1-3",
-                                                                  "ref": "sap-icon://course-program"
-                                                              }
-                                                          ]
-                                                      }
-                                                  ]
-                                              }
-                                          ]
-                                      },
-                                      {
-                                          "text": "Node1-2",
-                                          "ref": "sap-icon://create"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "text": "Node2",
-                                  "ref": "sap-icon://customer-financial-fact-sheet"
-                              }
-                            ];
-
-                             // Create the model linked to the data (oData)
-                            var _oModel = new JSONModel(oData);
-                            _oModel.setSizeLimit(1000000);
+		        var oNodes = { 
+		                            "nodes": [{
+		                              "name": "O100",
+		                              "description": "Software Development",
+		                              "ParentID": "",
+		                              "product": "O",
+		                              "nodes" : [{
+		                                "name": "O110",
+		                                "description": "Team A",
+		                                "ParentID": "O100",
+		                                "product": "O",
+		                                "nodes" : [{
+		                                  "name": "S111",
+		                                  "description": "Product Owner",
+		                                  "ParentID": "O110",
+		                                  "product": "S"
+		                                }]
+		                              }]
+		                            }]
+		                     };
+		        var oArmando = new sap.ui.model.json.JSONModel(oNodes);
                             
-                            // Link the model to the widget
-                            this.getView()
-                                .setModel(_oModel, that.widgetName);
-                            sap.ui.getCore().setModel(_oModel, that.widgetName);
+                        // Link the model to the widget
+                        this.getView()
+                             .setModel(oArmando);
+                        sap.ui.getCore().setModel(oArmando);
                     }
 
                 });
             });
-
-            console.log("WidgetName Final:" + widgetName);
-            var foundIndex = Ar.findIndex(x => x.id == widgetName);
-            var divfinal = Ar[foundIndex].div;
-            console.log(divfinal);
-
             
             //### THE APP: place the XMLView somewhere into DOM ###
             var oView = sap.ui.xmlview({
-                viewContent: jQuery(divfinal).html(),
+                viewContent: jQuery('#view1').html(),
             });
             oView.placeAt(div);
             
