@@ -298,7 +298,8 @@
             var foundIndex = Ar.findIndex(x => x.id == widgetName);
             var divfinal = Ar[foundIndex].div;
             console.log(divfinal);
-
+            
+            tbl.bindRows("/");
             
             //### THE APP: place the XMLView somewhere into DOM ###
             var oView = sap.ui.xmlview({
