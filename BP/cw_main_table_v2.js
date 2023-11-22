@@ -101,7 +101,7 @@
 	
 	function makeTable(JSON,paramColumns) {	
 
-		widgetName = "CWTableDrillV3_1";
+		widgetName = "CWTableDrillV2_1";
 
         var mapcanvas_divstr = _shadowRoot.getElementById('uiArea');
 
@@ -247,6 +247,7 @@
             
             var foundIndex = Ar.findIndex(x => x.id == widgetName);
             var divfinal = Ar[foundIndex].div;
+			console.log("divfinal:");
             console.log(divfinal);
 
             
