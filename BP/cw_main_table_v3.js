@@ -107,15 +107,11 @@
 
             
         let div2 = document.createElement('div');
-        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview">
-                            <mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m">
-                                <Tree class=""  id="Tree"  items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect" includeItemInSelection="false" updateFinished="onDefaultSelction">
-                                        <headerToolbar>
-                                        </headerToolbar>
-                                        <StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/>
-                                </Tree>
-                            </mvc:View>
-                            </script>';
+        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"><Tree class=""  id="Tree"  items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect" includeItemInSelection="false" updateFinished="onDefaultSelction"><headerToolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>';
+                                        
+                                
+                            
+                            
         _shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
