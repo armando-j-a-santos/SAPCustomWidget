@@ -13,8 +13,36 @@
 						ui-compatVersion="edge"
 						data-sap-ui-preload="async">
 					  </script>
-					  <div id="dataTableCustom999">
-					  </div>`;
+       
+					  <script id="view1" type="ui5/xmlview">
+					      <mvc:View 
+					        controllerName="view1.initial"
+					        xmlns:t="sap.ui.table"
+					        xmlns="sap.ui.commons"
+					        xmlns:mvc="sap.ui.core.mvc" >
+					          <t:TreeTable id="tbl" rows="{path:'/',parameters:{arrayNames:['data']}}" >
+					              <t:columns>
+					                  <t:Column>
+					                      <t:label><Label text="name" /></t:label>
+					                      <t:template><TextView text="{name}" /></t:template>
+					                  </t:Column>
+		       
+					                  <t:Column>
+					                      <t:label><Label text="Arm" /></t:label>
+					                      <t:template><TextView text="{description}" /></t:template>
+					                  </t:Column>
+		       
+					                  <t:Column>
+					                      <t:label><Label text="product" /></t:label>
+					                      <t:template><TextView text="{product}" /></t:template>
+					                  </t:Column>                
+					
+					              </t:columns>
+					          </t:TreeTable>
+					      </mvc:View>
+					  </script>
+					
+					  <div id="uiArea"></div>`;
 	
     class CWTableDrillV2 extends HTMLElement {
 		constructor() {
@@ -69,90 +97,118 @@
 	};
 	customElements.define('com-sap-ttable-cwtabledrillv2', CWTableDrillV2);	
 	
-	function makeTable(JSON,paramColumns) {		
-
-		console.log("-----******---");
-		
-		var ModelA = {  "catalog": {
-		"clothing": {
-		  "categories": [
-			{"name1": "Women", "amount": 160.99, "currency": "EUR", "size": "S", "selected": "X", "categories": [
-			  {"name1":"Clothing", "categories": [
-				 {"name1": "Dresses", "amount": 16.99, "currency": "EUR", "size": "S", "selected": "X", 
-				  "categories": [
-				 {"name1": "Casual Red Dress", "amount": 16.99, "currency": "EUR", "size": "S", "selected": "X"},
-				 {"name1": "Short Black Dress", "amount": 47.99, "currency": "EUR", "size": "M"},
-				 {"name1": "Long Blue Dinner Dress", "amount": 103.99, "currency": "USD", "size": "L"}
-				]},
-				{"name1": "Tops", "categories": [
-				  {"name1": "Printed Shirt", "amount": 24.99, "currency": "USD", "size": "M"},
-				  {"name1": "Tank Top", "amount": 14.99, "currency": "USD", "size": "S"}
-				]},
-				{"name1": "Pants", "categories": [
-				  {"name1": "Red Pant", "amount": 32.99, "currency": "USD", "size": "M"},
-				  {"name1": "Skinny Jeans", "amount": 44.99, "currency": "USD", "size": "S"},
-				  {"name1": "Black Jeans", "amount": 99.99, "currency": "USD", "size": "XS"},
-				  {"name1": "Relaxed Fit Jeans", "amount": 56.99, "currency": "USD", "size": "L"}
-				]},
-				{"name1": "Skirts", "categories": [
-				  {"name1": "Striped Skirt", "amount": 24.99, "currency": "USD", "size": "M"},
-				  {"name1": "Black Skirt", "amount": 44.99, "currency": "USD", "size": "S"}
-				]}
-			  ]},
-			  {"name1":"Jewelry", "categories": [
-				  {"name1": "Necklace", "amount": 16.99, "currency": "USD"},
-				  {"name1": "Bracelet", "amount": 47.99, "currency": "USD"},
-				  {"name1": "Gold Ring", "amount": 399.99, "currency": "USD"}
-				]},
-			  {"name1":"Handbags", "categories": [
-				{"name1": "Little Black Bag", "amount": 16.99, "currency": "USD", "size": "S"},
-				{"name1": "Grey Shopper", "amount": 47.99, "currency": "USD", "size": "M"}
-			  ]},
-			  {"name1":"Shoes", "categories": [
-				{"name1": "Pumps", "amount": 89.99, "currency": "USD"},
-				{"name1": "Sport Shoes", "amount": 47.99, "currency": "USD"},
-				{"name1": "Boots", "amount": 103.99, "currency": "USD"}
-			  ]}
-			]}]}
-			}};
-		var treeTable = new sap.ui.table.TreeTable({
-			title:"Tree Table",
-			selectionMode : sap.ui.table.SelectionMode.None,
-			editable:true,
-			ariaLabelledBy:"title",
-			toggleOpenState: function (oEvent) {}
-		});
-		var myModel = new sap.ui.model.json.JSONModel(ModelA);
-		treeTable.setModel(myModel);
-		treeTable.addColumn(new sap.ui.table.Column({
-			label: new sap.ui.commons.Label({text: "Categories - AAA"}),
-			template: new sap.m.Text({ text : "{name1}"}),
-			sortProperty: "NscItem"}));
-		treeTable.addColumn(new sap.ui.table.Column({
-			label: new sap.ui.commons.Label({text: "Armando"}),
-			template: new sap.m.Text({ text : "{amount}"}),
-			sortProperty: "NscItem"}));
-		treeTable.addColumn(new sap.ui.table.Column({
-			label: new sap.ui.commons.Label({text: "SANTOS"}),
-			template: new sap.m.Text({ text : "{currency}"}),
-			sortProperty: "NscItem"}));
-		treeTable.addColumn(new sap.ui.table.Column({
-			label: new sap.ui.commons.Label({text: "Size"}),
-			template: new sap.m.Text({ text : "{size}"}),
-			sortProperty: "NscItem"}));
-		treeTable.bindRows("/catalog/clothing/");
-		
-		var dataTable = document.createElement('div');		
-		//dataTable.slot = "content";
-		_shadowRoot.appendChild(dataTable);
+	function makeTable(JSON,paramColumns) {	
+	sap.ui.controller("view1.initial", {
+	    onInit : function(oEvent) {
+	        var oModel = new sap.ui.model.json.JSONModel();
+	        oModel.setData({
+	            data: [
+	                { 
+	                    name  : "node1", 
+	                    description : "Lorem ipsum dolor sit amet",
+	                    product : "ABC",
+	                    data : [
+	                        { 
+	                            name : "node1.1", 
+	                            description : "Cras pretium nisl ac ex congue posuere",
+	                            product : "XYZ" 
+	                        },
+	                        { 
+	                            name : "node1.2", 
+	                            description : "Consectetur adipiscing elit",
+	                            product : "ABC",
+	                            data: [
+	                                { 
+	                                    name : "node1.2.1",
+	                                    description : "Maecenas accumsan ipsum diam",
+	                                    product : "ABC",
+	                                }
+	                           ]
+	                        },
+	                        { 
+	                            name : "node1.3", 
+	                            description : "Sed tristique diam non imperdiet commodo",
+	                            product : "ABC"
+	                        },
+	                        { 
+	                            name : "node1.4", 
+	                            description : "Consectetur adipiscing elit",
+	                            product : "ABC",
+	                            data: [
+	                                { 
+	                                    name : "node1.4.1",
+	                                    description : "Maecenas accumsan ipsum diam",
+	                                    product : "ABC",
+	                                    data: [
+	                                        { 
+	                                            name : "node1.4.1.1",
+	                                            description : "Maecenas accumsan ipsum diam",
+	                                            product : "ABC",
+	                                            data: [
+	                                                { 
+	                                                    name : "node1.4.1.1.1",
+	                                                    description : "Maecenas accumsan ipsum diam",
+	                                                    product : "ABC",
+	                                                    data: [
+	                                                        { 
+	                                                            name : "node1.4.1.1.1.1",
+	                                                            description : "Maecenas accumsan ipsum diam",
+	                                                            product : "ABC",
+	                                                        }
+	                                                   ]
+	                                                }
+	                                           ]
+	                                        }
+	                                   ]
+	                                }
+	                           ]
+	                        },
+	                        { 
+	                            name : "node1.5", 
+	                            description : "Sed tristique diam non imperdiet commodo",
+	                            product : "ABC",
+	                        },
+	                        { 
+	                            name : "node1.6", 
+	                            description : "Consectetur adipiscing elit",
+	                            product : "ABC",
+	                            data: [
+	                                { 
+	                                    name : "node1.6.1",
+	                                    description : "Maecenas accumsan ipsum diam",
+	                                    product : "ABC",
+	                                }
+	                           ]
+	                        },
+	                        { 
+	                            name : "node1.7", 
+	                            description : "Sed tristique diam non imperdiet commodo",
+	                            product : "ABC",
+	                        },
 	
-		//_shadowRoot.querySelector("#dataTable").id = "_dataTable";
-		
-		treeTable.placeAt(_shadowRoot.getElementById("dataTableCustom999"));
-		
-		//_shadowRoot.getElementById("dataTableCustom99").innerHTML = treeTable;
-		//treeTable.placeAt("dataTable");
-		
+	                    ]
+	                },
+	            ]
+	        });
+	        this.getView().setModel(oModel);
+	    },
+	
+	    onAfterRendering : function() {
+	    }
+	});
+	  
+	var app = new sap.m.App({});
+	
+	var oView = sap.ui.xmlview({
+	    viewContent: jQuery("#view1").html()
+	});
+	
+	app.addPage(oView);
+	//app.placeAt("uiArea");
+
+	var myDiv = document.createElement('div');		
+	_shadowRoot.appendChild(myDiv);			
+	app.placeAt(_shadowRoot.getElementById("uiArea"));
 		
 	}
 })();
