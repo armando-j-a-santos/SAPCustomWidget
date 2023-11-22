@@ -107,7 +107,7 @@
 
             
         let div2 = document.createElement('div');
-        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"><TreeTable class=""  id="Tree"  items="{' + widgetName + '>/}" mode="None"  selectionChange="onSelect" includeItemInSelection="false" updateFinished="onDefaultSelction"><headerToolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></TreeTable></mvc:View></script>';
+        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"><TreeTable id="tbl" rows="{path:'/',parameters:{arrayNames:["data"]}}" ><t:columns><t:Column><t:label><Label text="name" /></t:label><t:template><TextView text="{name}" /></t:template></t:Column><t:Column><t:label><Label text="Arm" /></t:label><t:template><TextView text="{description}" /></t:template></t:Column><t:Column><t:label><Label text="product" /></t:label><t:template><TextView text="{product}" /></t:template></t:Column></t:columns></TreeTable></mvc:View></script>';
                                         
                                 
                             
