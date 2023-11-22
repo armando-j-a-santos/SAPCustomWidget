@@ -122,6 +122,7 @@
 
 
         console.log("MILTON TEST");
+        console.log(widgetName);
         console.log("div");
         console.log(div);
         console.log("div1");
