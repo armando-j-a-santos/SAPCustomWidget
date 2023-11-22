@@ -106,7 +106,7 @@
         div.slot = "content_" + widgetName;
 
         let div1 = document.createElement('div');
-        div1.innerHTML = '<script src="https://openui5.hana.ondemand.com/1.108.20/resources/sap-ui-core.js" type="text/javascript" id="sap-ui-bootstrap" data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table,sap.ui.layout,sap.ui.core.mvc.Controller" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-bindingSyntax="complex" ui-compatVersion="edge" data-sap-ui-preload="async"> </script>'
+        div1.innerHTML = '<script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-bindingSyntax="complex"> </script>'
         _shadowRoot.appendChild(div1);
             
         let div2 = document.createElement('div');
