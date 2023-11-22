@@ -103,9 +103,7 @@
             widgetName = that._export_settings.title.split("|")[0];
         }
 
-        console.log("MILTON TEST");
-        console.log(widgetName);
-
+    
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
 
@@ -122,6 +120,12 @@
          _shadowRoot.appendChild(div3);
 
         that_.appendChild(div);
+
+
+        console.log("MILTON TEST");
+        console.log(div1);
+        console.log(div2);
+        console.log(div3);
         
         var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
 
