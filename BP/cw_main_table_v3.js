@@ -115,6 +115,15 @@
          _shadowRoot.appendChild(div3);
 
         that_.appendChild(div);
+
+        console.log("TEST");
+        console.log("div");
+        console.log(div);
+        console.log("div2");
+        console.log(div2);
+        console.log("div3");
+        console.log(div3);
+        
         
         var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
 
