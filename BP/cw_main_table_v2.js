@@ -111,12 +111,12 @@
 
         that_.appendChild(div);
         
-        var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
+        //var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
 
-        Ar.push({
-            'id': widgetName,
-            'div': mapcanvas_divstr
-        });
+        //Ar.push({
+        //    'id': widgetName,
+        //    'div': mapcanvas_divstr
+        //});
 
         sap.ui.getCore().attachInit(function() {
             "use strict";
