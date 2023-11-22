@@ -1,109 +1,122 @@
-(function()  {
-	let _shadowRoot;
-	let _id;
-    let tmpl = document.createElement('template');
-	let widgetName;
-	var Ar = [];
-	
-	//HTML
-	tmpl.innerHTML = `<script src="https://openui5.hana.ondemand.com/1.108.20/resources/sap-ui-core.js"
-						type="text/javascript"
-						id="sap-ui-bootstrap"
-						data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table,sap.ui.layout,sap.ui.core.mvc.Controller"
-						data-sap-ui-theme="sap_bluecrystal"
-						data-sap-ui-bindingSyntax="complex"
-						ui-compatVersion="edge"
-						data-sap-ui-preload="async">
-					  </script>
+(function() {
+    let _shadowRoot;
+
+    let div;
+    let widgetName;
+    var Ar = [];
+
+    let tmpl = document.createElement("template");
+    tmpl.innerHTML = `
+      <style>
+      </style>      
+    `;
+
+    class ASANTOS extends HTMLElement {
+
+        constructor() {
+            super();
+
+            _shadowRoot = this.attachShadow({
+                mode: "open"
+            });
+            _shadowRoot.appendChild(tmpl.content.cloneNode(true));
+
+            /*
+            _id = createGuid();
+            _shadowRoot.querySelector("#oView").id = "oView";
+            */
+
+            this._export_settings = {};
+            this._export_settings.title = "";
+            this._export_settings.subtitle = "";
+            this._export_settings.icon = "";
+            this._export_settings.unit = "";
+            this._export_settings.footer = "";
+
+            this.addEventListener("click", event => {
+                console.log('click');
+
+            });
+
+            this._firstConnection = 0;
+        }
+
+        connectedCallback() {
+        }
+
+        disconnectedCallback() {
+            if (this._subscription) { // react store subscription
+                this._subscription();
+                this._subscription = null;
+            }
+        }
+
+        onCustomWidgetBeforeUpdate(changedProperties) {
+        }
+
+        onCustomWidgetAfterUpdate(changedProperties) {
+            var that = this;
+            loadthis(that, changedProperties);
+        }
+
+        /*
+        _firePropertiesChanged() {
+            this.unit = "";
+            this.dispatchEvent(new CustomEvent("propertiesChanged", {
+                detail: {
+                    properties: {
+                        unit: this.unit
+                    }
+                }
+            }));
+        }
+        */
+
+        /*
+        static get observedAttributes() {
+            return [
+                "title",
+                "subtitle",
+                "icon",
+                "unit",
+                "footer",
+                "link"
+            ];
+        }
+        */
+
+        attributeChangedCallback(name, oldValue, newValue) {
+            if (oldValue != newValue) {
+                this[name] = newValue;
+            }
+        }
+
+    }
+    customElements.define("com-asantos-sap-sac-sapuitable", ASANTOS);
+
+    function loadthis(that, changedProperties) {
+        var that_ = that;
+
+        widgetName = changedProperties.widgetName;
+        if (typeof widgetName === "undefined") {
+            widgetName = that._export_settings.title.split("|")[0];
+        }
+
+        div = document.createElement('div');
+        div.slot = "content_" + widgetName;
+
+            
+        let div2 = document.createElement('div');
+        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"><Tree class=""  id="Tree"  items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect" includeItemInSelection="true" updateFinished="onDefaultSelction"><headerToolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>';
+        _shadowRoot.appendChild(div2);
        
-					  <script id="view1" type="ui5/xmlview">
-					      <mvc:View 
-					        controllerName="view1.initial"
-					        xmlns:t="sap.ui.table"
-					        xmlns="sap.ui.commons"
-					        xmlns:mvc="sap.ui.core.mvc" >
-					          <t:TreeTable id="tbl" rows="{path:'/',parameters:{arrayNames:['data']}}" >
-					              <t:columns>
-					                  <t:Column>
-					                      <t:label><Label text="name" /></t:label>
-					                      <t:template><TextView text="{name}" /></t:template>
-					                  </t:Column>
-		       
-					                  <t:Column>
-					                      <t:label><Label text="Arm" /></t:label>
-					                      <t:template><TextView text="{description}" /></t:template>
-					                  </t:Column>
-		       
-					                  <t:Column>
-					                      <t:label><Label text="product" /></t:label>
-					                      <t:template><TextView text="{product}" /></t:template>
-					                  </t:Column>                
-					
-					              </t:columns>
-					          </t:TreeTable>
-					      </mvc:View>
-					  </script>
-					
-					  <div id="uiArea"></div>`;
-	
-    class CWTableDrillV2 extends HTMLElement {
-		constructor() {
-				super(); 
-				_shadowRoot = this.attachShadow({
-					mode: "open"
-				});
-				_shadowRoot.appendChild(tmpl.content.cloneNode(true));
-				this._JSON = "-";
-				this._paramColumns = "-";
-			    this.addEventListener("click", event => {
-                	var event = new Event("onClick");
-                	this.dispatchEvent(event);
-            	});
-		}
+        let div3 = document.createElement('div');
+        div3.innerHTML = '<div style="max-height: "' + that.max_height + that.unit_option + '"; border-radius: 15px; overflow-y: hidden;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><div style="max-height: ' + that.max_height + that.unit_option + '; border-radius: 15px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"> </slot></div></div>';
+         _shadowRoot.appendChild(div3);
 
-		connectedCallback(){
-		}
-
-		disconnectedCallback(){
-		}
-
-		onCustomWidgetBeforeUpdate(oChangedProperties) {
-		}
-
-		async loadData(JSON, paramColumns){
-			//if (JSON != "") {
-			console.log("-----**TES 3*---");
-				makeTable(JSON, paramColumns)
-			//}		
-		}
-
-		onCustomWidgetAfterUpdate(oChangedProperties) {
-		}
-
-		onCustomWidgetDestroy(){
-		}
-
-		//Getters and Setters
-		set paramColumns(value) {
-			this._paramColumns = value;
-		}
-
-		get JSON() {
-			return this._JSON;
-		}
-
-		set JSON(value) {
-			this._JSON = value;
-		}
-
-	};
-	customElements.define('com-sap-ttable-cwtabledrillv2', CWTableDrillV2);	
-	
-	function makeTable(JSON,paramColumns) {	
-
-		widgetName = "CWTableDrillV2_1";
-
-        var mapcanvas_divstr = _shadowRoot.getElementById('uiArea');
+        that_.appendChild(div);
+        
+        var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
 
         Ar.push({
             'id': widgetName,
@@ -137,99 +150,78 @@
 
                 var busyDialog = (busyDialog) ? busyDialog : new BusyDialog({});
 
-                return Controller.extend("view1.initial", {
+                return Controller.extend("myView.Template", {
 
                     onInit: function() {
                         
                         console.log('>>>>>>>>>>>>>>>inside onInit');
                         
-                         var oData = [
-							{ 
-								name  : "node1", 
-								description : "Lorem ipsum dolor sit amet",
-								product : "ABC",
-								data : [
-									{ 
-										name : "node1.1", 
-										description : "Cras pretium nisl ac ex congue posuere",
-										product : "XYZ" 
-									},
-									{ 
-										name : "node1.2", 
-										description : "Consectetur adipiscing elit",
-										product : "ABC",
-										data: [
-											{ 
-												name : "node1.2.1",
-												description : "Maecenas accumsan ipsum diam",
-												product : "ABC",
-											}
-									   ]
-									},
-									{ 
-										name : "node1.3", 
-										description : "Sed tristique diam non imperdiet commodo",
-										product : "ABC"
-									},
-									{ 
-										name : "node1.4", 
-										description : "Consectetur adipiscing elit",
-										product : "ABC",
-										data: [
-											{ 
-												name : "node1.4.1",
-												description : "Maecenas accumsan ipsum diam",
-												product : "ABC",
-												data: [
-													{ 
-														name : "node1.4.1.1",
-														description : "Maecenas accumsan ipsum diam",
-														product : "ABC",
-														data: [
-															{ 
-																name : "node1.4.1.1.1",
-																description : "Maecenas accumsan ipsum diam",
-																product : "ABC",
-																data: [
-																	{ 
-																		name : "node1.4.1.1.1.1",
-																		description : "Maecenas accumsan ipsum diam",
-																		product : "ABC",
-																	}
-															   ]
-															}
-													   ]
-													}
-											   ]
-											}
-									   ]
-									},
-									{ 
-										name : "node1.5", 
-										description : "Sed tristique diam non imperdiet commodo",
-										product : "ABC",
-									},
-									{ 
-										name : "node1.6", 
-										description : "Consectetur adipiscing elit",
-										product : "ABC",
-										data: [
-											{ 
-												name : "node1.6.1",
-												description : "Maecenas accumsan ipsum diam",
-												product : "ABC",
-											}
-									   ]
-									},
-									{ 
-										name : "node1.7", 
-										description : "Sed tristique diam non imperdiet commodo",
-										product : "ABC",
-									},
-			
-								]
-							},
-						];
+                            // oData defintion (nodes, columns and rows)
+                            /*
+                            var oData = [{
+                              text: "Node1",
+                              nodes: [{
+                                text: "Node1-1"
+                              }]
+                            }, {
+                              text: "Node2",
+                              nodes: [{
+                                text: "Node2-1"
+                              }]
+                            }];
+                            */
+
+                            var oData = [
+                                {
+                                  "text": "Node1",
+                                  "ref": "sap-icon://attachment-audio",
+                                  "nodes":
+                                  [
+                                      {
+                                          "text": "Node1-1",
+                                          "ref": "sap-icon://attachment-e-pub",
+                                          "nodes":[
+                                              {
+                                                  "text": "Node1-1-1",
+                                                  "ref": "sap-icon://attachment-html"
+                                              },
+                                              {
+                                                  "text": "Node1-1-2",
+                                                  "ref": "sap-icon://attachment-photo",
+                                                  "nodes":[
+                                                      {
+                                                          "text": "Node1-1-2-1",
+                                                          "ref": "sap-icon://attachment-text-file",
+                                                          "nodes":[
+                                                              {
+                                                                  "text": "Node1-1-2-1-1",
+                                                                  "ref": "sap-icon://attachment-video"
+                                                              },
+                                                              {
+                                                                  "text": "Node1-1-2-1-2",
+                                                                  "ref": "sap-icon://attachment-zip-file"
+                                                              },
+                                                              {
+                                                                  "text": "Node1-1-2-1-3",
+                                                                  "ref": "sap-icon://course-program"
+                                                              }
+                                                          ]
+                                                      }
+                                                  ]
+                                              }
+                                          ]
+                                      },
+                                      {
+                                          "text": "Node1-2",
+                                          "ref": "sap-icon://create"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "text": "Node2",
+                                  "ref": "sap-icon://customer-financial-fact-sheet"
+                              }
+                            ];
 
                              // Create the model linked to the data (oData)
                             var _oModel = new JSONModel(oData);
@@ -244,10 +236,9 @@
                 });
             });
 
-            
+            console.log("WidgetName Final:" + widgetName);
             var foundIndex = Ar.findIndex(x => x.id == widgetName);
             var divfinal = Ar[foundIndex].div;
-			console.log("divfinal:");
             console.log(divfinal);
 
             
@@ -256,10 +247,9 @@
                 viewContent: jQuery(divfinal).html(),
             });
             oView.placeAt(div);
-
-			oView.placeAt(_shadowRoot.getElementById("uiArea"));
             
         });
-		
-	}
+    } // end of: function loadthis(that, changedProperties) {
+
+    
 })();
