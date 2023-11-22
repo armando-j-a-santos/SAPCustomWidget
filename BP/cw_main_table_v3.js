@@ -134,8 +134,8 @@
         console.log(div);
         console.log("div1");
         console.log(div1);
-        console.log("div2");
-        console.log(div2);
+        //console.log("div2");
+        //console.log(div2);
         console.log("div3");
         console.log(div3);
         
