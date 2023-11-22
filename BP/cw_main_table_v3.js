@@ -111,7 +111,7 @@
         _shadowRoot.appendChild(div1);
             
         let div2 = document.createElement('div');
-        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><TreeTable id="tbl" rows="{path:'/'}" ></TreeTable></mvc:View></script>';               
+        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><TreeTable id="tbl" rows=10 ></TreeTable></mvc:View></script>';               
         _shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
