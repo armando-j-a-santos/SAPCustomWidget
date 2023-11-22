@@ -102,6 +102,13 @@
 
 		widgetName = "CWTableDrillV3_1";
 
+        var mapcanvas_divstr = _shadowRoot.getElementById('uiArea');
+
+        Ar.push({
+            'id': widgetName,
+            'div': mapcanvas_divstr
+        });
+
         sap.ui.getCore().attachInit(function() {
             "use strict";
 
