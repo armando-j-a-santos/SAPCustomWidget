@@ -187,7 +187,8 @@
                 viewContent: jQuery('#view1').html(),
             });
             oView.placeAt(div);
-            
+
+		
         });
     } // end of: function loadthis(that, changedProperties) {
 
