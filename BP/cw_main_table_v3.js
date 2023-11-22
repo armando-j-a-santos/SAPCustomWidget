@@ -261,10 +261,6 @@
                 
                                     ]
                                 },
-                              {
-                                  "text": "Node2",
-                                  "ref": "sap-icon://customer-financial-fact-sheet"
-                              }
                             ];
 
                              // Create the model linked to the data (oData)
