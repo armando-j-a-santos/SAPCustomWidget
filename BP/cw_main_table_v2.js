@@ -3,6 +3,7 @@
 	let _id;
     let tmpl = document.createElement('template');
 	let widgetName;
+	var Ar = [];
 	
 	//HTML
 	tmpl.innerHTML = `<script src="https://openui5.hana.ondemand.com/1.108.20/resources/sap-ui-core.js"
