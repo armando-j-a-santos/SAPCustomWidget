@@ -1,4 +1,3 @@
-
 (function() {
     let _shadowRoot;
 
@@ -103,16 +102,12 @@
             widgetName = that._export_settings.title.split("|")[0];
         }
 
-    
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
 
-        let div1 = document.createElement('div');
-        div1.innerHTML = '<script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-bindingSyntax="complex" data-sap-ui-libs="sap.m"> </script>'
-        _shadowRoot.appendChild(div1);
             
         let div2 = document.createElement('div');
-        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{path:'/',parameters:{arrayNames:["data"]}}" ><t:columns><t:Column><t:label><Label text="name" /></t:label><t:template><TextView text="{name}" /></t:template></t:Column><t:Column><t:label><Label text="Arm" /></t:label><t:template><TextView text="{description}" /></t:template></t:Column><t:Column><t:label><Label text="product" /></t:label><t:template><TextView text="{product}" /></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';               
+        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"><Tree class=""  id="Tree"  items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect" includeItemInSelection="true" updateFinished="onDefaultSelction"><headerToolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>';
         _shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
@@ -120,15 +115,6 @@
          _shadowRoot.appendChild(div3);
 
         that_.appendChild(div);
-
-
-        console.log("MILTON TEST");
-        console.log("div1");
-        console.log(div1);
-        console.log("div2");
-        console.log(div2);
-        console.log("div3");
-        console.log(div3);
         
         var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
 
@@ -186,95 +172,59 @@
                             */
 
                             var oData = [
-                                { 
-                                    name  : "node1", 
-                                    description : "Lorem ipsum dolor sit amet",
-                                    product : "ABC",
-                                    data : [
-                                        { 
-                                            name : "node1.1", 
-                                            description : "Cras pretium nisl ac ex congue posuere",
-                                            product : "XYZ" 
-                                        },
-                                        { 
-                                            name : "node1.2", 
-                                            description : "Consectetur adipiscing elit",
-                                            product : "ABC",
-                                            data: [
-                                                { 
-                                                    name : "node1.2.1",
-                                                    description : "Maecenas accumsan ipsum diam",
-                                                    product : "ABC",
-                                                }
-                                           ]
-                                        },
-                                        { 
-                                            name : "node1.3", 
-                                            description : "Sed tristique diam non imperdiet commodo",
-                                            product : "ABC"
-                                        },
-                                        { 
-                                            name : "node1.4", 
-                                            description : "Consectetur adipiscing elit",
-                                            product : "ABC",
-                                            data: [
-                                                { 
-                                                    name : "node1.4.1",
-                                                    description : "Maecenas accumsan ipsum diam",
-                                                    product : "ABC",
-                                                    data: [
-                                                        { 
-                                                            name : "node1.4.1.1",
-                                                            description : "Maecenas accumsan ipsum diam",
-                                                            product : "ABC",
-                                                            data: [
-                                                                { 
-                                                                    name : "node1.4.1.1.1",
-                                                                    description : "Maecenas accumsan ipsum diam",
-                                                                    product : "ABC",
-                                                                    data: [
-                                                                        { 
-                                                                            name : "node1.4.1.1.1.1",
-                                                                            description : "Maecenas accumsan ipsum diam",
-                                                                            product : "ABC",
-                                                                        }
-                                                                   ]
-                                                                }
-                                                           ]
-                                                        }
-                                                   ]
-                                                }
-                                           ]
-                                        },
-                                        { 
-                                            name : "node1.5", 
-                                            description : "Sed tristique diam non imperdiet commodo",
-                                            product : "ABC",
-                                        },
-                                        { 
-                                            name : "node1.6", 
-                                            description : "Consectetur adipiscing elit",
-                                            product : "ABC",
-                                            data: [
-                                                { 
-                                                    name : "node1.6.1",
-                                                    description : "Maecenas accumsan ipsum diam",
-                                                    product : "ABC",
-                                                }
-                                           ]
-                                        },
-                                        { 
-                                            name : "node1.7", 
-                                            description : "Sed tristique diam non imperdiet commodo",
-                                            product : "ABC",
-                                        },
-                
-                                    ]
-                                },
+                                {
+                                  "text": "Node1",
+                                  "ref": "sap-icon://attachment-audio",
+                                  "nodes":
+                                  [
+                                      {
+                                          "text": "Node1-1",
+                                          "ref": "sap-icon://attachment-e-pub",
+                                          "nodes":[
+                                              {
+                                                  "text": "Node1-1-1",
+                                                  "ref": "sap-icon://attachment-html"
+                                              },
+                                              {
+                                                  "text": "Node1-1-2",
+                                                  "ref": "sap-icon://attachment-photo",
+                                                  "nodes":[
+                                                      {
+                                                          "text": "Node1-1-2-1",
+                                                          "ref": "sap-icon://attachment-text-file",
+                                                          "nodes":[
+                                                              {
+                                                                  "text": "Node1-1-2-1-1",
+                                                                  "ref": "sap-icon://attachment-video"
+                                                              },
+                                                              {
+                                                                  "text": "Node1-1-2-1-2",
+                                                                  "ref": "sap-icon://attachment-zip-file"
+                                                              },
+                                                              {
+                                                                  "text": "Node1-1-2-1-3",
+                                                                  "ref": "sap-icon://course-program"
+                                                              }
+                                                          ]
+                                                      }
+                                                  ]
+                                              }
+                                          ]
+                                      },
+                                      {
+                                          "text": "Node1-2",
+                                          "ref": "sap-icon://create"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "text": "Node2",
+                                  "ref": "sap-icon://customer-financial-fact-sheet"
+                              }
                             ];
 
                              // Create the model linked to the data (oData)
-                            var _oModel = new sap.ui.model.json.JSONModel(oData);
+                            var _oModel = new JSONModel(oData);
                             _oModel.setSizeLimit(1000000);
                             
                             // Link the model to the widget
