@@ -123,8 +123,11 @@
 
 
         console.log("MILTON TEST");
+        console.log("div1");
         console.log(div1);
+        console.log("div2");
         console.log(div2);
+        console.log("div3");
         console.log(div3);
         
         var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
