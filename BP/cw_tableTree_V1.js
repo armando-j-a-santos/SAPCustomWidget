@@ -133,8 +133,7 @@
 
                     onInit: function() {
                         
-                            // oData defintion (nodes, columns and rows)
-
+                            // oData preparation (nodes, columns and rows)
                             var oData = { 
                                 "nodes": [{
                                   "name": "O100",
@@ -154,11 +153,67 @@
                                     }]
                                   }]
                                 }]
-                         };
+                            };
 
-           
 
-                             // Create the model linked to the data (oData)
+                            var myData = [
+                                // Level 0
+                                { Id: "1", Name: "#", Parent: "", HC: "20", Prediction: "-", Adjustment: "$282.27 m" },
+                                { Id: "2", Name: "Other", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                                { Id: "3", Name: "Customer & Products", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                                { Id: "4", Name: "Finance", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                                { Id: "5", Name: "Gas & Low Carbon Energy", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                                { Id: "6", Name: "Innovation & Engineering", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                                { Id: "7", Name: "Legal", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                                { Id: "8", Name: "People & Culture", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                                { Id: "9", Name: "Production & Operations", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                              
+                                // #
+                                { Id: "10", Name: "Unassigned", Parent: "1", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                                { Id: "11", Name: "Don't Use - Incorrect Enterprise", Parent: "10", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                                
+                                // Other
+                                { Id: "12", Name: "BP Corporate Exec Office Exec", Parent: "2", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                                { Id: "13", Name: "CEO - Legacy", Parent: "2", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                                { Id: "14", Name: "CEO Support", Parent: "2", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                               
+                            ];
+                              
+                            var x = {
+                                  ID: "15", Name: "Armando Santos", Parent: "12", HC: "5", Prediction: "10", Adjustment: "$123 m"
+                            };
+                              
+                            myData.push(x);
+                              
+                            var result = convert(myData);
+                            console.log("tree is: ", result);
+
+
+                            // Function that builds the hierarchy tree
+                            function convert(array) {
+                                var map = {};
+                                for (var i = 0; i < array.length; i++) {
+                                  var obj = array[i];
+                                  obj.children = [];
+                              
+                                  map[obj.Id] = obj;
+                              
+                                  var parent = obj.Parent || "-";
+                                  if (!map[parent]) {
+                                    map[parent] = {
+                                      children: [],
+                                    };
+                                  }
+                                  
+                                  map[parent].children.push(obj);
+                                }
+                              
+                                return map["-"].children;
+                            }
+
+                            
+
+                            // Create the model linked to the data (oData)
                             var _oModel = new sap.ui.model.json.JSONModel(oData);
                             //_oModel.setSizeLimit(1000000);
                             
