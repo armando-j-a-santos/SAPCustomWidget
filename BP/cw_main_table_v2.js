@@ -21,10 +21,6 @@
             });
             _shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
-            /*
-            _id = createGuid();
-            _shadowRoot.querySelector("#oView").id = "oView";
-            */
 
             this._export_settings = {};
             this._export_settings.title = "";
@@ -58,32 +54,6 @@
             var that = this;
             loadthis(that, changedProperties);
         }
-
-        /*
-        _firePropertiesChanged() {
-            this.unit = "";
-            this.dispatchEvent(new CustomEvent("propertiesChanged", {
-                detail: {
-                    properties: {
-                        unit: this.unit
-                    }
-                }
-            }));
-        }
-        */
-
-        /*
-        static get observedAttributes() {
-            return [
-                "title",
-                "subtitle",
-                "icon",
-                "unit",
-                "footer",
-                "link"
-            ];
-        }
-        */
 
         attributeChangedCallback(name, oldValue, newValue) {
             if (oldValue != newValue) {
@@ -174,20 +144,6 @@
                         
                         console.log('>>>>>>>>>>>>>>>inside onInit');
                         
-                            // oData defintion (nodes, columns and rows)
-                            /*
-                            var oData = [{
-                              text: "Node1",
-                              nodes: [{
-                                text: "Node1-1"
-                              }]
-                            }, {
-                              text: "Node2",
-                              nodes: [{
-                                text: "Node2-1"
-                              }]
-                            }];
-                            */
 
                             var oData = { 
                                 "nodes": [{
@@ -210,27 +166,7 @@
                                 }]
                          };
 
-                         /*
-                         var oData = { 
-
-                                data : [{ 
-                                    name  : "node1", 
-                                    description : "Lorem ipsum dolor sit amet",
-                                    product : "ABC",
-                                    data : [{ 
-                                            name : "node1.1", 
-                                            description : "Cras pretium nisl ac ex congue posuere",
-                                            product : "XYZ", 
-                                            data : [{ 
-                                                name : "node1.2", 
-                                                description : "test osuere",
-                                                product : "XYZ"
-                                            }]
-                                        }]
-                                      }]
-                            }; 
-                             */           
-
+  
                              // Create the model linked to the data (oData)
                             var _oModel = new sap.ui.model.json.JSONModel(oData);
                             //var _oModel = new JSONModel(oData)
@@ -240,30 +176,10 @@
                             console.log(_oModel);
                             
                             // Link the model to the widget
-                            //this.getView().setModel(_oModel, that.widgetName);  //(Previously)
                             this.getView().setModel(_oModel); 
-                            //sap.ui.getCore().setModel(_oModel, that.widgetName);
-
-                            
-                            //this.getView().byId("tbl").setModel(_oModel, that.widgetName);   // ----> did not solve
-                            //this.getView().byId("oViewsapuitable_1").setModel(_oModel, that.widgetName);  // ----> did not solve
-
-                            console.log("The model from");
-                            //console.log(this.getView().byId("oViewsapuitable_1").getModel());
-                            //console.log(this.getView().byId("tbl").getModel());
-
-
-                            //console.log(this.getView().byId("tbl").getModel());  // ---->> undefined
-                            console.log(this.getView().getModel());  
-
-                            //console.log(this.getView().getModel().getProperty(sPath))
-                            //console.log(this.getView().byId(that.widgetName).getModel()); // ---->> error
-
-                            //"oViewsapuitable_1"
-                            
-                            console.log("that.widgetName");
-                            console.log(that.widgetName);
-                    }
+                           
+                        
+                      }
 
                 });
             });
