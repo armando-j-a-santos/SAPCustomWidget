@@ -260,7 +260,7 @@
                             console.log(this.getView().getModel());  
                             
                             
-                            console.log(this.getView().getModel().getProperty())
+                            console.log(this.getView().getModel().getProperty("/spath"))
                             //console.log(this.getView().byId(that.widgetName).getModel()); // ---->> error
 
                             //"oViewsapuitable_1"
