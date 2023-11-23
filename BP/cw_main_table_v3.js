@@ -110,11 +110,11 @@
         div1.innerHTML = '<script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/1.108.20/resources/sap-ui-core.js" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-bindingSyntax="complex" data-sap-ui-libs="sap.m"></script>'
         _shadowRoot.appendChild(div1);
 
-        var path = "/"
+    
             
         let div2 = document.createElement('div');
         //div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows=\"/\"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';               
-        div2.innerHTML = '<script id="oViewsapuitable_1" name="oViewsapuitable_1" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{path:/}"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';  
+        div2.innerHTML = '<script id="oViewsapuitable_1" name="oViewsapuitable_1" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{/}"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';  
         _shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
@@ -247,23 +247,10 @@
                             this.getView().setModel(_oModel); 
                             //sap.ui.getCore().setModel(_oModel, that.widgetName);
 
-                            
-                            //this.getView().byId("tbl").setModel(_oModel, that.widgetName);   // ----> did not solve
-                            //this.getView().byId("oViewsapuitable_1").setModel(_oModel, that.widgetName);  // ----> did not solve
+                    
 
                             console.log("The model from");
-                            //console.log(this.getView().byId("oViewsapuitable_1").getModel());
-                            //console.log(this.getView().byId("tbl").getModel());
-
-
-                            //console.log(this.getView().byId("tbl").getModel());  // ---->> undefined
                             console.log(this.getView().getModel());  
-                            
-                            
-                            console.log(this.getView().getModel().getProperty("/spath"))
-                            //console.log(this.getView().byId(that.widgetName).getModel()); // ---->> error
-
-                            //"oViewsapuitable_1"
                             
                             console.log("that.widgetName");
                             console.log(that.widgetName);
