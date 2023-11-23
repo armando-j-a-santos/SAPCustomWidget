@@ -303,6 +303,7 @@
             var divfinal = Ar[foundIndex].div;
             console.log("divfinal:");
             console.log(divfinal);
+            console.log(divfinal.id);
             
             
             
