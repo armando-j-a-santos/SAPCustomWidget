@@ -21,6 +21,10 @@
             });
             _shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
+            /*
+            _id = createGuid();
+            _shadowRoot.querySelector("#oView").id = "oView";
+            */
 
             this._export_settings = {};
             this._export_settings.title = "";
@@ -55,6 +59,32 @@
             loadthis(that, changedProperties);
         }
 
+        /*
+        _firePropertiesChanged() {
+            this.unit = "";
+            this.dispatchEvent(new CustomEvent("propertiesChanged", {
+                detail: {
+                    properties: {
+                        unit: this.unit
+                    }
+                }
+            }));
+        }
+        */
+
+        /*
+        static get observedAttributes() {
+            return [
+                "title",
+                "subtitle",
+                "icon",
+                "unit",
+                "footer",
+                "link"
+            ];
+        }
+        */
+
         attributeChangedCallback(name, oldValue, newValue) {
             if (oldValue != newValue) {
                 this[name] = newValue;
@@ -79,9 +109,12 @@
         let div1 = document.createElement('div');
         div1.innerHTML = '<script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/1.108.20/resources/sap-ui-core.js" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-bindingSyntax="complex" data-sap-ui-libs="sap.m"></script>'
         _shadowRoot.appendChild(div1);
+
+    
             
         let div2 = document.createElement('div');
-        div2.innerHTML = '<script id="oViews' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{/}"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';  
+        //div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows=\"/\"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';               
+        div2.innerHTML = '<script id="oViewsapuitable_1" name="oViewsapuitable_1" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{/}"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';  
         _shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
@@ -91,7 +124,7 @@
         that_.appendChild(div);
 
 
-        console.log("LOGS in here:");
+        console.log("MILTON TEST");
         console.log(widgetName);
         console.log("div");
         console.log(div);
@@ -144,16 +177,30 @@
                         
                         console.log('>>>>>>>>>>>>>>>inside onInit');
                         
+                            // oData defintion (nodes, columns and rows)
+                            /*
+                            var oData = [{
+                              text: "Node1",
+                              nodes: [{
+                                text: "Node1-1"
+                              }]
+                            }, {
+                              text: "Node2",
+                              nodes: [{
+                                text: "Node2-1"
+                              }]
+                            }];
+                            */
 
                             var oData = { 
                                 "nodes": [{
                                   "name": "O100",
-                                  "description": "Software Development",
+                                  "description": "Fist nodee",
                                   
                                   "product": "O",
                                   "nodes" : [{
                                     "name": "O110",
-                                    "description": "Team A",
+                                    "description": "Team AAAA",
                                     
                                     "product": "O",
                                     "nodes" : [{
@@ -166,10 +213,29 @@
                                 }]
                          };
 
-  
+                         /*
+                         var oData = { 
+
+                                data : [{ 
+                                    name  : "node1", 
+                                    description : "Lorem ipsum dolor sit amet",
+                                    product : "ABC",
+                                    data : [{ 
+                                            name : "node1.1", 
+                                            description : "Cras pretium nisl ac ex congue posuere",
+                                            product : "XYZ", 
+                                            data : [{ 
+                                                name : "node1.2", 
+                                                description : "test osuere",
+                                                product : "XYZ"
+                                            }]
+                                        }]
+                                      }]
+                            }; 
+                             */           
+
                              // Create the model linked to the data (oData)
                             var _oModel = new sap.ui.model.json.JSONModel(oData);
-                            //var _oModel = new JSONModel(oData)
                             //_oModel.setSizeLimit(1000000);
                             
                             console.log("_oModel");
@@ -177,9 +243,13 @@
                             
                             // Link the model to the widget
                             this.getView().setModel(_oModel); 
-                           
-                        
-                      }
+
+                            console.log("The model from");
+                            console.log(this.getView().getModel());  
+                            
+                            console.log("that.widgetName");
+                            console.log(that.widgetName);
+                    }
 
                 });
             });
@@ -188,9 +258,7 @@
             var foundIndex = Ar.findIndex(x => x.id == widgetName);
             var divfinal = Ar[foundIndex].div;
             console.log(divfinal);
-            
-            
-            
+ 
             //### THE APP: place the XMLView somewhere into DOM ###
             var oView = sap.ui.xmlview({
                 viewContent: jQuery(divfinal).html(), 
