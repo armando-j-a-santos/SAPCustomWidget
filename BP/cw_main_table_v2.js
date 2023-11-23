@@ -6,8 +6,13 @@
     var Ar = [];
 
     let tmpl = document.createElement("template");
+    //div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{path:\'/\'}"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';               
+
+
     tmpl.innerHTML = `
       <style>
+      <script id="oView' + 'sapuitable_1' + '" name="oView' + 'sapuitable_1' + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"></script>
+      <script id="view1"><t:TreeTable id="tbl" rows="{path:\'/\'}"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>
       </style>      
     `;
 
@@ -92,7 +97,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitablex", ASANTOS);
+    customElements.define("com-asantos-sap-sac-sapuitable", ASANTOS);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -102,21 +107,45 @@
             widgetName = that._export_settings.title.split("|")[0];
         }
 
+    
         div = document.createElement('div');
-        //div.slot = "content_" + widgetName;
-  
+        div.slot = "content_" + widgetName;
+
+        let div1 = document.createElement('div');
+        div1.innerHTML = '<script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/1.108.20/resources/sap-ui-core.js" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-bindingSyntax="complex" data-sap-ui-libs="sap.m"></script>'
+        _shadowRoot.appendChild(div1);
+
+        //var path = "{path:\'/\',parameters:{arrayNames:[\'oData\']}}"
+     /*       
         let div2 = document.createElement('div');
-        div2.innerHTML = '<script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-xx-bindingSyntax="complex" data-sap-ui-libs="sap.m"></script> <script id="view1" type="ui5/xmlview"><mvc:View controllerName="view1.initial" xmlns:t="sap.ui.table" xmlns="sap.ui.commons" xmlns:mvc="sap.ui.core.mvc" > <t:TreeTable id="tbl" rows="{path:'+ "'" + '/' + "'" + '}" > <t:columns> <t:Column> <t:label><Label text="name" /></t:label> <t:template><TextView text="{name}" /></t:template> </t:Column> <t:Column> <t:label><Label text="Arm" /> </t:label> <t:template><TextView text="{description}" /></t:template> </t:Column> <t:Column> <t:label><Label text="product" /> </t:label> <t:template><TextView text="{product}" /></t:template> </t:Column> </t:columns> </t:TreeTable> </mvc:View> </script>';
+        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{path:\'/\'}"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';               
         _shadowRoot.appendChild(div2);
+        */
+       
+        let div3 = document.createElement('div');
+        div3.innerHTML = '<div style="max-height: "' + that.max_height + that.unit_option + '"; border-radius: 15px; overflow-y: hidden;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><div style="max-height: ' + that.max_height + that.unit_option + '; border-radius: 15px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"></slot></div></div>';
+         _shadowRoot.appendChild(div3);
 
         that_.appendChild(div);
-        
-        //var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
 
-        //Ar.push({
-        //    'id': widgetName,
-        //    'div': mapcanvas_divstr
-        //});
+
+        console.log("MILTON TEST");
+        console.log(widgetName);
+        console.log("div");
+        console.log(div);
+        console.log("div1");
+        console.log(div1);
+        //console.log("div2");
+        //console.log(div2);
+        console.log("div3");
+        console.log(div3);
+        
+        var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
+
+        Ar.push({
+            'id': widgetName,
+            'div': mapcanvas_divstr
+        });
 
         sap.ui.getCore().attachInit(function() {
             "use strict";
@@ -145,50 +174,147 @@
 
                 var busyDialog = (busyDialog) ? busyDialog : new BusyDialog({});
 
-                return Controller.extend("view1", {
+                return Controller.extend("myView.Template", {
 
                     onInit: function() {
                         
                         console.log('>>>>>>>>>>>>>>>inside onInit');
                         
-		        var oNodes = { 
-		                            "nodes": [{
-		                              "name": "O100",
-		                              "description": "Software Development",
-		                              "ParentID": "",
-		                              "product": "O",
-		                              "nodes" : [{
-		                                "name": "O110",
-		                                "description": "Team A",
-		                                "ParentID": "O100",
-		                                "product": "O",
-		                                "nodes" : [{
-		                                  "name": "S111",
-		                                  "description": "Product Owner",
-		                                  "ParentID": "O110",
-		                                  "product": "S"
-		                                }]
-		                              }]
-		                            }]
-		                     };
-		        var oArmando = new sap.ui.model.json.JSONModel(oNodes);
+                            // oData defintion (nodes, columns and rows)
+                            /*
+                            var oData = [{
+                              text: "Node1",
+                              nodes: [{
+                                text: "Node1-1"
+                              }]
+                            }, {
+                              text: "Node2",
+                              nodes: [{
+                                text: "Node2-1"
+                              }]
+                            }];
+                            */
+
+                            var oData = [
+                                { 
+                                    name  : "node1", 
+                                    description : "Lorem ipsum dolor sit amet",
+                                    product : "ABC",
+                                    data : [
+                                        { 
+                                            name : "node1.1", 
+                                            description : "Cras pretium nisl ac ex congue posuere",
+                                            product : "XYZ" 
+                                        },
+                                        { 
+                                            name : "node1.2", 
+                                            description : "Consectetur adipiscing elit",
+                                            product : "ABC",
+                                            data: [
+                                                { 
+                                                    name : "node1.2.1",
+                                                    description : "Maecenas accumsan ipsum diam",
+                                                    product : "ABC",
+                                                }
+                                           ]
+                                        },
+                                        { 
+                                            name : "node1.3", 
+                                            description : "Sed tristique diam non imperdiet commodo",
+                                            product : "ABC"
+                                        },
+                                        { 
+                                            name : "node1.4", 
+                                            description : "Consectetur adipiscing elit",
+                                            product : "ABC",
+                                            data: [
+                                                { 
+                                                    name : "node1.4.1",
+                                                    description : "Maecenas accumsan ipsum diam",
+                                                    product : "ABC",
+                                                    data: [
+                                                        { 
+                                                            name : "node1.4.1.1",
+                                                            description : "Maecenas accumsan ipsum diam",
+                                                            product : "ABC",
+                                                            data: [
+                                                                { 
+                                                                    name : "node1.4.1.1.1",
+                                                                    description : "Maecenas accumsan ipsum diam",
+                                                                    product : "ABC",
+                                                                    data: [
+                                                                        { 
+                                                                            name : "node1.4.1.1.1.1",
+                                                                            description : "Maecenas accumsan ipsum diam",
+                                                                            product : "ABC",
+                                                                        }
+                                                                   ]
+                                                                }
+                                                           ]
+                                                        }
+                                                   ]
+                                                }
+                                           ]
+                                        },
+                                        { 
+                                            name : "node1.5", 
+                                            description : "Sed tristique diam non imperdiet commodo",
+                                            product : "ABC",
+                                        },
+                                        { 
+                                            name : "node1.6", 
+                                            description : "Consectetur adipiscing elit",
+                                            product : "ABC",
+                                            data: [
+                                                { 
+                                                    name : "node1.6.1",
+                                                    description : "Maecenas accumsan ipsum diam",
+                                                    product : "ABC",
+                                                }
+                                           ]
+                                        },
+                                        { 
+                                            name : "node1.7", 
+                                            description : "Sed tristique diam non imperdiet commodo",
+                                            product : "ABC",
+                                        },
+                
+                                    ]
+                                },
+                            ];
+
+                             // Create the model linked to the data (oData)
+                            //var _oModel = new sap.ui.model.json.JSONModel(oData);
+                            var _oModel = new JSONModel(oData)
+                            _oModel.setSizeLimit(1000000);
                             
-                        // Link the model to the widget
-                        this.getView()
-                             .setModel(oArmando);
-                        sap.ui.getCore().setModel(oArmando);
+                            console.log("_oModel");
+                            console.log(_oModel);
+                            
+                            // Link the model to the widget
+                            this.getView()
+                                .setModel(_oModel, that.widgetName);
+                            sap.ui.getCore().setModel(_oModel, that.widgetName);
                     }
 
                 });
             });
+
+            console.log("WidgetName Final:" + widgetName);
+          //  var foundIndex = Ar.findIndex(x => x.id == widgetName);
+           // var divfinal = Ar[foundIndex].div;
+           // console.log(divfinal);
+            
+            
             
             //### THE APP: place the XMLView somewhere into DOM ###
             var oView = sap.ui.xmlview({
-                viewContent: jQuery('#view1').html(),
+                //viewContent: jQuery(divfinal).html(), 
+                viewContent: jQuery("#view1").html(), 
+
             });
             oView.placeAt(div);
-
-		
+            
         });
     } // end of: function loadthis(that, changedProperties) {
 
