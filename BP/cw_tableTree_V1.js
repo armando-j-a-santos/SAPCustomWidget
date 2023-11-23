@@ -77,9 +77,10 @@
         div2.innerHTML = '<script id="oView'+ widgetName +'" name="oView'+ widgetName +'" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" '+ 
         'xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{/}">'+
         '<t:columns>'+
-        '<t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column>'+
-        '<t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column>'+
-        '<t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column>'+
+        '<t:Column><t:label><Label text="Tree" /></t:label><t:template><TextView text="{Id}"/></t:template></t:Column>'+
+        '<t:Column><t:label><Label text="HC" /></t:label><t:template><TextView text="{HC}"/></t:template></t:Column>'+
+        '<t:Column><t:label><Label text="Prediction" /></t:label><t:template><TextView text="{Prediction}"/></t:template></t:Column>'+
+        '<t:Column><t:label><Label text="Adjustment" /></t:label><t:template><TextView text="{Adjustment}"/></t:template></t:Column>'+
         '</t:columns>'+
         '</t:TreeTable></mvc:View></script>';
         
@@ -142,7 +143,7 @@
                     return sap.ui.controller("myView.Template", {
 
                     onInit: function() {
-                        
+                            /*
                             // oData preparation (nodes, columns and rows)
                             var oData = { 
                                 "nodes": [{
@@ -164,8 +165,9 @@
                                   }]
                                 }]
                             };
+                            */
 
-
+                            // oData preparation (nodes, columns and rows)
                             var myData = [
                                 // Level 0
                                 { Id: "1", Name: "#", Parent: "", HC: "20", Prediction: "-", Adjustment: "$282.27 m" },
@@ -223,7 +225,7 @@
                             
 
                             // Create the model linked to the data (oData)
-                            var _oModel = new sap.ui.model.json.JSONModel(oData);
+                            var _oModel = new sap.ui.model.json.JSONModel(result);
                             //_oModel.setSizeLimit(1000000);
                             
                             console.log("_oModel");
