@@ -11,9 +11,6 @@
       </style>      
     `;
 
-    console.log('tmpl is');
-    console.log(tmpl);
-
     class ASANTOS extends HTMLElement {
 
         constructor() {
@@ -113,9 +110,10 @@
         div1.innerHTML = '<script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/1.108.20/resources/sap-ui-core.js" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-bindingSyntax="complex" data-sap-ui-libs="sap.m"></script>'
         _shadowRoot.appendChild(div1);
 
+        //var path = "{path:\'/\',parameters:{arrayNames:[\'oData\']}}"
             
         let div2 = document.createElement('div');
-        div2.innerHTML = '<script id="oViewsapuitablex_1" name="oViewsapuitablex_1" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"></script><script id="view1"><t:TreeTable id="tbl" rows="{path:\'/\'}"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';
+        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{path:\'/\'}"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';               
         _shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
@@ -125,7 +123,7 @@
         that_.appendChild(div);
 
 
-        console.log("armandos TEST");
+        console.log("Armando TEST");
         console.log(widgetName);
         console.log("div");
         console.log(div);
@@ -191,7 +189,8 @@
                             }];
                             */
 
-                            var oData = [{ 
+                            var oData = [
+                                { 
                                     name  : "node1", 
                                     description : "Lorem ipsum dolor sit amet",
                                     product : "ABC",
@@ -275,7 +274,8 @@
                                         },
                 
                                     ]
-                                }];
+                                },
+                            ];
 
                              // Create the model linked to the data (oData)
                             //var _oModel = new sap.ui.model.json.JSONModel(oData);
@@ -286,12 +286,9 @@
                             console.log(_oModel);
                             
                             // Link the model to the widget
-                            this.getView().setModel(_oModel, that.widgetName);
-                            
-
-                            //console.log(this.getView().byId("tbl").getModel());  // ---->> undefined
-                            //console.log(this.getView().byId(that.widgetName).getModel()); // ---->> error
-
+                            this.getView()
+                                .setModel(_oModel, that.widgetName);
+                            sap.ui.getCore().setModel(_oModel, that.widgetName);
                     }
 
                 });
@@ -300,9 +297,8 @@
             console.log("WidgetName Final:" + widgetName);
             var foundIndex = Ar.findIndex(x => x.id == widgetName);
             var divfinal = Ar[foundIndex].div;
-            console.log("divfinal:");
             console.log(divfinal);
-            console.log(divfinal.id);
+            
             
             
             //### THE APP: place the XMLView somewhere into DOM ###
