@@ -382,29 +382,29 @@
                         //Actuals
                         ////////////////////////////////////////////
                         if (NumVersions === 3 || NumVersions === 4) {
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY_Minus1.B1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY_Minus1.B2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY_Minus1.B3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY_Minus1.B4 = dp["@MeasureDimension"].formattedValue;
                             }
                         } else if (NumVersions === 0 || NumVersions === 1 || NumVersions === 2) {
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY_Minus1.A1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY_Minus1.A2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY_Minus1.A3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY_Minus1.A4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
@@ -421,16 +421,16 @@
                         ////////////////////////////////////////////
 
                         if(dp[DimVersion].description === Version_2){
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY.A1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY.A2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY.A3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY.A4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
@@ -442,16 +442,16 @@
                         ////////////////////////////////////////////
 
                         if(dp[DimVersion].description === Version_3){
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY.B1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY.B2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY.B3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY.B4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
@@ -463,16 +463,16 @@
                         ////////////////////////////////////////////
 
                         if(dp[DimVersion].description === Version_4){
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY.C1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY.C2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY.C3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY.C4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
@@ -484,16 +484,16 @@
                         ////////////////////////////////////////////
 
                         if(dp[DimVersion].description === Version_5){
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY.D1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY.D2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY.D3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY.D4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
@@ -508,16 +508,16 @@
                         ////////////////////////////////////////////
 
                         if(dp[DimVersion].description === Version_2){
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus1.A1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY_Plus1.A2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY_Plus1.A3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY_Plus1.A4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
@@ -529,16 +529,16 @@
                         ////////////////////////////////////////////
 
                         if(dp[DimVersion].description === Version_3){
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus1.B1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY_Plus1.B2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY_Plus1.B3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY_Plus1.B4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
@@ -550,16 +550,16 @@
                         ////////////////////////////////////////////
 
                         if(dp[DimVersion].description === Version_4){
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus1.C1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY_Plus1.C2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY_Plus1.C3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY_Plus1.C4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
@@ -571,16 +571,16 @@
                         ////////////////////////////////////////////
                         
                         if(dp[DimVersion].description === Version_5){
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus1.D1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY_Plus1.D2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY_Plus1.D3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY_Plus1.D4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
@@ -595,16 +595,16 @@
                         ////////////////////////////////////////////
 
                         if(dp[DimVersion].description === Version_2){
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus2.A1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY_Plus2.A2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY_Plus2.A3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY_Plus2.A4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
@@ -616,16 +616,16 @@
                         ////////////////////////////////////////////
 
                         if(dp[DimVersion].description === Version_3){
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus2.B1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY_Plus2.B2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY_Plus2.B3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY_Plus2.B4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
@@ -637,16 +637,16 @@
                         ////////////////////////////////////////////
 
                         if(dp[DimVersion].description === Version_4){
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus2.C1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY_Plus2.C2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY_Plus2.C3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY_Plus2.C4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
@@ -658,16 +658,16 @@
                         ////////////////////////////////////////////
 
                         if(dp[DimVersion].description === Version_5){
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus2.D1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY_Plus2.D2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY_Plus2.D3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY_Plus2.D4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
@@ -682,16 +682,16 @@
                         ////////////////////////////////////////////
 
                         if(dp[DimVersion].description === Version_2){
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus3.A1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY_Plus3.A2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY_Plus3.A3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY_Plus3.A4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
@@ -703,16 +703,16 @@
                         ////////////////////////////////////////////
 
                         if(dp[DimVersion].description === Version_3){
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus3.B1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY_Plus3.B2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY_Plus3.B3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY_Plus3.B4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
@@ -724,16 +724,16 @@
                         ////////////////////////////////////////////
 
                         if(dp[DimVersion].description === Version_4){
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus3.C1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY_Plus3.C2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY_Plus3.C3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY_Plus3.C4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
@@ -745,16 +745,16 @@
                         ////////////////////////////////////////////
 
                         if(dp[DimVersion].description === Version_5){    
-                            if (dp[DimSCope].id === "AI") {
+                            if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus3.D1 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_NEW") {
+                            if (dp[DimSCope].id === AIScope_2) {
                                 CY_Plus3.D2 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "AI_DRIVERS") {
+                            if (dp[DimSCope].id === AIScope_3) {
                                 CY_Plus3.D3 = dp["@MeasureDimension"].formattedValue;
                             }
-                            if (dp[DimSCope].id === "NON_AI") {
+                            if (dp[DimSCope].id === AIScope_4) {
                                 CY_Plus3.D4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
