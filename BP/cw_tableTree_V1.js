@@ -198,7 +198,7 @@
                             console.log("tree is: ", result);
 
 
-                            // Function that builds the hierarchy tree
+                            // Function that builds the hierarchy tree, readable in console.log
                             function convert(array) {
                                 var map = {};
                                 for (var i = 0; i < array.length; i++) {
