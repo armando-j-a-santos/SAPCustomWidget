@@ -110,10 +110,11 @@
         div1.innerHTML = '<script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/1.108.20/resources/sap-ui-core.js" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-bindingSyntax="complex" data-sap-ui-libs="sap.m"></script>'
         _shadowRoot.appendChild(div1);
 
-        //var path = "{path:\'/\',parameters:{arrayNames:[\'oData\']}}"
+        var path = "/"
             
         let div2 = document.createElement('div');
-        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{path:/}"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';               
+        //div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows=\"/\"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';               
+        div2.innerHTML = '<script id="oViewsapuitable_1" name="oViewsapuitable_1" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{path:/}"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';  
         _shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
@@ -123,7 +124,7 @@
         that_.appendChild(div);
 
 
-        console.log("Armando TEST");
+        console.log("MILTON TEST");
         console.log(widgetName);
         console.log("div");
         console.log(div);
@@ -168,7 +169,9 @@
 
                 var busyDialog = (busyDialog) ? busyDialog : new BusyDialog({});
 
-                return Controller.extend("myView.Template", {
+                //return Controller.extend("myView.Template", {
+
+                    return    sap.ui.controller("myView.Template", {
 
                     onInit: function() {
                         
@@ -189,106 +192,80 @@
                             }];
                             */
 
-                            var oData = [
-                                { 
+                            var oData = { 
+                                "nodes": [{
+                                  "name": "O100",
+                                  "description": "Software Development",
+                                  
+                                  "product": "O",
+                                  "nodes" : [{
+                                    "name": "O110",
+                                    "description": "Team A",
+                                    
+                                    "product": "O",
+                                    "nodes" : [{
+                                      "name": "S111",
+                                      "description": "Product Owner",
+                                      
+                                      "product": "S"
+                                    }]
+                                  }]
+                                }]
+                         };
+
+                         /*
+                         var oData = { 
+
+                                data : [{ 
                                     name  : "node1", 
                                     description : "Lorem ipsum dolor sit amet",
                                     product : "ABC",
-                                    data : [
-                                        { 
+                                    data : [{ 
                                             name : "node1.1", 
                                             description : "Cras pretium nisl ac ex congue posuere",
-                                            product : "XYZ" 
-                                        },
-                                        { 
-                                            name : "node1.2", 
-                                            description : "Consectetur adipiscing elit",
-                                            product : "ABC",
-                                            data: [
-                                                { 
-                                                    name : "node1.2.1",
-                                                    description : "Maecenas accumsan ipsum diam",
-                                                    product : "ABC",
-                                                }
-                                           ]
-                                        },
-                                        { 
-                                            name : "node1.3", 
-                                            description : "Sed tristique diam non imperdiet commodo",
-                                            product : "ABC"
-                                        },
-                                        { 
-                                            name : "node1.4", 
-                                            description : "Consectetur adipiscing elit",
-                                            product : "ABC",
-                                            data: [
-                                                { 
-                                                    name : "node1.4.1",
-                                                    description : "Maecenas accumsan ipsum diam",
-                                                    product : "ABC",
-                                                    data: [
-                                                        { 
-                                                            name : "node1.4.1.1",
-                                                            description : "Maecenas accumsan ipsum diam",
-                                                            product : "ABC",
-                                                            data: [
-                                                                { 
-                                                                    name : "node1.4.1.1.1",
-                                                                    description : "Maecenas accumsan ipsum diam",
-                                                                    product : "ABC",
-                                                                    data: [
-                                                                        { 
-                                                                            name : "node1.4.1.1.1.1",
-                                                                            description : "Maecenas accumsan ipsum diam",
-                                                                            product : "ABC",
-                                                                        }
-                                                                   ]
-                                                                }
-                                                           ]
-                                                        }
-                                                   ]
-                                                }
-                                           ]
-                                        },
-                                        { 
-                                            name : "node1.5", 
-                                            description : "Sed tristique diam non imperdiet commodo",
-                                            product : "ABC",
-                                        },
-                                        { 
-                                            name : "node1.6", 
-                                            description : "Consectetur adipiscing elit",
-                                            product : "ABC",
-                                            data: [
-                                                { 
-                                                    name : "node1.6.1",
-                                                    description : "Maecenas accumsan ipsum diam",
-                                                    product : "ABC",
-                                                }
-                                           ]
-                                        },
-                                        { 
-                                            name : "node1.7", 
-                                            description : "Sed tristique diam non imperdiet commodo",
-                                            product : "ABC",
-                                        },
-                
-                                    ]
-                                },
-                            ];
+                                            product : "XYZ", 
+                                            data : [{ 
+                                                name : "node1.2", 
+                                                description : "test osuere",
+                                                product : "XYZ"
+                                            }]
+                                        }]
+                                      }]
+                            }; 
+                             */           
 
                              // Create the model linked to the data (oData)
-                            //var _oModel = new sap.ui.model.json.JSONModel(oData);
-                            var _oModel = new JSONModel(oData)
-                            _oModel.setSizeLimit(1000000);
+                            var _oModel = new sap.ui.model.json.JSONModel(oData);
+                            //var _oModel = new JSONModel(oData)
+                            //_oModel.setSizeLimit(1000000);
                             
                             console.log("_oModel");
                             console.log(_oModel);
                             
                             // Link the model to the widget
-                            this.getView()
-                                .setModel(_oModel, that.widgetName);
-                            sap.ui.getCore().setModel(_oModel, that.widgetName);
+                            //this.getView().setModel(_oModel, that.widgetName);  //(Previously)
+                            this.getView().setModel(_oModel); 
+                            //sap.ui.getCore().setModel(_oModel, that.widgetName);
+
+                            
+                            //this.getView().byId("tbl").setModel(_oModel, that.widgetName);   // ----> did not solve
+                            //this.getView().byId("oViewsapuitable_1").setModel(_oModel, that.widgetName);  // ----> did not solve
+
+                            console.log("The model from");
+                            //console.log(this.getView().byId("oViewsapuitable_1").getModel());
+                            //console.log(this.getView().byId("tbl").getModel());
+
+
+                            //console.log(this.getView().byId("tbl").getModel());  // ---->> undefined
+                            console.log(this.getView().getModel());  
+
+                            //console.log(this.getView().getModel().getProperty(sPath))
+                            //console.log(this.getView().byId(that.widgetName).getModel()); // ---->> error
+
+                            //"oViewsapuitable_1"
+                            
+                            console.log("that.widgetName");
+                            console.log(that.widgetName);
                     }
 
                 });
