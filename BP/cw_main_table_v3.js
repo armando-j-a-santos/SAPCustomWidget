@@ -295,7 +295,7 @@
                             console.log("The model from");
                             console.log(this.getView().byId("tbl").setModel(_oModel, that.widgetName));
                             //console.log(this.getView().byId("tbl").getModel());  // ---->> undefined
-                            //console.log(this.getView().byId(that.widgetName).getModel());
+                            //console.log(this.getView().byId(that.widgetName).getModel()); // ---->> error
                             
                             console.log("that.widgetName");
                             console.log(that.widgetName);
