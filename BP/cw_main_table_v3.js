@@ -189,93 +189,25 @@
                             }];
                             */
 
-                            var oData = { data : [
-                                { 
+                            var oData = { 
+
+                                data : [{ 
                                     name  : "node1", 
                                     description : "Lorem ipsum dolor sit amet",
                                     product : "ABC",
-                                    data : [
-                                        { 
+                                    data : [{ 
                                             name : "node1.1", 
                                             description : "Cras pretium nisl ac ex congue posuere",
-                                            product : "XYZ" 
-                                        },
-                                        { 
-                                            name : "node1.2", 
-                                            description : "Consectetur adipiscing elit",
-                                            product : "ABC",
-                                            data: [
-                                                { 
-                                                    name : "node1.2.1",
-                                                    description : "Maecenas accumsan ipsum diam",
-                                                    product : "ABC",
-                                                }
-                                           ]
-                                        },
-                                        { 
-                                            name : "node1.3", 
-                                            description : "Sed tristique diam non imperdiet commodo",
-                                            product : "ABC"
-                                        },
-                                        { 
-                                            name : "node1.4", 
-                                            description : "Consectetur adipiscing elit",
-                                            product : "ABC",
-                                            data: [
-                                                { 
-                                                    name : "node1.4.1",
-                                                    description : "Maecenas accumsan ipsum diam",
-                                                    product : "ABC",
-                                                    data: [
-                                                        { 
-                                                            name : "node1.4.1.1",
-                                                            description : "Maecenas accumsan ipsum diam",
-                                                            product : "ABC",
-                                                            data: [
-                                                                { 
-                                                                    name : "node1.4.1.1.1",
-                                                                    description : "Maecenas accumsan ipsum diam",
-                                                                    product : "ABC",
-                                                                    data: [
-                                                                        { 
-                                                                            name : "node1.4.1.1.1.1",
-                                                                            description : "Maecenas accumsan ipsum diam",
-                                                                            product : "ABC",
-                                                                        }
-                                                                   ]
-                                                                }
-                                                           ]
-                                                        }
-                                                   ]
-                                                }
-                                           ]
-                                        },
-                                        { 
-                                            name : "node1.5", 
-                                            description : "Sed tristique diam non imperdiet commodo",
-                                            product : "ABC",
-                                        },
-                                        { 
-                                            name : "node1.6", 
-                                            description : "Consectetur adipiscing elit",
-                                            product : "ABC",
-                                            data: [
-                                                { 
-                                                    name : "node1.6.1",
-                                                    description : "Maecenas accumsan ipsum diam",
-                                                    product : "ABC",
-                                                }
-                                           ]
-                                        },
-                                        { 
-                                            name : "node1.7", 
-                                            description : "Sed tristique diam non imperdiet commodo",
-                                            product : "ABC",
-                                        },
-                
-                                    ]
-                                },
-                            ]};
+                                            product : "XYZ", 
+                                            data : [{ 
+                                                name : "node1.2", 
+                                                description : "test osuere",
+                                                product : "XYZ"
+                                            }]
+                                        }]
+                                      }]
+                            }; 
+                                        
 
                              // Create the model linked to the data (oData)
                             var _oModel = new sap.ui.model.json.JSONModel(oData);
