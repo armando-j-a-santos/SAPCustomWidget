@@ -143,30 +143,6 @@
                     return sap.ui.controller("myView.Template", {
 
                     onInit: function() {
-                            /*
-                            // oData preparation (nodes, columns and rows)
-                            var oData = { 
-                                "nodes": [{
-                                  "name": "O100",
-                                  "description": "Fist nodee",
-                                  
-                                  "product": "O",
-                                  "nodes" : [{
-                                    "name": "O110",
-                                    "description": "Team AAAA",
-                                    
-                                    "product": "O",
-                                    "nodes" : [{
-                                      "name": "S111",
-                                      "description": "Product Owner",
-                                      
-                                      "product": "S"
-                                    }]
-                                  }]
-                                }]
-                            };
-                            */
-
                             // oData preparation (nodes, columns and rows)
                             var myData = [
                                 // Level 0
@@ -191,7 +167,7 @@
                                
                             ];
                               
-                            var newMember = {Id: "15", Name: "Armando Santos", Parent: "12", HC: "5", Prediction: "10", Adjustment: "$123 m" };
+                            var newMember = {Id: "15", Name: "Armando Santos", Parent: "4", HC: "5", Prediction: "10", Adjustment: "$123 m" };
 
                             
                             myData.push(newMember);
