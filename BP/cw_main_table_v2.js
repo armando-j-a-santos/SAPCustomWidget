@@ -301,6 +301,7 @@
             console.log("WidgetName Final:" + widgetName);
             var foundIndex = Ar.findIndex(x => x.id == widgetName);
             var divfinal = Ar[foundIndex].div;
+            console.log("divfinal:");
             console.log(divfinal);
             
             
