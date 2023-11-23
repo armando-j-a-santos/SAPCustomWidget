@@ -3,7 +3,7 @@
 
     let div;
     let widgetName;
-    var Ar = [];
+    var tmpArray = [];
 
     let tmpl = document.createElement("template");
     tmpl.innerHTML = `
@@ -21,21 +21,8 @@
             });
             _shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
-            /*
-            _id = createGuid();
-            _shadowRoot.querySelector("#oView").id = "oView";
-            */
-
-            this._export_settings = {};
-            this._export_settings.title = "";
-            this._export_settings.subtitle = "";
-            this._export_settings.icon = "";
-            this._export_settings.unit = "";
-            this._export_settings.footer = "";
-
             this.addEventListener("click", event => {
-                console.log('click');
-
+                console.log('click event in here');
             });
 
             this._firstConnection = 0;
@@ -58,32 +45,6 @@
             var that = this;
             loadthis(that, changedProperties);
         }
-
-        /*
-        _firePropertiesChanged() {
-            this.unit = "";
-            this.dispatchEvent(new CustomEvent("propertiesChanged", {
-                detail: {
-                    properties: {
-                        unit: this.unit
-                    }
-                }
-            }));
-        }
-        */
-
-        /*
-        static get observedAttributes() {
-            return [
-                "title",
-                "subtitle",
-                "icon",
-                "unit",
-                "footer",
-                "link"
-            ];
-        }
-        */
 
         attributeChangedCallback(name, oldValue, newValue) {
             if (oldValue != newValue) {
@@ -111,7 +72,6 @@
         _shadowRoot.appendChild(div1);
 
     
-            
         let div2 = document.createElement('div');
         div2.innerHTML = '<script id="oView'+ widgetName +'" name="oView'+ widgetName +'" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{/}"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';  
         _shadowRoot.appendChild(div2);
@@ -122,7 +82,7 @@
 
         that_.appendChild(div);
 
-
+        console.log("================");
         console.log("LOGS");
         console.log(widgetName);
         console.log("div");
@@ -133,10 +93,11 @@
         console.log(div2);
         console.log("div3");
         console.log(div3);
+        console.log("================");
         
         var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
 
-        Ar.push({
+        tmpArray.push({
             'id': widgetName,
             'div': mapcanvas_divstr
         });
@@ -168,26 +129,11 @@
 
                 var busyDialog = (busyDialog) ? busyDialog : new BusyDialog({});
 
-                //return Controller.extend("myView.Template", {
-
-                    return    sap.ui.controller("myView.Template", {
+                    return sap.ui.controller("myView.Template", {
 
                     onInit: function() {
                         
                             // oData defintion (nodes, columns and rows)
-                            /*
-                            var oData = [{
-                              text: "Node1",
-                              nodes: [{
-                                text: "Node1-1"
-                              }]
-                            }, {
-                              text: "Node2",
-                              nodes: [{
-                                text: "Node2-1"
-                              }]
-                            }];
-                            */
 
                             var oData = { 
                                 "nodes": [{
@@ -210,26 +156,7 @@
                                 }]
                          };
 
-                         /*
-                         var oData = { 
-
-                                data : [{ 
-                                    name  : "node1", 
-                                    description : "Lorem ipsum dolor sit amet",
-                                    product : "ABC",
-                                    data : [{ 
-                                            name : "node1.1", 
-                                            description : "Cras pretium nisl ac ex congue posuere",
-                                            product : "XYZ", 
-                                            data : [{ 
-                                                name : "node1.2", 
-                                                description : "test osuere",
-                                                product : "XYZ"
-                                            }]
-                                        }]
-                                      }]
-                            }; 
-                             */           
+           
 
                              // Create the model linked to the data (oData)
                             var _oModel = new sap.ui.model.json.JSONModel(oData);
@@ -252,17 +179,19 @@
             });
 
             console.log("WidgetName Final:" + widgetName);
-            var foundIndex = Ar.findIndex(x => x.id == widgetName);
-            var divfinal = Ar[foundIndex].div;
+            var foundIndex = tmpArray.findIndex(x => x.id == widgetName);
+            var divfinal = tmpArray[foundIndex].div;
             console.log(divfinal);
  
-            //### THE APP: place the XMLView somewhere into DOM ###
+            //### THE APP: place the XMLView into DOM ###
             var oView = sap.ui.xmlview({
                 viewContent: jQuery(divfinal).html(), 
             });
+            //### Place the XMLView into div piece ###
             oView.placeAt(div);
             
         });
+
     } // end of: function loadthis(that, changedProperties) {
 
     
