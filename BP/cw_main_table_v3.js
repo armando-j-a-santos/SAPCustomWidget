@@ -168,7 +168,9 @@
 
                 var busyDialog = (busyDialog) ? busyDialog : new BusyDialog({});
 
-                return Controller.extend("myView.Template", {
+                //return Controller.extend("myView.Template", {
+
+                    return    sap.ui.controller("myView.Template", {
 
                     onInit: function() {
                         
