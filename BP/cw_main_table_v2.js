@@ -92,7 +92,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", ASANTOS);
+    customElements.define("com-asantos-sap-sac-sapuitablex", ASANTOS);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -291,10 +291,10 @@
 
                             
                             //this.getView().byId("tbl").setModel(_oModel, that.widgetName);   // ----> did not solve
-                            this.getView().byId("oViewsapuitable_1").setModel(_oModel);  // ----> did not solve
+                            this.getView().byId("oViewsapuitablex_1").setModel(_oModel);  // ----> did not solve
 
                             console.log("The model from");
-                            console.log(this.getView().byId("oViewsapuitable_1").getModel(_oModel, that.widgetName));
+                            console.log(this.getView().byId("oViewsapuitablex_1").getModel(_oModel, that.widgetName));
                             console.log(this.getView().byId("tbl").getModel(_oModel, that.widgetName));
 
 
