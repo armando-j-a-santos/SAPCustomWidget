@@ -195,12 +195,12 @@
                             var oData = { 
                                 "nodes": [{
                                   "name": "O100",
-                                  "description": "Software Development",
+                                  "description": "Fist nodee",
                                   
                                   "product": "O",
                                   "nodes" : [{
                                     "name": "O110",
-                                    "description": "Team A",
+                                    "description": "Team AAAA",
                                     
                                     "product": "O",
                                     "nodes" : [{
@@ -236,18 +236,13 @@
 
                              // Create the model linked to the data (oData)
                             var _oModel = new sap.ui.model.json.JSONModel(oData);
-                            //var _oModel = new JSONModel(oData)
                             //_oModel.setSizeLimit(1000000);
                             
                             console.log("_oModel");
                             console.log(_oModel);
                             
                             // Link the model to the widget
-                            //this.getView().setModel(_oModel, that.widgetName);  //(Previously)
                             this.getView().setModel(_oModel); 
-                            //sap.ui.getCore().setModel(_oModel, that.widgetName);
-
-                    
 
                             console.log("The model from");
                             console.log(this.getView().getModel());  
@@ -263,9 +258,7 @@
             var foundIndex = Ar.findIndex(x => x.id == widgetName);
             var divfinal = Ar[foundIndex].div;
             console.log(divfinal);
-            
-            
-            
+ 
             //### THE APP: place the XMLView somewhere into DOM ###
             var oView = sap.ui.xmlview({
                 viewContent: jQuery(divfinal).html(), 
