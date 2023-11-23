@@ -289,8 +289,11 @@
                             this.getView().setModel(_oModel, that.widgetName);
                             sap.ui.getCore().setModel(_oModel, that.widgetName);
 
-                            console.log("The model from");
+                            
                             this.getView().byId("tbl").setModel(_oModel, that.widgetName);
+
+                            console.log("The model from");
+                            console.log(this.getView().byId("tbl").setModel(_oModel, that.widgetName));
                             console.log(this.getView().byId("tbl").getModel());
                     }
 
