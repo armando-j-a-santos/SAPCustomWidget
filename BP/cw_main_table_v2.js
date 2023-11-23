@@ -150,6 +150,9 @@
             'div': mapcanvas_divstr
         });
 
+        console.log("Ar");
+        console.log(Ar);
+
         sap.ui.getCore().attachInit(function() {
             "use strict";
 
