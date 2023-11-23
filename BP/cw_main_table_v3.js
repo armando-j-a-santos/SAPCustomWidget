@@ -280,7 +280,7 @@
                              // Create the model linked to the data (oData)
                             var _oModel = new sap.ui.model.json.JSONModel(oData);
                             //var _oModel = new JSONModel(oData)
-                            _oModel.setSizeLimit(1000000);
+                            //_oModel.setSizeLimit(1000000);
                             
                             console.log("_oModel");
                             console.log(_oModel);
@@ -299,7 +299,7 @@
                             //console.log(this.getView().byId("tbl").getModel());
 
 
-                            console.log(this.getView().byId("tbl").getModel());  // ---->> undefined
+                            //console.log(this.getView().byId("tbl").getModel());  // ---->> undefined
                             console.log(this.getView().getModel());  // ---->> undefined
                             //console.log(this.getView().byId(that.widgetName).getModel()); // ---->> error
 
