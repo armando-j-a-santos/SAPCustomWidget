@@ -305,9 +305,6 @@
             console.log(divfinal);
             console.log(divfinal.id);
             
-            var x = '"'+divfinal.id+'"';
-            console.log("x:");
-            console.log(x);
             
             //### THE APP: place the XMLView somewhere into DOM ###
             var oView = sap.ui.xmlview({
