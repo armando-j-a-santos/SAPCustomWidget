@@ -16,6 +16,7 @@
       </style>      
     `;
 
+    console.log('tmpl is');
     console.log(tmpl);
 
     class ASANTOS extends HTMLElement {
