@@ -121,7 +121,7 @@
         that_.appendChild(div);
 
 
-        console.log("MILTON TEST");
+        console.log("LOGS in here:");
         console.log(widgetName);
         console.log("div");
         console.log(div);
