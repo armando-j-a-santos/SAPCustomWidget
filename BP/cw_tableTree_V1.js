@@ -77,7 +77,7 @@
         div2.innerHTML = '<script id="oView'+ widgetName +'" name="oView'+ widgetName +'" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" '+ 
         'xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{/}">'+
         '<t:columns>'+
-        '<t:Column><t:label><Label text="Tree" /></t:label><t:template><TextView text="{Id}"/></t:template></t:Column>'+
+        '<t:Column><t:label><Label text="Tree" /></t:label><t:template><TextView text="{Name}"/></t:template></t:Column>'+
         '<t:Column><t:label><Label text="HC" /></t:label><t:template><TextView text="{HC}"/></t:template></t:Column>'+
         '<t:Column><t:label><Label text="Prediction" /></t:label><t:template><TextView text="{Prediction}"/></t:template></t:Column>'+
         '<t:Column><t:label><Label text="Adjustment" /></t:label><t:template><TextView text="{Adjustment}"/></t:template></t:Column>'+
