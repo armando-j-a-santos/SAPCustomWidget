@@ -286,9 +286,11 @@
                             console.log(_oModel);
                             
                             // Link the model to the widget
-                            this.getView()
-                                .setModel(_oModel, that.widgetName);
+                            this.getView().setModel(_oModel, that.widgetName);
                             sap.ui.getCore().setModel(_oModel, that.widgetName);
+
+                            console.log("The model from");
+                            console.log(this.getView().getByid("tbl").getModel());
                     }
 
                 });
