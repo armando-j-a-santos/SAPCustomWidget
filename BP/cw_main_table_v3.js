@@ -190,6 +190,28 @@
                             */
 
                             var oData = { 
+                                "nodes": [{
+                                  "name": "O100",
+                                  "description": "Software Development",
+                                  
+                                  "product": "O",
+                                  "nodes" : [{
+                                    "name": "O110",
+                                    "description": "Team A",
+                                    
+                                    "product": "O",
+                                    "nodes" : [{
+                                      "name": "S111",
+                                      "description": "Product Owner",
+                                      
+                                      "product": "S"
+                                    }]
+                                  }]
+                                }]
+                         };
+
+                         /*
+                         var oData = { 
 
                                 data : [{ 
                                     name  : "node1", 
@@ -207,7 +229,7 @@
                                         }]
                                       }]
                             }; 
-                                        
+                             */           
 
                              // Create the model linked to the data (oData)
                             var _oModel = new sap.ui.model.json.JSONModel(oData);
