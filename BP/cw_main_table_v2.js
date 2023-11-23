@@ -191,7 +191,7 @@
                             }];
                             */
 
-                            var oData = { Hier: [{ 
+                            var oData = [{ 
                                     name  : "node1", 
                                     description : "Lorem ipsum dolor sit amet",
                                     product : "ABC",
@@ -275,8 +275,7 @@
                                         },
                 
                                     ]
-                                }]
-                            };
+                                }];
 
                              // Create the model linked to the data (oData)
                             //var _oModel = new sap.ui.model.json.JSONModel(oData);
