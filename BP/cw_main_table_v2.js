@@ -8,8 +8,13 @@
     let tmpl = document.createElement("template");
     tmpl.innerHTML = `
       <style>
+      <script id="oViewsapuitablex_1" name="oViewsapuitablex_1" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"></script>
+      <script id="view1"><t:TreeTable id="tbl" rows="{path:\'/\'}"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script> 
       </style>      
     `;
+
+    console.log('tmpl is');
+    console.log(tmpl);
 
     class ASANTOS extends HTMLElement {
 
