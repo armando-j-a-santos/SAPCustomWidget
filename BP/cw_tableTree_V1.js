@@ -73,7 +73,15 @@
 
     
         let div2 = document.createElement('div');
-        div2.innerHTML = '<script id="oView'+ widgetName +'" name="oView'+ widgetName +'" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{/}"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';  
+        div2.innerHTML = '<script id="oView'+ widgetName +'" name="oView'+ widgetName +'" type="sapui5/xmlview"><mvc:View controllerName="myView.Template"'+ 
+        'xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{/}">'+
+        '<t:columns>'+
+        '<t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column>'+
+        '<t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column>'+
+        '<t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column>'+
+        '</t:columns>'+
+        '</t:TreeTable></mvc:View></script>';
+
         _shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
@@ -179,11 +187,10 @@
                                
                             ];
                               
-                            var x = {
-                                  ID: "15", Name: "Armando Santos", Parent: "12", HC: "5", Prediction: "10", Adjustment: "$123 m"
-                            };
-                              
-                            myData.push(x);
+                            var newMember = {Id: "15", Name: "Armando Santos", Parent: "12", HC: "5", Prediction: "10", Adjustment: "$123 m" };
+
+                            
+                            myData.push(newMember);
                               
                             var result = convert(myData);
                             console.log("tree is: ", result);
