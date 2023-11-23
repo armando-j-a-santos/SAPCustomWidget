@@ -286,8 +286,9 @@
                             console.log(_oModel);
                             
                             // Link the model to the widget
-                            this.getView().setModel(_oModel, that.widgetName);
-                            sap.ui.getCore().setModel(_oModel, that.widgetName);
+                            //this.getView().setModel(_oModel, that.widgetName);  //(Previously)
+                            this.getView().setModel(_oModel); 
+                           // sap.ui.getCore().setModel(_oModel, that.widgetName);
 
                             
                             //this.getView().byId("tbl").setModel(_oModel, that.widgetName);   // ----> did not solve
