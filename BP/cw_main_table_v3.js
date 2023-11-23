@@ -286,12 +286,12 @@
                             console.log(_oModel);
                             
                             // Link the model to the widget
-                            //this.getView().setModel(_oModel, that.widgetName);
+                            this.getView().setModel(_oModel, that.widgetName);
                             sap.ui.getCore().setModel(_oModel, that.widgetName);
 
                             
                             //this.getView().byId("tbl").setModel(_oModel, that.widgetName);   // ----> did not solve
-                            this.getView().byId("oViewsapuitable_1").setModel(_oModel, that.widgetName);  // ----> did not solve
+                            //this.getView().byId("oViewsapuitable_1").setModel(_oModel, that.widgetName);  // ----> did not solve
 
                             console.log("The model from");
                             console.log(this.getView().byId("oViewsapuitable_1").getModel(_oModel, that.widgetName));
