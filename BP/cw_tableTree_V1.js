@@ -92,7 +92,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-treetableA", ASANTOS);
+    customElements.define("com-asantos-sap-sac-treetablea", ASANTOS);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
