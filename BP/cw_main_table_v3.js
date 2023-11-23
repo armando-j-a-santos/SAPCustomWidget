@@ -258,8 +258,9 @@
 
                             //console.log(this.getView().byId("tbl").getModel());  // ---->> undefined
                             console.log(this.getView().getModel());  
-
-                            //console.log(this.getView().getModel().getProperty(sPath))
+                            
+                            
+                            console.log(this.getView().getModel().getProperty())
                             //console.log(this.getView().byId(that.widgetName).getModel()); // ---->> error
 
                             //"oViewsapuitable_1"
