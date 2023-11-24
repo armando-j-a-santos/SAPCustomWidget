@@ -799,35 +799,40 @@
                 //{year:"2025", "A1": 24.2, "A2": 13, "A3":13.4, "B1": 30.2, "B2": 10, "B3":13.6, "C1": 30.2, "C2": 10, "C3":13.6}
                 //]
 
+                var CY_Minus1y_Data = false;
+                var CYy_Data = false;
+                var CY_Plus1y_Data = false;
+                var CY_Plus2y_Data = false;
+                var CY_Plus3y_Data = false;
   
                 // Data array definition
                 chart.data = [];
 
-                // Data array feed
-                
+                // Data array feed                
                 if(NumYears === 4){
-                    if(EnabledActuals === "true"){                        
-                        chart.data.push(CY_Minus1);
+                    if(EnabledActuals === "true"){  
+                        if(CY_Minus1y_Data === true){chart.data.push(CY_Minus1);}                
                     }
                     
-                    chart.data.push(CY);
-                    chart.data.push(CY_Plus1);
-                    chart.data.push(CY_Plus2);
-                    chart.data.push(CY_Plus3);
+                    if(CYy_Data === true){chart.data.push(CY);}
+                    if(CY_Plus1y_Data === true){chart.data.push(CY_Plus1);}
+                    if(CY_Plus2y_Data === true){chart.data.push(CY_Plus2);}
+                    if(CY_Plus3y_Data === true){chart.data.push(CY_Plus3);}           
+                    
                 }else if(NumYears === 3){
                     if(EnabledActuals === "true"){                    
-                        chart.data.push(CY_Minus1);
+                        if(CY_Minus1y_Data === true){chart.data.push(CY_Minus1);}
                     }                   
-                    chart.data.push(CY);
-                    chart.data.push(CY_Plus1);
-                    chart.data.push(CY_Plus2);
+                    if(CYy_Data === true){chart.data.push(CY);}
+                    if(CY_Plus1y_Data === true){chart.data.push(CY_Plus1);}
+                    if(CY_Plus2y_Data === true){chart.data.push(CY_Plus2);}
                 }else{
                     if(EnabledActuals === "true"){                        
-                        chart.data.push(CY_Minus1);
+                        if(CY_Minus1y_Data === true){chart.data.push(CY_Minus1);} 
                     }
                     
-                    chart.data.push(CY);
-                    chart.data.push(CY_Plus1);
+                    if(CYy_Data === true){chart.data.push(CY);}
+                    if(CY_Plus1y_Data === true){chart.data.push(CY_Plus1);}
                 }
                 
                 console.log("*******FINAL CHART DATA******");
