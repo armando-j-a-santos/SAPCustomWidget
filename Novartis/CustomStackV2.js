@@ -798,12 +798,6 @@
                 //{year:"2024", "A1": 24.2, "A2": 13, "A3":13.4, "B1": 30.2, "B2": 10, "B3":13.6, "C1": 30.2, "C2": 10, "C3":13.6}
                 //{year:"2025", "A1": 24.2, "A2": 13, "A3":13.4, "B1": 30.2, "B2": 10, "B3":13.6, "C1": 30.2, "C2": 10, "C3":13.6}
                 //]
-
-                var CY_Minus1y_Data = false;
-                var CYy_Data = false;
-                var CY_Plus1y_Data = false;
-                var CY_Plus2y_Data = false;
-                var CY_Plus3y_Data = false;
   
                 // Data array definition
                 chart.data = [];
