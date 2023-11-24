@@ -86,10 +86,10 @@
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /* NOTES:
-        selectionMode="Single" enableColumnReordering="false" expandFirstLevel="false" >>> To remove the first column checkboxes for each row.
+        1. selectionMode="Single" enableColumnReordering="false" expandFirstLevel="false" >>> To remove the first column checkboxes for each row.
         */
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        
+
         _shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
