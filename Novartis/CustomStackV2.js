@@ -369,6 +369,12 @@
                 console.log(MeasureID);
                 console.log("=========")
 
+                var CY_Minus1y_Data = false;
+                var CYy_Data = false;
+                var CY_Plus1y_Data = false;
+                var CY_Plus2y_Data = false;
+                var CY_Plus3y_Data = false;
+
 
                 // Loop trhough the resultset received from SAC side
                 resultSet.forEach(dp => {
@@ -408,7 +414,9 @@
                                 CY_Minus1.A4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
-                    
+
+                        //There is data for CY_Minus1y_Data
+                        CY_Minus1y_Data = true;                    
                     }
 
 
@@ -497,6 +505,9 @@
                                 CY.D4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
+
+                        //There is data for CYy_Data
+                        CYy_Data = true;
                     }
 
                     if (dp[DimTime].id === CY_Plus1y && dp["@MeasureDimension"].id === MeasureID) {
@@ -584,6 +595,9 @@
                                 CY_Plus1.D4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
+
+                        //There is data for CY_Plus1y_Data
+                        CY_Plus1y_Data = true;
                     }
 
                     if (dp[DimTime].id === CY_Plus2y && dp["@MeasureDimension"].id === MeasureID) {
@@ -671,6 +685,9 @@
                                 CY_Plus2.D4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
+
+                        //There is data for CY_Plus2y_Data
+                        CY_Plus2y_Data = true;
                     }
 
                     if (dp[DimTime].id === CY_Plus3y && dp["@MeasureDimension"].id === MeasureID) {
@@ -758,6 +775,9 @@
                                 CY_Plus3.D4 = dp["@MeasureDimension"].formattedValue;
                             }
                         }
+
+                        //There is data for CY_Plus3y_Data
+                        CY_Plus3y_Data = true;
                     }
 
                 })
