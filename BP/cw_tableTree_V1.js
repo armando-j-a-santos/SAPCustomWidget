@@ -83,8 +83,13 @@
         '<t:Column><t:label><Label text="Adjustment" /></t:label><t:template><TextView text="{Adjustment}"/></t:template></t:Column>'+
         '</t:columns>'+
         '</t:TreeTable></mvc:View></script>';
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /* NOTES:
+        selectionMode="Single" enableColumnReordering="false" expandFirstLevel="false" >>> To remove the first column checkboxes for each row.
+        */
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
-        /////div2.innerHTML = '<script id="oViewtreetableA_1" name="oViewtreetableA_1" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{/}"><t:columns><t:Column><t:label><Label text="ID" /></t:label><t:template><TextView text="{name}"/></t:template></t:Column><t:Column><t:label><Label text="NAME" /></t:label><t:template><TextView text="{description}"/></t:template></t:Column><t:Column><t:label><Label text="SURNAME" /></t:label><t:template><TextView text="{product}"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';  
         _shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
