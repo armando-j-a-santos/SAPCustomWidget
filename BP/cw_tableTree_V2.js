@@ -37,7 +37,13 @@
                 this._subscription = null;
             }
         }
-
+		
+        async loadData(arrayNodes, paramColumns){
+			if (arrayNodes != "") {
+				makeTable(arrayNodes, paramColumns)
+			 }		
+		}
+        
         onCustomWidgetBeforeUpdate(changedProperties) {
         }
 
@@ -55,6 +61,11 @@
     }
     customElements.define("com-asantos-sap-sac-treetableb", ASANTOS);
 
+    function makeTable(arrayNodes,paramColumns) {	
+        console.log("arrayNodes:");
+        console.log(arrayNodes);
+    }
+    
     function loadthis(that, changedProperties) {
         var that_ = that;
 
