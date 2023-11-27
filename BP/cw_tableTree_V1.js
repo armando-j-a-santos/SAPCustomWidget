@@ -150,7 +150,7 @@
                     onInit: function() {
                             // oData preparation (nodes, columns and rows)
                             var myData = [
-                                // Level 0
+                                // Level 0 - ENTITY
                                 { Id: "1", Name: "#", Parent: "", HC: "20", Prediction: "-", Adjustment: "$282.27 m" },
                                 { Id: "2", Name: "Other", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
                                 { Id: "3", Name: "Customer & Products", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
@@ -161,11 +161,11 @@
                                 { Id: "8", Name: "People & Culture", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
                                 { Id: "9", Name: "Production & Operations", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
                               
-                                // #
+                                // Level 1 - SUB-ENTITY
                                 { Id: "10", Name: "Unassigned", Parent: "1", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
                                 { Id: "11", Name: "Don't Use - Incorrect Enterprise", Parent: "10", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
                                 
-                                // Other
+                                // Level E - ENTERPRISE
                                 { Id: "12", Name: "BP Corporate Exec Office Exec", Parent: "2", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
                                 { Id: "13", Name: "CEO - Legacy", Parent: "2", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
                                 { Id: "14", Name: "CEO Support", Parent: "2", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
