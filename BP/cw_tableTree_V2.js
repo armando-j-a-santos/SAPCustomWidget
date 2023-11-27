@@ -52,7 +52,7 @@
 
         onCustomWidgetAfterUpdate(changedProperties) {
             	that = this;
-		changedPropertiesv2 = this.changedProperties;
+		changedPropertiesv2 = changedProperties;
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
