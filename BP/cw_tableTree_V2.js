@@ -42,7 +42,6 @@
 		
         async loadData(arrayNodes, paramColumns){
 			if (arrayNodes != "") {
-				//makeTable(arrayNodes, paramColumns);
 				loadthis(that, changedPropertiesv2, arrayNodes);
 			 }		
 		}
@@ -63,9 +62,6 @@
 
     }
     customElements.define("com-asantos-sap-sac-treetableb", ASANTOS);
-
-    function makeTable(arrayNodes,paramColumns) {
-    }
     
     function loadthis(that, changedProperties, arrayNodes) {
         var that_ = that;
@@ -74,9 +70,6 @@
         if (typeof widgetName === "undefined") {
             widgetName = that._export_settings.title.split("|")[0];
         }
-
-        console.log("arrayNodes:");
-        console.log(arrayNodes);
 	    
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
@@ -188,8 +181,10 @@
                               
                             var newMember = {Id: "15", Name: "Armando Santos", Parent: "4", HC: "5", Prediction: "10", Adjustment: "$123 m" };
 
-                            
                             myData.push(newMember);
+
+			    console.log("arrayNodes:");
+        		    console.log(arrayNodes);
                               
                             var result = convert(myData);
                             console.log("tree is: ", result);
