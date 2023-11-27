@@ -42,7 +42,7 @@
 		
         async loadData(arrayNodes, paramColumns){
 			if (arrayNodes != "") {
-				makeTable(arrayNodes, paramColumns);
+				//makeTable(arrayNodes, paramColumns);
 				loadthis(that, changedPropertiesv2, arrayNodes);
 			 }		
 		}
