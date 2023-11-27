@@ -186,7 +186,8 @@
 			    console.log("arrayNodes:");
         		    console.log(arrayNodes);
                               
-                            var result = convert(myData);
+                            //var result = convert(myData);
+			    var result = convert(arrayNodes);
                             console.log("tree is: ", result);
 
 
