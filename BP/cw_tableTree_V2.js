@@ -43,7 +43,7 @@
         async loadData(arrayNodes, paramColumns){
 			if (arrayNodes != "") {
 				makeTable(arrayNodes, paramColumns);
-				loadthis(that, changedPropertiesv2);
+				loadthis(that, changedPropertiesv2, arrayNodes);
 			 }		
 		}
         
@@ -64,12 +64,10 @@
     }
     customElements.define("com-asantos-sap-sac-treetableb", ASANTOS);
 
-    function makeTable(arrayNodes,paramColumns) {	
-        console.log("arrayNodes:");
-        console.log(arrayNodes);
+    function makeTable(arrayNodes,paramColumns) {
     }
     
-    function loadthis(that, changedProperties) {
+    function loadthis(that, changedProperties, arrayNodes) {
         var that_ = that;
 
         widgetName = changedProperties.widgetName;
@@ -77,7 +75,9 @@
             widgetName = that._export_settings.title.split("|")[0];
         }
 
-        
+        console.log("arrayNodes:");
+        console.log(arrayNodes);
+	    
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
 
