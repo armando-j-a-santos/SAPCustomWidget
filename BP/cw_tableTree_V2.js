@@ -4,6 +4,7 @@
     let div;
     let widgetName;
     var tmpArray = [];
+    let that;
 
     let tmpl = document.createElement("template");
     tmpl.innerHTML = `
@@ -40,7 +41,8 @@
 		
         async loadData(arrayNodes, paramColumns){
 			if (arrayNodes != "") {
-				makeTable(arrayNodes, paramColumns)
+				makeTable(arrayNodes, paramColumns);
+				loadthis(that, changedProperties);
 			 }		
 		}
         
@@ -48,8 +50,7 @@
         }
 
         onCustomWidgetAfterUpdate(changedProperties) {
-            var that = this;
-            loadthis(that, changedProperties);
+            that = this;
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
