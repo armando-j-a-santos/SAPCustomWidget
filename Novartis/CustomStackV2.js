@@ -166,6 +166,12 @@
                 var Version_4 = String(chartConfigurations.Version_4);
                 var Version_5 = String(chartConfigurations.Version_5);
 
+                var Version_1_ID = String(chartConfigurations.Version_1_ID);
+                var Version_2_ID = String(chartConfigurations.Version_2_ID);
+                var Version_3_ID = String(chartConfigurations.Version_3_ID);
+                var Version_4_ID = String(chartConfigurations.Version_4_ID);
+                var Version_5_ID = String(chartConfigurations.Version_5_ID);
+
                 var AIScope_1 = String(chartConfigurations.AIScope_1);
                 var AIScope_2 = String(chartConfigurations.AIScope_2);
                 var AIScope_3 = String(chartConfigurations.AIScope_3);
