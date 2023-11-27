@@ -386,7 +386,7 @@
                 resultSet.forEach(dp => {
                     //console.log(dp)
 
-                    if (dp[DimTime].id === CY_Minus1y && dp["@MeasureDimension"].id === MeasureID && dp[DimVersion].description === Version_1) {
+                    if (dp[DimTime].id === CY_Minus1y && dp["@MeasureDimension"].id === MeasureID && dp[DimVersion].id === Version_1_ID) {
 
                         ////////////////////////////////////////////
                         //Column 2021  (Blue Column)
@@ -434,7 +434,7 @@
                         //Model Variable --> Selected_Version_1 
                         ////////////////////////////////////////////
 
-                        if(dp[DimVersion].description === Version_2){
+                        if(dp[DimVersion].id === Version_2_ID){
                             if (dp[DimSCope].id === AIScope_1) {
                                 CY.A1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -455,7 +455,7 @@
                         //Model Variable --> Selected_Version_2 
                         ////////////////////////////////////////////
 
-                        if(dp[DimVersion].description === Version_3){
+                        if(dp[DimVersion].id === Version_3_ID){
                             if (dp[DimSCope].id === AIScope_1) {
                                 CY.B1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -476,7 +476,7 @@
                         //Model Variable --> Selected_Version_3 
                         ////////////////////////////////////////////
 
-                        if(dp[DimVersion].description === Version_4){
+                        if(dp[DimVersion].id === Version_4_ID){
                             if (dp[DimSCope].id === AIScope_1) {
                                 CY.C1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -497,7 +497,7 @@
                         //Model Variable --> Selected_Version_5 
                         ////////////////////////////////////////////
 
-                        if(dp[DimVersion].description === Version_5){
+                        if(dp[DimVersion].id === Version_5_ID){
                             if (dp[DimSCope].id === AIScope_1) {
                                 CY.D1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -524,7 +524,7 @@
                         //Model Variable --> Selected_Version_1 
                         ////////////////////////////////////////////
 
-                        if(dp[DimVersion].description === Version_2){
+                        if(dp[DimVersion].id === Version_2_ID){
                             if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus1.A1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -545,7 +545,7 @@
                         //Model Variable --> Selected_Version_2 
                         ////////////////////////////////////////////
 
-                        if(dp[DimVersion].description === Version_3){
+                        if(dp[DimVersion].id === Version_3_ID){
                             if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus1.B1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -566,7 +566,7 @@
                         //Model Variable --> Selected_Version_3 
                         ////////////////////////////////////////////
 
-                        if(dp[DimVersion].description === Version_4){
+                        if(dp[DimVersion].id === Version_4_ID){
                             if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus1.C1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -587,7 +587,7 @@
                         //Model Variable --> Selected_Version_4 
                         ////////////////////////////////////////////
                         
-                        if(dp[DimVersion].description === Version_5){
+                        if(dp[DimVersion].id === Version_5_ID){
                             if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus1.D1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -614,7 +614,7 @@
                         //Model Variable --> Selected_Version_1 
                         ////////////////////////////////////////////
 
-                        if(dp[DimVersion].description === Version_2){
+                        if(dp[DimVersion].id === Version_2_ID){
                             if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus2.A1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -635,7 +635,7 @@
                         //Model Variable --> Selected_Version_2 
                         ////////////////////////////////////////////
 
-                        if(dp[DimVersion].description === Version_3){
+                        if(dp[DimVersion].id === Version_3_ID){
                             if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus2.B1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -656,7 +656,7 @@
                         //Model Variable --> Selected_Version_3 
                         ////////////////////////////////////////////
 
-                        if(dp[DimVersion].description === Version_4){
+                        if(dp[DimVersion].id === Version_4_ID){
                             if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus2.C1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -677,7 +677,7 @@
                         //Model Variable --> Selected_Version_4 
                         ////////////////////////////////////////////
 
-                        if(dp[DimVersion].description === Version_5){
+                        if(dp[DimVersion].id === Version_5_ID){
                             if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus2.D1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -704,7 +704,7 @@
                         //Model Variable --> Selected_Version_1 
                         ////////////////////////////////////////////
 
-                        if(dp[DimVersion].description === Version_2){
+                        if(dp[DimVersion].id === Version_2_ID){
                             if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus3.A1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -725,7 +725,7 @@
                         //Model Variable --> Selected_Version_2 
                         ////////////////////////////////////////////
 
-                        if(dp[DimVersion].description === Version_3){
+                        if(dp[DimVersion].id === Version_3_ID){
                             if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus3.B1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -746,7 +746,7 @@
                         //Model Variable --> Selected_Version_3 
                         ////////////////////////////////////////////
 
-                        if(dp[DimVersion].description === Version_4){
+                        if(dp[DimVersion].id === Version_4_ID){
                             if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus3.C1 = dp["@MeasureDimension"].formattedValue;
                             }
@@ -767,7 +767,7 @@
                         //Model Variable --> Selected_Version_4 
                         ////////////////////////////////////////////
 
-                        if(dp[DimVersion].description === Version_5){    
+                        if(dp[DimVersion].id === Version_5_ID){    
                             if (dp[DimSCope].id === AIScope_1) {
                                 CY_Plus3.D1 = dp["@MeasureDimension"].formattedValue;
                             }
