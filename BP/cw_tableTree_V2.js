@@ -58,9 +58,6 @@
     function loadthis(that, changedProperties) {
         var that_ = that;
 
-        console.log("that_:");
-        console.log(that_);
-
         widgetName = changedProperties.widgetName;
         if (typeof widgetName === "undefined") {
             widgetName = that._export_settings.title.split("|")[0];
