@@ -30,7 +30,7 @@
             ///this._firstConnection = 0;
         }
 
-        connectedCallback() { }
+        connectedCallback() {}
 
         disconnectedCallback() {
             if (this._subscription) { // react store subscription
@@ -59,7 +59,7 @@
 
         }
 
-        onCustomWidgetBeforeUpdate(changedProperties) { }
+        onCustomWidgetBeforeUpdate(changedProperties) {}
 
         onCustomWidgetAfterUpdate(changedProperties) {
             that = this;
@@ -157,6 +157,12 @@
 
         console.log("arrayNodes:");
         console.log(arrayNodes);
+
+        console.log('that.max_height:');
+        console.log(that.max_height);
+        console.log('that.unit_option:');
+        console.log(that.unit_option);       
+
         console.log("================");
 
         var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
@@ -223,9 +229,7 @@
                         ];
                           
                         var newMember = {Id: "15", Name: "Armando Santos", Parent: "4", HC: "5", Prediction: "10", Adjustment: "$123 m" };
-
                         myData.push(newMember);
-
                         var result = convert(myData);
                         */
 
@@ -237,17 +241,17 @@
                         var _oModel = new sap.ui.model.json.JSONModel(result);
                         //_oModel.setSizeLimit(1000000);
 
-                        console.log("_oModel");
-                        console.log(_oModel);
+                        //console.log("_oModel");
+                        //console.log(_oModel);
 
                         // Link the model to the widget
                         this.getView().setModel(_oModel);
 
-                        console.log("The model from");
-                        console.log(this.getView().getModel());
+                        //console.log("The model from");
+                        //console.log(this.getView().getModel());
 
-                        console.log("that.widgetName");
-                        console.log(that.widgetName);
+                        //console.log("that.widgetName");
+                        //console.log(that.widgetName);
 
                         // Releasing memory
                         result = [''];
@@ -270,23 +274,13 @@
             //### Place the XMLView into div piece ###
             oView.placeAt(div);
 
-            console.log("...");
-            console.log(div);
             // Releasing memory
             oView = '';
             div = '';
 
-            console.log("...");
-            console.log(arrayNodes);
-            console.log(div);
-
         });
 
     } // end of: function loadthis...
-
-    function empty(element) {
-        element.innerHTML = "";
-    }
 
     // Function that builds the hierarchy tree, readable in console.log
     function convert(array) {
