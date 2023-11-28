@@ -256,7 +256,8 @@
             // Releasing memory
             //delete result;
             //delete _oModel;
-            delete oView;
+            //delete oView;
+            delete arrayNodes;
             
         });
 
