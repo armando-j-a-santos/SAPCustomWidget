@@ -75,16 +75,22 @@
         // Delete any previous DOM widget(s), to avoid the same treetable to appear multiple times. 
         // Only a SINGLE treetable should appear to the SAC user. For example, by appling different filters to the techTable behind the scenes.
         // The below while cycle will break when there is no __xmlview1,2,3,4,5,6... to to be removed.
-        var i = 1;
-        while (i<100) {
-            var x = document.getElementById(`__xmlview${i}`);
-            if (x) {
-                document.getElementById(`__xmlview${i}`).remove();
-                console.log('deleted the element.');
-                break;
+        
+        var x = document.getElementById("__xmlview1");
+        if (x) {
+            document.getElementById("__xmlview1").remove();
+        } else {
+            var i = 2;
+            while (i<50) {
+                var x = document.getElementById(`__xmlview${i}`);
+                if (x) {
+                    document.getElementById(`__xmlview${i}`).remove();
+                    console.log('deleted the element.');
+                    break;
+                }
+                i++;
+                console.log(i);
             }
-            i++;
-            console.log(i);
         }
 
         // div creation
