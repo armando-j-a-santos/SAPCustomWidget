@@ -255,7 +255,7 @@
 
             // Releasing memory
             delete result;
-            delete _oModel;
+            //delete _oModel;
             //delete oView;
             
         });
