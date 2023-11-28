@@ -125,7 +125,10 @@
         
         var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
 
+        console.log('>>>>');
+        console.log(mapcanvas_divstr);
         empty(mapcanvas_divstr);
+        console.log(mapcanvas_divstr);
 
         tmpArray.push({
             'id': widgetName,
@@ -279,5 +282,5 @@
            element.firstElementChild.remove();
         }
       }
-      
+
 })();
