@@ -86,7 +86,6 @@
             i++;
             console.log(i);
         }
- 
 
         // div creation
         div = document.createElement('div');
