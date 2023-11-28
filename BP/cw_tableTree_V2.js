@@ -78,7 +78,7 @@
         // Clear DOM
         // Delete any previous DOM widget(s), to avoid the same treetable to appear multiple times. 
         // Only a SINGLE treetable should appear to the SAC user.
-        var x = document.getElementById("__xmlview1");
+        var x = document.getElementById("__xmlview");
         if (x) {x.remove();}
 
 
