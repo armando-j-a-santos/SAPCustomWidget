@@ -74,6 +74,7 @@
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
 
+	// SAP UI5 necessary library and theme settings
         let div1 = document.createElement('div');
         div1.innerHTML = '<script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/1.108.20/resources/sap-ui-core.js" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-bindingSyntax="complex" data-sap-ui-libs="sap.m"></script>'
         _shadowRoot.appendChild(div1);
