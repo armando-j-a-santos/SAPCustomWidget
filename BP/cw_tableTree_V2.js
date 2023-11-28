@@ -77,7 +77,9 @@
         console.log('>>>>');
         console.log(tmpl);
         //empty(tmpl);
-        tmpl.innerHTML = '';
+        //tmpl.innerHTML = '';
+        var x = document.getElementById("template");
+        x.remove();
         console.log(tmpl);
 
 
