@@ -76,8 +76,12 @@
         // Only a SINGLE treetable should appear to the SAC user. For example, by appling different filters to the techTable behind the scenes.
         // The below while cycle will break when there is no __xmlview1,2,3,4,5,6... to to be removed.
         var i = 1;
-        while (document.getElementById(`__xmlview${i}`)) {
-            document.getElementById(`__xmlview${i}`).remove();
+        while (true) {
+            var x = document.getElementById(`__xmlview${i}`);
+            if (x) {
+                document.getElementById(`__xmlview${i}`).remove();
+                break;
+            }
             i++;
         }
  
