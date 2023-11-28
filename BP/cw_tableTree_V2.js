@@ -74,13 +74,9 @@
         div = document.createElement('div');
 
 
-        console.log('>>>>');
-        console.log(tmpl);
-        //empty(tmpl);
-        //tmpl.innerHTML = '';
-        var x = document.getElementById("template");
-        x.remove();
-        console.log(tmpl);
+        console.log('>>>><<<<<');
+        //var x = document.getElementById("template");
+        //x.remove();
 
 
         div.slot = "content_" + widgetName;
