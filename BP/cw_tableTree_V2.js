@@ -21,13 +21,13 @@
             _shadowRoot = this.attachShadow({
                 mode: "open"
             });
-            _shadowRoot.appendChild(tmpl.content.cloneNode(true));
+            _shadowRoot.appendChild(tmpl.content.cloneNode(false)); // true
 
             this.addEventListener("click", event => {
                 console.log('click event in here');
             });
 
-            this._firstConnection = 0;
+            ///this._firstConnection = 0;
         }
 
         connectedCallback() {}
