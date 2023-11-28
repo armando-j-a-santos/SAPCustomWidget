@@ -75,7 +75,10 @@
 
 
         console.log('>>>><<<<<');
-        var x = document.getElementById("__xmlview1--tbl");
+        // Clear DOM
+        // Delete any previous DOM widget(s), to avoid the same treetable to appear multiple times. 
+        // Only a SINGLE treetable should appear to the SAC user.
+        var x = document.getElementById("__xmlview1");
         if (x) {x.remove();}
 
 
