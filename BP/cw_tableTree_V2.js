@@ -256,8 +256,11 @@
             // Releasing memory
             //delete result;
             //delete _oModel;
-            //delete oView;
-            //delete arrayNodes;
+            oView = '';
+            arrayNodes = [''];
+
+            console.log("...");
+            console.log(arrayNodes);
             
         });
 
