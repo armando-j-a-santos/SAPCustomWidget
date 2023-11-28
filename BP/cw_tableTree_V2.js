@@ -118,6 +118,9 @@
         console.log(div2);
         console.log("div3");
         console.log(div3);
+        
+        console.log("arrayNodes:");
+        console.log(arrayNodes);
         console.log("================");
         
         var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
@@ -189,8 +192,6 @@
                             var result = convert(myData);
                             */
 
-			                console.log("arrayNodes:");
-        		            console.log(arrayNodes);
                               
 			                var result = convert(arrayNodes);
                             console.log("tree is: ", result);
