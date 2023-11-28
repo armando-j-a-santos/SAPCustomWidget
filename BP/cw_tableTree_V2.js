@@ -51,6 +51,7 @@
 
                     // NOTE: In this if statment the treetable is NOT created. Only the data is updated.
                 } else {
+                    // Need to treetable widget.
                     loadthis(that, changedPropertiesv2, arrayNodes);
                 }
             }
