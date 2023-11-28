@@ -41,6 +41,7 @@
 
         // Method: loadData use by SAC side to pass the array od nodes to be used.
         async loadData(arrayNodes, paramColumns) {
+            // if there is nodes to render
             if (arrayNodes != "") {
                 // Check if the treetable as already been created.
                 // If YES then only updating the data.
@@ -55,6 +56,7 @@
                     loadthis(that, changedPropertiesv2, arrayNodes);
                 }
             }
+
         }
 
         onCustomWidgetBeforeUpdate(changedProperties) { }
@@ -81,7 +83,7 @@
             widgetName = that._export_settings.title.split("|")[0];
         }
 
-        console.log('>>>><<<<<');
+        // console.log('>>>><<<<<');
         // Clear DOM
         // Delete any previous DOM widget(s), to avoid the same treetable to appear multiple times. 
         // Only a SINGLE treetable should appear to the SAC user. For example, by appling different filters to the techTable behind the scenes.
@@ -129,7 +131,7 @@
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /* NOTES:
-        1. selectionMode="Single" enableColumnReordering="false" expandFirstLevel="false" >>> To remove the first column checkboxes for each row.
+          1. selectionMode="Single" enableColumnReordering="false" expandFirstLevel="false" >>> To remove the first column checkboxes for each row.
         */
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         _shadowRoot.appendChild(div2);
@@ -284,7 +286,6 @@
 
     function empty(element) {
         element.innerHTML = "";
-        /////element.textContent = ""; 
     }
 
     // Function that builds the hierarchy tree, readable in console.log
