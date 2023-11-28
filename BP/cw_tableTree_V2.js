@@ -30,8 +30,7 @@
             this._firstConnection = 0;
         }
 
-        connectedCallback() {
-        }
+        connectedCallback() {}
 
         disconnectedCallback() {
             if (this._subscription) { // react store subscription
@@ -40,18 +39,18 @@
             }
         }
 		
+        // Method: loadData use by SAC side to pass the array od nodes to be used.
         async loadData(arrayNodes, paramColumns){
 			if (arrayNodes != "") {
 				loadthis(that, changedPropertiesv2, arrayNodes);
 			 }		
 		}
         
-        onCustomWidgetBeforeUpdate(changedProperties) {
-        }
+        onCustomWidgetBeforeUpdate(changedProperties) {}
 
         onCustomWidgetAfterUpdate(changedProperties) {
             	that = this;
-		changedPropertiesv2 = changedProperties;
+		        changedPropertiesv2 = changedProperties;
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
@@ -118,7 +117,7 @@
         console.log(div2);
         console.log("div3");
         console.log(div3);
-        
+
         console.log("arrayNodes:");
         console.log(arrayNodes);
         console.log("================");
@@ -194,7 +193,7 @@
 
                               
 			                var result = convert(arrayNodes);
-                            console.log("tree is: ", result);
+                            console.log("tableTree is: ", result);
 
 
                             // Function that builds the hierarchy tree, readable in console.log
