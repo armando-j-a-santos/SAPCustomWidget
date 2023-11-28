@@ -75,9 +75,9 @@
 
 
         console.log('>>>>');
-        console.log(div);
-        empty(div);
-        console.log(div);
+        console.log(tmpl);
+        empty(tmpl);
+        console.log(tmpl);
 
 
         div.slot = "content_" + widgetName;
