@@ -158,10 +158,10 @@
         console.log("arrayNodes:");
         console.log(arrayNodes);
 
-        console.log('that.max_height:');
-        console.log(that.max_height);
-        console.log('that.unit_option:');
-        console.log(that.unit_option);       
+        //console.log('that.max_height:');
+        //console.log(that.max_height);
+        //console.log('that.unit_option:');
+        //console.log(that.unit_option);       
 
         console.log("================");
 
