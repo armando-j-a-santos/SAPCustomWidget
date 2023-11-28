@@ -42,11 +42,14 @@
         // Method: loadData use by SAC side to pass the array od nodes to be used.
         async loadData(arrayNodes, paramColumns) {
             if (arrayNodes != "") {
-
+                // Check if the treetable as already been created.
+                // If YES then only updating the data.
                 if (sap && sap.ui.getCore().getElementById("__xmlview1--tbl")) {
                     var table = sap.ui.getCore().getElementById("__xmlview1--tbl");
                     var newData = convert(arrayNodes);
                     table.getModel().setData(newData);
+
+                    // NOTE: In this if statment the treetable is NOT created. Only the data is updated.
                 } else {
                     loadthis(that, changedPropertiesv2, arrayNodes);
                 }
