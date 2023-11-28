@@ -72,6 +72,14 @@
 	    
         // div creation
         div = document.createElement('div');
+
+
+        console.log('>>>>');
+        console.log(div);
+        empty(div);
+        console.log(div);
+
+
         div.slot = "content_" + widgetName;
 
 	    // SAP UI5 necessary library and theme settings
@@ -124,11 +132,6 @@
         console.log("================");
         
         var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
-
-        console.log('>>>>');
-        console.log(mapcanvas_divstr);
-        empty(mapcanvas_divstr);
-        console.log(mapcanvas_divstr);
 
         tmpArray.push({
             'id': widgetName,
@@ -279,7 +282,7 @@
 
     function empty(element) {
         element.innerHTML = ""; 
-        element.textContent = ""; 
+        /////element.textContent = ""; 
       }
 
 })();
