@@ -80,6 +80,7 @@
         x = document.getElementById("__xmlview2");
         if (x) {x.remove();}
 
+        
         // div creation
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
