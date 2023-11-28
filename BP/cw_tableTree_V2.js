@@ -278,9 +278,8 @@
     } // end of: function loadthis...
 
     function empty(element) {
-        while(element.firstElementChild) {
-           element.firstElementChild.remove();
-        }
+        element.innerHTML = ""; 
+        element.textContent = ""; 
       }
 
 })();
