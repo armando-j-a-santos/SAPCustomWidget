@@ -132,7 +132,7 @@
         sap.ui.getCore().attachInit(function() {
             "use strict";
 
-            //### Controller ###
+            //### Controller definition ###
             sap.ui.define([
                 "jquery.sap.global",
                 "sap/ui/core/mvc/Controller",
