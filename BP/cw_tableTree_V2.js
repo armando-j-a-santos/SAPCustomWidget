@@ -72,11 +72,6 @@
 	    
 
         div = document.createElement('div');
-        delete div;
-        div = document.createElement('div');
-
-        div.slot = "content_" + widgetName;
-        delete div.slot;
         div.slot = "content_" + widgetName;
 
 	    // SAP UI5 necessary library and theme settings
@@ -257,6 +252,11 @@
             });
             //### Place the XMLView into div piece ###
             oView.placeAt(div);
+
+            // Releasing memory
+            delete result;
+            delete _oModel;
+            delete oView;
             
         });
 
