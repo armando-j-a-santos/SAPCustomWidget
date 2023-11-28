@@ -237,7 +237,10 @@
                             console.log("that.widgetName");
                             console.log(that.widgetName);
 
+                             // Releasing memory
                             result = [''];
+                            _oModel = [''];
+                            arrayNodes = [''];
                     }
 
                 });
@@ -256,9 +259,7 @@
             oView.placeAt(div);
 
             // Releasing memory
-            _oModel = [''];
             oView = '';
-            arrayNodes = [''];
 
             console.log("...");
             console.log(arrayNodes);
