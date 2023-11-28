@@ -76,8 +76,7 @@
 
         console.log('>>>>');
         console.log(tmpl);
-        //empty(tmpl);
-        tmpl.remove;
+        empty(tmpl);
         console.log(tmpl);
 
 
