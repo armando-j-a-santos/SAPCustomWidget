@@ -71,8 +71,10 @@
         }
 	    
         delete div;
+        delete div.slot;
 
         div = document.createElement('div');
+
         div.slot = "content_" + widgetName;
 
 	    // SAP UI5 necessary library and theme settings
