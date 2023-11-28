@@ -1,4 +1,4 @@
-(function() {
+(function () {
     let _shadowRoot;
 
     let div;
@@ -30,7 +30,7 @@
             ///this._firstConnection = 0;
         }
 
-        connectedCallback() {}
+        connectedCallback() { }
 
         disconnectedCallback() {
             if (this._subscription) { // react store subscription
@@ -38,25 +38,26 @@
                 this._subscription = null;
             }
         }
-		
+
         // Method: loadData use by SAC side to pass the array od nodes to be used.
-        async loadData(arrayNodes, paramColumns){
+        async loadData(arrayNodes, paramColumns) {
             if (arrayNodes != "") {
-                
-                if (sap && sap.ui.getCore().getElementById("__xmlview1--tbl"))
-                {
-                    
+
+                if (sap && sap.ui.getCore().getElementById("__xmlview1--tbl")) {
+                    var table = sap.ui.getCore().getElementById("__xmlview1--tbl");
+                    var newData = convert(arrayNodes);
+                    table.getModel().setData(newData);
                 } else {
                     loadthis(that, changedPropertiesv2, arrayNodes);
                 }
-            }		
-	    }
-        
-        onCustomWidgetBeforeUpdate(changedProperties) {}
+            }
+        }
+
+        onCustomWidgetBeforeUpdate(changedProperties) { }
 
         onCustomWidgetAfterUpdate(changedProperties) {
-            	that = this;
-		        changedPropertiesv2 = changedProperties;
+            that = this;
+            changedPropertiesv2 = changedProperties;
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
@@ -67,7 +68,7 @@
 
     }
     customElements.define("com-asantos-sap-sac-treetableb", ASANTOS);
-    
+
     function loadthis(that, changedProperties, arrayNodes) {
         var that_ = that;
 
@@ -75,52 +76,52 @@
         if (typeof widgetName === "undefined") {
             widgetName = that._export_settings.title.split("|")[0];
         }
-	    
+
         console.log('>>>><<<<<');
         // Clear DOM
         // Delete any previous DOM widget(s), to avoid the same treetable to appear multiple times. 
         // Only a SINGLE treetable should appear to the SAC user. For example, by appling different filters to the techTable behind the scenes.
         // The below while cycle will break when there is no __xmlview1,2,3,4,5,6... to to be removed.
-        
-        var x = document.getElementById("__xmlview1");
-        if (x) {
-            document.getElementById("__xmlview1").remove();
-        } else {
-            var i = 2;
-            while (i<50) {
-                var x = document.getElementById(`__xmlview${i}`);
-                if (x) {
-                    document.getElementById(`__xmlview${i}`).remove();
-                    console.log('deleted the element.');
-                    break;
-                }
-                i++;
-                console.log(i);
-            }
-        }
+
+        // var x = document.getElementById("__xmlview1");
+        // if (x) {
+        //     document.getElementById("__xmlview1").remove();
+        // } else {
+        //     var i = 2;
+        //     while (i < 50) {
+        //         var x = document.getElementById(`__xmlview${i}`);
+        //         if (x) {
+        //             document.getElementById(`__xmlview${i}`).remove();
+        //             console.log('deleted the element.');
+        //             break;
+        //         }
+        //         i++;
+        //         console.log(i);
+        //     }
+        // }
 
         // div creation
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
 
-	    // SAP UI5 necessary library and theme settings
+        // SAP UI5 necessary library and theme settings
         let div1 = document.createElement('div');
         div1.innerHTML = '<script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/1.108.20/resources/sap-ui-core.js" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-bindingSyntax="complex" data-sap-ui-libs="sap.m"></script>'
         _shadowRoot.appendChild(div1);
 
-    
+
         // treeTable necessary settings & definitions
         // treeTable columns settings
         let div2 = document.createElement('div');
-        div2.innerHTML = '<script id="oView'+ widgetName +'" name="oView'+ widgetName +'" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" '+ 
-        'xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{/}" selectionMode="Single" enableColumnReordering="false" expandFirstLevel="false">'+
-        '<t:columns>'+
-        '<t:Column width="400px"><t:label><Label text="Tree" /></t:label><t:template><TextView text="{Name}"/></t:template></t:Column>'+
-        '<t:Column><t:label><Label text="HC" /></t:label><t:template><TextView text="{HC}"/></t:template></t:Column>'+
-        '<t:Column><t:label><Label text="Prediction" /></t:label><t:template><TextView text="{Prediction}"/></t:template></t:Column>'+
-        '<t:Column><t:label><Label text="Adjustment" /></t:label><t:template><TextView text="{Adjustment}"/></t:template></t:Column>'+
-        '</t:columns>'+
-        '</t:TreeTable></mvc:View></script>';
+        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" ' +
+            'xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{/}" selectionMode="Single" enableColumnReordering="false" expandFirstLevel="false">' +
+            '<t:columns>' +
+            '<t:Column width="400px"><t:label><Label text="Tree" /></t:label><t:template><TextView text="{Name}"/></t:template></t:Column>' +
+            '<t:Column><t:label><Label text="HC" /></t:label><t:template><TextView text="{HC}"/></t:template></t:Column>' +
+            '<t:Column><t:label><Label text="Prediction" /></t:label><t:template><TextView text="{Prediction}"/></t:template></t:Column>' +
+            '<t:Column><t:label><Label text="Adjustment" /></t:label><t:template><TextView text="{Adjustment}"/></t:template></t:Column>' +
+            '</t:columns>' +
+            '</t:TreeTable></mvc:View></script>';
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /* NOTES:
@@ -128,11 +129,11 @@
         */
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         _shadowRoot.appendChild(div2);
-       
+
         // treeTable panel & slot settings
         let div3 = document.createElement('div');
         div3.innerHTML = '<div style="max-height: "' + that.max_height + that.unit_option + '"; border-radius: 15px; overflow-y: hidden;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><div style="max-height: ' + that.max_height + that.unit_option + '; border-radius: 15px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"></slot></div></div>';
-         _shadowRoot.appendChild(div3);
+        _shadowRoot.appendChild(div3);
 
         that_.appendChild(div);
 
@@ -151,7 +152,7 @@
         console.log("arrayNodes:");
         console.log(arrayNodes);
         console.log("================");
-        
+
         var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
 
         tmpArray.pop();
@@ -160,7 +161,7 @@
             'div': mapcanvas_divstr
         });
 
-        sap.ui.getCore().attachInit(function() {
+        sap.ui.getCore().attachInit(function () {
             "use strict";
 
             //### Controller definition ###
@@ -182,95 +183,70 @@
                 'sap/ui/model/FilterOperator',
                 'sap/ui/model/odata/ODataModel',
                 'sap/m/BusyDialog'
-            ], function(jQuery, Controller, JSONModel, MessageToast, coreLibrary, Core, Filter, mobileLibrary, MessageBox, DateRange, DateFormat, BindingMode, Fragment, Token, FilterOperator, ODataModel, BusyDialog) {
+            ], function (jQuery, Controller, JSONModel, MessageToast, coreLibrary, Core, Filter, mobileLibrary, MessageBox, DateRange, DateFormat, BindingMode, Fragment, Token, FilterOperator, ODataModel, BusyDialog) {
                 "use strict";
 
                 var busyDialog = (busyDialog) ? busyDialog : new BusyDialog({});
 
-                    return sap.ui.controller("myView.Template", {
+                return sap.ui.controller("myView.Template", {
 
-                    onInit: function() {
-                            /*
-                            // oData preparation (nodes, columns and rows)
-                            var myData = [
-                                // Level 0 - ENTITY
-                                { Id: "1", Name: "#", Parent: "", HC: "20", Prediction: "-", Adjustment: "$282.27 m" },
-                                { Id: "2", Name: "Other", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
-                                { Id: "3", Name: "Customer & Products", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
-                                { Id: "4", Name: "Finance", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
-                                { Id: "5", Name: "Gas & Low Carbon Energy", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
-                                { Id: "6", Name: "Innovation & Engineering", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
-                                { Id: "7", Name: "Legal", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
-                                { Id: "8", Name: "People & Culture", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
-                                { Id: "9", Name: "Production & Operations", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
-                              
-                                // Level 1 - SUB-ENTITY
-                                { Id: "10", Name: "Unassigned", Parent: "1", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
-                                { Id: "11", Name: "Don't Use - Incorrect Enterprise", Parent: "10", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
-                                
-                                // Level E - ENTERPRISE
-                                { Id: "12", Name: "BP Corporate Exec Office Exec", Parent: "2", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
-                                { Id: "13", Name: "CEO - Legacy", Parent: "2", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
-                                { Id: "14", Name: "CEO Support", Parent: "2", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
-                               
-                            ];
-                              
-                            var newMember = {Id: "15", Name: "Armando Santos", Parent: "4", HC: "5", Prediction: "10", Adjustment: "$123 m" };
-
-                            myData.push(newMember);
-
-                            var result = convert(myData);
-                            */
-
-                              
-			                var result = convert(arrayNodes);
-                            console.log("tableTree is: ", result);
-
-
-                            // Function that builds the hierarchy tree, readable in console.log
-                            function convert(array) {
-                                var map = {};
-                                for (var i = 0; i < array.length; i++) {
-                                  var obj = array[i];
-                                  obj.children = [];
-                              
-                                  map[obj.Id] = obj;
-                              
-                                  var parent = obj.Parent || "-";
-                                  if (!map[parent]) {
-                                    map[parent] = {
-                                      children: [],
-                                    };
-                                  }
-                                  
-                                  map[parent].children.push(obj);
-                                }
-                              
-                                return map["-"].children;
-                            }
-
+                    onInit: function () {
+                        /*
+                        // oData preparation (nodes, columns and rows)
+                        var myData = [
+                            // Level 0 - ENTITY
+                            { Id: "1", Name: "#", Parent: "", HC: "20", Prediction: "-", Adjustment: "$282.27 m" },
+                            { Id: "2", Name: "Other", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                            { Id: "3", Name: "Customer & Products", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                            { Id: "4", Name: "Finance", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                            { Id: "5", Name: "Gas & Low Carbon Energy", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                            { Id: "6", Name: "Innovation & Engineering", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                            { Id: "7", Name: "Legal", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                            { Id: "8", Name: "People & Culture", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                            { Id: "9", Name: "Production & Operations", Parent: "", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                          
+                            // Level 1 - SUB-ENTITY
+                            { Id: "10", Name: "Unassigned", Parent: "1", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                            { Id: "11", Name: "Don't Use - Incorrect Enterprise", Parent: "10", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
                             
+                            // Level E - ENTERPRISE
+                            { Id: "12", Name: "BP Corporate Exec Office Exec", Parent: "2", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                            { Id: "13", Name: "CEO - Legacy", Parent: "2", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                            { Id: "14", Name: "CEO Support", Parent: "2", HC: "-", Prediction: "-", Adjustment: "$282.27 m" },
+                           
+                        ];
+                          
+                        var newMember = {Id: "15", Name: "Armando Santos", Parent: "4", HC: "5", Prediction: "10", Adjustment: "$123 m" };
 
-                            // Create the model linked to the data (oData)
-                            var _oModel = new sap.ui.model.json.JSONModel(result);
-                            //_oModel.setSizeLimit(1000000);
-                            
-                            console.log("_oModel");
-                            console.log(_oModel);
-                            
-                            // Link the model to the widget
-                            this.getView().setModel(_oModel); 
+                        myData.push(newMember);
 
-                            console.log("The model from");
-                            console.log(this.getView().getModel());  
-                            
-                            console.log("that.widgetName");
-                            console.log(that.widgetName);
+                        var result = convert(myData);
+                        */
 
-                             // Releasing memory
-                            result = [''];
-                            _oModel = [''];
-                            arrayNodes = [''];
+
+                        var result = convert(arrayNodes);
+                        console.log("tableTree is: ", result);
+
+                        // Create the model linked to the data (oData)
+                        var _oModel = new sap.ui.model.json.JSONModel(result);
+                        //_oModel.setSizeLimit(1000000);
+
+                        console.log("_oModel");
+                        console.log(_oModel);
+
+                        // Link the model to the widget
+                        this.getView().setModel(_oModel);
+
+                        console.log("The model from");
+                        console.log(this.getView().getModel());
+
+                        console.log("that.widgetName");
+                        console.log(that.widgetName);
+
+                        // Releasing memory
+                        result = [''];
+                        _oModel = [''];
+                        arrayNodes = [''];
                     }
 
                 });
@@ -280,10 +256,10 @@
             var foundIndex = tmpArray.findIndex(x => x.id == widgetName);
             var divfinal = tmpArray[foundIndex].div;
             console.log(divfinal);
- 
+
             //### THE APP: place the XMLView into DOM ###
             var oView = sap.ui.xmlview({
-                viewContent: jQuery(divfinal).html(), 
+                viewContent: jQuery(divfinal).html(),
             });
             //### Place the XMLView into div piece ###
             oView.placeAt(div);
@@ -297,14 +273,36 @@
             console.log("...");
             console.log(arrayNodes);
             console.log(div);
-            
+
         });
 
     } // end of: function loadthis...
 
     function empty(element) {
-        element.innerHTML = ""; 
+        element.innerHTML = "";
         /////element.textContent = ""; 
-      }
+    }
+
+    // Function that builds the hierarchy tree, readable in console.log
+    function convert(array) {
+        var map = {};
+        for (var i = 0; i < array.length; i++) {
+            var obj = array[i];
+            obj.children = [];
+
+            map[obj.Id] = obj;
+
+            var parent = obj.Parent || "-";
+            if (!map[parent]) {
+                map[parent] = {
+                    children: [],
+                };
+            }
+
+            map[parent].children.push(obj);
+        }
+
+        return map["-"].children;
+    }
 
 })();
