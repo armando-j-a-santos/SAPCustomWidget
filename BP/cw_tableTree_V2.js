@@ -70,10 +70,6 @@
             widgetName = that._export_settings.title.split("|")[0];
         }
 	    
-        // div creation
-        div = document.createElement('div');
-
-
         console.log('>>>><<<<<');
         // Clear DOM
         // Delete any previous DOM widget(s), to avoid the same treetable to appear multiple times. 
@@ -81,7 +77,8 @@
         var x = document.getElementById("__xmlview");
         if (x) {x.remove();}
 
-
+        // div creation
+        div = document.createElement('div');
         div.slot = "content_" + widgetName;
 
 	    // SAP UI5 necessary library and theme settings
