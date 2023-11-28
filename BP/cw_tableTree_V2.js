@@ -42,7 +42,13 @@
         // Method: loadData use by SAC side to pass the array od nodes to be used.
         async loadData(arrayNodes, paramColumns){
             if (arrayNodes != "") {
-                loadthis(that, changedPropertiesv2, arrayNodes);
+                
+                if (sap && sap.ui.getCore().getElementById("__xmlview1--tbl"))
+                {
+                    
+                } else {
+                    loadthis(that, changedPropertiesv2, arrayNodes);
+                }
             }		
 	    }
         
