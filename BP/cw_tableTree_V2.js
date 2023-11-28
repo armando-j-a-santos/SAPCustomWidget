@@ -138,7 +138,7 @@
 
         // treeTable panel & slot settings
         let div3 = document.createElement('div');
-        div3.innerHTML = '<div style="max-height: "200px"; border-radius: 15px; overflow-y: hidden;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><div style="max-height: 200px; border-radius: 15px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"></slot></div></div>';
+        div3.innerHTML = '<div style="max-height: "600px"; border-radius: 15px; overflow-y: hidden;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><div style="max-height: 600px; border-radius: 15px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"></slot></div></div>';
         _shadowRoot.appendChild(div3);
 
         that_.appendChild(div);
