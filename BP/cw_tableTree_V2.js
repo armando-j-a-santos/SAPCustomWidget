@@ -254,7 +254,7 @@
             
         });
 
-    } // end of: function loadthis(that, changedProperties) {
+    } // end of: function loadthis...
 
     
 })();
