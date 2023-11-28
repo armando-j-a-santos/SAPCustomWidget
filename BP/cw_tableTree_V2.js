@@ -80,7 +80,10 @@
         x = document.getElementById("__xmlview2");
         if (x) {x.remove();}
 
-        
+
+        var y = document.getElementsByClassName("__xmlview");
+        if (y) {console.log('yyyy:'); console.log(y);}
+
         // div creation
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
