@@ -133,6 +133,7 @@
         
         var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
 
+        tmpArray.pop();
         tmpArray.push({
             'id': widgetName,
             'div': mapcanvas_divstr
