@@ -41,13 +41,17 @@
 		
         // Method: loadData use by SAC side to pass the array od nodes to be used.
         async loadData(arrayNodes, paramColumns){
-		this.dispose();
+		    this.dispose();
 		
-		if (arrayNodes != "") {
-			loadthis(that, changedPropertiesv2, arrayNodes);
-		}		
-	}
+            if (arrayNodes != "") {
+                loadthis(that, changedPropertiesv2, arrayNodes);
+            }		
+	    }
         
+        dispose () {
+            this.src = ''
+          }
+
         onCustomWidgetBeforeUpdate(changedProperties) {}
 
         onCustomWidgetAfterUpdate(changedProperties) {
