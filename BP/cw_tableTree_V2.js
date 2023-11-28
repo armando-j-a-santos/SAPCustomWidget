@@ -76,7 +76,7 @@
 
         console.log('>>>><<<<<');
         var x = document.getElementById("__xmlview1--tbl");
-        x.remove();
+        if (x) {x.remove();}
 
 
         div.slot = "content_" + widgetName;
