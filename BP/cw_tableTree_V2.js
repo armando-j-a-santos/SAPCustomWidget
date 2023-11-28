@@ -83,7 +83,7 @@
         */
 
         var y = document.getElementsByClassName("__xmlview");
-        if (y) {console.log('yyyy:'); console.log(y);}
+        if (y) {console.log('------>:'); console.log(y);}
 
         // div creation
         div = document.createElement('div');
