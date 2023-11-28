@@ -254,9 +254,9 @@
             oView.placeAt(div);
 
             // Releasing memory
-            delete result;
-            delete _oModel;
-            delete oView;
+            //delete result;
+            //delete _oModel;
+            //delete oView;
             
         });
 
