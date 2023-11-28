@@ -83,6 +83,7 @@
                 break;
             }
             i++;
+            console.log(i);
         }
  
 
