@@ -73,7 +73,7 @@
         console.log('>>>><<<<<');
         // Clear DOM
         // Delete any previous DOM widget(s), to avoid the same treetable to appear multiple times. 
-        // Only a SINGLE treetable should appear to the SAC user.
+        // Only a SINGLE treetable should appear to the SAC user. For example, by appling different filters to the techTable behind the scenes.
         var x = document.getElementById("__xmlview");
         if (x) {x.remove();}
 
