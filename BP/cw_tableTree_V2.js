@@ -121,7 +121,7 @@
         let div2 = document.createElement('div');
         div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" ' +
             'xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons">' +
-            '<t:TreeTable id="tbl" rows="{/}" selectionMode="Single" enableColumnReordering="false" expandFirstLevel="false" height="700">' +
+            '<t:TreeTable id="tbl" rows="{/}" selectionMode="Single" enableColumnReordering="false" expandFirstLevel="false" height="800">' +
             '<t:columns>' +
             '<t:Column width="400px"><t:label><Label text="Tree" /></t:label><t:template><TextView text="{Name}"/></t:template></t:Column>' +
             '<t:Column><t:label><Label text="HC" /></t:label><t:template><TextView text="{HC}"/></t:template></t:Column>' +
@@ -139,7 +139,7 @@
 
         // treeTable panel & slot settings
         let div3 = document.createElement('div');
-        var maxheight = '200px';
+        var maxheight = '800px';
         div3.innerHTML = '<div style="max-height: "' + maxheight + '"; border-radius: 15px; overflow-y: hidden;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><div style="max-height: '+ maxheight +'; border-radius: 15px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"></slot></div></div>';
         _shadowRoot.appendChild(div3);
 
