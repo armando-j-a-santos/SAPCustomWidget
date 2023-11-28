@@ -74,18 +74,19 @@
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
 
-	// SAP UI5 necessary library and theme settings
+	    // SAP UI5 necessary library and theme settings
         let div1 = document.createElement('div');
         div1.innerHTML = '<script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/1.108.20/resources/sap-ui-core.js" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-bindingSyntax="complex" data-sap-ui-libs="sap.m"></script>'
         _shadowRoot.appendChild(div1);
 
     
+        // treeTable necessary settings & definitions
+        // treeTable columns settings
         let div2 = document.createElement('div');
-        
         div2.innerHTML = '<script id="oView'+ widgetName +'" name="oView'+ widgetName +'" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" '+ 
         'xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons"><t:TreeTable id="tbl" rows="{/}" selectionMode="Single" enableColumnReordering="false" expandFirstLevel="false">'+
         '<t:columns>'+
-        '<t:Column><t:label><Label text="Tree" /></t:label><t:template><TextView text="{Name}"/></t:template></t:Column>'+
+        '<t:Column><t:label><Label text="Tree" /></t:label><t:template><TextView text="{Name}"/></t:template> width="400px"</t:Column>'+
         '<t:Column><t:label><Label text="HC" /></t:label><t:template><TextView text="{HC}"/></t:template></t:Column>'+
         '<t:Column><t:label><Label text="Prediction" /></t:label><t:template><TextView text="{Prediction}"/></t:template></t:Column>'+
         '<t:Column><t:label><Label text="Adjustment" /></t:label><t:template><TextView text="{Adjustment}"/></t:template></t:Column>'+
@@ -97,9 +98,9 @@
         1. selectionMode="Single" enableColumnReordering="false" expandFirstLevel="false" >>> To remove the first column checkboxes for each row.
         */
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
         _shadowRoot.appendChild(div2);
        
+        // treeTable panel & slot settings
         let div3 = document.createElement('div');
         div3.innerHTML = '<div style="max-height: "' + that.max_height + that.unit_option + '"; border-radius: 15px; overflow-y: hidden;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><div style="max-height: ' + that.max_height + that.unit_option + '; border-radius: 15px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"></slot></div></div>';
          _shadowRoot.appendChild(div3);
@@ -107,7 +108,7 @@
         that_.appendChild(div);
 
         console.log("================");
-        console.log("LOGS");
+        console.log(">>>> LOGS >>>>");
         console.log(widgetName);
         console.log("div");
         console.log(div);
@@ -156,6 +157,7 @@
                     return sap.ui.controller("myView.Template", {
 
                     onInit: function() {
+                            /*
                             // oData preparation (nodes, columns and rows)
                             var myData = [
                                 // Level 0 - ENTITY
@@ -184,11 +186,13 @@
 
                             myData.push(newMember);
 
-			    console.log("arrayNodes:");
-        		    console.log(arrayNodes);
+                            var result = convert(myData);
+                            */
+
+			                console.log("arrayNodes:");
+        		            console.log(arrayNodes);
                               
-                            //var result = convert(myData);
-			    var result = convert(arrayNodes);
+			                var result = convert(arrayNodes);
                             console.log("tree is: ", result);
 
 
