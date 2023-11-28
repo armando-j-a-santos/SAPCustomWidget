@@ -254,8 +254,8 @@
             oView.placeAt(div);
 
             // Releasing memory
-            //delete result;
-            //delete _oModel;
+            result = [''];
+            _oModel = [''];
             oView = '';
             arrayNodes = [''];
 
