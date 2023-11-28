@@ -18,8 +18,6 @@
         constructor() {
             super();
 
-            _shadowRoot = '';
-
             _shadowRoot = this.attachShadow({
                 mode: "open"
             });
@@ -72,6 +70,8 @@
             widgetName = that._export_settings.title.split("|")[0];
         }
 	    
+        delete div;
+
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
 
