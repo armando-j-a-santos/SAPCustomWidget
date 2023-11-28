@@ -70,7 +70,7 @@
             widgetName = that._export_settings.title.split("|")[0];
         }
 	    
-
+        // div creation
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
 
@@ -236,6 +236,8 @@
                             
                             console.log("that.widgetName");
                             console.log(that.widgetName);
+
+                            result = [''];
                     }
 
                 });
@@ -254,7 +256,6 @@
             oView.placeAt(div);
 
             // Releasing memory
-            result = [''];
             _oModel = [''];
             oView = '';
             arrayNodes = [''];
