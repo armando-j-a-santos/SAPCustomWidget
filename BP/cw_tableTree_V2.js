@@ -18,10 +18,12 @@
         constructor() {
             super();
 
+            _shadowRoot = '';
+
             _shadowRoot = this.attachShadow({
                 mode: "open"
             });
-            _shadowRoot.appendChild(tmpl.content.cloneNode(false)); // true
+            _shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
             this.addEventListener("click", event => {
                 console.log('click event in here');
