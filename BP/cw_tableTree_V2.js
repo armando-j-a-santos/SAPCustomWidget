@@ -258,11 +258,15 @@
             //### Place the XMLView into div piece ###
             oView.placeAt(div);
 
+            console.log("...");
+            console.log(div);
             // Releasing memory
             oView = '';
+            div = '';
 
             console.log("...");
             console.log(arrayNodes);
+            console.log(div);
             
         });
 
