@@ -70,9 +70,9 @@
             widgetName = that._export_settings.title.split("|")[0];
         }
 	    
-        delete div;
-        delete div.slot;
 
+        div = document.createElement('div');
+        delete div;
         div = document.createElement('div');
 
         div.slot = "content_" + widgetName;
