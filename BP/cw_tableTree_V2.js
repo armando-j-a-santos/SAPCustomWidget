@@ -248,6 +248,9 @@
 
                         // Link the model to the widget
                         this.getView().setModel(_oModel);
+
+                        // Bring the columns into the treeTable defined above
+                        // NOTE: width property is set to 400px only for the first column (Tree column - hierarchy) 
                         var table = this.getView().byId("tbl");
                         columnsIDs.forEach((id, index) => {
                             table.addColumn(new sap.ui.table.Column({
