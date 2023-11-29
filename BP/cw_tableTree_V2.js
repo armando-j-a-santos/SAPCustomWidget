@@ -40,7 +40,7 @@
         }
 
         // Method: loadData use by SAC side to pass the array od nodes to be used.
-        async loadData(arrayNodes, paramColumns) {
+        async loadData(arrayNodes, columnsIDs, columnsDesc) {
             // if there is nodes to render
             if (arrayNodes != "") {
                 // Check if the treetable as already been created.
