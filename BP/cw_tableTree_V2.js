@@ -121,7 +121,7 @@
         let div2 = document.createElement('div');
         div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" ' +
             'xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons">' +
-            '<t:TreeTable id="tbl" rows="{/}" selectionMode="Single" enableColumnReordering="false" expandFirstLevel="false" visibleRowCount="25">' +
+            '<t:TreeTable id="tbl" rows="{/}" selectionMode="Single" enableColumnReordering="false" expandFirstLevel="false" visibleRowCount="16">' +
             '<t:columns>' +
             // '<t:Column width="400px"><t:label><Label text="Tree" /></t:label><t:template><TextView text="{Name}"/></t:template></t:Column>' +
             // '<t:Column><t:label><Label text="HC" /></t:label><t:template><TextView text="{HC}"/></t:template></t:Column>' +
@@ -133,6 +133,7 @@
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /* NOTES:
           1. selectionMode="Single" enableColumnReordering="false" expandFirstLevel="false" >>> To remove the first column checkboxes for each row.
+          2. visibleRowCount="16" >>> Basically defines the height of the treetable.
         */
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         _shadowRoot.appendChild(div2);
