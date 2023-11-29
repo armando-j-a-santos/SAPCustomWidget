@@ -247,16 +247,14 @@
 
                         // Link the model to the widget
                         this.getView().setModel(_oModel);
-                        var aCols = [];
+                        var table = this.getView().byId("tbl");
                         columnsIDs.forEach((id, index) => {
-                            aCols.push(new sap.ui.table.Column({
+                            table.addColumn(new sap.ui.table.Column({
                                 label: columnsDesc[index],
                                 template: id,
                                 width: index === 0 ? "400px" : ""
                             }));
                         });
-                        var table = this.getView().byId("tbl");
-                        table.setAggregation("columns", aCols);
 
                         //console.log("The model from");
                         //console.log(this.getView().getModel());
