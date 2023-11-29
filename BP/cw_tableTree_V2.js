@@ -53,7 +53,7 @@
                     // NOTE: In this if statment the treetable is NOT created. Only the data is updated.
                 } else {
                     // Need to treetable widget.
-                    loadthis(that, changedPropertiesv2, arrayNodes);
+                    loadthis(that, changedPropertiesv2, arrayNodes, columnsIDs, columnsDesc);
                 }
             }
 
@@ -75,7 +75,7 @@
     }
     customElements.define("com-asantos-sap-sac-treetableb", ASANTOS);
 
-    function loadthis(that, changedProperties, arrayNodes) {
+    function loadthis(that, changedProperties, arrayNodes, columnsIDs, columnsDesc) {
         var that_ = that;
 
         widgetName = changedProperties.widgetName;
@@ -160,11 +160,10 @@
         console.log("arrayNodes:");
         console.log(arrayNodes);
 
-        //console.log('that.max_height:');
-        //console.log(that.max_height);
-        //console.log('that.unit_option:');
-        //console.log(that.unit_option);       
-
+        console.log("columnsIDs:");
+        console.log(columnsIDs);
+        console.log("columnsDesc:");
+        console.log(columnsDesc);
         console.log("================");
 
         var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
