@@ -30,7 +30,7 @@
             ///this._firstConnection = 0;
         }
 
-        connectedCallback() {}
+        connectedCallback() { }
 
         disconnectedCallback() {
             if (this._subscription) { // react store subscription
@@ -59,7 +59,7 @@
 
         }
 
-        onCustomWidgetBeforeUpdate(changedProperties) {}
+        onCustomWidgetBeforeUpdate(changedProperties) { }
 
         onCustomWidgetAfterUpdate(changedProperties) {
             that = this;
@@ -121,12 +121,12 @@
         let div2 = document.createElement('div');
         div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" ' +
             'xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns="sap.ui.commons">' +
-            '<t:TreeTable id="tbl" rows="{/}" selectionMode="Single" enableColumnReordering="false" expandFirstLevel="false" style="height: 900">' +
+            '<t:TreeTable id="tbl" rows="{/}" selectionMode="Single" enableColumnReordering="false" expandFirstLevel="false" visibleRowCount="25">' +
             '<t:columns>' +
-            '<t:Column width="400px"><t:label><Label text="Tree" /></t:label><t:template><TextView text="{Name}"/></t:template></t:Column>' +
-            '<t:Column><t:label><Label text="HC" /></t:label><t:template><TextView text="{HC}"/></t:template></t:Column>' +
-            '<t:Column><t:label><Label text="Prediction" /></t:label><t:template><TextView text="{Prediction}"/></t:template></t:Column>' +
-            '<t:Column><t:label><Label text="Adjustment" /></t:label><t:template><TextView text="{Adjustment}"/></t:template></t:Column>' +
+            // '<t:Column width="400px"><t:label><Label text="Tree" /></t:label><t:template><TextView text="{Name}"/></t:template></t:Column>' +
+            // '<t:Column><t:label><Label text="HC" /></t:label><t:template><TextView text="{HC}"/></t:template></t:Column>' +
+            // '<t:Column><t:label><Label text="Prediction" /></t:label><t:template><TextView text="{Prediction}"/></t:template></t:Column>' +
+            // '<t:Column><t:label><Label text="Adjustment" /></t:label><t:template><TextView text="{Adjustment}"/></t:template></t:Column>' +
             '</t:columns>' +
             '</t:TreeTable></mvc:View></script>';
 
@@ -140,7 +140,7 @@
         // treeTable panel & slot settings
         let div3 = document.createElement('div');
         var maxheight = '800px';
-        div3.innerHTML = '<div style="max-height: "' + maxheight + '"; border-radius: 15px; overflow-y: hidden;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><div style="max-height: '+ maxheight +'; border-radius: 15px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"></slot></div></div>';
+        div3.innerHTML = '<div style="max-height: "' + maxheight + '"; border-radius: 15px; overflow-y: hidden;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><div style="max-height: ' + maxheight + '; border-radius: 15px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"></slot></div></div>';
         _shadowRoot.appendChild(div3);
 
         that_.appendChild(div);
@@ -247,6 +247,16 @@
 
                         // Link the model to the widget
                         this.getView().setModel(_oModel);
+                        var aCols = [];
+                        columnsIDs.forEach((id, index) => {
+                            aCols.push(new sap.ui.table.Column({
+                                label: columnsDesc[index],
+                                template: id,
+                                width: index === 0 ? "400px" : ""
+                            }));
+                        });
+                        var table = this.getView().byId("tbl");
+                        table.setAggregation("columns", aCols);
 
                         //console.log("The model from");
                         //console.log(this.getView().getModel());
