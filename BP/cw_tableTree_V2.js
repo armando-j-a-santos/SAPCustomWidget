@@ -254,7 +254,10 @@
                                         shortRefNumber: refNumber
                                     };
                                     var oFormatter = NumberFormat.getFloatInstance(oFormatOptions);
-                                    row[colName] = oFormatter.format(row[colName]);
+                                    var value = oFormatter.format(row[colName]);
+                                    var numberPart = value.substring(0, value.length - 1);
+                                    var letter = value.substring(value.length - 1);
+                                    row[colName] = numberPart + letter.toLowerCase();
                                 });
                             }
                         });
@@ -280,7 +283,7 @@
                                 label: colName,
                                 template: id,
                                 width: index === 0 ? "400px" : "",
-                                hAlign: scale !== "" && scale !== "-" ? "End" : ""
+                                hAlign: scale !== "" && scale !== "-" ? "End" : "Start"
                             }));
                         });
 
