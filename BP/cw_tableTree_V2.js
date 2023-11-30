@@ -283,7 +283,7 @@
                                 label: colName,
                                 template: id,
                                 width: index === 0 ? "400px" : "",
-                                hAlign: scale !== "" && scale !== "-" ? "End" : "Start"
+                                hAlign: scale !== "" && scale !== "-" ? "End" : "Begin"
                             }));
                         });
 
