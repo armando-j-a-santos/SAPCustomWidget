@@ -245,7 +245,7 @@
                             const parts = colNumFormat.split(";");
                             var colName = parts[0];
                             var scale = parts.length > 1 ? parts[1] : "";
-                            if (scale !== "-" || scale !== "") {
+                            if (scale !== "-" && scale !== "") {
                                 var refNumber = scale === "m" ? 1000000 : scale === "k" ? 1000 : 1;
                                 result.forEach((row) => {
                                     var oFormatOptions = {
@@ -280,7 +280,7 @@
                                 label: colName,
                                 template: id,
                                 width: index === 0 ? "400px" : "",
-                                hAlign: scale !== "" || scale !== "-" ? "End" : ""
+                                hAlign: scale !== "" && scale !== "-" ? "End" : ""
                             }));
                         });
 
