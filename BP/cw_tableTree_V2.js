@@ -47,7 +47,8 @@
                 // If YES then only updating the data.
                 if (sap && sap.ui.getCore().getElementById("__xmlview1--tbl")) {
                     var table = sap.ui.getCore().getElementById("__xmlview1--tbl");
-                    var newData = convert(arrayNodes);
+                    var formatterArrayNodes = formatNumbers(arrayNodes, columnsNumberFormat);
+                    var newData = convert(formatterArrayNodes);
                     table.getModel().setData(newData);
 
                     // NOTE: In this if statment the treetable is NOT created. Only the data is updated.
@@ -236,31 +237,31 @@
                         var result = convert(myData);
                         */
 
-
-                        var result = convert(arrayNodes);
+                        var formatterArrayNodes = formatNumbers(arrayNodes, columnsNumberFormat);
+                        var result = convert(formatterArrayNodes);
                         console.log("tableTree is: ", result);
 
                         // number formatting
-                        columnsNumberFormat.forEach((colNumFormat) => {
-                            const parts = colNumFormat.split(";");
-                            var colName = parts[0];
-                            var scale = parts.length > 1 ? parts[1] : "";
-                            if (scale !== "-" && scale !== "") {
-                                var refNumber = scale === "m" ? 1000000 : scale === "k" ? 1000 : 1;
-                                result.forEach((row) => {
-                                    var oFormatOptions = {
-                                        style: "short",
-                                        shortDecimals: 2,
-                                        shortRefNumber: refNumber
-                                    };
-                                    var oFormatter = NumberFormat.getFloatInstance(oFormatOptions);
-                                    var value = oFormatter.format(row[colName]);
-                                    var numberPart = value.substring(0, value.length - 1);
-                                    var letter = value.substring(value.length - 1);
-                                    row[colName] = numberPart + letter.toLowerCase();
-                                });
-                            }
-                        });
+                        // columnsNumberFormat.forEach((colNumFormat) => {
+                        //     const parts = colNumFormat.split(";");
+                        //     var colName = parts[0];
+                        //     var scale = parts.length > 1 ? parts[1] : "";
+                        //     if (scale !== "-" && scale !== "") {
+                        //         var refNumber = scale === "m" ? 1000000 : scale === "k" ? 1000 : 1;
+                        //         result.forEach((row) => {
+                        //             var oFormatOptions = {
+                        //                 style: "short",
+                        //                 shortDecimals: 2,
+                        //                 shortRefNumber: refNumber
+                        //             };
+                        //             var oFormatter = NumberFormat.getFloatInstance(oFormatOptions);
+                        //             var value = oFormatter.format(row[colName]);
+                        //             var numberPart = value.substring(0, value.length - 1);
+                        //             var letter = value.substring(value.length - 1);
+                        //             row[colName] = numberPart + letter.toLowerCase();
+                        //         });
+                        //     }
+                        // });
 
                         // Create the model linked to the data (oData)
                         var _oModel = new sap.ui.model.json.JSONModel(result);
@@ -283,7 +284,7 @@
                                 label: colName,
                                 template: id,
                                 width: index === 0 ? "400px" : "",
-                                hAlign: scale !== "" && scale !== "-" ? "End" : "Begin"
+                                hAlign: scale && scale !== "" ? "End" : "Begin"
                             }));
                         });
 
@@ -342,6 +343,31 @@
         }
 
         return map["-"].children;
+    }
+
+    function formatNumbers(array, columnsNumberFormat) {
+        const NumberFormat = sap.ui.core.format.NumberFormat;
+        columnsNumberFormat.forEach((colNumFormat) => {
+            const parts = colNumFormat.split(";");
+            var colName = parts[0];
+            var scale = parts.length > 1 ? parts[1] : "";
+            if (scale !== "-" && scale !== "") {
+                var refNumber = scale === "m" ? 1000000 : scale === "k" ? 1000 : 1;
+                array.forEach((row) => {
+                    var oFormatOptions = {
+                        style: "short",
+                        shortDecimals: 2,
+                        shortRefNumber: refNumber
+                    };
+                    var oFormatter = NumberFormat.getFloatInstance(oFormatOptions);
+                    var value = oFormatter.format(row[colName]);
+                    var numberPart = value.substring(0, value.length - 1);
+                    var letter = value.substring(value.length - 1);
+                    row[colName] = numberPart + " " + letter.toLowerCase();
+                });
+            }
+        });
+        return array;
     }
 
 })();
