@@ -40,7 +40,7 @@
         }
 
         // Method: loadData use by SAC side to pass the array od nodes to be used.
-        async loadData(arrayNodes, columnsIDs, columnsDesc) {
+        async loadData(arrayNodes, columnsIDs, columnsDesc, columnsNumberFormat) {
             // if there is nodes to render
             if (arrayNodes != "") {
                 // Check if the treetable as already been created.
@@ -53,7 +53,7 @@
                     // NOTE: In this if statment the treetable is NOT created. Only the data is updated.
                 } else {
                     // Need to treetable widget.
-                    loadthis(that, changedPropertiesv2, arrayNodes, columnsIDs, columnsDesc);
+                    loadthis(that, changedPropertiesv2, arrayNodes, columnsIDs, columnsDesc, columnsNumberFormat);
                 }
             }
 
@@ -75,7 +75,7 @@
     }
     customElements.define("com-asantos-sap-sac-treetableb", ASANTOS);
 
-    function loadthis(that, changedProperties, arrayNodes, columnsIDs, columnsDesc) {
+    function loadthis(that, changedProperties, arrayNodes, columnsIDs, columnsDesc, columnsNumberFormat) {
         var that_ = that;
 
         widgetName = changedProperties.widgetName;
