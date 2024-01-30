@@ -74,7 +74,7 @@
         }
 
     }
-    customElements.define("com-bp-sap-sac-treetableb", BPTREETABLE);
+    customElements.define("com-bp-sap-sac-treetablex", BPTREETABLE);
 
     function loadthis(that, changedProperties, arrayNodes, columnsIDs, columnsDesc, columnsNumberFormat) {
         var that_ = that;
